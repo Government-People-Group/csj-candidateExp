@@ -1,0 +1,320 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">CV and personal statement</span>
+        <h1 class="govuk-heading-xl">Policy Advisor</h1>
+
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <img src="/public/images/co-logo.png" style="width:75%;height:75%;float:right" alt="Cabinet Office logo">
+      </div>
+
+    </div>
+    <div class="govuk-grid-row govuk-!-margin-top-9">
+      <div class="govuk-grid-column-one-third">
+        <ul class="govuk-list govuk-list--bullet-">
+          <li><p class="govuk-body-m"><strong>CV</strong></p></li>
+          <li><p class="govuk-body-m"><a href="cv-and-personal-statement-ps" class="govuk-link govuk-link--no-visited-state">Personal statement</a></p></li>
+        </ul>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Your CV</h2>
+        <!-- <div style="background:#F3F2F9;padding-top:10px;padding-bottom:10px;padding-left:10px; padding-right:10px"> -->
+        <h3 class="govuk-heading-m">Use an existing CV</h3>
+        <p class="govuk-body-m">You can use a CV you have used for another application.</p>
+        <ol class="govuk-list govuk-list--number">
+          <li><a href="existing-cv-1" class="govuk-link govuk-link--no-visited-state">Sarah-Edwards-CV.doc, uploaded 03/10/2022</a></li>
+          <li><a href="existing-cv-2" class="govuk-link govuk-link--no-visited-state">Sarah-Edwards-NewCV.doc, uploaded 22/09/2022</a></li>
+        </ol>
+<!-- </div> -->
+
+
+        <div class="govuk-grid-row govuk-!-margin-top-7"><hr></div>
+
+          <!-- <div id="cvUpload" class="govuk-!-margin-bottom-4" style="background:#F6F6F6;padding-top:10px;padding-bottom:10px;padding-left:10px; padding-right:10px"> -->
+
+        <form class="form" action="cv-and-personal-statement-uploaded" method="post">
+        <h3 class="govuk-heading-m govuk-!-margin-top-7">Upload a CV</h3>
+        <p class="govuk-body-m">Choose your file and upload your CV.</p>
+        <p class="govuk-body-m">To make sure your CV will upload correctly, you should:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>use files up to 5 MB with types .pdf, .doc, .docx, .odt or .rtf</li>
+          <li>divide the text into clear sections</li>
+          <li>not use any images</li>
+          </ul>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" value="{{ data['file-upload-1']}}">
+          </div>
+
+          <p id="lastMod" class="govuk-body-m"></p>
+
+          <script>
+            const fileUpload = document.getElementById('file-upload-1');
+            var stamp = new Date();
+            var localStamp = stamp.toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" }) ;
+
+            fileUpload.addEventListener('change', (event) => {
+              const files = event.target.files;
+              for (const file of files) {
+                const name = file.name;
+                const lastModified = file.lastModified;
+                const lmElement = document.getElementById('lastMod');
+
+                var fileName = `${name}`;
+                var lastM = `Last modified on ${new Date(lastModified).toLocaleDateString('en-uk')}`;
+                lmElement.innerHTML = lastM;
+              }
+            });
+          </script>
+
+        <button class="govuk-button" data-module="govuk-button">Upload and continue</button>
+</form>
+
+        <!-- </div> -->
+        <div class="govuk-grid-row govuk-!-margin-top-7"><hr></div>
+        <h3 class="govuk-heading-m govuk-!-margin-top-7">Enter your CV</h3>
+        <p class="govuk-body-m">You can enter your CV manually.</p>
+
+        <h4 class="govuk-heading-m">Employment history</h4>
+
+        {{ govukInput({
+          label: {
+            text: "Employer's name",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-35",
+          id: "width-20",
+          name: "width-20"
+        }) }}
+
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+        {{ govukDateInput({
+          id: "from",
+          namePrefix: "from",
+          fieldset: {
+            legend: {
+              text: "From",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            autocomplete: "from-day"
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            autocomplete: "from-month"
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            autocomplete: "from-year"
+          }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "to",
+          namePrefix: "to",
+          fieldset: {
+            legend: {
+              text: "To",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            autocomplete: "to-day"
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            autocomplete: "to-month"
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            autocomplete: "to-year"
+          }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Job title",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-35",
+          id: "width-20",
+          name: "width-20"
+        }) }}
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukCharacterCount({
+        name: "desc",
+        label: {
+        text: "Describe your role",
+        classes: "govuk-label--s",
+        isPageHeading: false
+      },
+        id: "desc",
+          maxwords: 150
+        }) }}
+
+
+
+
+    <p><a href="#">Add another employment</a></p>
+        <h4 class="govuk-heading-m">Education and qualifications</h4>
+        {{ govukInput({
+          label: {
+            text: "Institution's name",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-35",
+          id: "width-20",
+          name: "width-20"
+        }) }}
+
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+        {{ govukDateInput({
+          id: "from",
+          namePrefix: "from",
+          fieldset: {
+            legend: {
+              text: "From",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            autocomplete: "from-day"
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            autocomplete: "from-month"
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            autocomplete: "from-year"
+          }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "to",
+          namePrefix: "to",
+          fieldset: {
+            legend: {
+              text: "To",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            autocomplete: "to-day"
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            autocomplete: "to-month"
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            autocomplete: "to-year"
+          }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Qualification awarded",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-35",
+          id: "width-20",
+          name: "width-20"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Grade",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-35",
+          id: "width-20",
+          name: "width-20"
+        }) }}
+
+
+
+        {{ govukInput({
+          label: {
+            text: "Course title",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-35",
+          id: "width-20",
+          name: "width-20"
+        }) }}
+<p><a href="#">Add another education</a></p>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+
+<a href="task-list">Return to task-list</a>
+{% endblock %}
