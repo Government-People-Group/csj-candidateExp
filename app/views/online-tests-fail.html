@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Online tests result – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="home" method="post">
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">
+      <strong>{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span>
+      <h1 class="govuk-heading-xl">Judgement test</h1>
+      <h2 class="govuk-heading-l">Your test result</h2>
+      <p class="govuk-body-m">Thank you for completing the Civil Service Judgement Test.</p>
+      <p class="govuk-body-m">Unfortunately, your performance was below the minimum requirements for this job grade, so you cannot continue with your application for {{ data['searchwhat'] | capitalize}}.</p>
+      <p class="govuk-body-m">You scored better than 43%. You needed to achieve 60% or more to pass this test.</p>
+      <p class="govuk-body-m">For more information on your performance, you can view your <a href="#">test report</a>.</p>
+
+      <p class="govuk-body-m">For help on improving your test scores, you can:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><p class="govuk-body-m">complete our CSJT practice test</p> </li>
+        <li><p class="govuk-body-m">explore resources, challenges or development opportunities that improve your judgement and decision making</p> </li>
+            <li><p class="govuk-body-m">consider how you analyse information and what you can gain from it - to better focus on important text points</p> </li>
+      </ul>
+
+<p class="govuk-body-m">You can search for another Civil service role. </p>
+
+      <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Search for jobs</button>
+</form>
+
+
+
+  {% endblock %}

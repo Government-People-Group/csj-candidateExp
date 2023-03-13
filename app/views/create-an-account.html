@@ -1,0 +1,161 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/header-create-acc.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Create an account</h1>
+
+        {{ govukInput({
+          label: {
+            classes: "govuk-label--m govuk-!-margin-top-9",
+            text: 'First name'
+          },
+          id: "fName",
+          name: "fName",
+          classes: "govuk-input--width-30",
+          autocomplete: "first-name-input"
+        }) }}
+        {{ govukInput({
+          label: {
+            classes: "govuk-label--m",
+            text: 'Last name'
+          },
+          id: "lName",
+          name: "lName",
+          classes: "govuk-input--width-30",
+          autocomplete: "last-name-input"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label--m govuk-!-margin-top-9"
+          },
+          hint: {
+            text: "You'll need this email address to sign in to your account  "
+          },
+          id: "email",
+          name: "email",
+          classes: "govuk-input--width-30",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Re-enter your email address to confirm",
+            classes: "govuk-label--m"
+          },
+          id: "email2",
+          name: "email2",
+          classes: "govuk-input--width-30",
+          type: "email",
+          autocomplete: "re-enter-email",
+          spellcheck: false
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Create a password",
+            classes: "govuk-label--m govuk-!-margin-top-9"
+          },
+          hint: {
+            text: "Your password should have at least 8 characters and not include your name, email address or commonly used words."
+          },
+          id: "password",
+          name: "password",
+          classes: "govuk-input--width-30",
+          type: "password",
+          autocomplete: "password",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Re-enter your password to confirm",
+            classes: "govuk-label--m"
+          },
+          id: "password2",
+          name: "password2",
+          classes: "govuk-input--width-30 govuk-!-margin-bottom-6",
+          type: "password",
+          autocomplete: "re-enter-password",
+          spellcheck: false
+        }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "exist-cs",
+          fieldset: {
+            legend: {
+              text: "Are you a civil servant or an employee of a public body?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m govuk-!-margin-top-6"
+            }
+          },
+          hint: {
+            text: "Some public bodies are accredited by the Civil Service Commission allowing their employees to view vacancies advertised to civil servants."
+          },
+          items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+          ]
+        }) }}
+
+        <hr class="govuk-!-margin-bottom-6">
+
+
+        <p class="govuk-body-m govuk-!-margin-top-6"><a href="#">Terms and conditions</a> (opens in a new tab)</p>
+        <div class="govuk-checkboxes govuk-!-margin-top-3" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input onclick="chkButton()" class="govuk-checkboxes__input" id="accept-terms-and-conditions" name="accept-terms-and-conditions" type="checkbox" value=checked("accept-terms-and-conditions","agree")">
+            <label class="govuk-label govuk-checkboxes__label" for="accept-terms-and-conditions">
+              I agree to the terms and conditions.
+            </label>
+          </div>
+
+        <div id="dis" class="govuk-!-margin-top-9">
+                <button id="crAcc" disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled" data-module="govuk-button">Create account</button>
+        </div>
+
+        <div id="notdis" class="govuk-!-margin-top-9" style="display:none">
+                <button id="crAcc" class="govuk-button" data-module="govuk-button">Create account</button>
+        </div>
+        </div>
+<script>
+  function chkButton(){
+    chk = document.getElementById("accept-terms-and-conditions");
+      // document.getElementById("dis").style.display = 'none';
+      // document.getElementById("notdis").style.display = 'block';
+
+      if (chk = "agree") {
+        document.getElementById("notdis").style.display = 'block';
+        document.getElementById("dis").style.display = 'none';
+      }
+  }
+</script>
+
+
+      </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,216 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">
+      <strong>{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span>
+      <h1 class="govuk-heading-xl">Check and submit your application</h1>
+
+    </div>
+  </div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h2 class="govuk-heading-m">Online tests</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Judgement test
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Completed
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              View
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Numerical test
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Completed
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              View
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Work strengths test
+          </dt>
+          <dd class="govuk-summary-list__value">
+          Completed
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              View
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">CV and personal statement</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            CV
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['file']}} - edited
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              edit
+              <span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Personal statement
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['ps-text-full'] |truncate(150)}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              edit
+              <span class="govuk-visually-hidden"> licence type</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Assessment questions</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Behaviour questions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Completed
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              edit
+              <span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Technical skills
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Completed
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              edit
+              <span class="govuk-visually-hidden"> licence type</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Background information questions</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Personal information
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Completed
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              edit
+              <span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Preferences
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Completed
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              edit
+              <span class="govuk-visually-hidden"> licence type</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Diversity and Inclusion
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Completed
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              edit
+              <span class="govuk-visually-hidden"> licence type</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <h2 class="govuk-heading-m">Now send your application</h2>
+
+      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Accept and send
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

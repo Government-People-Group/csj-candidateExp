@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+
+<form class="form" action="search-results" method="post">
+
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">
+      <strong>{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span>
+      <h1 class="govuk-heading-xl">Not eligible</h1>
+
+    </div>
+  </div>
+
+
+  <p class="govuk-body-l">Sorry, you do not qualify to apply for the {{ data['searchwhat'] | capitalize}} role because you don't meet the following requirements:</p>
+
+
+
+{% if data['righttoremain'] == "no"  %}
+  <p class="govuk-body-m">Nationality requirements</p>
+{% endif %}
+{% if data['memberships'] == "no" %}
+<p class="govuk-body-m">Professional memberships required</p>
+{% endif %}
+{% if data['language'] == "no" %}
+<p class="govuk-body-m">Language skills required</p>
+{% endif %}
+{% if data['essential1'] == "no" %}
+<p class="govuk-body-m">Essential criteria</p>
+{% elif data['essential2'] == "no" %}
+<p class="govuk-body-m">Essential criteria</p>
+{% endif %}
+
+
+
+
+<button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Back to search results</button>
+</form>
+  {% endblock %}

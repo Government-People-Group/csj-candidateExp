@@ -1,10 +1,69 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Home – {{ serviceName }} – GOV.UK Prototype Kit
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+
 {% endblock %}
 
 {% block content %}
+<form class="form" action="search-results" method="post">
+  <div class="govuk-width-container">
+    <h1 class="govuk-heading-l">Civil Service job search</h1>
+    <p class="govuk-body-l govuk-!-margin-bottom-6">Find jobs in the Civil Service and central government organisations</p>
+
+    <main class="govuk-main-wrapper" style="background:#f3f2f1; padding-top:20px;padding-bottom:20px; padding-right:0px;padding-left:30px">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters" style="min-height:150px;max-height:160px">
+          <div class="govuk-grid-column-one-half">
+            <p class="govuk-body-m govuk-!-margin-top-3 govuk-!-margin-bottom-2"><strong>What</strong></p>
+            {{ govukInput({
+              label: {
+                text: 'Enter job title, skill or keywords'
+              },
+              id: "searchwhat",
+              name: "searchwhat",
+              value: data['searchwhat'],
+              classes: "govuk-input--width-25",
+              autocomplete: "search-term-input"
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <p class="govuk-body-m govuk-!-margin-top-3 govuk-!-margin-bottom-2"><strong>Where</strong></p>
+            {{ govukInput({
+              label: {
+                text: 'Enter a postcode, town or region'
+              },
+              id: "searchwhere",
+              name: "searchwhere",
+              value: data['searchwhere'],
+              classes: "govuk-input--width-25",
+              autocomplete: "location-search-input"
+            }) }}
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-3"  style="position:relative;min-height:150px;max-height:160px">
+          <div class="govuk-grid-column-full"  style="position:absolute;bottom:0">
+            <button class="govuk-button" style="max-width:92%;min-width:70%" data-module="govuk-button">Search</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </form>
 
 
-{% endblock %}
+
+
+  {% endblock %}

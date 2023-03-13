@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/header-sign-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% if data['apply'] | length > 1 %}
+{% set buturl = "check-you-can-apply?signedin=true" %}
+{% else %}
+{% set buturl = "home?signedin=true" %}
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Sign-in</h1>
+      <p class="govuk-body-m">Sign in or <a href="create-an-account">create an account</a> to get started.</p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukInput({
+        label: {
+          text: "Email address",
+          classes: "govuk-label--m"
+        },
+        id: "email",
+        name: "email",
+        classes: "govuk-input--width-30",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Password",
+          classes: "govuk-label--m"
+        },
+        id: "password2",
+        name: "password2",
+        classes: "govuk-input--width-30",
+        type: "password",
+        autocomplete: "re-enter-password",
+        spellcheck: false
+      }) }}
+      <a class ="govuk-button" style="max-width:100%;min-width:40%" href="{{ buturl }}">Sign-in</a>
+      <p class="govuk-body-m"><a href="#">Forgotten your password?</p>
+      </div>
+  {% endblock %}

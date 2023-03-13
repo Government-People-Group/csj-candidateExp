@@ -27,13 +27,6 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
 {% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
 {% endif %}
 
-{% if data['file'] | length > 1 %}
-{% set cvurl = "cv-existing" %}
-{% elif data['file-upload-1'] | length > 1 %}
-{% set cvurl = "cv-uploaded" %}
-{% else %}
-{% set cvurl = "cv" %}
-{% endif %}
 
 
 {% if data['dept'] == "Department for Education" %}
@@ -48,22 +41,23 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-three-quarters" style="padding-right:10px">
     <span class="govuk-caption-l">{{ data['dept']}}</span>
     <h1 class="govuk-heading-xl">{{ data['searchwhat'] | capitalize}}</h1>
+<div id="vanishLoadedFile" class="govuk-heading-m govuk-!-margin-top-4" style="width:90%;border-radius: 10px;background:#ffffff;padding:10px;border:1px lightgrey solid">
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Application form complete and ready to submit</h2>
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      You must submit your application before 11:55 PM on 22nd February 2023.
+    </strong>
+  </div>
+
+  <form class="form" action="check-answers" method="post">
+  <button class="govuk-button govuk-!-margin-top-1 govuk-!-margin-left-0 govuk-!-margin-bottom-3" style=";max-width:100%;min-width:25%" data-module="govuk-button">Check your answers and submit</button>
+</form>
+</div>
 
 
-    <p class="govuk-body govuk-!-margin-bottom-3">Complete the application for {{ data['searchwhat'] | capitalize}}.<br>
-      Throughout your application you can leave and return to complete at any time.</p>
-      <p class="govuk-body govuk-!-margin-bottom-3">If you need a reasonable adjustment, you can contact our recruitment team.</p>
 
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-warning-text__assistive">Warning</span>
-          You must submit your application before 11:55 PM on 22nd February 2023.
-        </strong>
-      </div>
-
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 8 sections.</p>
     </div>
     <div class="govuk-grid-column-one-quarter" style="padding-left:20px">
     </div>
@@ -103,11 +97,8 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                 </a>
               </span>
 
-              {% if data['pass'] == "true"  %}
+
               <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% endif %}
 
 
 
@@ -118,11 +109,9 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                   Numeric test
                 </a>
               </span>
-              {% if data['pass'] == "true"  %}
+
               <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% endif %}
+
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
@@ -130,11 +119,9 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                   Work strengths test
                 </a>
               </span>
-              {% if data['pass'] == "true"  %}
+
               <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% endif %}
+
             </li>
           </ul>
         </li>
@@ -150,13 +137,9 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                 </a>
               </span>
 
-              {% if data['cv'] == "true"  %}
+
               <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-              {% elif data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-              {% endif %}
+
 
             </li>
             <li class="govuk-prototype-kit-task-list__item">
@@ -166,16 +149,8 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                 </a>
               </span>
 
-              {% if data['ps'] == "true"  %}
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
 
-              {% elif data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% elif data['cv'] == "true" %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-              {% endif %}
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
 
             </li>
           </ul>
@@ -192,11 +167,8 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                 </a>
               </span>
 
-              {% if data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-              {% endif %}
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
 
             </li>
             <li class="govuk-prototype-kit-task-list__item">
@@ -205,11 +177,7 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                 Technical skills
                 </a>
               </span>
-              {% if data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-              {% endif %}
+            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
 
             </li>
           </ul>
@@ -223,12 +191,7 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
               <span class="govuk-prototype-kit-task-list__task-name">
                 <a href="#" aria-describedby="contact-details-status">Personal information</a>
               </span>
-              {% if data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-              {% endif %}
-
+            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
 
 
             </li>
@@ -237,11 +200,7 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                 <a href="#" aria-describedby="contact-details-status">Preferences</a>
               </span>
 
-              {% if data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-              {% endif %}
+        <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
 
 
 
@@ -251,11 +210,7 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                 <a href="#" aria-describedby="contact-details-status">Diversity and Inclusion</a>
               </span>
 
-              {% if data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-              {% endif %}
+            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
             </li>
           </ul>
         </li>

@@ -1,0 +1,17 @@
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<ul style="font-size:20px;text-align: right;border-bottom: 1px solid #bfc1c3; vertical-align: middle; padding-bottom: 15px">
+  <li style="display: inline; padding-left: 10px"><a href="home">Home</a></li>
+    <li style="display: inline; padding-left: 10px"><a href="create-an-account">Create an account</a></li>
+  <li style="display: inline; padding-left: 10px"><a href="#">Cymraeg</a></li>
+</ul>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
