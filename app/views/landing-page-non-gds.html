@@ -1,0 +1,348 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+
+
+{% block beforeContent %}
+
+
+<div>
+<p class="govuk-!-margin-top-4" id="display" style="float:left;display: inline; padding-left: 20px;color:red"></p>
+
+<img src="public/images/social-linkedin.png" style="max-width:2%;padding-bottom:30px">
+<img src="public/images/social-twitter.png" style="max-width:2%;padding-bottom:30px">
+<img src="public/images/social-youtube.png" style="max-width:2%;padding-bottom:30px">
+<img src="public/images/civil-service-logo.png" style="max-width:10%; padding:5px 50px 0px 20px;filter:grayscale(100%)">
+
+
+<ul style="float:right;font-size:20px;text-align: right; vertical-align: middle; padding: 10px 40px 0px; margin-bottom:0px; font-size:1.5em">
+
+  <li style="display: inline; padding-left: 25px"><a href="#">
+  <span onclick="openNav()"><span onclick="openNav()"><strong style="font-size:1.2em">Find a job</strong></span></span></a></li>
+
+  <li style="display: inline; padding-left: 25px"><a href="sign-in">Sign in or create an account</a></li>
+
+  <li style="display: inline; padding-left: 25px"><a href="#">Cymraeg</a></li>
+</ul>
+</div>
+
+
+<style>
+
+
+.govuk-width-container {max-width:none;}
+.govuk-main-wrapper {padding-top:0px;}
+
+a, a:link, a:active, a:visited {
+  text-decoration: underline;
+  color: black;}
+
+.main-image {
+    position: relative;
+    margin-bottom: 0;
+    border: 0;
+    border-color: transparent;
+}
+
+.main-image-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 40%;
+}
+
+
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  font-color:#ffffff;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav h1 {
+  padding: 8px 8px 0px 32px;
+  margin-bottom:0px;
+  margin-block-end:0em;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav label {
+  padding: 10px 8px 8px 32px;
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-block-end:0em;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav select {
+  padding: 10px 8px 8px 5px;
+  margin-left:32px;
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-block-end:0em;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  transition: 0.3s;
+  width:60%;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.govuk-button:focus:not(:active):not(:hover) {
+  color: #ffffff;
+}
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <h1>What</h1>
+  <input class="govuk-input govuk-!-width-three-quarters" id="what" name="what" type="text" style="margin-left:32px" placeholder="Enter job title, skill or keywords">
+  <h1>Where</h1>
+  <input class="govuk-input govuk-!-width-three-quarters" id="where" name="where" type="text" style="margin-left:32px" placeholder="Enter a postcode, town or region">
+  <br><br><br><br>
+  <h1>Filters</h1>
+  <br>
+  <div class="govuk-form-group">
+    <label for="type">
+      Distance to search
+    </label>
+    <select id="type" name="type">
+      <option value="published" selected>Only the area chosen</option>
+      <option value="updated">Within 10 miles</option>
+      <option value="views">Within 30 miles</option>
+      <option value="comments">Within 50 miles</option>
+      <option value="comments">Anywhere in the UK</option>
+    </select>
+  </div>
+  <div class="govuk-form-group">
+    <label for="type">
+      Job type
+    </label>
+    <select id="type" name="type">
+      <option value="published" selected>Permanent</option>
+      <option value="updated">Contract</option>
+      <option value="views">Short term cover</option>
+      <option value="comments">Voluntary</option>
+      <option value="comments">Apprenticeship</option>
+    </select>
+  </div>
+  <div class="govuk-form-group">
+    <label for="salary">
+      Minimum salary
+    </label>
+    <select id="salary" name="salary">
+      <option value="published" selected>No minimum</option>
+      <option value="updated">£12,000</option>
+      <option value="views">£20,000</option>
+      <option value="comments">£40,000</option>
+      <option value="comments">£70,000</option>
+    </select>
+  </div><div class="govuk-form-group">
+    <label for="remote">
+      Remote working
+    </label>
+    <select id="remote" name="remote">
+      <option value="published" selected>Yes</option>
+      <option value="updated">No</option>
+      <option value="views">Hybrid</option>
+    </select>
+  </div><div class="govuk-form-group">
+    <label for="type">
+      Date job was posted
+    </label>
+    <select id="type" name="type">
+      <option value="published" selected>In last 7 days</option>
+      <option value="updated">In last 2 weeks</option>
+      <option value="views">In last month</option>
+      <option value="comments">Any time</option>
+    </select>
+  </div><br>
+  <button class="govuk-button" data-module="govuk-button" style="background-color:#28A197; margin-left:32px">
+    Search
+  </button>
+
+  </div>
+
+
+
+
+  <div class="govuk-width-container">
+<div class="govuk-grid-row">
+    <div id="box-search">
+          <div class="main-image text-center">
+              <img src="public/images/woman-laptop.jpeg" style="max-width:100%;" alt="">
+              <div class="main-image-text" style="background: rgba(0, 0, 0, .5);">
+                  <h1 class="govuk-heading-xl" style="color:#ffffff;opacity: 1; margin:20px 0px 20px 30px">Flexible.<br> Diverse.<br> Rewarding.</h1>
+                  <h1 class="govuk-heading-xl" style="float:right;color:#ffffff;opacity: 1;margin:0px 20px 20px 0px">Your Civil Service.</h1>
+              </div>
+          </div>
+      </div>
+</div>
+
+<div class="govuk-width-container" style="max-width:90%;margin-left:auto;margin-right:auto; margin-top:80px">
+  <div class="govuk-grid-row">
+    <p style="font-size:5em; font-weight:bold; text-align:center; padding-bottom:40px">What we offer</p>
+    <div class="govuk-grid-column-one-third" >
+      <p style="font-size:2em; font-weight:bold; margin-bottom:3px">Flexible working</p>
+      <p style="font-size:1.7em;">Hybrid working with opportunities to work flexible or compressed hours, part-time working and job sharing</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p style="font-size:2em; font-weight:bold; margin-bottom:3px">At least 25 days annual leave</p>
+      <p style="font-size:1.7em;">Plus an extra day off for the monarch's birthday</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p style="font-size:2em; font-weight:bold; margin-bottom:3px">Excellent pension</p>
+      <p style="font-size:1.7em;">Including an average contribution of 27% by the Civil Service</p>
+    </div>
+  </div>
+  <div class="govuk-grid-row" style="padding-top:80px;">
+
+    <div class="govuk-grid-column-one-third" >
+      <p style="font-size:2em; font-weight:bold; margin-bottom:3px">Flexible working</p>
+      <p style="font-size:1.7em;">Hybrid working with opportunities to work flexible or compressed hours, part-time working and job sharing</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p style="font-size:2em; font-weight:bold; margin-bottom:3px">At least 25 days annual leave</p>
+      <p style="font-size:1.7em;">Plus an extra day off for the monarch's birthday</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p style="font-size:2em; font-weight:bold; margin-bottom:3px">Excellent pension</p>
+      <p style="font-size:1.7em;">Including an average contribution of 27% by the Civil Service</p>
+    </div>
+  </div>
+  <div class="govuk-grid-row" style="padding-top:80px;">
+
+    <div class="govuk-grid-column-one-third" >
+      <p style="font-size:2em; font-weight:bold; margin-bottom:3px">Flexible working</p>
+      <p style="font-size:1.7em;">Hybrid working with opportunities to work flexible or compressed hours, part-time working and job sharing</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p style="font-size:2em; font-weight:bold; margin-bottom:3px">At least 25 days annual leave</p>
+      <p style="font-size:1.7em;">Plus an extra day off for the monarch's birthday</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p style="font-size:2em; font-weight:bold; margin-bottom:3px">Excellent pension</p>
+      <p style="font-size:1.7em;">Including an average contribution of 27% by the Civil Service</p>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-width-container" style="max-width:90%;margin-left:auto;margin-right:auto; margin-top:80px">
+    <div class="govuk-grid-row" style="background-color:#e1e0de;">
+      <div class="govuk-grid-column-one-third" style="padding: 70px 20px 30px 20px">
+        <p style="font-size:3em; font-weight:bold">There's no ordinary career in the Civil Service.</p>
+        <p style="font-size:2em; font-weight:bold">Because there's no such thing as an ordinary civil servant.</p><br>
+        <button id="play-cs-video-where-career" class="govuk-button" data-module="govuk-button" style="background-color:#28A197;font-size:2em;font-weight:bold;box-shadow:none;">
+          Find out more in our short video
+        </button><br>
+        <a href="https://www.civil-service-careers.gov.uk/" class="govuk-link govuk-link--no-visited-state" style="font-size:1.5em;">Explore careers in the Civil Service</a>
+      </div>
+      <div class="govuk-grid-column-two-thirds" style="padding: 20px 20px 20px 0px">
+        <video id="videoWhereCareer" width="100%" controls>
+          <source src="public/images/cs-video-where-career.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+
+
+
+</div>
+
+
+<script>
+  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "500px";
+  document.getElementById("main").style.marginLeft = "0px";
+
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+
+var playButton = document.getElementById("play-cs-video-where-career");
+
+// Event listener for the play/pause button
+playButton.addEventListener("click", function() {
+  if (videoWhereCareer.paused == true) {
+    // Play the video
+    videoWhereCareer.play();
+
+    // Update the button text to 'Pause'
+    playButton.innerHTML = "Pause";
+  } else {
+    // Pause the video
+    videoWhereCareer.pause();
+
+    // Update the button text to 'Play'
+    playButton.innerHTML = "Play";
+  }
+});
+</script>
+
+
+
+  {% endblock %}
