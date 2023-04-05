@@ -17,14 +17,24 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% endblock %}
 
+
+
 {% block content %}
-<form class="form" action="search-results" method="post">
+
   <div class="govuk-width-container">
-    <img src="public/images/civil-servants.jpeg" style="max-width:100%">
-    <main class="govuk-main-wrapper" style="background:#f3f2f1; padding-top:15px;padding-bottom:0px; padding-right:0px;padding-left:30px; position:absolute; top:400px;width:930px">
+
+    <main class="govuk-main-wrapper" style="background:#f3f2f1; padding-top:0px;padding-bottom:0px; padding-right:0px;padding-left:0px;">
+
+          <img src="public/images/woman-laptop.jpeg" style="max-width:100%;" alt="">
+
+
+      <div style="background: rgba(0, 0, 0, .5);padding-bottom:50px">
+          <h1 class="govuk-heading-xl" style="color:#ffffff;opacity: 1; margin:-5px 0px 0px 50px; font-size:2.7vw; padding-top:20px">Flexible.<br> Diverse.<br> Rewarding.</h1>
+          <h1 class="govuk-heading-xl" style="float:right;color:#ffffff;opacity: 1;margin:0px 50px 30px 0px; font-size:2.7vw">Your Civil Service.</h1>
+      </div>
 
       <div class="govuk-grid-row">
-        <h1 class="govuk-heading-l" style="margin-bottom:0px;margin-left:30px">Find a job in the Civil Service</h1>
+        <h1 class="govuk-heading-l" style="margin-bottom:0px;margin-left:30px; padding-top:30px">Find a job in the Civil Service</h1>
         <div class="govuk-grid-column-three-quarters" style="min-height:150px;max-height:160px">
           <div class="govuk-grid-column-one-half">
             <p class="govuk-body-m govuk-!-margin-top-3 govuk-!-margin-bottom-2"><strong>What</strong></p>
@@ -97,8 +107,44 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
                       Find out more
                     </a>
                   </section>
-                </article><br>
-                <img src="public/images/youtube.jpeg" style="width:100%"><br>
+                </article><br><br><br>
+
+
+  <div class="govuk-grid-row" style="background-color:#e1e0de;">
+                      <div class="govuk-grid-column-one-third" style="padding: 10px 20px 30px 20px">
+                        <p style="font-size:2vw; font-weight:bold">There's no ordinary career in the Civil Service.</p>
+                        <p style="font-size:1.4vw; font-weight:bold">Because there's no such thing as an ordinary civil servant.</p><br>
+                        <button id="play-cs-video-where-career" class="govuk-button" data-module="govuk-button" style="background-color:#28A197;font-size:1.4vw;font-weight:bold;box-shadow:none;">
+                          Find out more in our short video
+                        </button><br>
+                        <a href="https://www.civil-service-careers.gov.uk/" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2vw;">Explore careers in the Civil Service</a>
+                      </div>
+                      <div class="govuk-grid-column-two-thirds" style="padding: 20px 20px 20px 0px">
+                        <video id="videoWhereCareer" width="100%" controls>
+                          <source src="public/images/cs-video-where-career.mp4" type="video/mp4">
+                        </video>
+                      </div>
+</div><br><br><br>
+  <div class="govuk-grid-row" style="background-color:#e1e0de;">
+
+                        <div class="govuk-grid-column-one-third" style="padding: 10px 20px 30px 20px">
+                          <p style="font-size:2vw; font-weight:bold">Setting a new standard for diversity and inclusion.</p>
+                          <p style="font-size:1.4vw; font-weight:bold">Because only a diverse and inclusive Civil Service can help the UK's society of today.</p><br>
+                          <button id="play-cs-video-inclusion" class="govuk-button" data-module="govuk-button" style="background-color:#28A197;font-size:1.4vw;font-weight:bold;box-shadow:none;">
+                            Find out more in our video
+                          </button><br>
+                          <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1069072/civil-service-diversity-inclusion-strategy.pdf" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2vw;">Making a Civil Service for everyone</a>
+                        </div>
+                        <div class="govuk-grid-column-two-thirds" style="padding: 20px 20px 20px 0px">
+                          <video id="videoInclusion" width="100%" controls>
+                            <source src="public/images/cs-video-inclusion.mp4" type="video/mp4">
+                          </video>
+                        </div>
+
+</div><br><br><br><br>
+
+
+
                 <img src="public/images/fast-stream.png" style="width:100%; border:1px solid #000000">
 
             </div>
@@ -108,7 +154,45 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
   </form>
 
+<script>
+  var playButton = document.getElementById("play-cs-video-where-career");
 
+  // Event listener for the play/pause button
+  playButton.addEventListener("click", function() {
+    if (videoWhereCareer.paused == true) {
+      // Play the video
+      videoWhereCareer.play();
+
+      // Update the button text to 'Pause'
+      playButton.innerHTML = "Pause";
+    } else {
+      // Pause the video
+      videoWhereCareer.pause();
+
+      // Update the button text to 'Play'
+      playButton.innerHTML = "Play";
+    }
+  });
+
+  var playButton2 = document.getElementById("play-cs-video-inclusion");
+
+  // Event listener for the play/pause button
+  playButton2.addEventListener("click", function() {
+    if (videoInclusion.paused == true) {
+      // Play the video
+      videoInclusion.play();
+
+      // Update the button text to 'Pause'
+      playButton2.innerHTML = "Pause";
+    } else {
+      // Pause the video
+      videoInclusion.pause();
+
+      // Update the button text to 'Play'
+      playButton2.innerHTML = "Play";
+    }
+  });
+  </script>
 
 
   {% endblock %}
