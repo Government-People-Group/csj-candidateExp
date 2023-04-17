@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Design notes</h1>
+    <h3 class="govuk-heading-m" style="margin-bottom:5px">Landing page</h3>
+      <p class="govuk-body"><strong>Background</strong></p>
+      <p class="govuk-body">The current Civil Service job and career proposition is divided between a <a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi" target="_blank">job search site</a> and a <a href="https://www.civil-service-careers.gov.uk/" target="_blank">career site</a>. Both are independently maintained and have different styles: the job search site follows GDS patterns, while the careers site is Wordpress-based and follows a non-GDS design.</p><br>
+
+      <p class="govuk-body"><strong>Aim</strong></p>
+      <p class="govuk-body">Our aim was to investigate the following:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>is two separate sites necessary, or could one site cover careers and a job search?</li>
+        <li>would a new site have to be designed outside of GDS constraints (i.e. more 'corporate', more freedom to use imagery, video etc) or would a GDS version be sufficient to engage users?</li>
+        <li>what do users need to know / want to see on this site?</li>
+        <li>would users be happy to link out to existing content (for example on the existing careers site) or would the jump be too distracting for them?</li>
+        <li>is the job search the most important aspect and so have to be prominent on the page?</li>
+        <li>what mediums (e.g. video, PDF, podcast) would be useful to a user?</li>
+      </ul><br>
+
+      <p class="govuk-body"><strong>What we did</strong></p>
+      <p class="govuk-body">We designed two basic landing pages to show to users:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://csj-candidate-experience.herokuapp.com/landing-page" target="_blank">a GDS-friendly version</a> (version A), only slightly off GDS standard: large image, uses of video etc</li>
+        <li><a href="https://csj-candidate-experience.herokuapp.com/landing-page-non-gds" target="_blank">an off-standards version</a> (version B), with more imagery, sliding job search and non-standard sections / content display</li>
+      </ul>
+      <p class="govuk-body">Version B was designed with the most relevant content on it (at least as far as we could guess, based on previous evidence / desktop research). Version A had some matching content, but was mainly to be used as a simple comparison with B: if A had the same content as B, but displayed in a 'less appealing' way, would it be enough to engage users used to corporate-level job and career sites?</p><br>
+
+      <p class="govuk-body"><strong>User research</strong></p>
+      <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1680693151065/a3f1783f2f4fd90158b95bae6f81a4d0ba00dca0?sender=u21f36a9fedce292b06138582" target="_blank">Mural board with testing notes</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

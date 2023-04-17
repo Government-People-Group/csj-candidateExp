@@ -16,14 +16,34 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <h2 class="govuk-heading-l">  Candidate Experience</h2>
       <span class="govuk-caption-xl govuk-!-margin-bottom-6">Job ad to application submission</span>
 
+
+
+
     {% from "govuk/components/button/macro.njk" import govukButton %}
-  
+
 
     {{ govukButton({
       text: "Launch prototype",
       href: "home"
     }) }}
 
+    <br><br><br><h2 class="govuk-heading-l">  Candidate landing page</h2>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+    {{ govukButton({
+      text: "GDS style",
+      classes: "govuk-button--secondary",
+      href: "landing-page"
+    }) }}
+
+    {{ govukButton({
+      text: "non-GDS style",
+      classes: "govuk-button--secondary",
+      href: "landing-page-non-gds"
+    }) }}
+
+  <a href="design-notes" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
 
     {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
   </div>
