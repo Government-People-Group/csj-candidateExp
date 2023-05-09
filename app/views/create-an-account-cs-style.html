@@ -1,0 +1,76 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/header-csj-career-site-style.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="introduction-page" style="margin-top:50px" >
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-m" style="font-family: 'Adelle';">Sign in</h1>
+        {% if data['cookies']=="no"%}
+        <div class="govuk-inset-text" style="font-family: 'Adelle';">
+          If you have not signed in before, we'll use the email and password you enter to create an account for you.
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email" style="font-family: 'Adelle';">
+            Email address
+          </label>
+          {% if data['cookies']=="no"%}
+            <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+          {% else %}
+            <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email" value="lsmith@yahoo.com">
+          {% endif %}
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="password" style="font-family: 'Adelle';">
+            Password
+          </label>
+          {% if data['cookies']=="no"%}
+            <input class="govuk-input govuk-input--width-20" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint" autocomplete="password"><br><br>
+          {% else %}
+            <input class="govuk-input govuk-input--width-20" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint" autocomplete="password" value="*********"><br><br>
+          {% endif %}
+          <p class="govuk-body-s" ><a href="#" style="font-family: 'Adelle';">Forgotten your password?</a></p>
+        </div>
+
+
+
+            <form action="dashboard-cs-style" method="post" novalidate>
+              <button class="govuk-button" data-module="govuk-button"  style="font-family: 'Adelle';">
+                Sign in
+              </button>
+
+
+        <br><br><br>
+        <p class="govuk-body-s" style="font-family: 'Adelle';">You can also:</p>
+        {% if data['cookies']=="yes"%}
+          <img src="public/images/google-button.png" style="max-width:20.5%"><br><img src="public/images/linkedin-button.png" style="max-width:20%;padding-left:2px">
+        {% else %}
+            <img src="public/images/google-button.png" style="max-width:20.5%"><br><img src="public/images/linkedin-button.png" style="max-width:20%;padding-left:2px">
+        {% endif %}
+      </div>
+      </div>
+    </div>
+    <img src="public/images/career-site-social-media.png" style="max-width:100%; padding-bottom:20px">
+
+
+
+  <div id="footer">
+      <img src="public/images/career-site-footer.png" style="max-width:100%; ">
+  </div>
+
+{% endblock %}
