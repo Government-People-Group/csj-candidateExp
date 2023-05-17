@@ -27,7 +27,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       href: "home"
     }) }}
 
-    <br><br><br><h2 class="govuk-heading-l">  Candidate landing page</h2>
+    <br><br><br><h2 class="govuk-heading-l">Candidate landing page</h2>
+    <span class="govuk-caption-xl govuk-!-margin-bottom-6">Using an off-pattern style, and a more GDS-friendly style</span>
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
 
@@ -42,6 +43,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       classes: "govuk-button--secondary",
       href: "landing-page-non-gds"
     }) }}
+
+  <a href="design-notes" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
+
+  <br><h2 class="govuk-heading-l">Candidate portal</h2>
+  <span class="govuk-caption-xl govuk-!-margin-bottom-6">Using Career Site styling</span>
+  {{ govukButton({
+    text: "Launch prototype",
+    href: "career-site"
+  }) }}
 
   <a href="design-notes" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
 

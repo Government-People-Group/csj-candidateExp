@@ -10,6 +10,9 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Design notes</h1>
+
+<a href="#portal" class="govuk-link govuk-link--no-visited-state" style="display:block">Candidate portal notes</a><br><br>
+
     <h3 class="govuk-heading-m" style="margin-bottom:5px">Landing page</h3>
       <p class="govuk-body"><strong>Background</strong></p>
       <p class="govuk-body">The current Civil Service job and career proposition is divided between a <a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi" target="_blank">job search site</a> and a <a href="https://www.civil-service-careers.gov.uk/" target="_blank">career site</a>. Both are independently maintained and have different styles: the job search site follows GDS patterns, while the careers site is Wordpress-based and follows a non-GDS design.</p><br>
@@ -48,6 +51,52 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
         <li>most users did not want to read lengthy PDFs or listen to podcasts. However, they did want to see a summary of the info they contained and have the option to go to the PDF or podcast if they wanted to at another time</li>
         <li>the idea of a single site - covering job search and career info - had a mixed response: some users thought it was a sensible idea, others felt there was no need to muddy the waters if you only wanted to do one or the other</li>
         <li>the job search was considered very important, and although some users were happy with version B's hidden search feature, most felt it would be best on the page near the top</li>
+
+  </div>
+</div><br><br><br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m" style="margin-bottom:5px" id="portal">Candidate portal</h3>
+      <p class="govuk-body"><strong>Background</strong></p>
+      <p class="govuk-body">The current <a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi" target="_blank">Civil Service jobs site</a> has a limited candidate portal, with features restricted to viewing current and previous applications, and setting up job alerts.</p><br>
+
+      <p class="govuk-body"><strong>Aim</strong></p>
+      <p class="govuk-body">Our aim was to investigate the following:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>what features would a candidate want in their portal?</li>
+        <li>how would candidates react to a portal designed along the lines of the existing Career Site (i.e. non-standard font, non-GDS designs)?</li>
+        <li>would being proactively contacted about possible jobs be beneficial?</li>
+        <li>would advice in the form of messages (e.g. 'You can set up alerts for jobs like Delivery Manager') be helpful?</li>
+        <li>is a job search needed on this page, or just a link to one?</li>
+        <li>how keen are candidates to be able to reuse info they've already given?</li>
+        <li>does giving them sections to complete at the appopriate time (e.g. completed an application, so we ask if they want to set up a job alert for this, or see other jobs with same title) help candidates?</li>
+      </ul><br>
+
+      <p class="govuk-body"><strong>What we did</strong></p>
+      <p class="govuk-body">We designed a sign-in page (linked from a dummy Career Site page with a 'Sign in' button added), which linked to one fo the two following variations:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://csj-candidate-experience.herokuapp.com/dashboard-cs-style" target="_blank">a basic portal as would be seen if a candidate just signed up</li>
+        <li><a href="https://csj-candidate-experience.herokuapp.com/dashboard-cs-style-later" target="_blank">a more populated portal based on a candidate who has made some applications, saved some jobs, filled in their personal details etc</a></li>
+      </ul>
+
+      <p class="govuk-body"><strong>User research</strong></p>
+      <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1683623960575/18666886601916e4ad986df8a2abac093988f24c?sender=u21f36a9fedce292b06138582" target="_blank">Mural board with testing notes</a></p><br>
+      <p class="govuk-body"><strong>What we found</strong></p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>users generally liked the Career Site-style design, although one user thought it looked too much like the Guardian website(!)</li>
+        <li>sign up on the sign in page caused some confusion, as users didn't read the inset text</li>
+        <li>Google and LinkedIn were not popular sign-in options, as many users felt they were insecure, not allowed at work or too personal to use</li>
+        <li>some users expected to go straight to a 'search for jobs' page after signing in</li>
+        <li>messages did not test well: some users didn't want messages at all, others didn't notice their purpose (to give advice at pertinent times)</li>
+        <li>users were unsure whether they wanted / needed to see their login details so prominently on the page</li>
+        <li>joining a talent pool was seen as a good (and new) option</li>
+        <li>some users favoured having a search bar on their portal, although others were happy with the existing link (if renamed to 'Search for job' instead of 'Apply for job')</li>
+        <li>all users wanted to reuse previously submitted info in some way</li>
+        <li>The personal details section had too much prominence / was placed too high on the page</li>
+        <li>the application panel would be even more useful if it explained what was current, status of each application and showed draft applications</li>
+        
+
 
   </div>
 </div>
