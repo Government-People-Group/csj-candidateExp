@@ -53,7 +53,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     href: "career-site"
   }) }}
 
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
+
+  {{ govukButton({
+    text: "V1",
+    classes: "govuk-button--secondary",
+    href: "previous-versions/portal-v1/career-site"
+  }) }}
+
   <a href="design-notes" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
 
     {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
   </div>
