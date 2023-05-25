@@ -1,0 +1,297 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+.govuk-width-container {
+  margin-left:0px;
+  margin-right:0px;
+  max-width:100%;
+}
+
+.govuk-header__content {
+    padding-left: 165px;
+}
+
+@media (min-width: 768px)
+.beta-banner {
+    padding-right: 40px;
+    padding-left: 113px;
+}
+
+@media (min-width: 680px)
+.beta-banner {
+    padding-right: 40px;
+    padding-left: 60px;
+}
+.beta-banner {
+    background-color: #d6e8f2;
+    padding: 5px 20px 5px 20px;
+}
+
+.govuk-template__body {
+  background-color: #f3f3f3;
+}
+
+.govuk-main-wrapper {
+  padding:0px;
+}
+@media (min-width: 40.0625em) {
+.govuk-main-wrapper {
+  padding-bottom:0px;
+}
+}
+.introduction-page {
+    margin-top: 50px;
+    margin-bottom: 35px;
+    padding: 50px 36px;
+}
+.introduction-page {
+    width: calc(100% - 144px);
+}
+.introduction-page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: #fff;
+    margin-bottom:50px
+}
+.dash-element {
+    padding: 20px 20px;
+}
+
+.dash-element-left {
+  margin:30px 30px 0px 30px;
+}
+
+.govuk-header__logo {
+  margin-left:30px;
+  width:30%;
+}
+
+</style>
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="introduction-page dash-element dash-element-left" style="max-width:100%;margin-top:0px">
+          <div class="govuk-summary-card__title-wrapper" style="background-color:#1a81d966">
+            <h2 class="govuk-summary-card__title">Your log-in details</h2>
+          </div>
+
+
+
+          <dl class="govuk-summary-list" style="width:80%;margin-bottom:0px">
+            <div class="govuk-summary-list__row" style="width:80%;border-bottom:none">
+              <dd class="govuk-summary-list__value" style="font-weight:bold;width:10%;padding-left:20px">
+                Email
+              </dd>
+              <dd class="govuk-summary-list__value" style="width:25%">
+                lsmith@yahoo.com
+              </dd>
+              <dd class="govuk-summary-list__actions" style="text-align:left">
+                <a class="govuk-link" href="#" style="width:5%;">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+              <dd class="govuk-summary-list__value" style="font-weight:bold;width:15%;padding-right:0px">
+                Password
+              </dd>
+              <dd class="govuk-summary-list__value" style="width:15%;padding-right:0px">
+                *********
+              </dd>
+              <dd class="govuk-summary-list__actions" style="text-align:left">
+                <a class="govuk-link" href="#" >
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+      </div>
+      </div>
+    </div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dash-element-left" style="margin-right:70px">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="introduction-page dash-element dash-element-left" style="max-width:100%;background-color: #f3f3f3; margin-top:0px;">
+      <h1 class="govuk-heading-l" style="margin-bottom:0px; margin-left:30px;">Search for a job</h1>
+      <div class="govuk-grid-column-three-quarters" style="min-height:150px;max-height:160px">
+        <div class="govuk-grid-column-one-half">
+          <p class="govuk-body-m govuk-!-margin-top-3 govuk-!-margin-bottom-2"><strong>What</strong></p>
+          {{ govukInput({
+            label: {
+              text: 'Enter job title, skill or keywords'
+            },
+            id: "searchwhat",
+            name: "searchwhat",
+            value: data['searchwhat'],
+            classes: "govuk-input--width-25",
+            autocomplete: "search-term-input"
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <p class="govuk-body-m govuk-!-margin-top-3 govuk-!-margin-bottom-2"><strong>Where</strong></p>
+          {{ govukInput({
+            label: {
+              text: 'Enter a postcode, town or region'
+            },
+            id: "searchwhere",
+            name: "searchwhere",
+            value: data['searchwhere'],
+            classes: "govuk-input--width-25",
+            autocomplete: "location-search-input"
+          }) }}
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-3"  style="position:relative;min-height:150px;max-height:160px">
+        <div class="govuk-grid-column-full"  style="position:absolute;bottom:0">
+          <button class="govuk-button" style="max-width:92%;min-width:70%" data-module="govuk-button">Search</button>
+        </div>
+      </div>
+      </div></div></div>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dash-element-left" style="margin-right:70px; margin-top:0px">
+
+    <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half">
+      <div class="introduction-page dash-element dash-element-left">
+        <div class="govuk-summary-card__title-wrapper" style="background-color:#c1cdcd">
+          <h2 class="govuk-summary-card__title">Guidance <span id="notifications" class="moj-notification-badge">1</span></h2>
+        </div>
+
+
+        <dl class="govuk-summary-list" style="margin-bottom:0px;margin-left:30px;max-width:90%">
+          <div class="govuk-summary-list__row">
+
+            <dd class="govuk-summary-list__value"  style="; font-weight:700">
+              How to find your new career in the Civil Service
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#"  style=";">
+                Read<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border-bottom:none">
+
+            <dd class="govuk-summary-list__value"  style=";">
+              What you can do with your new account
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#"  style=";">
+                Read<span class="govuk-visually-hidden"> date of birth</span>
+              </a><br><br><br>
+            </dd>
+          </div>
+        </dl>
+
+
+    </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <div class="introduction-page dash-element dash-element-left">
+        <div class="govuk-summary-card__title-wrapper" style="background-color:#b1b4b65e">
+          <h2 class="govuk-summary-card__title"  >Your applications</h2>
+        </div>
+      <p class="govuk-body"  style=";padding-top:10px;margin-left:30px">You have no current applications.</p>
+      <p class="govuk-body"  style=";margin-left:30px">You have not applied for a Civil Service job before.</p>
+
+      <a href="#" class="govuk-link govuk-link--no-visited-state"  style=";margin-left:50px; font-size: 1.1875rem;">Search for jobs</a><br><br>
+    </div>
+    </div>
+    </div>
+
+    <br>
+
+
+
+
+    <div class="govuk-grid-row">
+
+
+    <div class="govuk-grid-column-one-half">
+
+      <div class="introduction-page dash-element dash-element-left">
+        <div class="govuk-summary-card__title-wrapper" style="background-color:#b1b4b65e">
+          <h2 class="govuk-summary-card__title"  style="">Your details</h2>
+        </div>
+      <p class="govuk-body"  style=";padding-top:10px;margin-left:30px">You can tell us:</p>
+      <ul class="govuk-list govuk-list--bullet" style=";margin-left:30px">
+        <li>your full name</li>
+        <li>how we should refer to you (for example, 'she' or 'they')</li>
+        <li>how you want to be contacted</li>
+        <li>whether you already work for the Civil Service</li>
+      </ul>
+      <a href="#" class="govuk-link govuk-link--no-visited-state"  style=";margin-left:50px; font-size: 1.1875rem;">Start</a>
+    </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+      <div class="introduction-page dash-element dash-element-left">
+        <div class="govuk-summary-card__title-wrapper" style="background-color:#b1b4b65e">
+          <h2 class="govuk-summary-card__title"  style="">Saved jobs</h2>
+        </div>
+      <p class="govuk-body"  style=";padding-top:10px;margin-left:30px">You can:</p>
+      <ul class="govuk-list govuk-list--bullet" style=";margin-left:30px">
+        <li>see any job you saved earlier</li>
+        <li>be warned if a job deadline is approaching</li>
+        <li>apply for a saved job</li>
+        <li>remove a job from your list of saved jobs</li>
+      </ul>
+      <a href="#" class="govuk-link govuk-link--no-visited-state"  style=";margin-left:50px; font-size: 1.1875rem;">Search for jobs</a>
+    </div>
+    </div>
+
+
+  </div>
+<br>
+    <div class="govuk-grid-row">
+
+
+  </div>
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-half">
+        <div class="introduction-page dash-element dash-element-left">
+          <div class="govuk-summary-card__title-wrapper" style="background-color:#b1b4b65e">
+            <h2 class="govuk-summary-card__title"  style="">Job alerts</h2>
+          </div>
+        <p class="govuk-body"  style=";padding-top:10px;margin-left:30px">You can:</p>
+        <ul class="govuk-list govuk-list--bullet" style=";margin-left:30px">
+          <li>set up alerts for the kind of jobs you're interested in</li>
+          <li>tell us how you want to be alerted</li>
+          <li>decide when we should alert you</li>
+        </ul>
+        <a href="#" class="govuk-link govuk-link--no-visited-state"  style=";margin-left:50px; font-size: 1.1875rem;">Start</a>
+      </div>
+      </div>
+
+
+      <div class="govuk-grid-column-one-half">
+        <div class="introduction-page dash-element dash-element-left">
+          <div class="govuk-summary-card__title-wrapper" style="background-color:#b1b4b65e">
+            <h2 class="govuk-summary-card__title"  style="">Join our talent pool</h2>
+          </div>
+        <p class="govuk-body"  style=";padding-top:10px;margin-left:30px">You can:</p>
+        <ul class="govuk-list govuk-list--bullet" style=";margin-left:30px">
+          <li>let us contact you if we find jobs we think you'd be a good fit for</li>
+
+        </ul>
+        <a href="#" class="govuk-link govuk-link--no-visited-state"  style=";margin-left:50px; font-size: 1.1875rem;">Start</a><br><br><br><br>
+      </div>
+      </div>
+    </div>
+<br><br><br>
+
+  </main>
+</div>
+
+{% endblock %}
