@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "app-width-container",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+.govuk-header__content {
+    width: 60%;
+}
+.govuk-header__logo {
+  margin-left:30px;
+}
+
+.nav-right{
+  float:right;
+}
+</style>
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Job alert saved
+    </h3>
+    <p class="govuk-body"><a class="govuk-notification-banner__link" href="portal-gds-search-results-return">Return to job search results</a><br><br><a class="govuk-notification-banner__link" href="portal-gds-job-alert">Manage your job alerts</a></p>
+  </div>
+</div>
+
+<!-- Search box at top  -->
+<form class="form" action="portal-gds-job-alert-saved" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Your job alert</h1>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Admin Manager
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Where
+            </dt>
+            <dd class="govuk-summary-list__value">
+              London
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How often
+            </dt>
+            <dd class="govuk-summary-list__value">
+              As soon as an Admin Manager job is posted
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> customer reference</span>
+              </a>
+            </dd>
+          </div>
+
+
+        </dl>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+</form>
+
+
+
+
+{% endblock %}

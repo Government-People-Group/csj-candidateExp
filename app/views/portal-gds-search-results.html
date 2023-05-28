@@ -1,0 +1,374 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "app-width-container",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-1",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<!-- number of results matched counter should need to reflect filter actions  -->
+{% set n = 16 %}
+
+<style>
+.govuk-header__content {
+    width: 60%;
+}
+.govuk-header__logo {
+  margin-left:30px;
+}
+
+.nav-right{
+  float:right;
+}
+</style>
+
+
+
+
+<!-- Search box at top  -->
+<form class="form" action="search-results" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-left-2 govuk-!-margin-bottom-6">{{ n }} Search results</h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row" style="background:#f3f2f1;position:relative">
+    <div class="govuk-grid-column-three-quarters">
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-body-m govuk-!-margin-top-3 govuk-!-margin-bottom-2"><strong>What</strong></p>
+        {{ govukInput({
+          label: {
+            text: 'Enter job title, skill or keywords'
+          },
+          id: "searchwhat",
+          name: "searchwhat",
+          value: data['searchwhat'],
+          classes: "govuk-input--width-25",
+          autocomplete: "search-term-input"
+        }) }}
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-body-m govuk-!-margin-top-3 govuk-!-margin-bottom-2"><strong>Where</strong></p>
+        {{ govukInput({
+          label: {
+            text: 'Enter a postcode, town or region'
+          },
+          id: "searchwhere",
+          name: "searchwhere",
+          value: data['searchwhere'],
+          classes: "govuk-input--width-25",
+          autocomplete: "location-search-input"
+        }) }}
+      </div>
+
+    </div>
+    <div class="govuk-grid-column-one-quarter" style="position:absolute;bottom:0;right:0;">
+      <button class="govuk-button" style="float:right;max-width:100%;min-width:85%" data-module="govuk-button">Search</button>
+    </div>
+  </div>
+</form>
+
+
+<!-- Filter panel  -->
+<div class="govuk-grid-row" style="padding-top:10px;padding-bottom:10px">
+  <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-top-3"  style="background:#f3f2f1;border-right:5px solid #1D70B8;padding-top:20px">
+    <h2 class="govuk-heading-m govuk-!-margin-left-3 govuk-!-margin-top-3">Filter search</h2>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half govuk-!-margin-top-3 govuk-!-margin-bottom-1" style="padding-left:30px">
+        {{ govukInput({
+          label: {
+            text: 'Distance',
+            classes: "govuk-label-m"
+          },
+          id: "searchdistance",
+          name: "searchdistance",
+          value: data['searchdistance'],
+          value: "10",
+          classes: "govuk-input--width-5",
+          autocomplete: "search-distance-input"
+        }) }}
+      </div>
+      <div class="govuk-grid-column-one-half govuk-!-margin-top-3 govuk-!-margin-bottom-2" style="padding-left:10px">
+        <label class="govuk-label" for="dsort">
+          Search units
+        </label>
+        <select class="govuk-select govuk-!-margin-bottom-3" style="min-width:60%;max-width:100%" id="dsort" name="dsort">
+          <option value="updated" selected>Miles</option>
+          <option value="views">Kilometres</option>
+        </select>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-from-desktop govuk-!-margin-bottom-2" style="padding-left:30px">
+        <label class="govuk-label" for="list1">
+          Show overseas jobs
+        </label>
+        <select class="govuk-select govuk-!-margin-bottom-2" style="min-width:95%;max-width:100%" id="list1" name="list1">
+          <option value="alpha" selected>Including overseas</option>
+          <option value="beta">Another option</option>
+        </select>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-from-desktop govuk-!-margin-bottom-2" style="padding-left:30px">
+        <label class="govuk-label" for="list2">
+          Type of role
+        </label>
+        <select class="govuk-select govuk-!-margin-bottom-2" style="min-width:95%;max-width:100%" id="list2" name="list2">
+          <option value="alpha2"></option>
+          <option value="beta">Recently published</option>
+        </select>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-from-desktop govuk-!-margin-bottom-2" style="padding-left:30px">
+        <label class="govuk-label" for="list3">
+          Department
+        </label>
+        <select class="govuk-select govuk-!-margin-bottom-2" style="min-width:95%;max-width:100%" id="list3" name="list3">
+          <option value="a"></option>
+          <option value="b">Another option</option>
+        </select>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-from-desktop govuk-!-margin-bottom-2" style="padding-left:30px">
+        <label class="govuk-label" for="list4">
+          Minimum salary
+        </label>
+        <select class="govuk-select govuk-!-margin-bottom-2" style="min-width:95%;max-width:100%" id="list4" name="list4">
+          <option value="aa">No minimum</option>
+          <option value="bb">Another option</option>
+        </select>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-from-desktop govuk-!-margin-bottom-2" style="padding-left:30px">
+        <label class="govuk-label" for="list5">
+          Maximum salary
+        </label>
+        <select class="govuk-select govuk-!-margin-bottom-2" style="min-width:95%;max-width:100%" id="list5" name="list5">
+          <option value="aaa">No maximum </option>
+          <option value="bbb">Another option</option>
+        </select>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-from-desktop govuk-!-margin-bottom-2" style="padding-left:30px">
+        <label class="govuk-label" for="list6">
+          Job grade
+        </label>
+        <select class="govuk-select govuk-!-margin-bottom-2" style="min-width:95%;max-width:100%" id="list6" name="list6">
+          <option value="aaaa"></option>
+          <option value="bbbb">Another option</option>
+        </select>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-from-desktop govuk-!-margin-bottom-2" style="padding-left:30px">
+        <label class="govuk-label" for="list7">
+          Working pattern
+        </label>
+        <select class="govuk-select govuk-!-margin-bottom-2" style="min-width:95%;max-width:100%" id="list7" name="list7">
+          <option value="aaaaa"></option>
+          <option value="bbbbb">Another option</option>
+        </select>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-from-desktop" style="padding-left:30px">
+        <label class="govuk-label" for="list8">
+          Contract type
+        </label>
+        <select class="govuk-select govuk-!-margin-bottom-3" style="min-width:95%;max-width:100%" id="list8" name="list8">
+          <option value="aaaaaa"></option>
+          <option value="bbbbbb">Another option</option>
+        </select>
+        <button class="govuk-button" style="max-width:100%;min-width:95%" data-module="govuk-button">Update results</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RHS results, pagination and order controls  -->
+  <div class="govuk-grid-column-two-thirds-from-desktop ">
+    <div class="govuk-grid-row govuk-!-padding-top-6 govuk-!-margin-left-3 govuk-!-padding-bottom-0">
+      <div class="govuk-grid-column-one-half">
+        <nav class="govuk-pagination govuk-!-padding-top-1" style="float:left" role="navigation" aria-label="results">
+          <ul class="govuk-pagination__list">
+            <li class="govuk-pagination__item govuk-pagination__item--current">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                1
+              </a>
+            </li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                2
+              </a>
+            </li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                3
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg></a>
+          </div>
+        </nav>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group" style="float:right">
+          <label class="govuk-label govuk-!-margin-top-1" style="padding-right:10px;padding-top:10px;font-size:20px;float:left" for="order">Order by</label>
+          <select class="govuk-select govuk-!-margin-top-1" style="min-width:60%;max-width:100%" id="order" name="order">
+            <option value="updated" selected>Closing date</option>
+            <option value="views">Most recent</option>
+            <option value="comments">Salary high to low</option>
+            <option value="comments">Salary high to low</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="govuk-grid-row govuk-!-padding-top-3 govuk-!-margin-left-3 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
+      <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
+        <h3 class="search-results-job-box-title"><a href="#" title="Laboratory Manager - Threat Detection Group (TGD)">Admin Manager</a></h3>
+        <span class="govuk-caption-m"><strong>Home Office</strong></span>
+        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Home Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, London, Bristol</p>
+        <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £44,900</p>
+        <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
+      </div>
+      <div class="govuk-grid-column-one-quarter-from-desktop" style="height:190px; padding-top:10px; padding-bottom:10px">
+        <img src="/public/images/ho-logo.png" style="min-height:25%;max-height:30%;float:right" alt="Home Office logo">
+        <form action="portal-gds-search-results-saved" method="post" novalidate>
+        <button  id="but2" style="float:right;min-width:15%;max-width:100%" class="govuk-button govuk-button--secondary  govuk-!-margin-top-9" data-module="govuk-button">☆ save</button>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="govuk-grid-row govuk-!-padding-top-3 govuk-!-margin-left-3 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
+      <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
+        <h3 class="search-results-job-box-title"><a href="#" title="Laboratory Manager - Threat Detection Group (TGD)">Admin Manager</a></h3>
+        <span class="govuk-caption-m"><strong>Home Office</strong></span>
+        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Home Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, London, Bristol</p>
+        <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £44,900</p>
+        <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
+      </div>
+      <div class="govuk-grid-column-one-quarter-from-desktop" style="height:190px; padding-top:10px; padding-bottom:10px">
+        <img src="/public/images/ho-logo.png" style="min-height:25%;max-height:30%;float:right" alt="Home Office logo">
+        <button  id="but6" style="float:right;min-width:15%;max-width:100%" onclick="this.innerHTML='★ saved'" class="govuk-button govuk-button--secondary  govuk-!-margin-top-9" data-module="govuk-button">☆ save</button>
+      </div>
+    </div>
+    <div class="govuk-grid-row govuk-!-margin-left-3 govuk-!-padding-top-1 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
+      <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
+        <h3 class="search-results-job-box-title"><a href="#" title="Laboratory Manager - Threat Detection Group (TGD)">Admin Manager</a></h3>
+        <span class="govuk-caption-m"><strong>Department for Education</strong></span>
+        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Department for Education">{{ data['searchwhat'] | capitalize}}</a></h2>
+        <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, London, Birmingham, Newcastle</p>
+        <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £38,995</p>
+        <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
+      </div>
+      <div class="govuk-grid-column-one-quarter" style="height:190px;padding-top:10px; padding-bottom:10px">
+        <img src="/public/images/dfe-logo.png" style="min-height:40%;max-height:30%;float:right" alt="Department for Education logo">
+        <button  id="but7" style="float:right;min-width:15%;max-width:100%" onclick="this.innerHTML='★ saved'" class="govuk-button govuk-button--secondary  govuk-!-margin-top-9" data-module="govuk-button">☆ save</button>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row govuk-!-padding-top-3 govuk-!-margin-left-3 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
+      <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
+        <h3 class="search-results-job-box-title"><a href="#" title="Laboratory Manager - Threat Detection Group (TGD)">Admin Manager</a></h3>
+        <span class="govuk-caption-m"><strong>Home Office</strong></span>
+        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Home Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, London, Bristol</p>
+        <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £44,900</p>
+        <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
+      </div>
+      <div class="govuk-grid-column-one-quarter-from-desktop" style="height:190px; padding-top:10px; padding-bottom:10px">
+        <img src="/public/images/ho-logo.png" style="min-height:25%;max-height:30%;float:right" alt="Home Office logo">
+        <button  id="but9" style="float:right;min-width:15%;max-width:100%" onclick="this.innerHTML='★ saved'" class="govuk-button govuk-button--secondary  govuk-!-margin-top-9" data-module="govuk-button">☆ save</button>
+      </div>
+    </div>
+
+    <!-- RHS bottom of page pagination  -->
+    <div class="govuk-grid-row govuk-!-padding-top-3 govuk-!-margin-left-3 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
+      <nav class="govuk-pagination govuk-!-padding-top-3" style="float:left" role="navigation" aria-label="results">
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+          </svg></a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<script>
+  var c = 0;
+  const element = document.getElementById("but1");
+  element.addEventListener("click", function() {
+    if (c == 0){
+      document.getElementById("but1").innerHTML = "★ saved ☑️"
+      c = c+1;
+      document.getElementById("display").innerHTML = "★";
+    } else {
+      document.getElementById("but1").innerHTML = "☆ save"
+
+      if (c == 1) {
+        c = c-1;
+        document.getElementById("display").innerHTML = "";
+      }
+    }
+  });
+</script>
+{% endblock %}

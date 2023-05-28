@@ -1,0 +1,172 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% if data['file'] | length > 1 %}
+{% set cvurl = "cv-existing" %}
+{% elif data['file-upload-1'] | length > 1 %}
+{% set cvurl = "cv-uploaded" %}
+{% elif data['cvopt'] == "manual" %}
+{% set cvurl = "cv-manual" %}
+{% else %}
+{% set cvurl = "cv" %}
+{% endif %}
+
+<script>
+  function hopToIt(div){
+    var divIt = document.getElementById(div);
+    divIt.scrollIntoView();
+    document.getElementById(div).style.display = 'none';
+    document.getElementById('ps-text-area-full').style.display = 'block';
+  }
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">
+      <strong>{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span>
+      <h1 class="govuk-heading-xl">Personal statement</h1>
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <ul class="govuk-list govuk-list--bullet-">
+      <li><p style ="border-left:0px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="{{ cvurl }}" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">CV</a></p></li>
+        <li><p style ="border-left:5px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"><strong>Personal statement</strong></a></p></li>
+      </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body-m">Use the <a href="#">STAR method</a> to write a personal statement that relates to the skills listed in the person specification from <a href="#">Policy Advisor</a>.</p>
+
+    <p class="govuk-body-m">The STAR method can help you structure your personal statement:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><p class="govuk-body-m"><strong>situation</strong> - the situation you had to deal with</p></li>
+      <li><p class="govuk-body-m"><strong>task</strong> - the task you were given to do</p></li>
+      <li><p class="govuk-body-m"><strong>action</strong> - the action you took</p></li>
+      <li><p class="govuk-body-m"><strong>result</strong> - what happened as a result of your action and what you learned from the experience</p></li>
+    </ul>
+    <p class="govuk-body-m">Please remove any references to your identity.</p>
+
+    <div class="govuk-heading-m govuk-!-margin-top-4" style="background:#F6F6F6;padding-top:5px;padding-bottom:5px;padding-left:20px; padding-right:20px">
+      <h3 class="govuk-heading-m govuk-!-margin-top-3">Person specification</h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><p class="govuk-body-m">You will have strong analytical skills and an ability to evaluate and interpret information (quantitative and qualitative, but particularly the latter) to form judgements and make appropriate recommendations</p></li>
+        <li><p class="govuk-body-m">The ability to manage own workload, resolve competing demands and cope with changing priorities in a flexible and proactive way</p></li>
+        <li><p class="govuk-body-m">Being able to forward plan, using foresight with the ability to anticipate forthcoming situations and planning time and resources accordingly</p></li>
+        <li><p class="govuk-body-m">To be able to communicate with people at all levels, in a clear, concise, and fluent manner</p></li>
+      </ul>
+
+    </div>
+    <h3 class="govuk-heading-m govuk-!-margin-top-6">Upload a personal statement</h3>
+
+    <p class="govuk-body-m">You can upload your personal statement and edit it.</p>
+    <div id="psupload" class="govuk-!-margin-bottom-3 govuk-!-margin-top-6" style="border-radius: 10px;background:#ffffff;padding:10px;border:1px lightgrey solid">
+
+
+      {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+      {{ govukFileUpload({
+        id: "ps-file-upload",
+        value: data['ps-file-upload'],
+        name: "ps-file-upload",
+        label: {
+          text: "Upload a file"
+        }
+      }) }}
+
+      <button class="govuk-button govuk-button--secondary" onclick="hopToIt('ps-text-area')" data-module="govuk-button">Upload and continue</button>
+
+
+      <!-- <hr style="border:0px" class="govuk-!-margin-top-0 govuk-!-margin-bottom-3"> -->
+
+    </div>
+    <form class="form" action="task-list-complete" method="post">
+    <h3 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Enter your personal statement</h3>
+  <p class="govuk-body-m">Or write your personal statement here</p>
+    <div style="background:#dee0e2;padding-left:20px;padding-top:10px;padding-bottom:10px">
+    <h3 class="govuk-heading-m govuk-!-margin-top-1 govuk-!-margin-bottom-0">Personal statement</h3>
+
+    </div>
+    <div id="ps-text-area" class="govuk-!-margin-top-0">
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+      {{ govukCharacterCount({
+        name: "ps-text",
+        id: "ps-text",
+        rows: "20",
+        maxwords: 1000,
+        value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum rhoncus sollicitudin. Mauris imperdiet elementum accumsan. Vivamus ac nulla erat. Maecenas quis orci ante. Donec nec egestas dolor. In bibendum interdum metus ac sodales. Curabitur sodales aliquet leo.
+
+Maecenas tempor sollicitudin tempor. Aenean viverra imperdiet ipsum quis laoreet. Etiam molestie lacus sit amet arcu luctus, a convallis est rhoncus. Aliquam eget malesuada diam. Praesent aliquam ligula nunc, et elementum leo placerat quis. Vestibulum sodales, arcu accumsan egestas tempus, nunc enim iaculis purus, ut pharetra enim elit ut risus. Nam facilisis velit ut magna sodales, et tristique libero facilisis. Suspendisse porta bibendum ipsum, vitae interdum mauris ornare sit amet.
+
+Aliquam dignissim mauris at tempus vehicula. Nam at neque ut nulla ultrices scelerisque ac non velit. Donec condimentum tincidunt dolor, venenatis tempus tellus interdum ac. Aenean lobortis dapibus iaculis. Donec scelerisque diam in lacus tristique, eget pellentesque nibh tincidunt. Morbi dictum malesuada mauris quis varius. In ut elit sapien. Vivamus a augue sed turpis pretium laoreet. Sed erat justo, elementum eu porta eu, tempor eget ante. Aliquam suscipit nunc eget mollis cursus. Duis vel metus vel ipsum convallis condimentum. Praesent nec leo vel nisi pretium ullamcorper. Fusce tincidunt vehicula odio a cursus. Praesent at venenatis dolor. Sed malesuada dui nec neque facilisis ornare. Pellentesque finibus iaculis pulvinar.
+
+Vivamus ut lacus sed odio porttitor ultricies. In in libero eget tellus interdum lacinia. Donec aliquam dignissim sem vitae malesuada. Mauris tempor blandit tempor. Etiam non ex et nisl imperdiet tempus. Proin sed semper est. Suspendisse fermentum odio a viverra malesuada. Aliquam erat volutpat.
+
+Proin tempor vehicula ante, sed viverra nunc aliquam in. Curabitur et nulla neque. Pellentesque nec neque vitae turpis sodales suscipit in id magna. Suspendisse potenti. Morbi suscipit cursus justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus venenatis lorem nisi. Ut laoreet rutrum tellus, ut lacinia est viverra eu. Suspendisse quis mauris pretium, cursus metus sed, laoreet mi. Proin elementum dolor sit amet accumsan interdum. Morbi eu interdum arcu, quis tincidunt sapien. Donec ac turpis in erat tempor venenatis. Etiam lectus risus, lacinia nec laoreet vitae, eleifend ac sem. In iaculis magna eu lectus pulvinar, ut blandit sem ullamcorper."
+      }) }}
+
+    </div>
+
+    <div id="ps-text-area-full" style="display:none" class="govuk-!-margin-top-3">
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+      {{ govukCharacterCount({
+        name: "ps-text-full",
+        hint: {
+          text: "",
+          isPageHeading: false
+        },
+        id: "ps-text-full",
+        rows: "20",
+        maxwords: 1000,
+        value: data['ps-text-full'],
+        value: "Call me *******. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people’s hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.There now is your insular city of the Manhattoes, belted round by wharves as Indian isles by coral reefs—commerce surrounds it with her surf. Right and left, the streets take you waterward. Its extreme downtown is the battery, where that noble mole is washed by waves, and cooled by breezes, which a few hours previous were out of sight of land. Look at the crowds of water-gazers there.Circumambulate the city of a dreamy Sabbath afternoon. Go from Corlears Hook to Coenties Slip, and from thence, by Whitehall, northward. What do you see?—Posted like silent sentinels all around the town, stand thousands upon thousands of mortal men fixed in ocean reveries. Some leaning against the spiles; some seated upon the pier-heads; some looking over the bulwarks of ships from China; some high aloft in the rigging, as if striving to get a still better seaward peep. But these are all landsmen; of week days pent up in lath and plaster—tied to counters, nailed to benches, clinched to desks. How then is this? Are the green fields gone? What do they here?But look! here come more crowds, pacing straight for the water, and seemingly bound for a dive. Strange! Nothing will content them but the extremest limit of the land; loitering under the shady lee of yonder warehouses will not suffice. No. They must get just as nigh the water as they possibly can without falling in. And there they stand—miles of them—leagues. Inlanders all, they come from lanes and alleys, streets and avenues—north, east, south, and west. Yet here they all unite. Tell me, does the magnetic virtue of the needles of the compasses of all those ships attract them thither?Once more. Say you are in the country; in some high land of lakes. Take almost any path you please, and ten to one it carries you down in a dale, and leaves you there by a pool in the stream. There is magic in it. Let the most absent-minded of men be plunged in his deepest reveries—stand that man on his legs, set his feet a-going, and he will infallibly lead you to water, if water there be in all that region. Should you ever be athirst in the great American desert, try this experiment, if your caravan happen to be supplied with a metaphysical professor. Yes, as every one knows, meditation and water are wedded for ever.But here is an artist. He desires to paint you the dreamiest, shadiest, quietest, most enchanting bit of romantic landscape in all the valley of the Saco. What is the chief element he employs? There stand his trees, each with a hollow trunk, as if a hermit and a crucifix were within; and here sleeps his meadow, and there sleep his cattle; and up from yonder cottage goes a sleepy smoke. Deep into distant woodlands winds a mazy way, reaching to overlapping spurs of mountains bathed in their hill-side blue. But though the picture lies thus tranced, and though this pine-tree shakes down its sighs like leaves upon this shepherd’s head, yet all were vain, unless the shepherd’s eye were fixed upon the magic stream before him. Go visit the Prairies in June, when for scores on scores of miles you wade knee-deep among Tiger-lilies—what is the one charm wanting?—Water—there is not a drop of water there! Were Niagara but a cataract of sand, would you travel your thousand miles to see it? Why did the poor poet of Tennessee, upon suddenly receiving two handfuls of silver, deliberate whether to buy him a coat, which he sadly needed, or invest his money in a pedestrian trip to Rockaway Beach? Why is almost every robust healthy boy with a robust healthy soul in him, at some time or other crazy to go to sea? Why upon your first voyage as a passenger, did you yourself feel such a mystical vibration, when first told that you and your ship were now out of sight of land? Why did the old Persians hold the sea holy? Why did the Greeks give it a separate deity, and own brother of Jove? Surely all this is not without meaning. And still deeper the meaning of that story of Narcissus, who because he could not grasp the tormenting, mild image he saw in the fountain, plunged into it and was drowned. But that same image, we ourselves see in all rivers and oceans. It is the image of the ungraspable phantom of life; and this is the key to it all."
+
+      }) }}
+    </div>
+
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+  </form>
+  <p class="govuk-body-m"><a href="task-list">Return to task-list</a></p>
+</div>
+</div>
+
+{% endblock %}

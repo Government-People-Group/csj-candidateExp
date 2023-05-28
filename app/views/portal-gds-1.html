@@ -1,12 +1,37 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Home – {{serviceName}} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "app-width-container",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-1",
+        text: "My dashboard",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block content %}
 
+
 <style>
+
+
+
+.govuk-footer__meta {
+  margin-left:10px;
+  margin-right:10px;
+}
 .govuk-width-container {
   margin-left:0px;
   margin-right:0px;
@@ -70,6 +95,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 .govuk-header__logo {
   margin-left:30px;
   width:30%;
+}
+
+.nav-right{
+  float:right;
 }
 
 </style>
@@ -160,6 +189,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       </div>
                       <div class="govuk-summary-list__row" >
                         <dt class="govuk-summary-list__key">
+                          Preferred language
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          English
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row" >
+                        <dt class="govuk-summary-list__key">
                           Refer to me as
                         </dt>
                         <dd class="govuk-summary-list__value">
@@ -241,7 +283,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
       <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-3"  style="position:relative;min-height:150px;max-height:160px">
         <div class="govuk-grid-column-full"  style="position:absolute;bottom:0">
+          <form action="portal-gds-search-results" method="post" novalidate>
           <button class="govuk-button" style="max-width:92%;min-width:70%" data-module="govuk-button">Search</button>
+          </form>
         </div>
       </div>
       </div></div></div>
@@ -390,23 +434,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <div class="introduction-page dash-element dash-element-left" style="max-width:100%;background-color: #f3f3f3; margin-top:0px;">
 
 
+
           <div class="govuk-grid-column-one-third" style="padding-left:30px;padding-right:30px">
-            <p style="font-size:1.7vw; font-weight:bold; margin-bottom:10px">Your applications - what next?</p>
-            <img src="public/images/get-assessed.jpeg" style="max-width:100%;" alt="">
-            <p style="font-size:1.2vw;">How we assess your application, including the things we look for and how to handle an interview.</p>
-            <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em;">See what happens next with your applications</a>
+            <p style="font-size:1.7vw; font-weight:bold; margin-bottom:10px">Preparing for your interview</p>
+            <img src="public/images/reuse.png" style="max-width:100%;object-fit:cover" alt="">
+            <p style="font-size:1.2vw;">Our advice on how to prepare for your interview in 3 days.</p>
+            <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em;">Find out more</a>
           </div>
+          <div class="govuk-grid-column-one-third" style="padding-left:30px;padding-right:30px">
+            <p style="font-size:1.7vw; font-weight:bold; margin-bottom:10px">After your interview</p>
+            <img src="public/images/get-assessed.jpeg" style="max-width:100%;" alt="">
+            <p style="font-size:1.2vw;">Find out what happens once you've had your interview with us.</p>
+            <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em;">Find out more</a>
+          </div>
+
           <div class="govuk-grid-column-one-third" style="padding-left:30px;padding-right:30px">
             <p style="font-size:1.7vw; font-weight:bold; margin-bottom:10px">Setting up job alerts</p>
             <img src="public/images/job-alert.png" style="max-width:100%;" alt="">
             <p style="font-size:1.2vw;">We'll tell you when the job you want is advertised using our simple job alert service.</p>
-            <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em;">How to get job alerts</a>
-          </div>
-          <div class="govuk-grid-column-one-third" style="padding-left:30px;padding-right:30px">
-            <p style="font-size:1.7vw; font-weight:bold; margin-bottom:10px">Save time by reusing your info</p>
-            <img src="public/images/reuse.png" style="max-width:100%;object-fit:cover" alt="">
-            <p style="font-size:1.2vw;">You can use information you've already told us in future applications - here's how.</p>
-            <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em;">How to reuse info when you apply in the future</a>
+            <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em;">Find out more</a>
           </div>
 
 

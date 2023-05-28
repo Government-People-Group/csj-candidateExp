@@ -1,0 +1,177 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "app-width-container",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-1",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+.govuk-header__content {
+    width: 60%;
+}
+.govuk-header__logo {
+  margin-left:30px;
+}
+
+.nav-right{
+  float:right;
+}
+</style>
+<form class="form" action="portal-gds-job-alert-saved" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Saved jobs</h1>
+
+      <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper" style="background-color:#5694ca4a">
+    <h2 class="govuk-summary-card__title">Admin Manager - Home Office<span id="notifications" class="moj-notification-badge" style="font-size:12px;border-radius:0px; padding:2px; margin-left:10px;background-color: #ffffff;border-color:#000000; color:#000000">NEW</span></h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+          Delete
+        </a>
+      </li>
+
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">Apply
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+
+        <dd class="govuk-summary-list__actions" style="text-align:left">
+          <p class="govuk-body" >LUAS Admin support is a small but dynamic team that provides support to student members and local staff. LUAS Adjutant is a demanding job with the requirement to be able to think on your feet and act accordingly without supervision.</p>
+
+          <p class="govuk-body" style="text-align:left; font-weight:bold">Closing date: 28 June 2023</p>
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Full details</a>
+        </dd>
+      </div>
+
+    </dl>
+  </div>
+</div>
+<div class="govuk-summary-card">
+<div class="govuk-summary-card__title-wrapper" style="background-color:#5694ca4a">
+<h2 class="govuk-summary-card__title">Digital Delivery Manager - HMRC</h2>
+<ul class="govuk-summary-card__actions">
+<li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+    Delete
+  </a>
+</li>
+
+<li class="govuk-summary-card__action"> <a class="govuk-link" href="#">Apply
+  </a>
+</li>
+</ul>
+</div>
+<div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+
+  <dd class="govuk-summary-list__actions" style="text-align:left">
+    <p class="govuk-body" >We are looking for a number of talented Digital Project Managers to join us in the P3 (Project, Programme and Portfolio) Group in Operations Division. The Division, working with the Digital delivery team, provides the platform (building and digital infrastructure) and capability to enable the delivery of high impact Science and Technology and our project managers are key in delivering projects that make a difference to the whole organisation.</p>
+
+    <p class="govuk-body" style="text-align:left; font-weight:bold">Closing date: 30 May 2023</p>
+    <a href="#" class="govuk-link govuk-link--no-visited-state">Full details</a>
+  </dd>
+</div>
+
+</dl>
+</div>
+</div>
+<div class="govuk-summary-card">
+<div class="govuk-summary-card__title-wrapper" style="background-color:#5694ca4a">
+<h2 class="govuk-summary-card__title">Service Designer - DWP</h2>
+<ul class="govuk-summary-card__actions">
+<li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+    Delete
+  </a>
+</li>
+
+<li class="govuk-summary-card__action"> <a class="govuk-link" href="#">Apply
+  </a>
+</li>
+</ul>
+</div>
+<div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+
+  <dd class="govuk-summary-list__actions" style="text-align:left">
+    <p class="govuk-body" >This role provides a comprehensive, efficient and effective range of facilities services. It provides support to the FM team, our local site-based customers, and the wider property portfolio team to meet our corporate and environmental goals. It is a site-based role requiring regular travel to other sites (potentially two or three times per week).</p>
+
+    <p class="govuk-body" style="text-align:left; font-weight:bold">Closing date: 30 May 2023</p>
+    <a href="#" class="govuk-link govuk-link--no-visited-state">Full details</a>
+  </dd>
+</div>
+
+</dl>
+</div>
+</div><div class="govuk-summary-card">
+<div class="govuk-summary-card__title-wrapper" style="background-color:#5694ca4a">
+<h2 class="govuk-summary-card__title">Technical Architect - Dept for Education</h2>
+<ul class="govuk-summary-card__actions">
+<li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+    Delete
+  </a>
+</li>
+
+<li class="govuk-summary-card__action"> <a class="govuk-link" href="#">Apply
+  </a>
+</li>
+</ul>
+</div>
+<div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+
+  <dd class="govuk-summary-list__actions" style="text-align:left">
+    <p class="govuk-body" >The technology team is responsible for delivering various modern technology services to a user base. We work flexibly to deliver excellent user centred services within Microsoft Azure, AWS, Microsoft 365 and other SaaS and Desktop apps. We’re now looking to build internal capability and skills so that we can take forward cloud-based services for the department.</p>
+
+    <p class="govuk-body" style="text-align:left; font-weight:bold">Closing date: 8 July 2023</p>
+    <a href="#" class="govuk-link govuk-link--no-visited-state">Full details</a>
+  </dd>
+</div>
+
+</dl>
+</div>
+</div>
+
+
+    </div>
+  </div>
+
+
+</form>
+
+
+
+
+{% endblock %}
