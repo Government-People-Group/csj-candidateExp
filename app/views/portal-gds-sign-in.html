@@ -85,10 +85,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="introduction-page" style="margin-top:50px" >
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-m"  >Sign in</h1>
+        {% if data['cookies']=="no"%}
+        <h1 class="govuk-heading-m">Sign in or create an account</h1>
+        {% else %}
+        <h1 class="govuk-heading-m">Sign in</h1>
+        {% endif %}
+
         {% if data['cookies']=="no"%}
         <div class="govuk-inset-text"  >
-          If you have not signed in before, we'll use the email and password you enter to create an account for you.
+          Sign in with your details or enter an email address and password to create an account.
         </div>
         {% endif %}
       </div>
@@ -116,7 +121,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {% else %}
             <input class="govuk-input govuk-input--width-20" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint" autocomplete="password" value="*********"><br><br>
           {% endif %}
-          <p class="govuk-body-s" ><a href="#"  >Forgotten your password?</a></p>
+          <p class="govuk-body-s"><a href="#"  >Forgotten your password?</a></p>
         </div>
 
 
@@ -128,7 +133,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 
         <br><br><br>
-        <p class="govuk-body-s"  >You can also:</p>
+        <h2 class="govuk-heading-s">Sign in with an existing account</h2>
         {% if data['cookies']=="yes"%}
           <img src="public/images/google-button.png" style="max-width:20.5%"><br><img src="public/images/linkedin-button.png" style="max-width:20%;padding-left:2px">
         {% else %}
