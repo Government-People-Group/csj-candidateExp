@@ -11,7 +11,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Design notes</h1>
 
-<a href="#portal" class="govuk-link govuk-link--no-visited-state" style="display:block">Candidate portal notes</a><br><br>
+<a href="#portalv2" class="govuk-link govuk-link--no-visited-state" style="display:block">Candidate portal notes - v2</a><br><a href="#portalv1" class="govuk-link govuk-link--no-visited-state" style="display:block">Candidate portal notes - v1</a><br><br>
 
     <h3 class="govuk-heading-m" style="margin-bottom:5px">Landing page</h3>
       <p class="govuk-body"><strong>Background</strong></p>
@@ -57,45 +57,83 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h3 class="govuk-heading-m" style="margin-bottom:5px" id="portal">Candidate portal</h3>
-      <p class="govuk-body"><strong>Background</strong></p>
-      <p class="govuk-body">The current <a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi" target="_blank">Civil Service jobs site</a> has a limited candidate portal, with features restricted to viewing current and previous applications, and setting up job alerts.</p><br>
+    <h3 class="govuk-heading-m" style="margin-bottom:5px" id="portalv2">Candidate portal</h3>
+    <h3 class="govuk-heading-s" style="margin-bottom:5px">V2</h3><br>
+
+
 
       <p class="govuk-body"><strong>Aim</strong></p>
-      <p class="govuk-body">Our aim was to investigate the following:</p>
+      <p class="govuk-body">Following on from V1, our aim was to:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>what features would a candidate want in their portal?</li>
-        <li>how would candidates react to a portal designed along the lines of the existing Career Site (i.e. non-standard font, non-GDS designs)?</li>
-        <li>would being proactively contacted about possible jobs be beneficial?</li>
-        <li>would advice in the form of messages (e.g. 'You can set up alerts for jobs like Delivery Manager') be helpful?</li>
-        <li>is a job search needed on this page, or just a link to one?</li>
-        <li>how keen are candidates to be able to reuse info they've already given?</li>
-        <li>does giving them sections to complete at the appopriate time (e.g. completed an application, so we ask if they want to set up a job alert for this, or see other jobs with same title) help candidates?</li>
+        <li>change the look / feel from Career Site to more GDS-aligned styling</li>
+        <li>add a search jobs facility on the portal page itself</li>
+        <li>show a reuseable info section so users could see that they didn't have to repeat certain info entries every time they applied</li>
+        <li>let the user save a job</li>
+        <li>let the user set up a job alert</li>
+        <li>iterate the design based on V1 feedback e.g. more detailed application section, status tags, change 'Messages' to guidance panels</li>
       </ul><br>
 
       <p class="govuk-body"><strong>What we did</strong></p>
-      <p class="govuk-body">We designed a sign-in page (linked from a dummy Career Site page with a 'Sign in' button added), which linked to one fo the two following variations:</p>
+      <p class="govuk-body">We redesigned the portal page with a GDS-friendly look, and then offered users two variants:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="https://csj-candidate-experience.herokuapp.com/dashboard-cs-style" target="_blank">a basic portal as would be seen if a candidate just signed up</li>
-        <li><a href="https://csj-candidate-experience.herokuapp.com/dashboard-cs-style-later" target="_blank">a more populated portal based on a candidate who has made some applications, saved some jobs, filled in their personal details etc</a></li>
+        <li><a href="https://csj-candidate-experience.herokuapp.com/portal-gds-1" target="_blank">an iterated (from V1) portal but still based on a series of info panels</li>
+        <li><a href="https://csj-candidate-experience.herokuapp.com/portal-gds-tabs" target="_blank">a more concise version, using tabs to compartmentalise the same info as on the non-tabbed version</a>. This was for a quick user view to see if they preferred seeing less info than on the normal version.</li>
       </ul>
 
       <p class="govuk-body"><strong>User research</strong></p>
-      <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1683623960575/18666886601916e4ad986df8a2abac093988f24c?sender=u21f36a9fedce292b06138582" target="_blank">Mural board with testing notes</a></p><br>
+      <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1685443464412/ca1f3c757df02ee26d08181a7e9d264cff731c4e?sender=u21f36a9fedce292b06138582" target="_blank">Mural board with testing notes</a></p><br>
       <p class="govuk-body"><strong>What we found</strong></p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>users generally liked the Career Site-style design, although one user thought it looked too much like the Guardian website(!)</li>
-        <li>sign up on the sign in page caused some confusion, as users didn't read the inset text</li>
-        <li>Google and LinkedIn were not popular sign-in options, as many users felt they were insecure, not allowed at work or too personal to use</li>
-        <li>some users expected to go straight to a 'search for jobs' page after signing in</li>
-        <li>messages did not test well: some users didn't want messages at all, others didn't notice their purpose (to give advice at pertinent times)</li>
-        <li>users were unsure whether they wanted / needed to see their login details so prominently on the page</li>
-        <li>joining a talent pool was seen as a good (and new) option</li>
-        <li>some users favoured having a search bar on their portal, although others were happy with the existing link (if renamed to 'Search for job' instead of 'Apply for job')</li>
-        <li>all users wanted to reuse previously submitted info in some way</li>
-        <li>The personal details section had too much prominence / was placed too high on the page</li>
-        <li>the application panel would be even more useful if it explained what was current, status of each application and showed draft applications</li>
-        
+        <li>the improved applications panel was very successful, with all users understanding what each application type was</li>
+        <li>the status tags were also very successful, especially the red one warning of an impending deadline</li>
+        <li>users liked the targeted guidance panels and usually understood why they were seeing particular ones at a certain point</li>
+        <li>there was some debate over the placement of the details section, with some happy with it's position but others suggesting it should be in the top nav bar. Either way, the hidden details was preferred to the previous version in V1</li>
+        <li>users understood and liked the reuseable info section</li>
+        <li>all users were able to navigate the saved job and job alert journeys and had no major concerns with either</li>
+        <li>interestingly, a number of users said they'd prefer video content when been given guidance - in stark contrast to opinion on videos on the initial landing page prototype. This implies that while generic 'corporate' videos are not welcomed, they can be valuable when giving instructions or advice</li>
+        <li>a number of users felt that setting up job alerts was mentioned too many times</li>
+        <li>users still struggled to see how to create an account on the sign in page</li>
+        <li>the notification banner for a saved job might be better placed on the saved ad itself, rather than the top of the page as per standards</li>
+        <li>the 'new' tag was a success, although some users felt it should be more prominent e.g. in a coloured box, bolder, bigger etc</li><br><br>
+        <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
+        <br><h3 class="govuk-heading-s" style="margin-bottom:5px" id="portalv1">V1</h3>
+        <p class="govuk-body"><strong>Background</strong></p>
+        <p class="govuk-body">The current <a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi" target="_blank">Civil Service jobs site</a> has a limited candidate portal, with features restricted to viewing current and previous applications, and setting up job alerts.</p><br>
+
+        <p class="govuk-body"><strong>Aim</strong></p>
+        <p class="govuk-body">Our aim was to investigate the following:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>what features would a candidate want in their portal?</li>
+          <li>how would candidates react to a portal designed along the lines of the existing Career Site (i.e. non-standard font, non-GDS designs)?</li>
+          <li>would being proactively contacted about possible jobs be beneficial?</li>
+          <li>would advice in the form of messages (e.g. 'You can set up alerts for jobs like Delivery Manager') be helpful?</li>
+          <li>is a job search needed on this page, or just a link to one?</li>
+          <li>how keen are candidates to be able to reuse info they've already given?</li>
+          <li>does giving them sections to complete at the appopriate time (e.g. completed an application, so we ask if they want to set up a job alert for this, or see other jobs with same title) help candidates?</li>
+        </ul><br>
+
+        <p class="govuk-body"><strong>What we did</strong></p>
+        <p class="govuk-body">We designed a sign-in page (linked from a dummy Career Site page with a 'Sign in' button added), which linked to one fo the two following variations:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="https://csj-candidate-experience.herokuapp.com/dashboard-cs-style" target="_blank">a basic portal as would be seen if a candidate just signed up</li>
+          <li><a href="https://csj-candidate-experience.herokuapp.com/dashboard-cs-style-later" target="_blank">a more populated portal based on a candidate who has made some applications, saved some jobs, filled in their personal details etc</a></li>
+        </ul>
+
+        <p class="govuk-body"><strong>User research</strong></p>
+        <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1683623960575/18666886601916e4ad986df8a2abac093988f24c?sender=u21f36a9fedce292b06138582" target="_blank">Mural board with testing notes</a></p><br>
+        <p class="govuk-body"><strong>What we found</strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>users generally liked the Career Site-style design, although one user thought it looked too much like the Guardian website(!)</li>
+          <li>sign up on the sign in page caused some confusion, as users didn't read the inset text</li>
+          <li>Google and LinkedIn were not popular sign-in options, as many users felt they were insecure, not allowed at work or too personal to use</li>
+          <li>some users expected to go straight to a 'search for jobs' page after signing in</li>
+          <li>messages did not test well: some users didn't want messages at all, others didn't notice their purpose (to give advice at pertinent times)</li>
+          <li>users were unsure whether they wanted / needed to see their login details so prominently on the page</li>
+          <li>joining a talent pool was seen as a good (and new) option</li>
+          <li>some users favoured having a search bar on their portal, although others were happy with the existing link (if renamed to 'Search for job' instead of 'Apply for job')</li>
+          <li>all users wanted to reuse previously submitted info in some way</li>
+          <li>The personal details section had too much prominence / was placed too high on the page</li>
+          <li>the application panel would be even more useful if it explained what was current, status of each application and showed draft applications</li>
 
 
   </div>
