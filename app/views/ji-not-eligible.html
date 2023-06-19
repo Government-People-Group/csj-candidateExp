@@ -66,6 +66,9 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
                   {% if data['declaration'] == "no" %}
                   <li>you told us that you do not match all of the necessary criteria for this role</li>
                   {% endif %}
+                  {% if data['rtw'] == "no" %}
+                  <li>you do not have the right to remain and take up work in the UK before this employment commences</li>
+                  {% endif %}
                 </ul>
               </legend>
             </fieldset>

@@ -49,42 +49,26 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
     {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
-      <form action="" method="post" novalidate>
+    <form class="form" action="ji-task-list" method="post">
       <span class="govuk-caption-l">
-        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
-        <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Are you either of the following?
-                </h1><br>
+        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
 
-                <ul class="govuk-list govuk-list--bullet">
-                  <li>a national of the Republic of Ireland</li>
-                  <li>a national of a Commonwealth country who has the right to work in the UK</li>
-                </ul>
-              </legend>
-              <div class="govuk-radios--inline" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="where-do-you-live" name="comm-or-ireland" type="radio" value="yes~/ji-right-to-work">
-                  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="where-do-you-live-2" name="comm-or-ireland" type="radio" value="no~/ji-not-eligible">
-                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                    No
-                  </label>
-                </div>
+          <h1 class="govuk-heading-xl">
+            You are eligible to apply for this role
+          </h1>
 
-
-              </div>
-            </fieldset>
-          </div>
-
-        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Continue</button>
-
+        <p class="govuk-body">You can leave and return to complete at any time. Your answers will automatically save when you complete a section.</p>
+        <p class="govuk-body">If you need a reasonable adjustment, you can contact our recruitment team.</p>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            You must submit your application before 11:55 PM on 22nd February 2023.
+          </strong>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">
+          Start application
+        </button>
       </div>
     </div>
 

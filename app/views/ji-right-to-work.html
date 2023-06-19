@@ -52,36 +52,28 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
       <form action="" method="post" novalidate>
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
-        <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Are you either of the following?
-                </h1><br>
-
-                <ul class="govuk-list govuk-list--bullet">
-                  <li>a national of the Republic of Ireland</li>
-                  <li>a national of a Commonwealth country who has the right to work in the UK</li>
-                </ul>
-              </legend>
-              <div class="govuk-radios--inline" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="where-do-you-live" name="comm-or-ireland" type="radio" value="yes~/ji-right-to-work">
-                  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="where-do-you-live-2" name="comm-or-ireland" type="radio" value="no~/ji-not-eligible">
-                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                    No
-                  </label>
-                </div>
-
-
-              </div>
-            </fieldset>
-          </div>
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "rtw",
+          name: "rtw",
+          fieldset: {
+          legend: {
+          text: "Will you have the right to remain and take up work in the UK before employment commences?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+          value: "yes~/ji-declaration",
+          text: "Yes"
+          },
+          {
+          value: "no~/ji-not-eligible",
+          text: "No"
+          }
+          ]
+          }) }}
 
         <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Continue</button>
 
