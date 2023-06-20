@@ -56,20 +56,10 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  You cannot apply for this role
+                  You cannot apply for {{ data['searchwhat'] | capitalize}}
                 </h1><br>
-                <p class="govuk-body">You're not able to apply for the role of {{ data['searchwhat'] | capitalize}} because:</p>
-                <ul class="govuk-list govuk-list--bullet">
-                  {% if data['comm-or-ireland'] == "no"  %}
-                    <li>you do not have the right to work in the UK</li>
-                  {% endif %}
-                  {% if data['declaration'] == "no" %}
-                  <li>you told us that you do not match all of the necessary criteria for this role</li>
-                  {% endif %}
-                  {% if data['rtw'] == "no" %}
-                  <li>you do not have the right to remain and take up work in the UK before this employment commences</li>
-                  {% endif %}
-                </ul>
+                <p class="govuk-body">Unfortunately, you do not meet the eligibility criteria for this role.</p>
+                <p class="govuk-body">We’re sorry you cannot apply. You can search for similar roles on <a href="ji-search-results">Civil Service jobs</a>.</p>
               </legend>
             </fieldset>
           </div>
