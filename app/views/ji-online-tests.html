@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Online tests – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">
+      <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+      <h1 class="govuk-heading-xl">Judgement test</h1>
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <ul class="govuk-list govuk-list--bullet-">
+        <li><p style ="border-left:5px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"><strong>Judgement test</strong></a></p></li>
+        <li><p style ="border-left:0px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="cv-and-personal-statement-ps" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Numerical test</a></p></li>
+        <li><p style ="border-left:0px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="cv-and-personal-statement-ps" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Work strengths test</a></p></li>
+      </ul>
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+
+        <p class="govuk-body-m govuk-!-margin-bottom-3">You have been invited to complete the Civil Service Judgement online test.</p>
+      <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">You’ll need to pass this test before you can progress to the next step in your application.</p>
+      <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">The Judgement test has 3 sections and will take 45 minutes to complete.</p>
+      <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">Section 3 is timed and will be a set of questions.</p>
+
+      <h2 class="govuk-heading-l">Before you start</h2>
+      <h3 class="govuk-heading-m">How to prepare</h3>
+      <p class="govuk-body-m">To prepare for the test, you can:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><p class="govuk-body-m">read our <a href="#">help on preparing for the online tests</a></p> </li>
+        <li><p class="govuk-body-m">read the <a href="#">test guide</a></p> </li>
+        <li><p class="govuk-body-m">take the <a href="#">Judgement practice test</a></p> </li>
+      </ul>
+      <p class="govuk-body-m">The test has three sections and will take 45 minutes to complete it.<br>Section 3 is timed and will be provided with a number of questions. The time left to complete this section will be shown to you.</p>
+      <h3 class="govuk-heading-m">What you need</h3>
+
+      <p class="govuk-body-m">We recommend you taking the test on a large screen (a laptop or desktop).</p>
+      <p class="govuk-body-m">For the test, you will need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><p class="govuk-body-m">good internet connection</p> </li>
+        <li><p class="govuk-body-m">time with no interruptions</p> </li>
+        <li><p class="govuk-body-m">to take the test alone. Your application could be withdrawn if any evidence of receiving help is found</p> </li>
+      </ul>
+
+      <p class="govuk-body-m">Please contact <a href="#">{{ data['dept']}} recruitment team</a> if you need further support.</p>
+
+      <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Start test</button>
+
+
+
+    </div>
+<a href="online-tests-pass">Online test - pass</a> | <a href="online-tests-fail">Online test - fail</a>
+  </div>
+
+
+
+
+  {% endblock %}
