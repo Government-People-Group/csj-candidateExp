@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Application submitted</h1>
+        <div class="govuk-panel__body">
+          {{ data['searchwhat'] | capitalize}}<br> {{ data['dept']}}
+        </div>
+        <div class="govuk-panel__body">
+          Your reference number<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>Applications will be marked by 22nd February 2023.</p>
+      <p>If your application is successful, you will be emailed and invited to interview by 19th March 2023.</p>
+
+      <p>We will email you about your application’s progress or you can <a href="">check in the application centre</a>.</p>
+
+      <p>If you need support, please contact <a href="#">Craig.Shaddick@doe.gov.uk</a></p>
+
+      <p>You can <a ref="">withdraw your application</a> at any time.</p>
+    </div>
+  </div>
+
+{% endblock %}
