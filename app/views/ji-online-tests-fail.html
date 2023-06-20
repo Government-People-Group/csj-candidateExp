@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Online tests result – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="home" method="post">
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">
+      <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+      <h1 class="govuk-heading-xl">You have failed the Judgement test</h1>
+
+      <p class="govuk-body-m">Unfortunately, your Civil Service Judgement test result was not high enough for the role.</p>
+      <p class="govuk-body-m">Your score was 15%. The score needed for this role is 47% or above.
+Your results will not be saved or affect future applications.
+</p>
+      <p class="govuk-body-m">You can view your <a href="#">test feedback</a>.</p>
+
+      <p class="govuk-body-m">You can:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><p class="govuk-body-m">continue to <a href="">search and apply for Civil Service jobs</a></p> </li>
+        <li><p class="govuk-body-m">complete our <a href="">practice test</a></p> </li>
+        <li><p class="govuk-body-m">read our <a href="">guidance on how to complete Civil Service online tests</a></p> </li>
+      </ul>
+
+<p class="govuk-body-m">You can search for another Civil service role. </p>
+
+      <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Search for jobs</button>
+</form>
+
+
+
+  {% endblock %}
