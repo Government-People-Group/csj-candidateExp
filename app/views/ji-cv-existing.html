@@ -1,0 +1,731 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+<script>
+  const fileUpload = document.getElementById('file-upload-1');
+  var stamp = new Date();
+  var newStamp = stamp.toLocaleDateString('en-uk', { day:"numeric", month:"short", year:"numeric", hour:"numeric", minute:"minute" }) ;
+
+  fileUpload.addEventListener('change', (event) => {
+    const files = event.target.files;
+    for (const file of files) {
+      const name = file.name;
+      const lastModified = file.lastModified;
+      const lmElement = document.getElementById('lastMod');
+
+      var fileName = `${name}`;
+      var lastM = `Last modified on ${new Date(lastModified).toLocaleDateString('en-uk')}`;
+      lmElement.innerHTML = lastM;
+    }
+  });
+</script>
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">
+      <strong>{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span>
+      <h1 class="govuk-heading-xl">CV</h1>
+
+    </div>
+  </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <ul class="govuk-list govuk-list--bullet-">
+      <li><p style ="border-left:5px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"><strong>CV</strong></a></p></li>
+        <li><p style ="border-left:0px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="personal-statement" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Personal statement</a></p></li>
+      </ul>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <div id="vanishLoadedFile" class="govuk-heading-m govuk-!-margin-top-4" style="background:#F6F6F6;padding-top:10px;padding-left:10px; padding-right:10px">
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Your details have been filled in from a CV you used for another application. Please check your details are correct.
+        </strong>
+
+        <p class="govuk-body-m govuk-!-margin-top-3" style="float:right;color:#1d70b8;padding-bottom:45px;padding-right:45px"><strong><a style="color:#1d70b8" onclick="hideDiv('vanishLoadedFile');showDiv('fileUploadRewind');">Remove</a></strong></p>
+        <p class="govuk-body-m govuk-!-margin-top-3 govuk-!-margin-bottom-3" style="padding-left:45px">{{ data['file']}}</p>
+      </div>
+    </div>
+
+
+
+
+    <div id="fileUploadRewind" style="display:none;;padding-top:10px;padding-left:20px; padding-right:20px" class="govuk-!-margin-top-0 govuk-!-margin-bottom-5">
+
+      <form class="form" action="cv-uploaded" method="post">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-3">Upload a CV</h2>
+        <p class="govuk-body-m">Choose your file and upload your CV.</p>
+        <p class="govuk-body-m">To make sure your CV will upload correctly, you should:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>use files up to 5 MB with types .pdf, .doc, .docx, .odt or .rtf</li>
+          <li>divide the text into clear sections</li>
+          <li>not use any images</li>
+        </ul>
+        <div class="govuk-form-group" style="border-radius: 10px;background:#ffffff;padding:10px;border:1px lightgrey solid">
+
+          <label class="govuk-label" for="file-upload-1">
+            Upload a file
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" value="{{ data['file-upload-1']}}">
+          <p id="lastMod" class="govuk-body-m"></p>
+          <button class="govuk-button" data-module="govuk-button">Upload and continue</button>
+        </div>
+
+      </form>
+    </div>
+    <h3 style="background:#dee0e2;padding-left:20px;padding-top:20px;padding-bottom:20px" class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Employment history</h3>
+
+    <div id="employ1" style="padding:20px;border:1px lightgrey solid">
+      {{ govukInput({
+        label: {
+          text: "Employer's name",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        value: data['emp1'],
+        value: "Department of Health and Social Care",
+        id: "emp1",
+        name: "emp1"
+      }) }}
+
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+        id: "from-1",
+        namePrefix: "from-1",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+        {
+          name: "day",
+          value: data['from-day-1'],
+          value: "01",
+          classes: "govuk-input--width-2",
+          autocomplete: "from-day1"
+        },
+        {
+          name: "month",
+          value: data['from-month-1'],
+          value: "09",
+          classes: "govuk-input--width-2",
+          autocomplete: "from-month1"
+        },
+        {
+          name: "year",
+          value: data['from-year-1'],
+          value: "2019",
+          classes: "govuk-input--width-4",
+          autocomplete: "from-year1"
+        }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "to-1",
+        namePrefix: "to-1",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+        {
+          name: "day",
+          value: data['to-day-1'],
+          value: "30",
+          classes: "govuk-input--width-2",
+          autocomplete: "to-day1"
+        },
+        {
+          name: "month",
+          value: data['to-month-1'],
+          value: "12",
+          classes: "govuk-input--width-2",
+          autocomplete: "to-month1"
+        },
+        {
+          name: "year",
+          value: data['to-year-1'],
+          value: "2022",
+          classes: "govuk-input--width-4",
+          autocomplete: "to-year1"
+        }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Job title",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "job-title-1",
+        value: data['job-title-1'],
+        value: "Policy Advisor",
+        name: "job-title-1"
+      }) }}
+
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+      {{ govukCharacterCount({
+        name: "resonsibilities-1",
+        label: {
+          text: "Describe your role",
+          classes: "govuk-label--s"
+        },
+        id: "resonsibilities-1",
+        maxwords: 150,
+        value: data['resonsibilities-1'],
+        value: "Responsible for commissioning and pulling together evidence, carrying out project work to prepare for future requests and briefing senior officials in preparation for ministerial review and discussion. Working within a cross-cutting policy team to achieve something or another.",
+        hint: {
+          text: "In-line guidance lorem ipsum dolor sit amet."
+        }
+      }) }}
+      <p class="govuk-body-m govuk-!-margin-top-0 govuk-!-margin-bottom-3"><a style="color:#1d70b8" onclick="showDiv('employ2')">Add another employer</a></p>
+      <!-- <hr class="govuk-!-margin-top-6 govuk-!-margin-bottom-6"> -->
+    </div>
+
+    <div id="employ2" style="display:none;background:#F6F6F6; padding:20px;border:1px lightgrey solid">
+      {{ govukInput({
+        label: {
+          text: "Employer's name",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        value: data['emp2'],
+        id: "emp2",
+        name: "emp2"
+      }) }}
+
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+        id: "from-2",
+        namePrefix: "from-2",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+        {
+          name: "day",
+          value: data['from-day-2'],
+          classes: "govuk-input--width-2",
+          autocomplete: "from-day"
+        },
+        {
+          name: "month",
+          value: data['from-month-2'],
+          classes: "govuk-input--width-2",
+          autocomplete: "from-month"
+        },
+        {
+          name: "year",
+          value: data['from-year-2'],
+          classes: "govuk-input--width-4",
+          autocomplete: "from-year"
+        }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "to-2",
+        namePrefix: "to-2",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+        {
+          name: "day",
+          value: data['to-day-2'],
+          classes: "govuk-input--width-2",
+          autocomplete: "to-day"
+        },
+        {
+          name: "month",
+          value: data['to-month-2'],
+          classes: "govuk-input--width-2",
+          autocomplete: "to-month"
+        },
+        {
+          name: "year",
+          value: data['to-year-2'],
+          classes: "govuk-input--width-4",
+          autocomplete: "to-year"
+        }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Job title",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "job-title-2",
+        value: data['job-title-2'],
+        name: "job-title-2"
+      }) }}
+
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+      {{ govukCharacterCount({
+        name: "resonsibilities-2",
+        label: {
+          text: "Describe your role",
+          classes: "govuk-label--s"
+        },
+        id: "resonsibilities-2",
+        maxwords: 150,
+        value: data['resonsibilities-2']
+      }) }}
+
+      <p class="govuk-body-m govuk-!-margin-top-1 govuk-!-margin-bottom-1" style="float:right;color:#1d70b8"><a onclick="hideDiv('employ2')">Delete</a></p>
+      <p class="govuk-body-m govuk-!-margin-top-1 govuk-!-margin-bottom-1"><a style="color:#1d70b8" onclick="showDiv('employ3')">Add another employer</a></p>
+      <hr  style="border:0px" class="govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    </div>
+
+    <div id="lastAdd" style="display:none" class="govuk-!-margin-top-0 govuk-!-margin-bottom-0">
+      <p class="govuk-body-m govuk-!-margin-top-0 govuk-!-margin-bottom-0"><a style="color:#1d70b8" onclick="showDiv('employ1')">Add another employer</a></p>
+      <hr  style="border:0px" class="govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    </div>
+
+
+
+
+    <div id="employ3" style="display:none; background:#F6F6F6; padding:20px;border:1px lightgrey solid" class="govuk-!-margin-top-0 govuk-!-margin-bottom-0">
+      {{ govukInput({
+        label: {
+          text: "Employer's name",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        value: data['emp3'],
+        id: "emp3",
+        name: "emp3"
+      }) }}
+
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+        id: "from-3",
+        namePrefix: "from-3",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+        {
+          name: "day",
+          value: data['from-day-3'],
+          classes: "govuk-input--width-2",
+          autocomplete: "from-day"
+        },
+        {
+          name: "month",
+          value: data['from-month-3'],
+          classes: "govuk-input--width-2",
+          autocomplete: "from-month"
+        },
+        {
+          name: "year",
+          value: data['from-year-3'],
+          classes: "govuk-input--width-4",
+          autocomplete: "from-year"
+        }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "to-3",
+        namePrefix: "to-3",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+        {
+          name: "day",
+          value: data['to-day-3'],
+          classes: "govuk-input--width-2",
+          autocomplete: "to-day"
+        },
+        {
+          name: "month",
+          value: data['to-month-3'],
+          classes: "govuk-input--width-2",
+          autocomplete: "to-month"
+        },
+        {
+          name: "year",
+          value: data['to-year-3'],
+          classes: "govuk-input--width-4",
+          autocomplete: "to-year"
+        }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Job title",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "job-title-3",
+        value: data['job-title-3'],
+        name: "job-title-3"
+      }) }}
+
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+      {{ govukCharacterCount({
+        name: "resonsibilities-3",
+        label: {
+          text: "Describe your role",
+          classes: "govuk-label--s"
+        },
+        id: "resonsibilities-3",
+        maxwords: 150,
+        value: data['resonsibilities-3']
+      }) }}
+
+      <p class="govuk-body-m govuk-!-margin-top-0 govuk-!-margin-bottom-0" style="float:right;color:#1d70b8"><a onclick="hideDiv('employ3')">Delete</a></p>
+      <p class="govuk-body-m govuk-!-margin-top-0 govuk-!-margin-bottom-0"><a style="color:#1d70b8" onclick="">Add another employer</a></p>
+      <hr  style="border:0px" class="govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    </div>
+
+    <h3 style="background:#dee0e2;padding-left:20px;padding-top:20px;padding-bottom:20px" class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Education and qualifications</h3>
+
+    <div id="edu1" style="padding:20px;border:1px lightgrey solid">
+      {{ govukInput({
+        label: {
+          text: "Institution's name",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "edu-name-1",
+        value: data['edu-name-1'],
+        value: "University of East London",
+        name: "edu-name-1"
+      }) }}
+
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+        id: "edu-from-1",
+        namePrefix: "edu-from-1",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+        {
+          name: "day",
+          value: data['edu-from-day-1'],
+          value: "01",
+          classes: "govuk-input--width-2",
+          autocomplete: "from-day"
+        },
+        {
+          name: "month",
+          value: data['edu-from-moth-1'],
+          value: "10",
+          classes: "govuk-input--width-2",
+          autocomplete: "from-month"
+        },
+        {
+          name: "year",
+          value: data['edu-from-year-1'],
+          value: "2016",
+          classes: "govuk-input--width-4",
+          autocomplete: "from-year"
+        }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "edu-to-1",
+        namePrefix: "edu-to-1",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+        {
+          name: "day",
+          value: data['edu-to-day-1'],
+          value: "30",
+          classes: "govuk-input--width-2",
+          autocomplete: "to-day"
+        },
+        {
+          name: "month",
+          value: data['edu-to-month-1'],
+          value: "06",
+          classes: "govuk-input--width-2",
+          autocomplete: "to-month"
+        },
+        {
+          name: "year",
+          value: data['edu-to-year-1'],
+          value: "2019",
+          classes: "govuk-input--width-4",
+          autocomplete: "to-year"
+        }
+        ]
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Qualification awarded",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "edu-qual-1",
+        value: data['edu-qual-1'],
+        value: "Bachelor of Arts",
+        name: "edu-qual-1"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Course title",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "edu-title-1",
+        value: data['edu-title-1'],
+        value: "History",
+        name: "edu-title-1"
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Grade",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "edu-grade-1",
+        value: data['edu-grade-1'],
+        value: "Upper Second",
+        name: "edu-grade-1"
+      }) }}
+      <p class="govuk-body-m govuk-!-margin-top-0 govuk-!-margin-bottom-3"><a style="color:#1d70b8" onclick="showDiv('edu2')">Add another education</a></p>
+    </div>
+
+    <div id="edu2" style="display:none;background:#F6F6F6; padding:20px;border:1px lightgrey solid">
+      {{ govukInput({
+        label: {
+          text: "Institution's name",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "edu-name-2",
+        value: data['edu-name-2'],
+        name: "edu-name-2"
+      }) }}
+
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+        id: "edu-from-2",
+        namePrefix: "edu-from-2",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+        {
+          name: "day",
+          value: data['edu-from-day-2'],
+          classes: "govuk-input--width-2",
+          autocomplete: "from-day"
+        },
+        {
+          name: "month",
+          value: data['edu-from-month-2'],
+          classes: "govuk-input--width-2",
+          autocomplete: "from-month"
+        },
+        {
+          name: "year",
+          value: data['edu-from-year-2'],
+          classes: "govuk-input--width-4",
+          autocomplete: "from-year"
+        }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "edu-to-2",
+        namePrefix: "edu-to-2",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+        {
+          name: "day",
+          value: data['edu-to-day-2'],
+          classes: "govuk-input--width-2",
+          autocomplete: "to-day"
+        },
+        {
+          name: "month",
+          value: data['edu-to-month-2'],
+          classes: "govuk-input--width-2",
+          autocomplete: "to-month"
+        },
+        {
+          name: "year",
+          value: data['edu-to-year-2'],
+          classes: "govuk-input--width-4",
+          autocomplete: "to-year"
+        }
+        ]
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Qualification awarded",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "edu-qual-2",
+        value: data['edu-qual-2'],
+        name: "edu-qual-2"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Course title",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "edu-title-2",
+        value: data['edu-title-2'],
+        name: "edu-title-2"
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Grade",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-35",
+        id: "edu-grade-2",
+        value: data['edu-grade-2'],
+        name: "edu-grade-2"
+      }) }}
+
+      <p class="govuk-body-m govuk-!-margin-top-1 govuk-!-margin-bottom-1" style="float:right;color:#1d70b8"><a onclick="hideDiv('edu2')">Delete</a></p>
+      <p class="govuk-body-m govuk-!-margin-top-1 govuk-!-margin-bottom-1"><a style="color:#1d70b8" onclick="showDiv('employ3')">Add another education</a></p>
+      <hr  style="border:0px" class="govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    </div>
+    <div id="lastAdd" style="display:none" class="govuk-!-margin-top-0 govuk-!-margin-bottom-0">
+      <p class="govuk-body-m govuk-!-margin-top-0 govuk-!-margin-bottom-0"><a style="color:#1d70b8" onclick="showDiv('edu1')">Add another education</a></p>
+      <hr  style="border:0px" class="govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    </div>
+    <hr  style="border:0px" class="govuk-!-margin-top-3 govuk-!-margin-bottom-3">
+
+
+
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Save and continue",
+      href: "personal-statement"
+    }) }}
+
+    <p class="govuk-body-m"><a href="task-list">Return to task-list</a></p>
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}
