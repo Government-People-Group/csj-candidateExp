@@ -39,8 +39,9 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters" style="padding-right:10px">
-    <span class="govuk-caption-l">{{ data['dept']}}</span>
-    <h1 class="govuk-heading-xl">{{ data['searchwhat'] | capitalize}}</h1>
+    <span class="govuk-caption-l">
+      <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
+    <h1 class="govuk-heading-xl">Your application for {{ data['searchwhat'] | capitalize}}</h1>
 
 
 
@@ -102,7 +103,7 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
           <h2 class="govuk-prototype-kit-task-list__section">
             Online tests
           </h2>
-          
+
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
