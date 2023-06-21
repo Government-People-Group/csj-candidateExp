@@ -49,12 +49,12 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
 
     <span class="govuk-caption-l">
       <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
-    <h1 class="govuk-heading-xl">Your application</h1>
+    <h1 class="govuk-heading-xl">Your application for {{ data['searchwhat'] | capitalize}}</h1>
 
 
     <p class="govuk-body">You can leave and return to complete at any time. Your answers will automatically save when you complete a section.</p>
 
-    <p class="govuk-body">You can <a href="ji-job-ad-full">view the {{ data['searchwhat'] | capitalize}} advert</a>.</p>
+    <p class="govuk-body"><a href="ji-job-ad-full">View the {{ data['searchwhat'] | capitalize}} advert</a>.</p>
 
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -97,7 +97,7 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
             Online tests
           </h2>
           <p class="govuk-body govuk-!-margin-left-6">For this application, you must pass 3 online tests. You’ll need to pass these tests before you can progress to the next step in your application.</p>
-          <p class="govuk-body govuk-!-margin-left-6"><a href="">Preparing for the online tests</a></p><br><br>
+          <p class="govuk-body govuk-!-margin-left-6">You can <a href="">practice for the online test</a> before taking it.</p><br><br>
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
@@ -147,10 +147,15 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
           </h2>
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
+
               <span class="govuk-prototype-kit-task-list__task-name">
-
+                {% if data['pass'] == "true"  %}
+                <a href="ji-cv-upload-choice" aria-describedby="list-convictions-status">
                   CV
-
+                </a>
+                {% else%}
+                  CV
+                {% endif %}
               </span>
 
               {% if data['cv'] == "true"  %}
@@ -165,7 +170,13 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
 
+                {% if data['pass'] == "true"  %}
+                <a href="ji-personal-statement" aria-describedby="list-convictions-status">
                   Personal statement
+                </a>
+                {% else %}
+                  Personal statement
+                {% endif %}
 
               </span>
 
@@ -190,9 +201,13 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-
-                Behaviour questions
-
+                {% if data['pass'] == "true"  %}
+                <a href="ji-behaviour-questions" aria-describedby="list-convictions-status">
+                  Behaviour questions
+                </a>
+                {% else%}
+                  Behaviour questions
+                {% endif %}
               </span>
 
               {% if data['pass'] == "true"  %}
@@ -201,11 +216,17 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
               {% endif %}
 
+
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-
-                Technical skills
+                {% if data['pass'] == "true"  %}
+                <a href="ji-technical-skills" aria-describedby="list-convictions-status">
+                  Technical skills
+                </a>
+                {% else%}
+                  Technical skills
+                {% endif %}
 
               </span>
               {% if data['pass'] == "true"  %}
@@ -224,7 +245,13 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-              Personal information
+                {% if data['pass'] == "true"  %}
+                <a href="ji-personal-info" aria-describedby="list-convictions-status">
+                  Personal information
+                </a>
+                {% else%}
+                  Personal information
+                {% endif %}
               </span>
               {% if data['pass'] == "true"  %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
@@ -237,7 +264,13 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                Preferences
+                {% if data['pass'] == "true"  %}
+                <a href="ji-preferences" aria-describedby="list-convictions-status">
+                  Preferences
+                </a>
+                {% else%}
+                  Preferences
+                {% endif %}
               </span>
 
               {% if data['pass'] == "true"  %}
@@ -251,7 +284,13 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-              Diversity and Inclusion
+                {% if data['pass'] == "true"  %}
+                <a href="ji-diversity-inclusion" aria-describedby="list-convictions-status">
+                  Diversity and inclusion
+                </a>
+                {% else%}
+                  Diversity and inclusion
+                {% endif %}
               </span>
 
               {% if data['pass'] == "true"  %}
@@ -268,10 +307,10 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
       <ul class="govuk-list govuk-list--bullet-" style="padding-left:10px">
         <li><h2 style="padding-left:5px;border-top:5px solid #1D70B8;padding-top:20px" class="govuk-heading-m">Related content</h2></li>
 
-        <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="job-ad-full">View {{ data['searchwhat'] | capitalize}} advert</a></p></li>
+
         <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">How to answer behaviour questions</a></p></li>
         <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">Success profile guidiance</a></p></li>
-        <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">Preparing for the online tests</a></p></li>
+        
 
       </ul>
     </div>

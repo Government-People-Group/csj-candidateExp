@@ -52,17 +52,18 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
     <form class="form" action="ji-nationality" method="post">
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
-        <h1 class="govuk-heading-l">Can you apply for this role?</h1>
+        <h1 class="govuk-heading-l">Are you eligible to apply for the role of {{ data['searchwhat'] | capitalize}}?</h1>
 
         <p class="govuk-body-m">Before you start your application, you need to check you are eligible to apply.</p><br>
 
-        <p class="govuk-body-m">By applying for this role, you agree you:</p>
+        <p class="govuk-body-m">By applying for this role, you agree you meet the eligibility criteria:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>You are a qualified practising barrister or solicitor on the CPS Advocate Panel at a minimum of level 2</li>
-          <li>You speak Spanish to a level that would allow you to do the job <a href="">based on the job description</a></li>
-          <li>You have knowledge of the further or higher education sector</li>
+          <li>You have a Financial Skills Certificate (Foundation level)</li>
+          <li>You have experience in data-driven technology</li>
           <li>You feel confident communicating with a range of stakeholders</li>
         </ul><br>
+
+        <p class="govuk-body-m">I have read and understood the eligibility criteria.</p>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="waste-hint">

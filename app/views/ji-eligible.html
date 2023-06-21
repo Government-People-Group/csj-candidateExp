@@ -54,10 +54,10 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
         <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
 
           <h1 class="govuk-heading-xl">
-            You are eligible to apply for this role
+            You are eligible to apply for {{ data['searchwhat'] | capitalize}}
           </h1>
 
-        
+
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text">
