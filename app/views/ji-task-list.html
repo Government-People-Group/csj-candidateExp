@@ -179,7 +179,10 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                 {% endif %}
               </span>
 
-              {% if data['pass'] == "true"  %}
+
+              {% if data['behaviour-pass'] == "true" %}
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elif data['pass'] == "true"  %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
@@ -196,7 +199,9 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
                 {% endif %}
 
               </span>
-              {% if data['pass'] == "true"  %}
+              {% if data['tech-skills-pass'] == "true" %}
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elif data['pass'] == "true"  %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
