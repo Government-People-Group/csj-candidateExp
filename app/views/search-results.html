@@ -18,6 +18,7 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
 
 <!-- number of results matched counter should need to reflect filter actions  -->
 {% set n = 86 %}
+{% set defaultJob = 'Strategy Advisor' %}
 
 
 
@@ -234,7 +235,13 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-margin-left-3 govuk-!-padding-top-1 govuk-!-padding-bottom-3">
       <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
         <span class="govuk-caption-m"><strong>Department for Education</strong></span>
-        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Department for Education">{{ data['searchwhat'] | capitalize}}</a></h2>
+
+        {% if data['searchwhat'] %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Department for Education">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% else %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Department for Education">{{defaultJob}}</a></h2>
+        {% endif %}
+
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, Exeter, Manchester</p>
         <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £38,995</p>
         <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
@@ -249,7 +256,11 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-padding-top-3 govuk-!-margin-left-3 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
       <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
         <span class="govuk-caption-m"><strong>Home Office</strong></span>
-        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Home Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% if data['searchwhat'] %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Home Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% else %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Home Office">{{defaultJob}}</a></h2>
+        {% endif %}
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, London, Bristol</p>
         <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £44,900</p>
         <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
@@ -262,7 +273,11 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-padding-top-3 govuk-!-margin-left-3 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
       <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
         <span class="govuk-caption-m"><strong>Cabinet Office</strong></span>
-        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Cabinet Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% if data['searchwhat'] %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?dept=DCabinet Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% else %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Cabinet Office">{{defaultJob}}</a></h2>
+        {% endif %}
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, Glasgow, Cardiff</p>
         <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £41,550</p>
         <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
@@ -275,7 +290,11 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-padding-top-3 govuk-!-margin-left-3 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
       <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
         <span class="govuk-caption-m"><strong>Cabinet Office</strong></span>
-        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Cabinet Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% if data['searchwhat'] %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Cabinet Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% else %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Cabinet Office">{{defaultJob}}</a></h2>
+        {% endif %}
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, Glasgow, Cardiff</p>
         <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £41,550</p>
         <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
@@ -288,7 +307,11 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-margin-left-3 govuk-!-padding-top-1 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
       <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
         <span class="govuk-caption-m"><strong>Department for Education</strong></span>
-        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Department for Education">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% if data['searchwhat'] %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Department for Education">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% else %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Department for Education">{{defaultJob}}</a></h2>
+        {% endif %}
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, Exeter, Manchester</p>
         <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £38,995</p>
         <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
@@ -301,7 +324,11 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-padding-top-3 govuk-!-margin-left-3 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
       <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
         <span class="govuk-caption-m"><strong>Home Office</strong></span>
-        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Home Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% if data['searchwhat'] %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Home Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% else %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Home Office">{{defaultJob}}</a></h2>
+        {% endif %}
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, London, Bristol</p>
         <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £44,900</p>
         <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
@@ -314,7 +341,11 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-margin-left-3 govuk-!-padding-top-1 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
       <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
         <span class="govuk-caption-m"><strong>Department for Education</strong></span>
-        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Department for Education">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% if data['searchwhat'] %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Department for Education">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% else %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Department for Education">{{defaultJob}}</a></h2>
+        {% endif %}
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, Exeter, Manchester</p>
         <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £38,995</p>
         <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
@@ -327,7 +358,11 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-margin-left-3 govuk-!-padding-top-1 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
       <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
         <span class="govuk-caption-m"><strong>Department for Education</strong></span>
-        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Department for Education">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% if data['searchwhat'] %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Department for Education">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% else %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Department for Education">{{defaultJob}}</a></h2>
+        {% endif %}
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, Exeter, Manchester</p>
         <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £38,995</p>
         <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
@@ -340,7 +375,11 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-padding-top-3 govuk-!-margin-left-3 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
       <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
         <span class="govuk-caption-m"><strong>Home Office</strong></span>
-        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Home Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% if data['searchwhat'] %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Home Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% else %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Home Office">{{defaultJob}}</a></h2>
+        {% endif %}
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, London, Bristol</p>
         <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £44,900</p>
         <p class="govuk-body-m">Closes: <strong>23:59, Sunday 19 March 2023</strong></p>
@@ -353,7 +392,11 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-padding-top-3 govuk-!-margin-left-3 govuk-!-padding-bottom-3" style="border-top:0.25px solid grey">
       <div class="govuk-grid-column-three-quarters" style="padding-left:10px;padding-top:10px; padding-bottom:10px;height:190px;">
         <span class="govuk-caption-m"><strong>Cabinet Office</strong></span>
-        <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Cabinet Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% if data['searchwhat'] %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Cabinet Office">{{ data['searchwhat'] | capitalize}}</a></h2>
+        {% else %}
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Cabinet Office">{{defaultJob}}</a></h2>
+        {% endif %}
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, Glasgow, Cardiff</p>
         <p class="govuk-body-m govuk-!-margin-bottom-1">Salary: £41,550</p>
         <p class="govuk-body-m">Closing date for applications: <strong>23:59 19 March 2023</strong></p>

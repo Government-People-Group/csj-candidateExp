@@ -23,7 +23,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
     <h1 class="govuk-heading-l">Civil Service job search</h1>
     <p class="govuk-body-l govuk-!-margin-bottom-6">Find jobs in the Civil Service and central government organisations</p>
 
-    <main class="govuk-main-wrapper" style="background:#f3f2f1; padding-top:20px;padding-bottom:20px; padding-right:0px;padding-left:30px">
+    <main class="govuk-main-wrapper" style="background:#DEE0E2; padding-top:0px;padding-bottom:0px; padding-right:0px;padding-left:0px">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters" style="min-height:150px;max-height:160px">
           <div class="govuk-grid-column-one-half">
@@ -54,16 +54,22 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
           </div>
         </div>
         <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-3"  style="position:relative;min-height:150px;max-height:160px">
-          <div class="govuk-grid-column-full"  style="position:absolute;bottom:0">
-            <button class="govuk-button" style="max-width:92%;min-width:70%" data-module="govuk-button">Search</button>
+
+
+          <div class="govuk-grid-column-full">
+            <button class="govuk-button" style="max-width:92%;min-width:70%; margin-top:80px;margin-bottom:20px" data-module="govuk-button">Search</button>
+              <a href="search-results" class="govuk-link govuk-link--no-visited-state" style="text-align:right;">Advanced search</a>
           </div>
         </div>
+
       </main>
     </div>
 
-  </form>
 
 
+  </form><br><br>
+
+<a href="https://www.civil-service-careers.gov.uk/" class="govuk-link govuk-link--no-visited-state" target="_blank">Discover careers within the Civil Service</a><br><br><br><br>
 
 
   {% endblock %}
