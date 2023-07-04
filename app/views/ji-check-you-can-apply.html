@@ -68,15 +68,21 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
 
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                <label class="govuk-label govuk-checkboxes__label" for="waste">
-                  I confirm that I meet the criteria for this role
-                </label>
-              </div>
-
-            </div>
+            {{ govukRadios({
+              classes: "govuk-radios",
+              idPrefix: "nationality",
+              name: "nationality",
+              items: [
+              {
+              value: "eligible-yes~/ji-nationality",
+              text: "Yes - I meet the criteria for this role"
+              },
+              {
+              value: "eligible-no~/ji-job-ad-full",
+              text: "No - I do not meet the criteria"
+              }
+              ]
+              }) }}
           </fieldset>
 </div>
         <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Continue</button>
