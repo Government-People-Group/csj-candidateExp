@@ -1,0 +1,125 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="interview-confirmed" method="post" novalidate>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
+        <h1 class="govuk-heading-l">
+          Book your interview slot
+        </h1>
+        <p class="govuk-body-m"><strong>Book your interview slot for {{data['searchwhat']}}.</strong></p>
+
+        <p class="govuk-body-m">The interview will be 1 hour long and will include:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>questions on the <a href="">behaviours</a>: Making effective decisions, Communicating and influencing and Seeing the big picture</li>
+          <li>presentation: a 15 minute presentation on ‘managing relationships with key policy stakeholders’</li>
+        </ul>
+
+        <p class="govuk-body-m">Your interview will be:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a remote interview</li>
+          <li>1 hour long</li>
+        </ul>
+
+        <p class="govuk-body-m">Please select a time and date you can attend an interview.</p>
+
+        <div class="govuk-inset-text"><a href="">Tell us if you can not attend any of the interview times</a>.</div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Location
+          </label>
+          <select class="govuk-select" id="interview-location" name="interview-location" style="background-color:#f3f2f1">
+            <option value="Remote" selected>Remote</option>
+
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Select interview date
+          </label>
+          <select class="govuk-select" id="interview-date" name="interview-date">
+            <option value="Monday 16th March" selected>Monday 16th March</option>
+            <option value="updated">Date 2</option>
+            <option value="views">Date 3</option>
+            <option value="comments">Date 4</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Select interview time slot
+          </label>
+          <select class="govuk-select" id="interview-time" name="interview-time">
+            <option value="3pm" selected>3pm</option>
+            <option value="updated">Time 2</option>
+            <option value="views">Time 3</option>
+            <option value="comments">Time 4</option>
+          </select>
+        </div>
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body-m">Your profile shows you need reasonable adjustments. Please <a href="">tell us about your symptoms and how we can help improve your interview</a>.</p>
+          <p class="govuk-body-m">We will contact you about your reasonable adjustments before we confirm your interview slot.</p>
+        </div>
+
+        <p class="govuk-body-m">If you would like to talk to someone about your application, you can contact <a href="">adam.smith@cabinetoffice.gov.uk</a></p>
+
+        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Book your interview</button>
+
+      </div>
+    </div>
+
+
+
+  </form>
+  {% endblock %}

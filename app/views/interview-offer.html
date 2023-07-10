@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="book-interview" method="post" novalidate>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
+        <h1 class="govuk-heading-l">
+          Interview invitation
+        </h1>
+        <p class="govuk-body-m"><strong>Congratulations, your application has been successful and we would like to invite you to an interview.</strong></p>
+
+        <p class="govuk-body-m">The interview will be 1 hour long and will include:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>questions on the <a href="">behaviours</a>: Making effective decisions, Communicating and influencing and Seeing the big picture</li>
+          <li>presentation: a 15 minute presentation on ‘managing relationships with key policy stakeholders’</li>
+        </ul>
+
+        <p class="govuk-body-m">You can <a href="application-feedback">view your application feedback</a> to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>practice for your interview</li>
+          <li>practice <a href="">behaviour questions</a></li>
+        </ul>
+
+        <p class="govuk-body-m">If you would like to talk to someone about your application, you can contact <a href="">adam.smith@cabinetoffice.gov.uk</a></p>
+
+        <div class="govuk-inset-text">If you are no longer interested in this job, you can <a href="">withdraw your application</a> at any time.</div>
+
+        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Book your interview</button>
+
+      </div>
+    </div>
+
+
+
+  </form>
+  {% endblock %}

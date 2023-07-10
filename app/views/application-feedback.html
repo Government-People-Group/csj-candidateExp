@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="portal-interview" method="post" novalidate>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
+        <h1 class="govuk-heading-l">
+          Application feedback
+        </h1>
+        <p class="govuk-body-m">Thank you for applying for {{data['searchwhat']}}.</p>
+        <p class="govuk-body-m"><strong>You were successful at passing this stage of the application process.</strong></p>
+        <p class="govuk-body-m">We hope the feedback on your application will help you.</p><br>
+
+        <p class="govuk-body-m">You can view the feedback from your <a href="application-feedback">online test</a>.</p><br>
+
+
+        <p class="govuk-body-m">Changing and improving</p>
+        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
+        <p class="govuk-body-m">Leadership</p>
+        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
+        <p class="govuk-body-m">Delivering at pace</p>
+        <p class="govuk-body-m">Score 3 - Moderate demonstration</p>
+        <p class="govuk-body-m">Working together</p>
+        <p class="govuk-body-m">Score 5 - Good demonstration</p>
+        <br><br>
+
+        <h1 class="govuk-heading-m">
+          CV and personal statement score
+        </h1>
+
+        <p class="govuk-body-m">Your CV and personal statement were marked against the behaviours.</p><br>
+
+
+        <p class="govuk-body-m">Changing and improving</p>
+        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
+        <p class="govuk-body-m">Leadership</p>
+        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
+        <p class="govuk-body-m">Delivering at pace</p>
+        <p class="govuk-body-m">Score 5 - Good demonstration</p>
+        <p class="govuk-body-m">Working together</p>
+        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
+
+        <h1 class="govuk-heading-m">
+          Score overall
+        </h1>
+
+        <p class="govuk-body-m">You scored 43 out of 56</p><br>
+
+        <p class="govuk-body-m">For help on applying for Civil Service roles, you can:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>review how to write <a href="">behaviour questions</a></li>
+          <li>look at our <a href="">success profiles</a></li>
+        </ul>
+
+        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Back to your dashboard</button>
+
+      </div>
+    </div>
+
+
+
+  </form>
+  {% endblock %}

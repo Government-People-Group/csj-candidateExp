@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="unsuccessful-application-feedback" method="post" novalidate>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
+        <h1 class="govuk-heading-l">
+          Application feedback
+        </h1>
+        <p class="govuk-body-m"><strong>Unfortunately your application for {{data['searchwhat']}} has not been successful.</strong></p>
+
+
+        <p class="govuk-body-m">You can <a href="unsuccessful-application-feedback">view your application feedback</a>.</p>
+
+        <p class="govuk-body-m">For help on applying for Civil Service roles, you can:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="">practise for online tests</a></li>
+          <li>review how to write <a href="">behaviour questions</a></li>
+          <li>look at our <a href="">success profiles</a></li>
+        </ul>
+
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            View your feedback
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Search for a job
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </form>
+  {% endblock %}

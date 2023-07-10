@@ -1,0 +1,526 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "app-width-container",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-1",
+        text: "My dashboard",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+
+
+.govuk-footer__meta {
+  margin-left:10px;
+  margin-right:10px;
+}
+.govuk-width-container {
+  margin-left:0px;
+  margin-right:0px;
+  max-width:100%;
+}
+
+.govuk-header__content {
+    padding-left: 165px;
+}
+
+@media (min-width: 768px)
+.beta-banner {
+    padding-right: 40px;
+    padding-left: 113px;
+}
+
+@media (min-width: 680px)
+.beta-banner {
+    padding-right: 40px;
+    padding-left: 60px;
+}
+.beta-banner {
+    background-color: #d6e8f2;
+    padding: 5px 20px 5px 20px;
+}
+
+.govuk-template__body {
+  background-color: #f3f3f3;
+}
+
+.govuk-main-wrapper {
+  padding:0px;
+}
+@media (min-width: 40.0625em) {
+.govuk-main-wrapper {
+  padding-bottom:0px;
+}
+}
+.introduction-page {
+    margin-top: 50px;
+    margin-bottom: 35px;
+    padding: 50px 36px;
+}
+.introduction-page {
+    width: calc(100% - 144px);
+}
+.introduction-page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: #fff;
+    margin-bottom:50px
+}
+.dash-element {
+    padding: 20px 20px;
+}
+
+.dash-element-left {
+  margin:50px 0px 0px 30px;
+}
+
+.govuk-header__logo {
+  margin-left:30px;
+  width:30%;
+}
+
+.nav-right{
+  float:right;
+}
+
+.govuk-tag--bright-green{
+  background-color:#189d51;
+  color:#fffff;
+}
+
+</style>
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="introduction-page dash-element dash-element-left" style="max-width:100%;margin-top:0px">
+          <div class="govuk-summary-card__title-wrapper" style="background-color:#1a81d966">
+            <h2 class="govuk-summary-card__title" style="font-size:24px">Lisa Smith</h2>
+          </div><br>
+
+          <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Your details
+              </span>
+            </summary>
+
+
+                      <dl class="govuk-summary-list" style="margin-bottom:0px;margin-left:30px;max-width:50%">
+                        <div class="govuk-summary-list__row" style="; ">
+                          <dt class="govuk-summary-list__key" style="width:40%">
+                            Log-in email
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            lsmith@yahoo.com
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                              Change<span class="govuk-visually-hidden"> name</span>
+                            </a>
+                          </dd>
+                        </div>
+                        <div class="govuk-summary-list__row" style="; ">
+                          <dt class="govuk-summary-list__key" style="width:40%">
+                            Log-in password
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            *********
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                              Change<span class="govuk-visually-hidden"> name</span>
+                            </a>
+                          </dd>
+                        </div>
+                      <div class="govuk-summary-list__row" style="; ">
+                        <dt class="govuk-summary-list__key" style="width:40%">
+                          Full name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          Deborah Lisa Smith
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row" >
+                        <dt class="govuk-summary-list__key">
+                          Preferred name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          Lisa Smith
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row" >
+                        <dt class="govuk-summary-list__key">
+                          Nationality
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          British
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row" >
+                        <dt class="govuk-summary-list__key">
+                          Preferred language
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          English
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row" >
+                        <dt class="govuk-summary-list__key">
+                          Refer to me as
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          She / Her
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row" >
+                        <dt class="govuk-summary-list__key">
+                          Contact me
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <p class="govuk-body" >By email</p>
+                          <p class="govuk-body" >lsmith@yahoo.com</p>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row" style="border-bottom:none;">
+                        <dt class="govuk-summary-list__key">
+                          I'm already a Civil Servant
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          No
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div>
+                    </dl>
+          </details>
+
+      </div>
+      </div>
+    </div>
+
+    <div class="govuk-warning-text" style="margin:20px 0px 20px 80px;max-width:50%">
+  <span class="govuk-warning-text__icon" aria-hidden="true" style="background-color:#189d51;border:3px solid #189d51;">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    <a href="interview-offer">You have been offered an interview for Delivery Manager - DWP</a>.
+  </strong>
+</div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dash-element-left" style="margin-right:70px; margin-top:0px">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="introduction-page dash-element dash-element-left" style="max-width:100%;background-color: #f3f3f3; margin-top:0px;">
+      <h1 class="govuk-heading-l" style="margin-bottom:0px; margin-left:30px;">Search for a job</h1>
+      <div class="govuk-grid-column-three-quarters" style="min-height:150px;max-height:160px">
+        <div class="govuk-grid-column-one-half">
+          <p class="govuk-body-m govuk-!-margin-top-3 govuk-!-margin-bottom-2"><strong>What</strong></p>
+          {{ govukInput({
+            label: {
+              text: 'Enter job title, skill or keywords'
+            },
+            id: "searchwhat",
+            name: "searchwhat",
+            value: data['searchwhat'],
+            classes: "govuk-input--width-25",
+            autocomplete: "search-term-input"
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <p class="govuk-body-m govuk-!-margin-top-3 govuk-!-margin-bottom-2"><strong>Where</strong></p>
+          {{ govukInput({
+            label: {
+              text: 'Enter a postcode, town or region'
+            },
+            id: "searchwhere",
+            name: "searchwhere",
+            value: data['searchwhere'],
+            classes: "govuk-input--width-25",
+            autocomplete: "location-search-input"
+          }) }}
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-3"  style="position:relative;min-height:150px;max-height:160px">
+        <div class="govuk-grid-column-full"  style="position:absolute;bottom:0">
+          <form action="portal-gds-search-results" method="post" novalidate>
+          <button class="govuk-button" style="max-width:92%;min-width:70%" data-module="govuk-button">Search</button>
+          </form>
+        </div>
+      </div>
+      </div></div></div>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dash-element-left" style="margin-right:70px; margin-top:0px">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half" style="padding:0 0 0 15px">
+          <div class="introduction-page dash-element dash-element-left">
+            <div class="govuk-summary-card__title-wrapper"  style="background-color:#c1cdcd">
+              <h2 class="govuk-summary-card__title"></h2>
+            </div>
+
+            <dl class="govuk-summary-list" style="margin-bottom:0px;margin-left:30px;max-width:90%">
+              <h2 class="govuk-summary-card__title">Important</h2>
+              <div class="govuk-summary-list__row" style="border:none">
+
+                <dd class="govuk-summary-list__value"  style="; width:20%;padding-right:0px">
+                  <a class="govuk-link" href="#"  style="font-weight:bold;font-size:22px;">Delivery Manager - DWP</a><br><a href="interview-offer" class="govuk-link govuk-link--no-visited-state"  style=";font-size: 1rem;">Book your interview</a><span id="notifications" class="moj-notification-badge" style="font-size:12px;border-radius:0px; padding:2px; margin-left:10px;background-color: #ffffff;border-color:#000000; color:#000000">NEW</span><br><a href="#" class="govuk-link govuk-link--no-visited-state"  style=";font-size: 1rem;">Set up alerts for jobs like this</a><br><br>
+                </dd>
+                <dd class="govuk-summary-list__actions" style="text-align:left; padding-left:10px">
+                  <strong class="govuk-tag govuk-tag--bright-green" style="font-size:0.8rem">
+                    interview offered
+                  </strong>
+                </dd>
+
+              </div>
+              <h2 class="govuk-summary-card__title">Submitted</h2>
+              <div class="govuk-summary-list__row" style="border:none">
+
+                <dd class="govuk-summary-list__value"  style="; width:20%;padding-right:0px">
+                  <a class="govuk-link" href="#"  style="font-weight:bold;font-size:22px;">Delivery Manager - DWP</a><br><a href="#" class="govuk-link govuk-link--no-visited-state"  style=";font-size: 1rem;">Set up alerts for jobs like this</a><br><br>
+                </dd>
+                <dd class="govuk-summary-list__actions" style="text-align:left; padding-left:10px">
+                  <strong class="govuk-tag" style="font-size:0.8rem">
+                    interview in 3 days
+                  </strong>
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+
+                <dd class="govuk-summary-list__value"  style="; width:20%;padding-right:0px">
+                  <a class="govuk-link" href="#"  style="font-weight:bold;font-size:22px;">Agile Lead - HMRC</a><br><a href="#" class="govuk-link govuk-link--no-visited-state"  style=";font-size: 1rem;">Set up alerts for jobs like this</a><br><br>
+                </dd>
+                <dd class="govuk-summary-list__actions" style="text-align:left; padding-left:10px">
+                  <strong class="govuk-tag govuk-tag--blue" style="font-size:0.8rem;">
+                    received
+                  </strong>
+                </dd>
+
+              </div><br>
+              <h2 class="govuk-summary-card__title">Not submitted yet</h2>
+              <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value"  style="; width:20%;padding-right:0px">
+                  <a class="govuk-link" href="#"  style="font-size:22px;font-weight:bold;">Project Lead - Defra</a><br><a href="#" class="govuk-link govuk-link--no-visited-state"  style=";font-size: 1rem;font-weight:bold;">Finish this application</a><br><a href="#" class="govuk-link govuk-link--no-visited-state"  style=";font-size: 1rem;">Set up alerts for jobs like this</a><br><br>
+                </dd>
+                <dd class="govuk-summary-list__actions" style="text-align:left; padding-left:10px">
+                  <strong class="govuk-tag govuk-tag--red" style="font-size:0.8rem; background-color:#d4351c; color:#ffffff">
+                    deadline in 2 days
+                  </strong>
+                </dd>
+
+              </div><br>
+              <h2 class="govuk-summary-card__title">Previous applications</h2>
+
+            </dl>
+            <br>
+
+            <a href="#" class="govuk-link govuk-link--no-visited-state"  style=";margin-left:30px; font-size: 1.1875rem;">See previous applications</a><br>
+        </div>
+
+
+        <div class="introduction-page dash-element dash-element-left">
+          <div class="govuk-summary-card__title-wrapper" style="background-color:#c1cdcd">
+            <h2 class="govuk-summary-card__title">Reuse your information</h2>
+          </div>
+        <p class="govuk-body"  style=";padding-top:10px;margin-left:30px">You can use the following info you've already given us in your next application:</p>
+        <dl class="govuk-summary-list" style="margin-bottom:0px;margin-left:30px;max-width:90%">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value"  style="; width:30%"">
+              <a class="govuk-link" href="personal-statement-2"  style=";">Personal statement</a>
+            </dd>
+            <dd class="govuk-summary-list__actions" style=";">
+              Last changed 3 May 2023
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row" style="border-bottom:none">
+            <dd class="govuk-summary-list__value"  style="; width:30%"">
+              <a class="govuk-link" href="cv"  style=";">CV</a>
+            </dd>
+            <dd class="govuk-summary-list__actions" style=";">
+              Last changed 19 May 2023
+            </dd>
+          </div><br><br>
+          <a href="portal-gds-manage-saved-jobs" class="govuk-link govuk-link--no-visited-state"  style="font-size: 1rem;">Manage the info you can reuse</a><br>
+
+        </dl>
+
+      </div>
+
+        </div>
+        <div class="govuk-grid-column-one-half" style="padding:0px 0px 0px 0px">
+          <div class="introduction-page dash-element dash-element-left">
+            <div class="govuk-summary-card__title-wrapper" style="background-color:#c1cdcd">
+              <h2 class="govuk-summary-card__title">Saved jobs</h2>
+            </div>
+            <dl class="govuk-summary-list" style="margin-bottom:0px;margin-left:30px;max-width:90%">
+              <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value"  style="; width:30%"">
+                  <a class="govuk-link" href="#"  style=";">Admin Manager - Home Office</a>
+                </dd>
+                <dd class="govuk-summary-list__actions" style=";">
+                  Closes 28 June 2023
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value"  style="; width:30%"">
+                  <a class="govuk-link" href="#"  style=";">Digital Delivery Manager - HMRC</a>
+                </dd>
+                <dd class="govuk-summary-list__actions" style=";">
+                  Closes 19 May 2023
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value"  style="; width:30%"">
+                  <a class="govuk-link" href="#"  style=";">Service Designer - DWP</a>
+                </dd>
+                <dd class="govuk-summary-list__actions" style=";">
+                  Closes 30 May 2023
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row" style="border-bottom:none">
+                <dd class="govuk-summary-list__value"  style="; width:30%"">
+                  <a class="govuk-link" href="#"  style=";">Technical Architect - Dept for Education</a>
+                </dd>
+                <dd class="govuk-summary-list__actions" style=";">
+                  Closes 8 July 2023
+                </dd>
+              </div><br><br>
+              <a href="portal-gds-manage-saved-jobs" class="govuk-link govuk-link--no-visited-state"  style="font-size: 1rem;">Manage your saved jobs</a><br>
+
+            </dl>
+        </div>
+
+
+
+
+        <div class="introduction-page dash-element dash-element-left">
+          <div class="govuk-summary-card__title-wrapper" style="background-color:#c1cdcd">
+            <h2 class="govuk-summary-card__title">Job alerts</h2>
+          </div>
+          <dl class="govuk-summary-list" style="margin-bottom:0px;margin-left:30px;max-width:90%">
+            <div class="govuk-summary-list__row" style="border-bottom:none">
+              <dd class="govuk-summary-list__value"  style="; width:30%"">
+                <a class="govuk-link" href="#"  style=";">Admin Manager - Home Office</a><span id="notifications" class="moj-notification-badge" style="font-size:12px;border-radius:0px; padding:2px; margin-left:10px;background-color: #ffffff;border-color:#000000; color:#000000">NEW</span>
+              </dd>
+              <dd class="govuk-summary-list__actions" style=";">
+                Closes 28 June 2023
+              </dd>
+            </div>
+          <br><br>
+            <a href="#" class="govuk-link govuk-link--no-visited-state"  style="font-size: 1rem;">Manage your job alerts</a><br>
+
+          </dl>
+      </div>
+
+
+        <div class="introduction-page dash-element dash-element-left">
+          <div class="govuk-summary-card__title-wrapper" style="background-color:#b1b4b65e">
+            <h2 class="govuk-summary-card__title">Join our talent pool</h2>
+          </div>
+        <p class="govuk-body"  style=";padding-top:10px;margin-left:30px">You can:</p>
+        <ul class="govuk-list govuk-list--bullet" style=";margin-left:30px">
+          <li>let us contact you if we find jobs we think you'd be a good fit for</li>
+
+        </ul>
+        <a href="#" class="govuk-link govuk-link--no-visited-state"  style=";margin-left:50px; font-size: 1rem;">Start</a>
+      </div>
+
+        </div>
+
+    </div><br>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="introduction-page dash-element dash-element-left" style="max-width:100%;background-color: #f3f3f3; margin-top:0px;">
+
+
+
+          <div class="govuk-grid-column-one-third" style="padding-left:30px;padding-right:30px">
+            <p style="font-size:1.7vw; font-weight:bold; margin-bottom:10px">Preparing for your interview</p>
+            <img src="public/images/get-assessed.jpeg" style="max-width:100%;object-fit:cover" alt="">
+            <p style="font-size:1.2vw;">Our advice on how to prepare for your interview in 3 days.</p>
+            <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em;">Find out more</a>
+          </div>
+          <div class="govuk-grid-column-one-third" style="padding-left:30px;padding-right:30px">
+            <p style="font-size:1.7vw; font-weight:bold; margin-bottom:10px">After your interview</p>
+            <img src="public/images/reuse.png" style="max-width:100%;" alt="">
+            <p style="font-size:1.2vw;">Find out what happens once you've had your interview with us.</p>
+            <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em;">Find out more</a>
+          </div>
+
+          <div class="govuk-grid-column-one-third" style="padding-left:30px;padding-right:30px">
+            <p style="font-size:1.7vw; font-weight:bold; margin-bottom:10px">Reusing info from applications</p>
+            <img src="public/images/manage-job-alerts.jpeg" style="max-width:100%;" alt="">
+            <p style="font-size:1.2vw;">How to reuse something you've already told us, so you save time and effort.</p>
+            <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em;">Find out more</a>
+          </div>
+
+
+      </div></div></div>
+
+
+
+
+    </div><br><br><br>
+
+
+
+{% endblock %}

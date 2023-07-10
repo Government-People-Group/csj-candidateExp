@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="portal-interview" method="post" novalidate>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
+        <h1 class="govuk-heading-l">
+          Interview confirmation
+        </h1>
+        <p class="govuk-body-m"><strong>Your interview has successfully been booked.</strong></p>
+
+        <p class="govuk-body-m">The interview will be 1 hour long and will include:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>questions on the <a href="">behaviours</a>: Making effective decisions, Communicating and influencing and Seeing the big picture</li>
+          <li>presentation: a 15 minute presentation on ‘managing relationships with key policy stakeholders’</li>
+        </ul>
+
+        <p class="govuk-body-m">Your interview is at {{data['interview-time']}} on {{data['interview-date']}}</p>
+
+
+        <p class="govuk-body-m">Location: remote interview. You will be emailed the interview invite by Friday 13 March 2024.</p>
+
+        <div class="govuk-inset-text">We have received your reasonable adjustments and will email you to confirm they will be met.</div><br><br>
+
+        <h1 class="govuk-heading-m">
+          Next steps
+        </h1>
+
+        <p class="govuk-body-m">You can view your <a href="application-feedback">application feedback</a> to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>look at your strengths and weaknesses</li>
+          <li>practice for your interview</li>
+        </ul>
+
+        <p class="govuk-body-m">Your interview will include <a href="">behaviour questions</a>. You should prepare answers for questions on:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>communicating and influencing - communicate purpose and direction with clarity, integrity and enthusiasm. Respect the needs, responses and opinions of others</li>
+          <li>changing and improving - seek out opportunities to create effective change and suggest innovative ideas for improvement. Review ways of working, including seeking and providing feedback</li>
+        </ul>
+
+        <p class="govuk-body-m">Before your interview, you can:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>review the <a href="">Policy Advisor person specifications</a></li>
+          <li>look at our <a href="">success profiles</a></li>
+        </ul><br><br>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Back to your dashboard
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Make a change to my interview
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </form>
+  {% endblock %}
