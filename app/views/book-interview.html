@@ -1,17 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
- – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-{% if data['signedin'] == "true" %}
-{% include "includes/header-signed-in.html" %}
-{% elif data['signedin'] == "false" %}
-{% include "includes/header-home.html" %}
-{% else %}
-{% include "includes/header-home.html" %}
-{% endif %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "portal-interview",
+        text: "Go back to my dashboard",
+        active: true
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block content %}

@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "portal-interview",
+        text: "Go back to my dashboard",
+        active: true
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="book-interview" method="post" novalidate>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
+        <h1 class="govuk-heading-l">
+          Interview invitation
+        </h1>
+        <p class="govuk-body-m">Congratulations, you passed your interview for <a href="">{{data['searchwhat']}}</a>.</p>
+
+        <p class="govuk-body-m"><strong>We would like to offer you a place on our reserve list.</strong></p>
+
+        <p class="govuk-body-m">We had more than one candidate pass the interview for {{data['searchwhat']}} and this job role has now been filled.</p>
+
+        <p class="govuk-body-m">If you accept a place on the reserve list, your application will be shown to other Civil Service departments recruiting for similar job roles. You:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>do not have to go on the reserve list, and you can withdraw at any time</li>
+          <li>may receive a job offer</li>
+          <li>will be placed on the reserve list for 12 months</li>
+          <li>can still apply for other roles while on the reserve list</li>
+        </ul>
+
+        <p class="govuk-body-m">If you would like to talk to someone about your application, you can contact <a href="">adam.smith@cabinetoffice.gov.uk</a></p><br><br>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Would you like to be placed on the reserve list?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="reserve-list" name="reserve-list" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="reserve-list">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="reserve-list-2" name="reserve-list" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="reserve-list-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Submit</button>
+
+      </div>
+    </div>
+
+
+
+  </form>
+  {% endblock %}
