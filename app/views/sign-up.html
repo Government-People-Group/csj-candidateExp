@@ -1,0 +1,165 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/header-sign-in.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% if data['apply'] | length > 1 %}
+{% set buturl = "check-you-can-apply?signedin=true" %}
+{% else %}
+{% set buturl = "home?signedin=true" %}
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Create an account</h1>
+    </div>
+  </div><br>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukInput({
+        label: {
+          text: "First name",
+          classes: "govuk-label--m"
+        },
+        id: "email",
+        name: "email",
+        classes: "govuk-input--width-30",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name",
+          classes: "govuk-label--m"
+        },
+        id: "email",
+        name: "email",
+        classes: "govuk-input--width-30",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text: "You'll need this email address to sign into your account"
+        },
+        id: "email",
+        name: "email",
+        classes: "govuk-input--width-30",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Re-enter your email address to confirm",
+          classes: "govuk-label--m"
+        },
+        id: "email",
+        name: "email",
+        classes: "govuk-input--width-30",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+
+      <br><br><br>
+
+      {{ govukInput({
+        label: {
+          text: "Create a password",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text: "Your password should have at least 8 characters and not include your name, email address or commonly used words"
+        },
+        id: "email",
+        name: "email",
+        classes: "govuk-input--width-30",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Re-enter your password to confirm",
+          classes: "govuk-label--m"
+        },
+
+        id: "email",
+        name: "email",
+        classes: "govuk-input--width-30",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+
+      <br><br><br>
+
+      {{ govukRadios({
+        classes: "govuk-radios--small govuk-radios--inline",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "Are you a civil servant or an employee of a public body?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Some public bodies are accredited by the Civil Service Commission allowing their employees to view vacancies advertised to civil servants"
+        },
+        items: [
+          {
+            value: "month",
+            text: "Yes"
+          },
+          {
+            value: "year",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      <br><br><br>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Terms and conditions</a> (opens in a new tab)</p>
+
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                I agree to the terms and conditions
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+
+      <a class ="govuk-button" style="max-width:100%;min-width:40%" href="{{ buturl }}">Create account</a>
+
+      </div>
+  {% endblock %}
