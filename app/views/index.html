@@ -72,6 +72,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   }) }}
 
   <a href="design-notes" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
+
+  {{ govukButton({
+    text: "Interview offer",
+    href: "portal-interview"
+  }) }}<br>
+
+  {{ govukButton({
+    text: "Pre-employment checks stage",
+    href: "portal-pec"
+  }) }}<br>
+
   <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
 
     {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
