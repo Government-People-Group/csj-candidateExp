@@ -1,0 +1,190 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+{% include 'hub/candidate/includes/tab-header-pec-list.html' %}
+
+
+    <div class="govuk-tabs" style="margin-top:0px">
+
+      <div class="govuk-tabs__panel" id="pecs">
+
+        <h2 class="govuk-heading-l" style="margin-bottom:10px">About this page</h2>
+        <p class="govuk-body-l" style="margin-bottom:15px">See how each of your pre-employment checks is progressing.</p>
+        <div class="govuk-inset-text">You can click on the name of any check for more information about the check, how it's progressing and how long it might take.</div><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"><br>
+
+        {% if data ['comms'] =='yes' %}
+                <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                  <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                      Regular update requested
+                    </h2>
+                  </div>
+                  <div class="govuk-notification-banner__content" style="max-width: 100%;">
+                    <h3 class="govuk-notification-banner__heading"  style="max-width: 100%;">
+                      We will send you a regular update on how your checks are progressing.<br>
+
+                    </h3>
+
+                  {% if data ['contact'] =='email' %}
+                    <p class="govuk-body"  style="max-width: 100%;">We will send it to {{data['contact-by-email']}} {{data['frequency']}}. You can ask us to <a href="">stop sending updates</a> at any time.</p>
+                  {% elif data ['contact'] =='text' %}
+                    <p class="govuk-body"  style="max-width: 100%;">We will send it to {{data['contact-by-text']}} {{data['frequency']}}. You can ask us to <a href="">stop sending updates</a> at any time.</p>
+                  {% endif %}
+
+                  </div>
+                </div>
+
+        {% endif %}
+
+        <br>
+
+        <h2 class="govuk-heading-m">Status of your pre-employment checks<span style="font-weight:normal; font-size:20px; padding-left:10px">(5 of 9 checks complete)</span></h2>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            You need to complete an action on the Right to Work check.
+          </strong>
+        </div>
+      <br>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            <ol class="app-task-list">
+              <li>
+
+                <ul class="app-task-list__items" style="margin-bottom:30px">
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="rtw-page" aria-describedby="eligibility-status">
+                        Right to Work
+                      </a>
+                    </span>
+                    <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="financial-evidence-status" style="float:none">candidate action needed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="eehc-page" aria-describedby="eligibility-status">
+                        Employment History
+                      </a>
+                    </span>
+                    {% if data['eehc-status'] == 'Passed' %}
+                      <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+                    {% elif data['eehc-status'] == 'risk-assessment' %}
+                      <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status" style="float:none">References needed</strong>
+                    {% elif data['eehc-status'] == 'failed' %}
+                      <strong class="govuk-tag govuk-tag--black app-task-list__tag" id="financial-evidence-status" style="float:none">Failed</strong>
+                    {% elif data['eehc-status'] == 'in-progress' %}
+                      <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="float:none">In progress</strong>
+                    {% elif data['duplicate-eehc'] == 'yes' %}
+                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started - duplicate check available</strong>
+                    {% else %}
+                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                    {% endif %}
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        References
+                      </a>
+                    </span>
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                  </li>
+                  <li class="app-task-list__item">
+
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="prev-civil-service-page" aria-describedby="eligibility-status">
+                        Previous Civil Service Employment
+                      </a>
+                    </span>
+  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        Pensions
+                      </a>
+                    </span>
+  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        Self Employment
+                      </a>
+                    </span>
+  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="dbs-page" aria-describedby="eligibility-status">
+                        DBS (Disclosure & Barring Service)
+                      </a>
+                    </span>
+  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="float:none">In progress</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        Criminal Record Check
+                      </a>
+                    </span>
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        National Insurance Number Check
+                      </a>
+                    </span>
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                  </li>
+                  </ul>
+
+                  <form action="tab-pec-list-comms-options" method="post" novalidate>
+                  <button class="govuk-button" data-module="govuk-button" style="margin-left:30px; margin-top:20px">
+                    Receive updates about the progress of my checks
+                  </button>
+                  </form>
+                  </li>
+                  <li>
+
+
+
+
+                      </ol>
+
+
+                              </div>
+
+
+                </div>
+              </div>
+
+</div>
+</div>
+
+
+{% endblock %}
