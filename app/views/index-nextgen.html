@@ -1,0 +1,218 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#past-day">
+            Prototype
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-week">
+            User journeys
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-month">
+            Requirement documents
+          </a>
+        </li>
+
+      </ul>
+      <div class="govuk-tabs__panel" id="past-day">
+        <h2 class="govuk-heading-l">Prototype</h2>
+        <h2 class="govuk-heading-m">Step 1: vacancy is set up</h2>
+        <h2 class="govuk-heading-m">Step 2: candidate finds role</h2>
+        <h2 class="govuk-heading-m">Step 3: candidate applies</h2>
+        <h2 class="govuk-heading-m">Step 4: candidates are sifted</h2>
+        <h2 class="govuk-heading-m">Step 5: candidate gets interview offer</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width:45%">Event</th>
+              <th scope="col" class="govuk-table__header" style="width:30%">Decision</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header">Confidence</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/portal-interview" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Portal advises an interview has been offered</a><br><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      About this page
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    At this point, the candidate will have been sent an email advising them an interview has been offered to them.<br><br>The email may advise logging into their candidate portal to view the details. The candidate may also see this version of their portal if they log in after an interview has been offered but before they have actioned that offer further (i.e. booked an interview or withdrawn their application).
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  high
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/interview-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate is shown interview invitation</a><br><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      About this page
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Candidate is given interview info e.g. duration, itinerary.<br><br>On this page candidate can link to:
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li><a href="" class="govuk-link govuk-link--no-visited-state">behaviours</a></li>
+                      <li><a href="" class="govuk-link govuk-link--no-visited-state">application feedback</a></li>
+                      <li><a href="" class="govuk-link govuk-link--no-visited-state">behaviour question practice</a></li>
+                      <li><a href="" class="govuk-link govuk-link--no-visited-state">email to vacancy holder</a></li>
+                      <li><a href="" class="govuk-link govuk-link--no-visited-state">withdraw application</a></li>
+                    </ul>
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--yellow">
+                  medium
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/book-interview" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate books interview</a><br><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      About this page
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet felis sed nibh tristique feugiat.<br><br>Curabitur vitae felis ac ante placerat tincidunt.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--grey">
+                  untested
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                  low
+                </strong>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/reserve-list-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate offered place on reserve list</a><br><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      About this page
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet felis sed nibh tristique feugiat.<br><br>Curabitur vitae felis ac ante placerat tincidunt.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Accepts
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <a href="" class="govuk-link govuk-link--no-visited-state">Returns to portal with message advising has been added to reserve list</a><br><br>
+                    Status - <strong class="govuk-tag">
+                      TESTED
+                    </strong>
+                    <br><br>
+                    Confidence - <strong class="govuk-tag govuk-tag--yellow">
+                      medium
+                    </strong>
+                  </div>
+                </details>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Declines
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <a href="" class="govuk-link govuk-link--no-visited-state">Returns to portal with message advising has rejected chance to join reserve list</a><br><br>
+                    Status - <strong class="govuk-tag">
+                      TESTED
+                    </strong>
+                      <br><br>
+                    Confidence - <strong class="govuk-tag govuk-tag--green">
+                      high
+                    </strong>
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  high
+                </strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+        <h2 class="govuk-heading-l">User journeys</h2>
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+        <h2 class="govuk-heading-l">Requirement documents</h2>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+{% endblock %}
