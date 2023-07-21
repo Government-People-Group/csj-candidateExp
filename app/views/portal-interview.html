@@ -244,6 +244,23 @@
       </div>
     </div>
 
+{% if data['interview-booked'] =="yes" %}
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner" style="margin:20px 0px 20px 80px;max-width:35%">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading" style="max-width:100%">
+      Your interview is booked for 3pm on Monday 16 March 2024.
+    </h3>
+    <p class="govuk-body">If you need to you can <a class="govuk-notification-banner__link" href="#">change your interview slot</a> up to 2 days before the interview.</p>
+  </div>
+  </div>
+{% else %}
     <div class="govuk-warning-text" style="margin:20px 0px 20px 80px;max-width:50%">
   <span class="govuk-warning-text__icon" aria-hidden="true" style="background-color:#189d51;border:3px solid #189d51;">!</span>
   <strong class="govuk-warning-text__text">
@@ -251,6 +268,7 @@
     <a class="govuk-link--no-visited-state" href="interview-offer">You have been offered an interview for Policy Manager - DWP</a>.
   </strong>
 </div>
+{% endif %}
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dash-element-left" style="margin-right:70px; margin-top:0px">
 
@@ -310,12 +328,22 @@
               <div class="govuk-summary-list__row" style="border:none;">
 
                 <dd class="govuk-summary-list__value"  style="; width:20%;padding-right:0px">
-                  <a class="govuk-link govuk-link--no-visited-state" href="dwp-application-home?searchwhat=Delivery Manager&dept=DWP"  style="font-weight:bold;font-size:22px;">Delivery Manager - DWP</a><br><a href="interview-offer" class="govuk-link govuk-link--no-visited-state"  style=";font-size: 1rem;">Book your interview</a><span id="notifications" class="moj-notification-badge" style="font-size:12px;border-radius:0px; padding:2px; margin-left:10px;background-color: #ffffff;border-color:#000000; color:#000000">NEW</span><br><a href="#" class="govuk-link govuk-link--no-visited-state"  style=";font-size: 1rem;">Set up alerts for jobs like this</a><br><br>
+                  <a class="govuk-link govuk-link--no-visited-state" href="dwp-application-home?searchwhat=Delivery Manager&dept=DWP"  style="font-weight:bold;font-size:22px;">Delivery Manager - DWP</a><br>
+                  {% if data['interview-booked'] !="yes" %}
+                  <a href="interview-offer" class="govuk-link govuk-link--no-visited-state"  style=";font-size: 1rem;">Book your interview</a><span id="notifications" class="moj-notification-badge" style="font-size:12px;border-radius:0px; padding:2px; margin-left:10px;background-color: #ffffff;border-color:#000000; color:#000000">NEW</span><br>
+                  {% endif %}
+                  <a href="#" class="govuk-link govuk-link--no-visited-state"  style=";font-size: 1rem;">Set up alerts for jobs like this</a><br><br>
                 </dd>
                 <dd class="govuk-summary-list__actions" style="text-align:left; padding-left:10px">
+                  {% if data['interview-booked'] !="yes" %}
                   <strong class="govuk-tag govuk-tag--bright-green" style="font-size:0.8rem">
                     interview offered
                   </strong>
+                  {% else %}
+                  <strong class="govuk-tag" style="font-size:0.8rem">
+                    interview booked
+                  </strong>
+                  {% endif %}
                 </dd>
 
               </div>

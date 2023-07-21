@@ -50,7 +50,7 @@
     {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
-      <form action="portal-interview" method="post" novalidate>
+
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
         <h1 class="govuk-heading-l">
@@ -94,12 +94,21 @@
         </ul><br><br>
 
         <div class="govuk-button-group">
+          {% if data['appl-homepage']=="yes" %}
+          <form action="dwp-application-home?interview-booked=yes" method="post" novalidate>
+          <button class="govuk-button" data-module="govuk-button">
+            Back to your application page
+          </button>
+          {% else %}
+          <form action="portal-interview?interview-booked=yes" method="post" novalidate>
           <button class="govuk-button" data-module="govuk-button">
             Back to your dashboard
           </button>
+          {% endif %}
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Make a change to my interview
           </button>
+          </form>
         </div>
 
       </div>

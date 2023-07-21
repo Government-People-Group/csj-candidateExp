@@ -73,7 +73,7 @@
     <br><br>
 
 
-
+    {% if data['interview-booked'] !="yes" %}
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true" style="background-color:#189d51;border:3px solid #189d51;">!</span>
       <strong class="govuk-warning-text__text">
@@ -81,26 +81,82 @@
         You have been offered an interview for this job. You should book an interview slot as soon as possible.
       </strong>
     </div>
-
+    <form action="interview-offer?appl-homepage=yes" method="post" novalidate>
     <button class="govuk-button" data-module="govuk-button">
       Book your interview
     </button><br>
-
     <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      I need to ask for a reasonable adjustment for my interview
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet libero vitae massa euismod elementum. Aenean vitae ullamcorper lorem. Duis molestie leo nec tellus pharetra malesuada. Sed ex sapien, cursus in lectus sed, porta interdum risus. Mauris nibh purus, ultrices sit amet ornare ac, semper eget quam. Sed nec elementum turpis, sit amet venenatis nisi.<br><br><a href="">Ask for a reasonable adjustment</a>
-  </div>
-</details>
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I need to ask for a reasonable adjustment for my interview
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet libero vitae massa euismod elementum. Aenean vitae ullamcorper lorem. Duis molestie leo nec tellus pharetra malesuada. Sed ex sapien, cursus in lectus sed, porta interdum risus. Mauris nibh purus, ultrices sit amet ornare ac, semper eget quam. Sed nec elementum turpis, sit amet venenatis nisi.<br><br><a href="">Ask for a reasonable adjustment</a>
+      </div>
+    </details>
+    {% else %}
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Your interview is booked for 3pm on Monday 16 March 2024.
+        </h3>
+        <p class="govuk-body">If you need to you can <a class="govuk-notification-banner__link" href="#">change your interview slot</a> up to 2 days before the interview.</p>
+      </div>
+      </div>
+    {% endif %}
+
+
+
+
 
 <br><br>
 <h2 class="govuk-heading-m">Messages about this job</h2>
 <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections" style="background-color:#f3f2f1;padding:20px">
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="font-size:0.8em">
+          You have booked your interview <span style="padding-left:30px; font-weight:normal; font-size:0.8em">23 July 2023</span>
+        </span>
+      </h2>
 
+    </div>
+    <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+      <p class="govuk-body">Congratulations, your application has been successful and we would like to invite you to an interview.<br><br>The interview will be 1 hour long and will include:
+
+  questions on the behaviours: Making effective decisions, Communicating and influencing and Seeing the big picture
+  presentation: a 15 minute presentation on ‘managing relationships with key policy stakeholders’
+  <br><br>You can view your application feedback to:
+
+  practice for your interview
+  practice behaviour questions
+  <br><br>If you would like to talk to someone about your application, you can contact adam.smith@cabinetoffice.gov.uk
+
+  <br><br>If you are no longer interested in this job, you can withdraw your application at any time.</p>
+  <button class="govuk-button" data-module="govuk-button">
+  Book your interview
+  </button>
+      <ul class="govuk-list">
+        <li><br>
+          <a class="govuk-link" href="#">View your application feedback</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Contact the vacancy holder</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Withdraw your application</a>
+        </li>
+      </ul>
+    </div>
+  </div>
   <div class="govuk-accordion__section">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
@@ -262,38 +318,32 @@ practice behaviour questions
               <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:16px;font-weight:normal">View your application feedback</a><br><br>
             </h3>
           </div>
-
-
         </li>
+        <li class="app-step-nav__step" id="get-a-provisional-licence">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><img src="public/images/green-tick.png" style="max-width:50%;"><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
 
+              <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                You booked your interview
+              </span><br>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:16px;font-weight:normal">See your booking</a><br><br>
+            </h3>
+          </div>
+        </li>
       </ol>
     </div><br>
 
     <div data-module="appstepnav"id="step-by-step-navigation" >
       <h2 class="govuk-heading-m">Next steps</h2>
       <ol class="app-step-nav__steps">
-        <li class="app-step-nav__step js-step app-step-nav__step" aria-current="step" id="check-you-re-allowed-to-drive">
-          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none">
-            <h3 class="app-step-nav__title">
-              <span class="app-step-nav__circle app-step-nav__circle--number">
-                <span class="app-step-nav__circle-inner">
-                  <span class="app-step-nav__circle-background">
-                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                  </span>
-                </span>
-              </span>
 
-              <span class="js-step-title">
-                You book an interview slot
-              </span>
-
-              <br><br>
-            </h3>
-          </div>
-
-
-
-        </li>
         <li class="app-step-nav__step" id="get-a-provisional-licence">
           <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
             <h3 class="app-step-nav__title">
@@ -308,7 +358,7 @@ practice behaviour questions
               <span class="js-step-title" style="color:#505a5f;font-weight:normal">
                 We interview you
               </span><br>
-              <br>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:16px;font-weight:normal">How to prepare for your interview</a><br><br>
             </h3>
           </div>
         </li>
