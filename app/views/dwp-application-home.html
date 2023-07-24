@@ -65,10 +65,22 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-heading-l" style="margin-bottom:10px">
-      <strong style="padding-right:20px;">{{ data['searchwhat'] | capitalize}}</strong></span>
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
 
-    <span class="govuk-caption-xl">{{ data['dept']}}</span>
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
+    <span class="govuk-heading-l" style="margin-bottom:10px">
+      <strong style="padding-right:20px;">{{ Job }}</strong></span>
+
+    <span class="govuk-caption-xl">{{ Dept }}</span>
 
     <br><br>
 

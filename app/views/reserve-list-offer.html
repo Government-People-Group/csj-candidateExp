@@ -49,14 +49,26 @@
     <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
     {% endif %}
 
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
     <div class="govuk-grid-column-two-thirds">
       <form action="book-interview" method="post" novalidate>
       <span class="govuk-caption-l">
-        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
+        <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept}}</span><br>
         <h1 class="govuk-heading-l">
-          Interview invitation
+          Reserve list invitation
         </h1>
-        <p class="govuk-body-m">Congratulations, you passed your interview for <a href="">{{data['searchwhat']}}</a>.</p>
+        <p class="govuk-body-m">Congratulations, you passed your interview for <a href="">{{Job}} - {{Dept}}</a>.</p>
 
         <p class="govuk-body-m"><strong>We would like to offer you a place on our reserve list.</strong></p>
 
@@ -84,13 +96,13 @@
 
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="reserve-list" name="reserve-list" type="radio" value="yes">
+                <input class="govuk-radios__input" id="reserve-list" name="reserve-list" type="radio" value="yes~/portal-reserve-list?reserve-list=yes">
                 <label class="govuk-label govuk-radios__label" for="reserve-list">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="reserve-list-2" name="reserve-list" type="radio" value="no">
+                <input class="govuk-radios__input" id="reserve-list-2" name="reserve-list" type="radio" value="no~/portal-reserve-list?reserve-list=no">
                 <label class="govuk-label govuk-radios__label" for="reserve-list-2">
                   No
                 </label>
