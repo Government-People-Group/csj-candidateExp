@@ -68,52 +68,25 @@
         <h1 class="govuk-heading-l">
           Application feedback
         </h1>
-        <p class="govuk-body-m">Thank you for applying for {{data['searchwhat']}}.</p>
-        <p class="govuk-body-m"><strong>Unfortunately, your application was not successful this time.</strong></p>
+        <p class="govuk-body-m">Thank you for applying for {{Job}}.</p>
+        <p class="govuk-body-m"><strong>Unfortunately, your application was not successful.</strong> You can view your <a href="application-feedback">online test feedback</a>.</p>
         <p class="govuk-body-m">We hope the feedback on your application will help you.</p><br>
 
-        <p class="govuk-body-m">You can view the feedback from your <a href="application-feedback">online test</a>.</p><br>
 
+        <p class="govuk-body-m">Thank you for applying for {{Job}}. We hope you apply for future Civil Service jobs.</p><br>
 
-        <p class="govuk-body-m">Changing and improving</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Leadership</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Delivering at pace</p>
-        <p class="govuk-body-m">Score 3 - Moderate demonstration</p>
-        <p class="govuk-body-m">Working together</p>
-        <p class="govuk-body-m">Score 5 - Good demonstration</p>
-        <br><br>
+        <div class="govuk-button-group">
 
-        <h1 class="govuk-heading-m">
-          CV and personal statement score
-        </h1>
+          <form action="dwp-application-home" method="post" novalidate>
+          <button class="govuk-button" data-module="govuk-button">
+            Back to your application page
+          </button>
 
-        <p class="govuk-body-m">Your CV and personal statement were marked against the behaviours.</p><br>
-
-
-        <p class="govuk-body-m">Changing and improving</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Leadership</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Delivering at pace</p>
-        <p class="govuk-body-m">Score 5 - Good demonstration</p>
-        <p class="govuk-body-m">Working together</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-
-        <h1 class="govuk-heading-m">
-          Score overall
-        </h1>
-
-        <p class="govuk-body-m">You scored 43 out of 56</p><br>
-
-        <p class="govuk-body-m">For help on applying for Civil Service roles, you can:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>review how to write <a href="">behaviour questions</a></li>
-          <li>look at our <a href="">success profiles</a></li>
-        </ul>
-
-        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Back to your dashboard</button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Search for a job
+          </button>
+          </form>
+        </div>
 
       </div>
     </div>

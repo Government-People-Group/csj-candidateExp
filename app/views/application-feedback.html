@@ -68,52 +68,86 @@
         <h1 class="govuk-heading-l">
           Application feedback
         </h1>
-        <p class="govuk-body-m">Thank you for applying for {{data['searchwhat']}}.</p>
-        <p class="govuk-body-m"><strong>You were successful at passing this stage of the application process.</strong></p>
+        <p class="govuk-body-m">Thank you for applying for {{Job}}.</p>
+        <p class="govuk-body-m"><strong>Your application was successful.</strong></p>
         <p class="govuk-body-m">We hope the feedback on your application will help you.</p><br>
 
-        <p class="govuk-body-m">You can view the feedback from your <a href="application-feedback">online test</a>.</p><br>
+        <p class="govuk-body-m">You can view the feedback from your <a href="application-feedback">online test feedback</a>.</p><br>
 
+        <h2 class="govuk-heading-m">
+          Behaviour statement scores
+        </h2>
 
-        <p class="govuk-body-m">Changing and improving</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Leadership</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Delivering at pace</p>
-        <p class="govuk-body-m">Score 3 - Moderate demonstration</p>
-        <p class="govuk-body-m">Working together</p>
-        <p class="govuk-body-m">Score 5 - Good demonstration</p>
+        <h3 class="govuk-heading-s">
+          Changing and improving
+        </h3>
+        <p class="govuk-body-m">You scored 6 out of 7.</p>
+        <p class="govuk-body-m">Strong demonstration - substantial, positive evidence and includes some evidence of exceeding expectations.</p>
+
+        <h3 class="govuk-heading-s">
+          Leadership
+        </h3>
+        <p class="govuk-body-m">You scored 6 out of 7.</p>
+        <p class="govuk-body-m">Strong demonstration - substantial, positive evidence and includes some evidence of exceeding expectations.</p>
+
+        <h3 class="govuk-heading-s">
+          Delivering at pace
+        </h3>
+        <p class="govuk-body-m">You scored 6 out of 7.</p>
+        <p class="govuk-body-m">Strong demonstration - substantial, positive evidence and includes some evidence of exceeding expectations.</p>
+
+        <h3 class="govuk-heading-s">
+          Working together
+        </h3>
+        <p class="govuk-body-m">You scored 5 out of 7.</p>
+        <p class="govuk-body-m">Good demonstration - Substantial positive evidence.</p>
         <br><br>
 
+        <h2 class="govuk-heading-m">
+          CV and personal statement scores
+        </h2>
+
+        <p class="govuk-body-m">Your CV and personal statement were marked against the behaviours:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>changing and improving</li>
+          <li>leadership</li>
+          <li>working together</li>
+        </ul><br>
+
+
+        <p class="govuk-body-m">Your cv scored 5 out of 7.</p>
+        <p class="govuk-body-m">Good demonstration - Substantial positive evidence.</p><br>
+
+        <p class="govuk-body-m">Your personal statement scored 6 out of 7.</p>
+        <p class="govuk-body-m">Strong demonstration - substantial, positive evidence and includes some evidence of exceeding expectations.</p>
+
+
+
+
         <h1 class="govuk-heading-m">
-          CV and personal statement score
-        </h1>
-
-        <p class="govuk-body-m">Your CV and personal statement were marked against the behaviours.</p><br>
-
-
-        <p class="govuk-body-m">Changing and improving</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Leadership</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Delivering at pace</p>
-        <p class="govuk-body-m">Score 5 - Good demonstration</p>
-        <p class="govuk-body-m">Working together</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-
-        <h1 class="govuk-heading-m">
-          Score overall
+          Your score overall
         </h1>
 
         <p class="govuk-body-m">You scored 43 out of 56</p><br>
 
-        <p class="govuk-body-m">For help on applying for Civil Service roles, you can:</p>
+        <p class="govuk-body-m">For help improving your scores, you can:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>review how to write <a href="">behaviour questions</a></li>
           <li>look at our <a href="">success profiles</a></li>
         </ul>
 
-        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Back to your dashboard</button>
+        <div class="govuk-button-group">
+
+          <form action="dwp-application-home" method="post" novalidate>
+          <button class="govuk-button" data-module="govuk-button">
+            Back to your application page
+          </button>
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Make a change to my interview
+          </button>
+          </form>
+        </div>
 
       </div>
     </div>

@@ -62,52 +62,93 @@
     {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
-      <form action="portal-interview" method="post" novalidate>
+
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
         <h1 class="govuk-heading-l">
           Interview feedback
         </h1>
-        <p class="govuk-body-m">Thank you for applying for {{ Job }}.</p>
-        <p class="govuk-body-m"><strong>Your application was successful.</strong></p>
+        <p class="govuk-body-m">Thank you for applying for {{Job}}.</p>
+        <p class="govuk-body-m"><strong>Your interview was successful.</strong></p>
 
-        <p class="govuk-body-m">You can view the feedback from your <a href="application-feedback">online test</a>.</p><br>
+        <h2 class="govuk-heading-m">
+          Behaviour statement scores
+        </h2>
+
+        <h3 class="govuk-heading-s">
+          Changing and improving
+        </h3>
+        <p class="govuk-body-m">You scored 6 out of 7.</p>
+        <p class="govuk-body-m">Strong demonstration - substantial, positive evidence and includes some evidence of exceeding expectations.</p>
+
+        <h3 class="govuk-heading-s">
+          Seeing the big picture
+        </h3>
+        <p class="govuk-body-m">You scored 6 out of 7.</p>
+        <p class="govuk-body-m">Strong demonstration - substantial, positive evidence and includes some evidence of exceeding expectations.</p>
 
 
-        <p class="govuk-body-m">Changing and improving</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Leadership</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Delivering at pace</p>
-        <p class="govuk-body-m">Score 7 - Outstanding demonstration</p>
-        <p class="govuk-body-m">Working together</p>
-        <p class="govuk-body-m">Score 7 - Outstanding demonstration</p>
         <br><br>
 
-        <h1 class="govuk-heading-m">
-          CV and personal statement score
-        </h1>
+        <h2 class="govuk-heading-m">
+          Experience scores
+        </h2>
 
-        <p class="govuk-body-m">Your CV and personal statement were marked against the behaviours.</p><br>
+        <h3 class="govuk-heading-s">
+          Building engaging and effective relationships with stakeholders
+        </h3>
+        <p class="govuk-body-m">You scored 3 out of 7.</p>
+        <p class="govuk-body-m">Moderate demonstration - Moderate positive evidence.</p><br>
+
+        <h2 class="govuk-heading-m">
+          Strength questions scores
+        </h2>
+
+        <h3 class="govuk-heading-s">
+          Analytical
+        </h3>
+        <p class="govuk-body-m">You scored 5 out of 7.</p>
+        <p class="govuk-body-m">Good demonstration - Substantial positive evidence.</p>
+
+        <h3 class="govuk-heading-s">
+          Challenger
+        </h3>
+        <p class="govuk-body-m">You scored 3 out of 7.</p>
+        <p class="govuk-body-m">Moderate demonstration - Moderate positive evidence.</p>
+
+        <h3 class="govuk-heading-s">
+          Problem solver
+        </h3>
+        <p class="govuk-body-m">You scored 6 out of 7.</p>
+        <p class="govuk-body-m">Strong demonstration -  Substantial, positive evidence and includes some evidence of exceeding expectations.</p><br>
+
+        <h2 class="govuk-heading-m">
+          Presentation
+        </h2>
+        <p class="govuk-body-m">You scored 6 out of 7.</p>
+        <p class="govuk-body-m">Strong demonstration -  Substantial, positive evidence and includes some evidence of exceeding expectations.</p><br>
 
 
-        <p class="govuk-body-m">Changing and improving</p>
-        <p class="govuk-body-m">Score 7 - Outstanding demonstration</p>
-        <p class="govuk-body-m">Leadership</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Delivering at pace</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-        <p class="govuk-body-m">Working together</p>
-        <p class="govuk-body-m">Score 6 - Strong demonstration</p>
-
-        <h1 class="govuk-heading-m">
-          Score overall
-        </h1>
-
-        <p class="govuk-body-m">You scored 51 out of 56</p><br>
 
 
-        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Back to your dashboard</button>
+        <h2 class="govuk-heading-m">
+          Your score overall
+        </h2>
+
+        <p class="govuk-body-m">You scored 35 out of 49</p><br>
+
+        <div class="govuk-button-group">
+
+          <form action="candidate-formal-offer/formal-offer" method="post" novalidate>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue to provisional offer
+          </button>
+          
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Back to your application page
+          </button>
+
+        </div>
 
       </div>
     </div>
