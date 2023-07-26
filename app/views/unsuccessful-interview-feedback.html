@@ -1,0 +1,161 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "portal-interview",
+        text: "Go back to my dashboard",
+        active: true
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="portal-interview" method="post" novalidate>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
+        <h1 class="govuk-heading-l">
+          Interview feedback
+        </h1>
+
+        <p class="govuk-body-m"><strong>Unfortunately, your interview was not successful.</strong></p>
+
+        <p class="govuk-body-m">You can view your <a href="#">online test feedback</a>.</p>
+
+        <p class="govuk-body-m">Thank you for applying for {{Job}}. We hope you apply for future Civil Service jobs and this feedback will help you.</p><br>
+
+        <h2 class="govuk-heading-m">
+          Behaviour statement scores
+        </h2>
+
+        <h3 class="govuk-heading-s">
+          Changing and improving
+        </h3>
+        <p class="govuk-body-m">You scored 3 out of 7.</p>
+        <p class="govuk-body-m">Moderate Demonstration - Moderate positive evidence.</p>
+
+        <h3 class="govuk-heading-s">
+          Leadership
+        </h3>
+        <p class="govuk-body-m">You scored 3 out of 7.</p>
+        <p class="govuk-body-m">Moderate Demonstration - Moderate positive evidence.</p>
+
+        <h3 class="govuk-heading-s">
+          Delivering at pace
+        </h3>
+        <p class="govuk-body-m">You scored 4 out of 7.</p>
+        <p class="govuk-body-m">Acceptable Demonstration - Adequate positive evidence.
+</p>
+
+        <h3 class="govuk-heading-s">
+          Working together
+        </h3>
+        <p class="govuk-body-m">You scored 5 out of 7.</p>
+        <p class="govuk-body-m">Good demonstration - Substantial positive evidence.</p>
+        <br><br>
+
+        <h2 class="govuk-heading-m">
+          CV and personal statement scores
+        </h2>
+
+        <p class="govuk-body-m">Your CV and personal statement were marked against the behaviours:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>changing and improving</li>
+          <li>leadership</li>
+          <li>working together</li>
+        </ul><br>
+
+
+        <p class="govuk-body-m">Your cv scored 3 out of 7.</p>
+        <p class="govuk-body-m">Moderate Demonstration - Moderate positive evidence.</p><br>
+
+        <p class="govuk-body-m">Your personal statement scored 4 out of 7.</p>
+        <p class="govuk-body-m">Acceptable Demonstration - Adequate positive evidence.</p>
+
+
+
+
+        <h1 class="govuk-heading-m">
+          Your score overall
+        </h1>
+
+        <p class="govuk-body-m">You scored 22 out of 56</p><br>
+
+        <p class="govuk-body-m">For help improving your scores, you can:
+</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>review how to write <a href="">behaviour questions</a></li>
+          <li>look at our <a href="">success profiles</a></li>
+        </ul><br>
+
+        <div class="govuk-button-group">
+
+          <form action="dwp-application-home" method="post" novalidate>
+          <button class="govuk-button" data-module="govuk-button">
+            Back to your application page
+          </button>
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Search for a job
+          </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </form>
+  {% endblock %}
