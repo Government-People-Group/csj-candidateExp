@@ -12,7 +12,10 @@ Online tests – {{ serviceName }} – GOV.UK Prototype Kit
 {% else %}
 {% include "includes/header-home.html" %}
 {% endif %}
+
 {% endblock %}
+
+
 
 {% block content %}
 
@@ -27,8 +30,8 @@ Online tests – {{ serviceName }} – GOV.UK Prototype Kit
   {% endif %}
 
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">
-      <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+    {% include "includes/job-and-dept.html" %}
+
       <h1 class="govuk-heading-xl">Judgement test</h1>
 
     </div>
@@ -42,6 +45,9 @@ Online tests – {{ serviceName }} – GOV.UK Prototype Kit
 
         <p class="govuk-body-m govuk-!-margin-bottom-3">You have been invited to complete the Civil Service Judgement online test.</p>
       <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">You’ll need to pass this test before you can progress to the next step in your application.</p>
+
+      <h2 class="govuk-heading-m">What the judgement test includes</h2>
+
       <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">The Judgement test has 3 sections and will take 45 minutes to complete.</p>
       <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">Section 3 is timed and will be a set of questions.</p>
 

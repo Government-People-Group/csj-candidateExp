@@ -50,8 +50,7 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
 
     <div class="govuk-grid-column-two-thirds">
       <form action="" method="post" novalidate>
-      <span class="govuk-caption-l">
-        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+        {% include "includes/job-and-dept.html" %}
         <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
@@ -66,9 +65,11 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
 
     <ul class="govuk-list govuk-list--bullet">
       <li><p class="govuk-body-m">how your past experience meets the <a href="">main responsibilities</a></p></li>
-      <li><p class="govuk-body-m">Communicating and influencing - Communicate in a straightforward, honest and engaging manner, choosing appropriate styles to maximise understanding and impact. Encourage the use of different communication methods, including digital resources and highlight the benefits, including ensuring cost effectiveness. Ensure communication has a clear purpose and takes into account people’s individual needs. Share information as appropriate and check understanding. Show positivity and enthusiasm towards work, encouraging others to do the same. Ensure that important messages are communicated with colleagues and stakeholders respectfully, taking into consideration the diversity of interests</p></li>
+      <li><p class="govuk-body-m">Communicating and influencing - you can <a href="#">read the description of this behaviour</a></p></li>
     </ul>
 </div><br>
+
+<p class="govuk-body-m">You can <a href="#">use the person specification</a> to help write your CV.</p><br>
 
     <p class="govuk-body">Choose one of the following options:</p>
     <div class="govuk-radios" data-module="govuk-radios">
@@ -90,7 +91,7 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="sign-in-2" name="cv-option" type="radio" value="manual-cv~/ji-manual-cv" aria-describedby="sign-in-2-item-hint">
         <label class="govuk-label govuk-radios__label" for="sign-in-2">
-          I want to enter my CV manually
+          I want to enter my CV
         </label>
       </div>
       <div class="govuk-radios__item">

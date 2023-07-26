@@ -27,11 +27,12 @@ Online tests result – {{ serviceName }} – GOV.UK Prototype Kit
   {% endif %}
 
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">
-      <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+    {% include "includes/job-and-dept.html" %}
       <h1 class="govuk-heading-xl">You’ve passed the Judgement test</h1>
 
       <p class="govuk-body-m">Thank you for completing the Civil Service Judgement online test.</p>
+
+      <p class="govuk-body-m">Your score was 65%. The score needed for this role is 47% or above.</p>
 
       <p class="govuk-body-m">You can <a href="#">view your test feedback</a>.</p>
 

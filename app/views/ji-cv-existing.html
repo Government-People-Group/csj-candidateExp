@@ -67,8 +67,7 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
   {% endif %}
 
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">
-      <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+  {% include "includes/job-and-dept.html" %}
       <h1 class="govuk-heading-xl">CV</h1>
 
     </div>
@@ -718,7 +717,7 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
       text: "Save and continue",
-      href: "personal-statement"
+      href: "ji-personal-statement"
     }) }}
 
     <p class="govuk-body-m"><a href="task-list">Return to task-list</a></p>

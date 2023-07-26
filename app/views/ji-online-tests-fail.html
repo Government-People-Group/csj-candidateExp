@@ -27,8 +27,7 @@ Online tests result – {{ serviceName }} – GOV.UK Prototype Kit
   {% endif %}
 
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">
-      <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+  {% include "includes/job-and-dept.html" %}
       <h1 class="govuk-heading-xl">You have failed the Judgement test</h1>
 
       <p class="govuk-body-m">Unfortunately, your Civil Service Judgement test result was not high enough for the role.</p>
@@ -46,7 +45,7 @@ Your results will not be saved or affect future applications.
 
 
 
-    
+
 </form>
 
 

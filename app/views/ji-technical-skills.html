@@ -42,8 +42,7 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
   {% endif %}
 
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">
-      <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+    {% include "includes/job-and-dept.html" %}
       <h1 class="govuk-heading-xl">Technical skills</h1>
 
     </div>
@@ -61,6 +60,8 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
 
   <div class="govuk-grid-column-two-thirds">
     <p class="govuk-body-m">The Civil Service uses <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/744220/Success-Profiles-Technical-vFV.pdf" target="_blank">technical skills</a> to see how you meet the skills needed for this role. </p>
+
+    <p class="govuk-body-m">Technical skills are the demonstration of specific professional skills, knowledge or qualifications.</p>
 
     <p class="govuk-body-m">Use <a href="">the STAR method</a> to help you structure your answers:</p>
     <ul class="govuk-list govuk-list--bullet">

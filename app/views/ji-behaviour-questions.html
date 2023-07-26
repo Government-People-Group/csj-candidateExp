@@ -42,8 +42,7 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
   {% endif %}
 
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">
-      <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+    {% include "includes/job-and-dept.html" %}
       <h1 class="govuk-heading-xl">Behaviour questions</h1>
 
     </div>
@@ -76,24 +75,20 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
         <span class="govuk-warning-text__assistive">Warning</span>
         Please remove any references to your identity.
       </strong>
-    </div>
+    </div><br>
 
-    <h3 class="govuk-heading-m govuk-!-margin-top-6">Communicating and influencing</h3>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Communicating and influencing
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Communicate in a straightforward, honest and engaging manner, choosing appropriate styles to maximise understanding and impact. Encourage the use of different communication methods, including digital resources and highlight the benefits, including ensuring cost effectiveness. Ensure communication has a clear purpose and takes into account people’s individual needs. Share information as appropriate and check understanding. Show positivity and enthusiasm towards work, encouraging others to do the same. Ensure that important messages are communicated with colleagues and stakeholders respectfully, taking into consideration the diversity of interests.
+      </div>
+    </details>
 
-    <p class="govuk-body-m">Communicate in a straightforward, honest and engaging manner, choosing appropriate styles to maximise understanding and impact. Encourage the use of different communication methods, including digital resources and highlight the benefits, including ensuring cost effectiveness. Ensure communication has a clear purpose and takes into account people’s individual needs. Share information as appropriate and check understanding. Show positivity and enthusiasm towards work, encouraging others to do the same. Ensure that important messages are communicated with colleagues and stakeholders respectfully, taking into consideration the diversity of interests.</p>
 
-    <div class="govuk-character-count" data-module="govuk-character-count" data-maxWords="250">
-    <div class="govuk-form-group">
-    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="10" aria-describedby="with-hint-info with-hint-hint"></textarea>
-    </div>
-    <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
-    You can enter up to 200 characters
-    </div>
-    </div><br><br>
-
-    <h3 class="govuk-heading-m govuk-!-margin-top-6">Seeing the big picture</h3>
-
-    <p class="govuk-body-m">Understand the strategic drivers for your area of work. Align activities to contribute to wider organisational priorities. Remain alert to emerging issues and trends which might impact your work area. Seek out and share experiences to develop knowledge of the team’s business area. Understand how the strategies and activities of the team create value and meet the diverse needs of all stakeholders.</p>
 
     <div class="govuk-character-count" data-module="govuk-character-count" data-maxWords="250">
     <div class="govuk-form-group">
@@ -104,9 +99,41 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
     </div>
     </div><br><br>
 
-    <h3 class="govuk-heading-m govuk-!-margin-top-6">Making Effective Decisions</h3>
 
-    <p class="govuk-body-m">Understand own level of responsibility and empower others to make decisions where appropriate. Analyse and use a range of relevant, credible information from internal and external sources to support decisions. Invite challenge and where appropriate involve others in decision making. Display confidence when making difficult decisions, even if they prove to be unpopular. Consult with others to ensure the potential impacts on end users have been considered. Present strong recommendations in a timely manner outlining the consideration of other options, costs, benefits and risks.</p>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Seeing the big picture
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Understand the strategic drivers for your area of work. Align activities to contribute to wider organisational priorities. Remain alert to emerging issues and trends which might impact your work area. Seek out and share experiences to develop knowledge of the team’s business area. Understand how the strategies and activities of the team create value and meet the diverse needs of all stakeholders.
+      </div>
+    </details>
+
+
+
+    <div class="govuk-character-count" data-module="govuk-character-count" data-maxWords="250">
+    <div class="govuk-form-group">
+    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="10" aria-describedby="with-hint-info with-hint-hint"></textarea>
+    </div>
+    <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+    You can enter up to 200 characters
+    </div>
+    </div><br><br>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Making effective decisions
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Understand own level of responsibility and empower others to make decisions where appropriate. Analyse and use a range of relevant, credible information from internal and external sources to support decisions. Invite challenge and where appropriate involve others in decision making. Display confidence when making difficult decisions, even if they prove to be unpopular. Consult with others to ensure the potential impacts on end users have been considered. Present strong recommendations in a timely manner outlining the consideration of other options, costs, benefits and risks.
+      </div>
+    </details>
+
+  
 
     <div class="govuk-character-count" data-module="govuk-character-count" data-maxWords="250">
     <div class="govuk-form-group">
