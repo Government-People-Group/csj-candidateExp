@@ -338,6 +338,9 @@ practice behaviour questions
             </h3>
           </div>
         </li>
+
+        {% if data['interview-booked'] =="yes" %}
+
         <li class="app-step-nav__step" id="get-a-provisional-licence">
           <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
             <h3 class="app-step-nav__title">
@@ -356,12 +359,35 @@ practice behaviour questions
             </h3>
           </div>
         </li>
+        {% endif %}
       </ol>
     </div><br>
 
     <div data-module="appstepnav"id="step-by-step-navigation" >
       <h2 class="govuk-heading-m">Next steps</h2>
       <ol class="app-step-nav__steps">
+
+        {% if data['interview-booked'] !="yes" %}
+
+        <li class="app-step-nav__step" id="get-a-provisional-licence">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><img src="public/images/green-tick.png" style="max-width:50%;"><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                You book your interview
+              </span><br>
+              <a href="interview-offer?appl-homepage=yes" class="govuk-link govuk-link--no-visited-state" style="font-size:16px;font-weight:normal">Book your interview slot</a><br><br>
+            </h3>
+          </div>
+        </li>
+        {% endif %}
 
         <li class="app-step-nav__step" id="get-a-provisional-licence">
           <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
@@ -374,9 +400,15 @@ practice behaviour questions
                 </span>
               </span>
 
+              {% if data['interview-booked'] !="yes" %}
               <span class="js-step-title" style="color:#505a5f;font-weight:normal">
                 We interview you
               </span><br>
+              {% else %}
+              <span class="js-step-title">
+                We interview you
+              </span><br>
+              {% endif %}
               <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:16px;font-weight:normal">How to prepare for your interview</a><br><br>
             </h3>
           </div>
