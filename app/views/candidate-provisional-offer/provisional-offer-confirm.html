@@ -18,22 +18,36 @@
 {% block content %}
 
   <div class="govuk-grid-row">
+
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
     <div class="govuk-grid-column-two-thirds">
       <form action="offer-option-confirm" method="post">
-
+        <span class="govuk-caption-l">
+          <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Are you sure you want to {{data['formal-offer']}}?
+              Are you sure you want to {{data['provisional-offer']}}?
             </h1>
           </legend><br>
-          {% if data ['formal-offer'] == 'decline the formal offer'%}
+          {% if data ['provisional-offer'] == 'decline the provisional offer'%}
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-warning-text__assistive">Warning</span>
-              If you select yes, the formal offer will be withdrawn. You will not be able to reverse this decision.
+              If you select yes, the provisional offer will be withdrawn. You will not be able to reverse this decision.
             </strong>
           </div>
           {% endif %}
@@ -43,9 +57,9 @@
 
               <div class="govuk-radios" data-module="govuk-radios">
 
-              {% if data ['formal-offer'] == 'decline the formal offer'%}
+              {% if data ['provisional-offer'] == 'decline the provisional offer'%}
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact" name="formal-offer-confirm" type="radio" value="yes~formal-offer-confirmation" data-aria-controls="conditional-contact">
+                  <input class="govuk-radios__input" id="contact" name="provisional-offer-confirm" type="radio" value="yes~provisional-offer-confirmation" data-aria-controls="conditional-contact">
                   <label class="govuk-label govuk-radios__label" for="contact">
                     Yes
                   </label>
@@ -60,14 +74,14 @@
                 </div>
               {% else %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name-2" name="formal-offer-confirm" type="radio" value="yes~formal-offer-confirmation">
+                <input class="govuk-radios__input" id="changed-name-2" name="provisional-offer-confirm" type="radio" value="yes~provisional-offer-confirmation">
                 <label class="govuk-label govuk-radios__label" for="changed-name-2">
                   Yes
                 </label>
               </div>
               {% endif %}
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="changed-name-2" name="formal-offer-confirm" type="radio" value="no~formal-offer">
+                  <input class="govuk-radios__input" id="changed-name-2" name="provisional-offer-confirm" type="radio" value="no~provisional-offer">
                   <label class="govuk-label govuk-radios__label" for="changed-name-2">
                     No - go back to my options
                   </label>

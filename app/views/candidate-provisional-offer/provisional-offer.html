@@ -17,20 +17,60 @@
 
 {% block content %}
 
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
   <div class="govuk-grid-row">
+
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
     <div class="govuk-grid-column-two-thirds">
-      <form action="formal-offer-confirm" method="post">
-      <h1 class="govuk-heading-l">
-        Policy Advisor
-      </h1>
-      <h2 class="govuk-heading-m">
-        Formal offer
-      </h2>
 
-      <p class="govuk-body">Congratulations, Steve Evans.</p>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
+        <h1 class="govuk-heading-l">
+          Provisional offer
+        </h1>
+        <form action="provisional-offer-confirm" method="post">
+      <p class="govuk-body">Congratulations, your interview was successful.</p>
 
+      <p class="govuk-body"><strong>We would like to make you a provisional offer.</strong></p>
 
-      <p class="govuk-body">Your pre-employment checks have been completed. We are delighted to formally offer you the job of <a href="#">Policy Advisor</a>.</p>
+      <p class="govuk-body">You will receive a formal offer when your pre-employment checks are complete.</p>
+
+      <div class="govuk-inset-text"><strong>Please note that pre-employment checks can take up to 10 weeks</strong></div>
+
+      <p class="govuk-body">You can view your <a href="interview-feedback">interview feedback</a>.</p>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -68,8 +108,7 @@
       </dl>
 
       <br>
-      <p class="govuk-body"><strong>You have until <span class="deadline"></span> to decide if you would like to accept this formal offer.</strong></p>
-      <br>
+
 
       <p class="govuk-body">Your benefits include:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -79,51 +118,40 @@
       </ul>
       <br>
 
-      <p class="govuk-body">You should:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>talk to the hiring manager to decide what your working pattern will be</li>
-        <li>receive more information from HR on your contract within the next 3 working days
-</li>
-      </ul>
-      <br>
+
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
-              What would you like to do about your formal offer for Policy Advisor?
+              What would you like to do about your provisional offer for {{Job}}?
             </h1>
           </legend>
           <div id="changed-name-hint" class="govuk-hint">
-            You can <a href="#">review Policy Advisor job details</a> before making your decision.
+            You can <a href="#">speak to the hiring manager</a> before making your decision.
           </div>
 
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-warning-text__assistive">Warning</span>
-              You have until <span class="deadline2"></span> to decide if you would like to accept this formal offer.
+              You have until <span class="deadline2"></span> to decide if you would like to accept this provisional offer.
             </strong>
           </div>
 
 
           <div class="govuk-radios" data-module="govuk-radios">
+
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="formal-offer" type="radio" value="speak to the hiring manager">
-              <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                Speak to the hiring manager
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name" name="formal-offer" type="radio" value="accept the formal offer">
+              <input class="govuk-radios__input" id="changed-name" name="provisional-offer" type="radio" value="accept the provisional offer">
               <label class="govuk-label govuk-radios__label" for="changed-name">
-                Accept the formal offer
+                Accept the provisional offer
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="formal-offer" type="radio" value="decline the formal offer">
+              <input class="govuk-radios__input" id="changed-name-2" name="provisional-offer" type="radio" value="decline the provisional offer">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                Decline the formal offer
+                Decline the provisional offer
               </label>
             </div>
 
