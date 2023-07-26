@@ -48,10 +48,22 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
     <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
     {% endif %}
 
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
     <div class="govuk-grid-column-two-thirds">
       <form action="" method="post" novalidate>
       <span class="govuk-caption-l">
-        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+        <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br><br>
         {{ govukRadios({
           classes: "govuk-radios--inline",
           idPrefix: "rtw",

@@ -48,15 +48,27 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
     <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
     {% endif %}
 
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
     <div class="govuk-grid-column-two-thirds">
       <form action="ji-search-results" method="post" novalidate>
       <span class="govuk-caption-l">
-        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+        <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br><br>
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  You can not apply for {{ data['searchwhat'] | capitalize}}
+                  You can not apply for {{Job}}
                 </h1><br>
                 <p class="govuk-body">Unfortunately, you do not meet the eligibility criteria for this role.</p>
                 <p class="govuk-body">We’re sorry you cannot apply. You can search for similar roles on <a href="ji-search-results">Civil Service Jobs</a>.</p>

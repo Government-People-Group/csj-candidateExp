@@ -37,7 +37,17 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
   }
 </script>
 
+{% if data['searchwhat'] %}
+  {% set Job = data['searchwhat'] %}
+{% else %}
+  {% set Job = 'Delivery Manager' %}
+{% endif %}
 
+{% if data['dept'] %}
+  {% set Dept = data['dept'] %}
+{% else %}
+  {% set Dept = 'DWP' %}
+{% endif %}
 
   <div class="govuk-grid-row">
     {% if data['dept'] == "Department for Education" %}
@@ -51,7 +61,7 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
       <form action="" method="post" novalidate>
       <span class="govuk-caption-l">
-        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+        <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br><br>
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
