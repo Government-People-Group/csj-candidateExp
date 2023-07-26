@@ -13,6 +13,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 {% block content %}
 
+<style>
+  .govuk-width-container {
+    max-width:1200px;
+  }
+</style>
+
 <div class="govuk-grid-row">
 
 
@@ -163,14 +169,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <tr class="govuk-table__row">
                       <th scope="col" class="govuk-table__header" style="width:45%">Event</th>
                       <th scope="col" class="govuk-table__header">Who</th>
-                      <th scope="col" class="govuk-table__header" style="width:25%">Routing</th>
                       <th scope="col" class="govuk-table__header" style="width:10%">Status</th>
                       <th scope="col" class="govuk-table__header">Confidence</th>
+                      <th scope="col" class="govuk-table__header" style="width:25%">Routing</th>
                     </tr>
                   </thead>
                   <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/portal-interview" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Portal advises candidate an interview has been offered</a><br>
+                      <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/portal-interview" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Portal advises candidate an interview has been offered</a><br><div class="govuk-radios__divider">or</div>
                         <span class="govuk-caption-m" style="font-size:1rem">version 1.0</span>
                         <br>
                         <details class="govuk-details" data-module="govuk-details">
@@ -190,9 +196,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         </strong>
                       </td>
                       <td class="govuk-table__cell">
-                        n/a
-                      </td>
-                      <td class="govuk-table__cell">
                         <strong class="govuk-tag">
                           TESTED
                         </strong>
@@ -202,7 +205,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                           high
                         </strong>
                       </td>
+                      <td class="govuk-table__cell">
+                        n/a
+                      </td>
                     </tr>
+
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/interview-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate is shown interview invitation</a><br>
                         <span class="govuk-caption-m" style="font-size:1rem">version 1.0</span>
@@ -231,9 +238,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         </strong>
                       </td>
                       <td class="govuk-table__cell">
-                        n/a
-                      </td>
-                      <td class="govuk-table__cell">
                         <strong class="govuk-tag">
                           TESTED
                         </strong>
@@ -242,6 +246,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         <strong class="govuk-tag govuk-tag--yellow">
                           medium
                         </strong>
+                      </td>
+                      <td class="govuk-table__cell">
+                        n/a
                       </td>
                     </tr>
                     <tr class="govuk-table__row">
@@ -265,9 +272,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         </strong>
                       </td>
                       <td class="govuk-table__cell">
-                        n/a
-                      </td>
-                      <td class="govuk-table__cell">
                         <strong class="govuk-tag govuk-tag--grey">
                           untested
                         </strong>
@@ -276,6 +280,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         <strong class="govuk-tag govuk-tag--red">
                           low
                         </strong>
+                      </td>
+                      <td class="govuk-table__cell">
+                        n/a
                       </td>
                     </tr>
 
@@ -299,7 +306,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                           candidate
                         </strong>
                       </td>
-
+                      <td class="govuk-table__cell">
+                        <strong class="govuk-tag">
+                          TESTED
+                        </strong>
+                      </td>
+                      <td class="govuk-table__cell">
+                        <strong class="govuk-tag govuk-tag--green">
+                          high
+                        </strong>
+                      </td>
                       <td class="govuk-table__cell">
 
                         <details class="govuk-details" data-module="govuk-details">
@@ -340,16 +356,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                             </strong>
                           </div>
                         </details>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag">
-                          TESTED
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--green">
-                          high
-                        </strong>
                       </td>
                     </tr>
                   </tbody>
