@@ -62,7 +62,10 @@
     {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
-
+      {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}<br><br>
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
         <h1 class="govuk-heading-l">
@@ -117,10 +120,14 @@
             Back to your dashboard
           </button>
           {% endif %}
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Make a change to my interview
-          </button>
+          {{ govukButton({
+            text: "Make a change to my booking",
+            classes: "govuk-button--secondary",
+            href: "book-interview"
+          }) }}
           </form>
+
+
         </div>
 
       </div>
