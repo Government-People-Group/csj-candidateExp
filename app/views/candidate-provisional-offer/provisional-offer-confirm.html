@@ -32,6 +32,10 @@
     {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
+      {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}<br><br>
       <form action="offer-option-confirm" method="post">
         <span class="govuk-caption-l">
           <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>

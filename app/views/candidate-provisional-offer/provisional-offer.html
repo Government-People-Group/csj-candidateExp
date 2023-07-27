@@ -49,6 +49,10 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">
+        {{ govukBackLink({
+                  text: "Back",
+                  href: "javascript:history.go(-1)"
+                }) }}<br><br>
         <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
         <h1 class="govuk-heading-l">
           Provisional offer
@@ -62,7 +66,7 @@
 
       <div class="govuk-inset-text"><strong>Please note that pre-employment checks can take up to 10 weeks</strong></div>
 
-      <p class="govuk-body">You can view your <a href="interview-feedback">interview feedback</a>.</p>
+      <p class="govuk-body">You can view your <a href="../interview-feedback">interview feedback</a>.</p>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
