@@ -21,7 +21,26 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
 {% set defaultJob = 'Strategy Advisor' %}
 
 
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Job saved
+    </h3>
+    {% if data['searchwhat'] %}
+      <p class="govuk-body"><a class="govuk-notification-banner__link" href="portal-gds-job-alert">Create a job alert for <span style="text-transform: capitalize;">{{ data['searchwhat']}}</span> jobs</a></p>
+    {% else %}
+      <p class="govuk-body"><a class="govuk-notification-banner__link" href="portal-gds-job-alert">Create a job alert for {{defaultJob}} jobs</a></p>
+    {% endif %}
 
+  </div>
+</div>
 
 
 
@@ -248,7 +267,7 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
       </div>
       <div class="govuk-grid-column-one-quarter" style="height:190px;padding-top:10px; padding-bottom:10px">
         <img src="/public/images/dfe-logo.png" style="min-height:40%;max-height:30%;float:right" alt="Department for Education logo">
-        <form action="search-results-saved" method="post" novalidate>
+        <form action="portal-gds-search-results-saved" method="post" novalidate>
         <button  id="but2" style="float:right;min-width:15%;max-width:100%" class="govuk-button govuk-button--secondary  govuk-!-margin-top-9" data-module="govuk-button">☆ save</button>
         </form>
       </div>

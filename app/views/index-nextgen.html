@@ -4,18 +4,16 @@
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block pageScripts %}
-  <script type="text/javascript">
-    var $element = document.querySelector('#step-by-step-navigation')
-    var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
-  </script>
-{% endblock %}
 
 {% block content %}
 
 <style>
   .govuk-width-container {
     max-width:1200px;
+  }
+
+  .column-width-40 {
+    width:40% !important;
   }
 </style>
 
@@ -51,413 +49,165 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           If you have any questions about using this prototype, please contact <a href="">Jonathan Inch</a>, <a href="">Ismail Ismail</a> or <a href="">Anna Smith</a>.
         </div>
 
-        <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
-          <ol class="app-step-nav__steps">
-            <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
-              <div class="app-step-nav__header js-toggle-panel" data-position="1">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 1<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <ul class="govuk-list">
+              <li>
+                (1) <a class="govuk-link" href="step1">Vacancy is set up</a>
+              </li>
+              <li>
+                (2) <a class="govuk-link" href="#step2">Candidate finds role</a>
+              </li>
+              <li>
+                (3) <a class="govuk-link" href="#step3">Candidate applies</a>
+              </li>
+              <li>
+                (4) <a class="govuk-link" href="#step4">Applications are sifted</a>
+              </li>
+              <li>
+                (5) <a class="govuk-link" href="#step5">Interviews are set up and arranged</a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <ul class="govuk-list">
+              <li>
+                (6) <a class="govuk-link" href="#step6">Interviews take place</a>
+              </li>
+              <li>
+                (7) <a class="govuk-link" href="#step7">Provisional offer made</a>
+              </li>
+              <li>
+                (8) <a class="govuk-link" href="#step8">Pre-employment checks</a>
+              </li>
+              <li>
+                (9) <a class="govuk-link" href="#step9">Final offer</a>
+              </li>
+            </ul>
+          </div>
+        </div><br>
+
+        <table class="govuk-table" id="step2">
+          <caption class="govuk-table__caption govuk-table__caption--m">(2) Candidate finds role</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header column-width-40">Event</th>
+              <th scope="col" class="govuk-table__header">Who</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header">Confidence</th>
+              <th scope="col" class="govuk-table__header">Confidence notes</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate begins on CS Jobs search page</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
                     </span>
-                  </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    This page can be accessed from a number of places, including GOV.UK and Civil Service Careers website. It is also easily found on search engines.<br><br>
 
-                  <span class="js-step-title">
-                    Vacancy is set up
-                  </span>
-                </h2>
+                    On this page candidate can link to:
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li><a href="https://csj-candidate-experience.herokuapp.com/sign-in" class="govuk-link govuk-link--no-visited-state">a sign in page</a></li>
+                      <li><a href="https://csj-candidate-experience.herokuapp.com/create-an-account" class="govuk-link govuk-link--no-visited-state">an account creation page</a></li>
+                      <li><a href="https://csj-candidate-experience.herokuapp.com/search-results" class="govuk-link govuk-link--no-visited-state">advanced search (which is just the search results page)</a></li>
+                      <li><a href="https://www.civil-service-careers.gov.uk/" class="govuk-link govuk-link--no-visited-state">the Civil Service Careers website</a></li>
+                    </ul>
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                  low
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/portal-gds-search-results" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Search results are shown</a><br>
 
-              </div>
-
-              <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
-
-              </div>
-
-            </li>
-
-            <li class="app-step-nav__step js-step" id="get-a-provisional-licence">
-              <div class="app-step-nav__header js-toggle-panel" data-position="2">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 2<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
                     </span>
-                  </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Optional: candidate can save a job they are interested in, which takes them on a mini journey to save job and optionally set up a job alert for that job type.<br><br>To show this, click on the 'Save' button on the first job in the list. This will then take you to '<a href="#saves-a-job">Candidate saves a job they like</a>'.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--grey">
+                  untested
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                  low
+                </strong>
 
-                  <span class="js-step-title">
-                    Candidate finds role
-                  </span>
-                </h2>
-              </div>
+              </td>
+              <td class="govuk-table__cell">
+                Untested
+              </td>
+            </tr>
+            <tr id="saves-a-job" class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/portal-gds-search-results" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate saves a job they like (optional)</a><br>
 
-              <div class="app-step-nav__panel js-panel" id="step-panel-get-a-provisional-licence-2">
-
-              </div>
-
-            </li>
-
-            <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
-              <div class="app-step-nav__header js-toggle-panel" data-position="3">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                          <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 3<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
                     </span>
-                  </span>
-
-                  <span class="js-step-title">
-                    Candidate applies
-                  </span>
-                </h2>
-              </div>
-
-              <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
-
-              </div>
-
-            </li>
-
-            <li class="app-step-nav__step js-step" id="prepare-for-your-theory-test">
-              <div class="app-step-nav__header js-toggle-panel" data-position="4">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                          <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 4<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
-                    </span>
-                  </span>
-
-                  <span class="js-step-title">
-                    Applications are sifted
-                  </span>
-                </h2>
-              </div>
-
-              <div class="app-step-nav__panel js-panel" id="step-panel-prepare-for-your-theory-test-4">
-
-              </div>
-
-            </li>
-
-            <li class="app-step-nav__step js-step" id="book-and-manage-your-theory-test">
-              <div class="app-step-nav__header js-toggle-panel" data-position="5">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 5<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
-                    </span>
-                  </span>
-
-                  <span class="js-step-title">
-                    Interviews are set up and arranged
-                  </span>
-                </h2>
-              </div>
-
-              <div class="app-step-nav__panel js-panel" id="step-panel-book-and-manage-your-theory-test-5">
-                <table class="govuk-table">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header" style="width:45%">Event</th>
-                      <th scope="col" class="govuk-table__header">Who</th>
-                      <th scope="col" class="govuk-table__header" style="width:10%">Status</th>
-                      <th scope="col" class="govuk-table__header">Confidence</th>
-                      <th scope="col" class="govuk-table__header" style="width:25%">Routing</th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/portal-interview" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Portal advises candidate an interview has been offered</a><br><div class="govuk-radios__divider">or</div>
-                        <span class="govuk-caption-m" style="font-size:1rem">version 1.0</span>
-                        <br>
-                        <details class="govuk-details" data-module="govuk-details">
-                          <summary class="govuk-details__summary" style="color:#5d6062">
-                            <span class="govuk-details__summary-text" style="font-size:0.9em">
-                              About this page
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            At this point, the candidate will have been sent an email advising them an interview has been offered to them.<br><br>The email may advise logging into their candidate portal to view the details. The candidate may also see this version of their portal if they log in after an interview has been offered but before they have actioned that offer further (i.e. booked an interview or withdrawn their application).
-                          </div>
-                        </details>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--blue">
-                          candidate
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag">
-                          TESTED
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--green">
-                          high
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        n/a
-                      </td>
-                    </tr>
-
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/interview-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate is shown interview invitation</a><br>
-                        <span class="govuk-caption-m" style="font-size:1rem">version 1.0</span>
-                        <br>
-                        <details class="govuk-details" data-module="govuk-details">
-                          <summary class="govuk-details__summary" style="color:#5d6062">
-                            <span class="govuk-details__summary-text" style="font-size:0.9em">
-                              About this page
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            Candidate is given interview info e.g. duration, itinerary.<br><br>On this page candidate can link to:
-                            <ul class="govuk-list govuk-list--bullet">
-                              <li><a href="" class="govuk-link govuk-link--no-visited-state">behaviours</a></li>
-                              <li><a href="" class="govuk-link govuk-link--no-visited-state">application feedback</a></li>
-                              <li><a href="" class="govuk-link govuk-link--no-visited-state">behaviour question practice</a></li>
-                              <li><a href="" class="govuk-link govuk-link--no-visited-state">email to vacancy holder</a></li>
-                              <li><a href="" class="govuk-link govuk-link--no-visited-state">withdraw application</a></li>
-                            </ul>
-                          </div>
-                        </details>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--blue">
-                          candidate
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag">
-                          TESTED
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--yellow">
-                          medium
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        n/a
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/book-interview" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate books interview</a><br>
-                        <span class="govuk-caption-m" style="font-size:1rem">version 1.0</span>
-                        <br>
-                        <details class="govuk-details" data-module="govuk-details">
-                          <summary class="govuk-details__summary" style="color:#5d6062">
-                            <span class="govuk-details__summary-text" style="font-size:0.9em">
-                              About this page
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet felis sed nibh tristique feugiat.<br><br>Curabitur vitae felis ac ante placerat tincidunt.
-                          </div>
-                        </details>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--blue">
-                          candidate
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--grey">
-                          untested
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--red">
-                          low
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        n/a
-                      </td>
-                    </tr>
-
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/reserve-list-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate offered place on reserve list</a><br>
-                        <span class="govuk-caption-m" style="font-size:1rem">version 1.0</span>
-                        <br>
-                        <details class="govuk-details" data-module="govuk-details">
-                          <summary class="govuk-details__summary" style="color:#5d6062">
-                            <span class="govuk-details__summary-text" style="font-size:0.9em">
-                              About this page
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet felis sed nibh tristique feugiat.<br><br>Curabitur vitae felis ac ante placerat tincidunt.
-                          </div>
-                        </details>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--blue">
-                          candidate
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag">
-                          TESTED
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--green">
-                          high
-                        </strong>
-                      </td>
-                      <td class="govuk-table__cell">
-
-                        <details class="govuk-details" data-module="govuk-details">
-                          <summary class="govuk-details__summary">
-                            <span class="govuk-details__summary-text">
-                              Accepts
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            <a href="" class="govuk-link govuk-link--no-visited-state">Returns to portal with message advising has been added to reserve list</a><br>
-                              <span class="govuk-caption-m" style="font-size:1rem">version 1.0</span>
-                              <br>
-                            Status - <strong class="govuk-tag" style="font-size:0.7em">
-                              TESTED
-                            </strong>
-                            <br><br>
-                            Confidence - <strong class="govuk-tag govuk-tag--yellow" style="font-size:0.7em">
-                              medium
-                            </strong>
-                          </div>
-                        </details>
-                        <details class="govuk-details" data-module="govuk-details">
-                          <summary class="govuk-details__summary">
-                            <span class="govuk-details__summary-text">
-                              Declines
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            <a href="" class="govuk-link govuk-link--no-visited-state">Returns to portal with message advising has rejected chance to join reserve list</a><br>
-                              <span class="govuk-caption-m" style="font-size:1rem">version 1.0</span>
-                              <br>
-                            Status - <strong class="govuk-tag" style="font-size:0.7em">
-                              TESTED
-                            </strong>
-                              <br><br>
-                            Confidence - <strong class="govuk-tag govuk-tag--green" style="font-size:0.7em">
-                              high
-                            </strong>
-                          </div>
-                        </details>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-            </li>
-
-            <li class="app-step-nav__step js-step" id="book-and-manage-your-driving-test">
-              <div class="app-step-nav__header js-toggle-panel" data-position="6">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 6<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
-                    </span>
-                  </span>
-
-                  <span class="js-step-title">
-                    Interviews take place
-                  </span>
-                </h2>
-              </div>
-
-              <div class="app-step-nav__panel js-panel" id="step-panel-book-and-manage-your-driving-test-6">
-
-              </div>
-
-            </li>
-
-            <li class="app-step-nav__step js-step" id="when-you-pass">
-              <div class="app-step-nav__header js-toggle-panel" data-position="7">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 7<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
-                    </span>
-                  </span>
-
-                  <span class="js-step-title">
-                    Provisional offer made
-                  </span>
-                </h2>
-              </div>
-
-              <div class="app-step-nav__panel js-panel" id="step-panel-when-you-pass-7">
-
-              </div>
-
-            </li>
-            <li class="app-step-nav__step js-step" id="when-you-pass">
-              <div class="app-step-nav__header js-toggle-panel" data-position="7">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 8<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
-                    </span>
-                  </span>
-
-                  <span class="js-step-title">
-                    Pre-employment checks
-                  </span>
-                </h2>
-              </div>
-
-              <div class="app-step-nav__panel js-panel" id="step-panel-when-you-pass-7">
-
-              </div>
-
-            </li>
-            <li class="app-step-nav__step js-step" id="when-you-pass">
-              <div class="app-step-nav__header js-toggle-panel" data-position="7">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 9<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
-                    </span>
-                  </span>
-
-                  <span class="js-step-title">
-                    Final offer
-                  </span>
-                </h2>
-              </div>
-
-              <div class="app-step-nav__panel js-panel" id="step-panel-when-you-pass-7">
-
-              </div>
-
-            </li>
-          </ol>
-        </div>
-
-
-
+                  </summary>
+                  <div class="govuk-details__text">
+                    n/a
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  tested
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                </strong>
+                ???
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
 
       </div>
