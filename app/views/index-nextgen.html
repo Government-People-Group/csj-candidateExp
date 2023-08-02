@@ -15,6 +15,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   .column-width-40 {
     width:40% !important;
   }
+
+  :target{
+    background-color:#e5f5f0;
+  }
 </style>
 
 <div class="govuk-grid-row">
@@ -133,12 +137,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
               </td>
             </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" style="background-color:lightgrey"><br><br></td>
-              <td class="govuk-table__cell" style="background-color:lightgrey"><br><br></td>
-              <td class="govuk-table__cell" style="background-color:lightgrey"><br><br></td>
-              <td class="govuk-table__cell" style="background-color:lightgrey"><br><br></td>
-            </tr>
+
             <tr class="govuk-table__row" id="use-template">
               <td class="govuk-table__cell"><strong>Scenario A - using template</strong><br><br><a href="home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em"> egjsdg sodg</a><br>
                 <details class="govuk-details" data-module="govuk-details">
@@ -223,12 +222,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
               </td>
             </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" style="background-color:lightgrey"><br><br></td>
-              <td class="govuk-table__cell" style="background-color:lightgrey"><br><br></td>
-              <td class="govuk-table__cell" style="background-color:lightgrey"><br><br></td>
-              <td class="govuk-table__cell" style="background-color:lightgrey"><br><br></td>
-            </tr>
+            
 
             <tr class="govuk-table__row" id="no-template">
               <td class="govuk-table__cell"><strong>Scenario B - not using template</strong><br><br><a href="home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">ahsdfkahsdafa</a><br>
@@ -626,7 +620,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 ???
               </td>
             </tr>
-            <tr class="govuk-table__row">
+            <tr class="govuk-table__row" id="uk-national">
               <td class="govuk-table__cell"><a href="nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate declares if they are a UK national</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
@@ -656,7 +650,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 ???
               </td>
             </tr>
-            <tr class="govuk-table__row">
+            <tr class="govuk-table__row" id="other-nationality">
               <td class="govuk-table__cell"><a href="other-nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">If not UK, candidate declares if they are EU, EEA etc</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
@@ -670,7 +664,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </details><br>
                 <a href="#right-to-work" class="govuk-link govuk-link--no-visited-state">Yes - candidate fits the description</a>
                 <p class="govuk-body-m" style="padding-top:20px">OR</p>
-                <a href="#commonwealth-or-ireland" class="govuk-link govuk-link--no-visited-state">No - candidate doesn not fit the description</a><br><br><br>
+                <a href="#commonwealth-or-ireland" class="govuk-link govuk-link--no-visited-state">No - candidate does not fit the description</a><br><br><br>
               </td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--purple">
@@ -687,7 +681,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
             <tr class="govuk-table__row" id="commonwealth-or-ireland">
-              <td class="govuk-table__cell"><a href="sign-in-apply?cookies=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">If not EU, EEA etc, candidate declares if Commonwealth or Irish citizen</a><br>
+              <td class="govuk-table__cell"><a href="commonwealth-or-ireland" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">If not EU, EEA etc, candidate declares if Commonwealth or Irish citizen</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -698,9 +692,39 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     None.
                   </div>
                 </details><br>
-                <a href="#right-to-work" class="govuk-link govuk-link--no-visited-state">Yes - candidate fits the description</a>
+                <a href="#right-to-work" class="govuk-link govuk-link--no-visited-state">Yes - candidate is Commonwealth or Irish citizen</a>
                 <p class="govuk-body-m" style="padding-top:20px">OR</p>
-                <a href="#commonwealth-or-ireland" class="govuk-link govuk-link--no-visited-state">No - candidate doesn not fit the description</a><br><br><br>
+                <a href="#eligible-no" class="govuk-link govuk-link--no-visited-state">No - candidate is not Commonwealth or irish citizen</a><br><br><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="right-to-work">
+              <td class="govuk-table__cell"><a href="right-to-work" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate declares if have right to work in UK</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details><br>
+                <a href="#eligible-yes" class="govuk-link govuk-link--no-visited-state">Yes - candidate can work in the UK</a>
+                <p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#eligible-no" class="govuk-link govuk-link--no-visited-state">No - candidate cannot work in the UK</a><br><br><br>
               </td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--purple">
