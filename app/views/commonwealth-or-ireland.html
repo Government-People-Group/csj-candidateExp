@@ -1,41 +1,44 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['signedin'] == "true" %}
-{% include "includes/header-signed-in.html" %}
-{% elif data['signedin'] == "false" %}
-{% include "includes/header-home.html" %}
-{% else %}
-{% include "includes/header-home.html" %}
-{% endif %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
 {% endblock %}
 
 {% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
 
-{% if data['dept'] == "Department for Education" %}
-{% set salary = "£38,995" %}
-{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
-{% elif data['dept'] == "Cabinet Office" %}
-{% set salary = "£41,550" %}
-{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
-{% elif data['dept'] == "Home Office" %}
-{% set salary = "£44,900" %}
-{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
-{% endif %}
+<style>
 
-<script>
-  function showDiv(div){
-    document.getElementById(div).style.display = 'block';
-  }
-
-  function hideDiv(div){
-    document.getElementById(div).style.display = 'none';
-  }
-</script>
+.nav-right{
+  float:right;
+}
+</style>
 
 
 
@@ -78,13 +81,13 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
               </legend>
               <div class="govuk-radios--inline" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="where-do-you-live" name="comm-or-ireland" type="radio" value="yes~/ji-right-to-work">
+                  <input class="govuk-radios__input" id="where-do-you-live" name="comm-or-ireland" type="radio" value="yes~/right-to-work">
                   <label class="govuk-label govuk-radios__label" for="where-do-you-live">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="where-do-you-live-2" name="comm-or-ireland" type="radio" value="no~/ji-not-eligible">
+                  <input class="govuk-radios__input" id="where-do-you-live-2" name="comm-or-ireland" type="radio" value="no~/not-eligible">
                   <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
                     No
                   </label>

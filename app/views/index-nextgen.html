@@ -567,7 +567,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="sign-in-apply?cookies=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate signs in</a><br>
+              <td class="govuk-table__cell"><a href="sign-in-apply?cookies=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate signs in or registers</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -575,7 +575,184 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-                    If candidate has already created an account and we detect this through cookies, this page is shown.<br><br>If no existing account cookie is detected, <a href="sign-in-apply?cookies=no" target="_blank">this version with alternate content</a> is shown.<br><br>Applying is not the only place where a candidate might sign in or register - there are a number of entry points, including saving a job, creating a job alert etc (mainly any action that is specific to that candidate and needs to be stored in their account). A candidate may also choose to register in preparation for one of these actions, without actually saving a job, applying etc at that time.
+                    If candidate has already created an account and we detect this through cookies, this page is shown.<br><br>
+                    If no existing account cookie is detected, <a href="sign-in-apply?cookies=no" target="_blank">this version with alternate content</a> is shown.
+                    <br><br>Applying is not the only place where a candidate might sign in or register - there are a number of entry points, including saving a job, creating a job alert etc (mainly any action that is specific to that candidate and needs to be stored in their account). A candidate may also choose to register in preparation for one of these actions, without actually saving a job, applying etc at that time.<br><br>
+                    It is also possible that a candidate might choose not to sign in or register until they have <a href="#eligibility-criteria">decided they meet the eligibility criteria</a> for a role.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="eligibility-criteria">
+              <td class="govuk-table__cell"><a href="sign-in-apply?cookies=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate decides if meets eligibility criteria</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Criteria shown to candidate are job-specific and so subject to change depending on role applied for.
+                  </div>
+                </details><br>
+                <a href="#uk-national" class="govuk-link govuk-link--no-visited-state">Yes - candidate thinks they're eligible</a>
+                <p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#eligible-no" class="govuk-link govuk-link--no-visited-state">No - candidate is not eligible</a><br><br><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate declares if they are a UK national</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details><br>
+                <a href="#eligible-yes" class="govuk-link govuk-link--no-visited-state">Yes - candidate is a UK national</a>
+                <p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#other-nationality" class="govuk-link govuk-link--no-visited-state">No - candidate is not a UK national</a><br><br><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="other-nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">If not UK, candidate declares if they are EU, EEA etc</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details><br>
+                <a href="#right-to-work" class="govuk-link govuk-link--no-visited-state">Yes - candidate fits the description</a>
+                <p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#commonwealth-or-ireland" class="govuk-link govuk-link--no-visited-state">No - candidate doesn not fit the description</a><br><br><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="commonwealth-or-ireland">
+              <td class="govuk-table__cell"><a href="sign-in-apply?cookies=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">If not EU, EEA etc, candidate declares if Commonwealth or Irish citizen</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details><br>
+                <a href="#right-to-work" class="govuk-link govuk-link--no-visited-state">Yes - candidate fits the description</a>
+                <p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#commonwealth-or-ireland" class="govuk-link govuk-link--no-visited-state">No - candidate doesn not fit the description</a><br><br><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="eligible-yes">
+              <td class="govuk-table__cell"><a href="eligible" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Eligibility to apply is confirmed</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="eligible-no">
+              <td class="govuk-table__cell"><a href="not-eligible" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Not eligible to apply is confirmed</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
                   </div>
                 </details>
               </td>

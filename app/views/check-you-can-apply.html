@@ -1,20 +1,45 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['signedin'] == "true" %}
-{% include "includes/header-signed-in.html" %}
-{% elif data['signedin'] == "false" %}
-{% include "includes/header-home.html" %}
-{% else %}
-{% include "includes/header-home.html" %}
-{% endif %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
 {% endblock %}
 
 {% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+</style>
+
 
 {% if data['dept'] == "Department for Education" %}
 {% set salary = "£38,995" %}
@@ -37,7 +62,7 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
   }
 </script>
 
-<form class="form" action="/check-eligible" method="post">
+
 
   <div class="govuk-grid-row">
     {% if data['dept'] == "Department for Education" %}
@@ -49,207 +74,66 @@ Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
     {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">
-        {{ data['searchwhat'] | capitalize}} {{ data['dept']}}</span>
-        <h1 class="govuk-heading-xl">Check you can apply</h1>
+    <form class="form" action="" method="post">
+      <span class="govuk-caption-l">
+        {% if data['searchwhat'] %}
+          <strong style="padding-right:20px; text-transform: capitalize;">{{ data['searchwhat']}}</strong> {{ data['dept']}}</span><br>
+        {% else %}
+          <strong style="padding-right:20px; text-transform: capitalize;">{{ defaultJob}}</strong> {{defaultDept}}<br>
+        {% endif %}<br>
+
+
+        {% if data['searchwhat'] %}
+          <h1 class="govuk-heading-l">Are you eligible to apply for the role of <span style="text-transform: capitalize;">{{ data['searchwhat']}}</span>?</h1>
+        {% else %}
+          <h1 class="govuk-heading-l">Are you eligible to apply for the role of {{defaultJob}}?</h1>
+        {% endif %}
+
+        <p class="govuk-body-m">Before you start your application, you need to check you are eligible to apply.</p><br>
+
+        <p class="govuk-body-m">By applying for this role, you agree you meet the eligibility criteria:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>You have a Financial Skills Certificate (Foundation level)</li>
+          <li>You have experience in data-driven technology</li>
+          <li>You feel confident communicating with a range of stakeholders</li>
+        </ul><br>
+
+        <p class="govuk-body-m">I have read and understood the eligibility criteria.</p>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+            {{ govukRadios({
+              classes: "govuk-radios",
+              idPrefix: "nationality",
+              name: "nationality",
+              items: [
+              {
+              value: "eligible-yes~/nationality",
+              text: "Yes - I meet the criteria for this role"
+              },
+              {
+              value: "eligible-no~/not-eligible",
+              text: "No - I do not meet the criteria"
+              }
+              ]
+              }) }}
+          </fieldset>
+</div>
+        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Continue</button>
 
       </div>
     </div>
 
 
 
-    <p class="govuk-body-m">An application for {{ data['searchwhat'] | capitalize}} will include:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>a judgement test</li>
-      <li>technical questions</li>
-      <li>behaviour questions</li>
-    </ul>
-    <p class="govuk-body-m"><strong>Your completed application must be received before closing at 11:55PM on 22 February 2023.<br> Applications received after closing unfortunately can not be considered.</strong></p>
-
-    <p class="govuk-body-m">Before you start your application, you need to check you are eligible to apply.</p>
-
-
-    <div id="q1" style="border:1px lightgrey solid; padding:20px;">
-      <h3 class="govuk-heading-l">Nationality requirements</h3>
-      <p class="govuk-body-m">What is your nationality?</p>
 
 
 
-      {% from "govuk/components/select/macro.njk" import govukSelect %}
-      {{ govukSelect({
-        id: "nationality",
-        name: "nationality",
-        label: {
-          text: ""
-        },
-        items: [
-        {
-          value: "none",
-          text: "",
-          selected: checked("nationality","none")
-        },
-
-        {
-          value: "Another nationality",
-          text: "Another nationality",
-          selected: checked("nationality","Another nationality")
-        }
-        ]
-      }) }}
-
-      <p class="govuk-body-m govuk-!-margin-top-9">Will you have the right to remain and take up work in the UK before employment commences? <br>For more information, you can view the full list of <a href="#">nationality requirements</a>.</p>
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        name: "righttoremain",
-        id: "righttoremain",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-
-        items: [
-        {
-          value: "yes",
-          checked: checked("righttoremain","yes"),
-          text: "Yes"
-        },
-        {
-          value: "no",
-          checked: checked("righttoremain","no"),
-          text: "No"
-        }
-        ]
-      }) }}
 
 
-    </div>
-    <div id="q2" style="border:1px lightgrey solid; padding:20px;">
-      <h3 class="govuk-heading-l govuk-!-margin-top-9">Professional memberships required</h3>
 
-      <p class="govuk-body-m">You must be a qualified practising barrister or solicitor on the CPS Advocate Panel at a minimum of level 2. Do you meet the professional membership requirements?</p>
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        name: "memberships",
-        id: "memberships",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
 
-        items: [
-        {
-          value: "yes",
-          checked: checked("memberships","yes"),
-          text: "Yes"
-        },
-        {
-          value: "no",
-          checked: checked("memberships","no"),
-          text: "No"
-        }
-        ]
-      }) }}
-
-    </div>
-
-    <div id="q3" style="border:1px lightgrey solid; padding:20px;">
-      <h3 class="govuk-heading-l govuk-!-margin-top-9">Language skills required</h3>
-
-      <p class="govuk-body-m">You must speak Spanish fluently? <br>Do you meet the language skills requirements?</p>
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        id: "language",
-        name: "language",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-        {
-          value: "yes",
-          checked: checked("language","yes"),
-          text: "Yes"
-        },
-        {
-          value: "no",
-          checked: checked("language","no"),
-          text: "No"
-        }
-        ]
-      }) }}
-
-    </div>
-    <div id="q4" style="border:1px lightgrey solid; padding:20px;">
-      <h3 class="govuk-heading-l govuk-!-margin-top-9">Essential criteria</h3>
-
-      <p class="govuk-body-m">Do you feel confident to communicate with a range of stakeholders?</p>
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        name: "essential1",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-        {
-          value: "yes",
-          checked: checked("essential1","yes"),
-          text: "Yes"
-        },
-        {
-          value: "no",
-          checked: checked("essential1","no"),
-          text: "No"
-        }
-        ]
-      }) }}
-      <p class="govuk-body-m govuk-!-margin-bottom-9 govuk-!-margin-top-9">Do you have knowledge of the further or higher education sector?</p>
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        name: "essential2",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-        {
-          value: "yes",
-          checked: checked("essential2","yes"),
-          text: "Yes"
-        },
-        {
-          value: "no",
-          checked: checked("essential2","no"),
-          text: "No"
-        }
-        ]
-      }) }}
-    </div>
-    <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Submit your answers</button>
   </form>
   {% endblock %}

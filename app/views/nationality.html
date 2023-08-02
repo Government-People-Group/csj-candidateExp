@@ -61,7 +61,17 @@
   }
 </script>
 
+{% if data['searchwhat'] %}
+  {% set Job = data['searchwhat'] %}
+{% else %}
+  {% set Job = 'Delivery Manager' %}
+{% endif %}
 
+{% if data['dept'] %}
+  {% set Dept = data['dept'] %}
+{% else %}
+  {% set Dept = 'DWP' %}
+{% endif %}
 
   <div class="govuk-grid-row">
     {% if data['dept'] == "Department for Education" %}
@@ -72,38 +82,35 @@
     <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
     {% endif %}
 
-    {% if data['searchwhat'] %}
-      {% set Job = data['searchwhat'] %}
-    {% else %}
-      {% set Job = 'Delivery Manager' %}
-    {% endif %}
-
-    {% if data['dept'] %}
-      {% set Dept = data['dept'] %}
-    {% else %}
-      {% set Dept = 'DWP' %}
-    {% endif %}
-
     <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="ji-task-list" method="post">
+      <form action="" method="post" novalidate>
       <span class="govuk-caption-l">
-        <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br>
+        <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br><br>
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "nationality",
+          name: "nationality",
+          fieldset: {
+          legend: {
+          text: "Are you a national of the UK?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+          value: "uk-yes~/eligible",
+          text: "Yes"
+          },
+          {
+          value: "uk-no~/other-nationality",
+          text: "No"
+          }
+          ]
+          }) }}
 
-          <h1 class="govuk-heading-xl">
-            You are eligible to apply for {{Job}}
-          </h1>
+        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Continue</button>
 
-
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            You must submit your application before 11:55 PM on 22nd February 2023.
-          </strong>
-        </div>
-        <button class="govuk-button" data-module="govuk-button">
-          Start application
-        </button>
       </div>
     </div>
 
