@@ -87,6 +87,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
         </div><br>
 
+
+
+
         <table class="govuk-table" id="step2">
           <caption class="govuk-table__caption govuk-table__caption--m">(2) Candidate finds role</caption>
           <thead class="govuk-table__head">
@@ -100,7 +103,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate begins on CS Jobs search page</a><br>
+              <td class="govuk-table__cell"><a href="home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate begins on CS Jobs search page</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -112,9 +115,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                     On this page candidate can link to:
                     <ul class="govuk-list govuk-list--bullet">
-                      <li><a href="https://csj-candidate-experience.herokuapp.com/sign-in" class="govuk-link govuk-link--no-visited-state">a sign in page</a></li>
-                      <li><a href="https://csj-candidate-experience.herokuapp.com/create-an-account" class="govuk-link govuk-link--no-visited-state">an account creation page</a></li>
-                      <li><a href="https://csj-candidate-experience.herokuapp.com/search-results" class="govuk-link govuk-link--no-visited-state">advanced search (which is just the search results page)</a></li>
+                      <li><a href="sign-in" class="govuk-link govuk-link--no-visited-state">a sign in page</a></li>
+                      <li><a href="create-an-account" class="govuk-link govuk-link--no-visited-state">an account creation page</a></li>
+                      <li><a href="search-results" class="govuk-link govuk-link--no-visited-state">advanced search (which is just the search results page)</a></li>
                       <li><a href="https://www.civil-service-careers.gov.uk/" class="govuk-link govuk-link--no-visited-state">the Civil Service Careers website</a></li>
                     </ul>
                   </div>
@@ -140,7 +143,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/portal-gds-search-results" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Search results are shown</a><br>
+              <td class="govuk-table__cell"><a href="search-results" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Search results are shown</a><br>
 
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
@@ -173,8 +176,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 Untested
               </td>
             </tr>
-            <tr id="saves-a-job" class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="https://csj-candidate-experience.herokuapp.com/portal-gds-search-results" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate saves a job they like (optional)</a><br>
+            <tr id="job-ad" class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/job-ad-full?searchwhat=Strategy%20Advisor&dept=Department%20for%20Education" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate reads job ad</a><br>
 
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
@@ -183,7 +186,107 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-                    n/a
+                    From here, 'Apply' takes the candidate to step (3) - <a href="#step3">'Candidate applies'</a>.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--grey">
+                  UNTESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                  LOW
+                </strong>
+
+              </td>
+              <td class="govuk-table__cell">
+                Not tested in a long time, only internally, wasn't very content heavy. This page hasn't progressed in line with the Vacancy Holder progress so hasn't been tested in the state it needs to be updated to, to reflect these VH findings.
+              </td>
+            </tr>
+            <tr id="saves-a-job" class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="search-results-saved" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate saves a job they like (optional)</a><br>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Optional: candidate can create a job alert to notify them if similar roles are posted in the future.<br><br>To create an alert, they will need to <a href="#sign-in">sign in</a> or <a href="#sign-up">register</a> first so that the alert can be stored in their profile.<br><br>To show this, click on the link in the banner. This will then take you to '<a href="#job-alert">Candidate creates job alert for this role</a>'.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  tested
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                </strong>
+                ???
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr id="job-alert" class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="job-alert" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate creates job alert for this role (optional)</a><br>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    This page includes a link to more options for setting up a job alert (e.g. job type, minimum salary, range from a location etc). <strong>This has not been prototyped</strong>.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  tested
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                </strong>
+                ???
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr id="job-alert" class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="job-alert-saved" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Job alert is saved (optional)</a><br>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
                   </div>
                 </details>
               </td>
@@ -207,7 +310,59 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
           </tbody>
+        </table><br><br><br>
+
+
+
+        <table class="govuk-table" id="step3">
+          <caption class="govuk-table__caption govuk-table__caption--m">(3) Candidate applies</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header column-width-40">Event</th>
+              <th scope="col" class="govuk-table__header">Who</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header">Confidence</th>
+              <th scope="col" class="govuk-table__header">Confidence notes</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="sign-in-apply?cookies=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate signs in</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    If candidate has already created an account and we detect this through cookies, this page is shown.<br><br>If no existing account cookie is detected, <a href="sign-in-apply?cookies=no" target="_blank">this version with alternate content</a> is shown.<br><br>Applying is not the only place where a candidate might sign in or register - there are a number of entry points, including saving a job, creating a job alert etc (mainly any action that is specific to that candidate and needs to be stored in their account). A candidate may also choose to register in preparation for one of these actions, without actually saving a job, applying etc at that time.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                  low
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+              </td>
+            </tr>
+
+          </tbody>
         </table>
+
+
 
 
       </div>

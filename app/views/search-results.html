@@ -239,7 +239,7 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
         {% if data['searchwhat'] %}
           <h2 class="govuk-heading-m"><a href="job-ad-full?dept=Department for Education">{{ data['searchwhat'] | capitalize}}</a></h2>
         {% else %}
-          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat=Strategy Advisor&dept=Department for Education">{{defaultJob}}</a></h2>
+          <h2 class="govuk-heading-m"><a href="job-ad-full?searchwhat={{defaultJob}}&dept=Department for Education">{{defaultJob}}</a></h2>
         {% endif %}
 
         <p class="govuk-body-m govuk-!-margin-bottom-1">Location: <strong>{{ data['searchwhere'] | capitalize}}</strong>, Exeter, Manchester</p>

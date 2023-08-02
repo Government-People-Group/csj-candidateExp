@@ -1,17 +1,18 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-{% if data['signedin'] == "true" %}
-{% include "includes/header-signed-in.html" %}
-{% elif data['signedin'] == "false" %}
-{% include "includes/header-home.html" %}
-{% else %}
-{% include "includes/header-home.html" %}
-{% endif %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "Go to my dashboard",
+        active: true
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -34,7 +35,7 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
       Job saved
     </h3>
     {% if data['searchwhat'] %}
-      <p class="govuk-body"><a class="govuk-notification-banner__link" href="portal-gds-job-alert">Create a job alert for <span style="text-transform: capitalize;">{{ data['searchwhat']}}</span> jobs</a></p>
+      <p class="govuk-body"><a class="govuk-notification-banner__link" href="job-alert">Create a job alert for <span style="text-transform: capitalize;">{{ data['searchwhat']}}</span> jobs</a></p>
     {% else %}
       <p class="govuk-body"><a class="govuk-notification-banner__link" href="portal-gds-job-alert">Create a job alert for {{defaultJob}} jobs</a></p>
     {% endif %}

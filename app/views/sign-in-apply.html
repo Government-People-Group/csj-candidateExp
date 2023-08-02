@@ -1,0 +1,147 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+  .govuk-footer__meta {
+    margin-left:10px;
+    margin-right:10px;
+  }
+
+.govuk-width-container {
+  margin-left:0px;
+  margin-right:0px;
+  max-width:100%;
+}
+
+.govuk-header__content {
+    padding-left: 165px;
+}
+
+@media (min-width: 768px)
+.beta-banner {
+    padding-right: 40px;
+    padding-left: 113px;
+}
+
+@media (min-width: 680px)
+.beta-banner {
+    padding-right: 40px;
+    padding-left: 60px;
+}
+.beta-banner {
+    background-color: #d6e8f2;
+    padding: 5px 20px 5px 20px;
+}
+
+.govuk-template__body {
+  background-color: #f3f3f3;
+}
+
+.govuk-main-wrapper {
+  padding:0px;
+}
+@media (min-width: 40.0625em) {
+.govuk-main-wrapper {
+  padding-bottom:0px;
+}
+}
+.introduction-page {
+    margin-top: 50px;
+    margin-bottom: 35px;
+    padding: 50px 36px;
+}
+.introduction-page {
+    width: calc(100% - 144px);
+}
+.introduction-page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: #fff;
+    margin-bottom:50px
+}
+.dash-element {
+    padding: 20px 20px;
+}
+
+.dash-element-left {
+  margin:30px 30px 0px 30px;
+}
+
+.govuk-header__logo {
+  margin-left:30px;
+  width:30%;
+}
+
+</style>
+
+
+
+  <div class="introduction-page" style="margin-top:50px" >
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {% if data['cookies']=="no"%}
+        <h1 class="govuk-heading-m">Sign in or create an account</h1>
+        {% else %}
+        <h1 class="govuk-heading-m">Sign in</h1>
+        {% endif %}
+
+        {% if data['cookies']=="no"%}
+        <div class="govuk-inset-text"  >
+          Sign in with your details or enter an email address and password to create an account.
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email"  >
+            Email address
+          </label>
+          {% if data['cookies']=="no"%}
+            <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+          {% else %}
+            <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email" value="lsmith@yahoo.com">
+          {% endif %}
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="password"  >
+            Password
+          </label>
+          {% if data['cookies']=="no"%}
+            <input class="govuk-input govuk-input--width-20" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint" autocomplete="password"><br><br>
+          {% else %}
+            <input class="govuk-input govuk-input--width-20" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint" autocomplete="password" value="*********"><br><br>
+          {% endif %}
+          <p class="govuk-body-s"><a href="#"  >Forgotten your password?</a></p>
+        </div>
+
+
+
+            <form action="???" method="post" novalidate>
+              <button class="govuk-button" data-module="govuk-button"   >
+                Sign in
+              </button>
+
+
+        <br><br><br>
+        <h2 class="govuk-heading-s">Sign in with an existing account</h2>
+        {% if data['cookies']=="yes"%}
+          <img src="public/images/google-button.png" style="max-width:20.5%"><br><img src="public/images/linkedin-button.png" style="max-width:20%;padding-left:2px">
+        {% else %}
+            <img src="public/images/google-button.png" style="max-width:20.5%"><br><img src="public/images/linkedin-button.png" style="max-width:20%;padding-left:2px">
+        {% endif %}
+      </div>
+      </div>
+    </div>
+  <br>
+
+{% endblock %}
