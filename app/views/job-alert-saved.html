@@ -3,7 +3,6 @@
 {% block header %}
   {{ govukHeader({
     homepageUrl: "#",
-    containerClasses: "app-width-container",
     serviceName: "Civil Service Jobs",
     serviceUrl: "#",
     navigationClasses:"nav-right",
@@ -21,6 +20,7 @@
 {% endblock %}
 
 {% block beforeContent %}
+
 <br>
 {{ govukBackLink({
           text: "Back",
@@ -30,14 +30,10 @@
 {% endblock %}
 
 {% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
 
 <style>
-.govuk-header__content {
-    width: 60%;
-}
-.govuk-header__logo {
-  margin-left:30px;
-}
 
 .nav-right{
   float:right;

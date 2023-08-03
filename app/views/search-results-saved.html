@@ -5,17 +5,40 @@
     homepageUrl: "#",
     serviceName: "Civil Service Jobs",
     serviceUrl: "#",
+    navigationClasses:"nav-right",
     navigation: [
       {
         href: "portal-gds-2",
-        text: "Go to my dashboard",
-        active: true
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
       }
     ]
   }) }}
 {% endblock %}
 
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
 {% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+</style>
 
 <!-- number of results matched counter should need to reflect filter actions  -->
 {% set n = 86 %}
