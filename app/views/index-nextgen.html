@@ -505,7 +505,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </strong>
               </td>
               <td class="govuk-table__cell">
-                ???
+                Only one round of testing done so far. The basic functionality tested well but we haven't yet tested more advanced functionality e.g. 'more options'
               </td>
             </tr>
             <tr id="job-alert" class="govuk-table__row">
@@ -556,7 +556,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="sign-in-apply?cookies=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate signs in or registers</a><br>
+              <td class="govuk-table__cell"><a href="sign-in?cookies=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate signs in or registers</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -585,8 +585,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 ???
               </td>
             </tr>
-            <tr class="govuk-table__row" id="eligibility-criteria">
-              <td class="govuk-table__cell"><a href="sign-in-apply?cookies=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate decides if meets eligibility criteria</a><br>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="check-you-can-apply" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligibility-criteria">Candidate decides if meets eligibility criteria</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -615,8 +615,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 Still doubt that candidate may just press 'yes' or may be unsure. Been through one round of testing.
               </td>
             </tr>
-            <tr class="govuk-table__row" id="uk-national">
-              <td class="govuk-table__cell"><a href="nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate declares if they are a UK national</a><br>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="uk-national">Candidate declares if they are a UK national</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -645,8 +645,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 ???
               </td>
             </tr>
-            <tr class="govuk-table__row" id="other-nationality">
-              <td class="govuk-table__cell"><a href="other-nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">If not UK, candidate declares if they are EU, EEA etc</a><br>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="other-nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="other-nationality">If not UK, candidate declares if they are EU, EEA etc</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -675,8 +675,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 ???
               </td>
             </tr>
-            <tr class="govuk-table__row" id="commonwealth-or-ireland">
-              <td class="govuk-table__cell"><a href="commonwealth-or-ireland" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">If not EU, EEA etc, candidate declares if Commonwealth or Irish citizen</a><br>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="commonwealth-or-ireland" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="commonwealth-or-ireland">If not EU, EEA etc, candidate declares if Commonwealth or Irish citizen</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -705,8 +705,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 ???
               </td>
             </tr>
-            <tr class="govuk-table__row" id="right-to-work">
-              <td class="govuk-table__cell"><a href="right-to-work" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate declares if have right to work in UK</a><br>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="right-to-work" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="right-to-work">Candidate declares if have right to work in UK</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -735,8 +735,35 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 ???
               </td>
             </tr>
-            <tr class="govuk-table__row" id="eligible-yes">
-              <td class="govuk-table__cell"><a href="eligible" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Eligibility to apply is confirmed</a><br>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="eligible" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligible-yes">Eligibility to apply is confirmed</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    As they are eligibile, the candidate can now go to their <a href="#task-list">application task list</a> and start their application.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="not-eligible" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligible-no">Not eligible to apply is confirmed</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -762,8 +789,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 ???
               </td>
             </tr>
-            <tr class="govuk-table__row" id="eligible-no">
-              <td class="govuk-table__cell"><a href="not-eligible" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Not eligible to apply is confirmed</a><br>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><br><br></td>
+              <td class="govuk-table__cell"><br><br></td>
+              <td class="govuk-table__cell"><br><br></td>
+              <td class="govuk-table__cell"><br><br></td>
+            </tr>
+            <tr class="govuk-table__row" >
+              <td class="govuk-table__cell"><a href="task-list" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="task-list">Application task list is available to candidate</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -774,6 +807,66 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     None.
                   </div>
                 </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="eligibility-cya" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="task-list">Eligibility answers can be viewed</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    This page displays the answers the candidate gave confirming they were eligible to apply. The candidate cannot change their answers - this is just for reference.<br><br>
+                    This page is reached by clicking on the 'Eligibility details' link on the <a href="#task-list">application task list</a>.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="online-test" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="online-test">Candidate takes online test</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    The candidate has to pass an initial online test before they can 'unlock' the rest of the tasks on the <A href="#task-list">application task list</a> and continue with their application.<br><br>
+                    If they fail the test, their application is ended.<br><br>
+                    <strong>Note - the online test is not hosted in this service. At this point, the candidate would be sent online to a 3rd party test supplier, then returned to our service after finishing the test.</strong>
+                  </div>
+                </details><br>
+                <a href="#online-tests-pass" class="govuk-link govuk-link--no-visited-state">Candidate passes test</a>
+                <p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#online-test-fail" class="govuk-link govuk-link--no-visited-state">Candidate fails test</a><br><br><br>
               </td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--purple">

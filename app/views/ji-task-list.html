@@ -1,20 +1,44 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Task list – {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['signedin'] == "true" %}
-{% include "includes/header-signed-in.html" %}
-{% elif data['signedin'] == "false" %}
-{% include "includes/header-home.html" %}
-{% else %}
-{% include "includes/header-home.html" %}
-{% endif %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
 {% endblock %}
 
 {% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+</style>
 
 {% if data['dept'] == "Department for Education" %}
 {% set salary = "£38,995" %}

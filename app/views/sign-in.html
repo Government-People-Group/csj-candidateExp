@@ -1,56 +1,98 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#"
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/header-sign-in.html" %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
 {% endblock %}
 
 {% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
 
-{% if data['apply'] | length > 1 %}
-{% set buturl = "ji-check-you-can-apply?signedin=true" %}
-{% else %}
-{% set buturl = "home?signedin=true" %}
-{% endif %}
+<style>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">Sign-in</h1>
-      <p class="govuk-body-m">Sign in or <a href="create-an-account">create an account</a> to get started.</p>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+.nav-right{
+  float:right;
+}
+</style>
 
-      {{ govukInput({
-        label: {
-          text: "Email address",
-          classes: "govuk-label--m"
-        },
-        id: "email",
-        name: "email",
-        classes: "govuk-input--width-30",
-        type: "email",
-        autocomplete: "email",
-        spellcheck: false
-      }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Password",
-          classes: "govuk-label--m"
-        },
-        id: "password2",
-        name: "password2",
-        classes: "govuk-input--width-30",
-        type: "password",
-        autocomplete: "re-enter-password",
-        spellcheck: false
-      }) }}
-      <a class ="govuk-button" style="max-width:100%;min-width:40%" href="{{ buturl }}">Sign-in</a>
-      <p class="govuk-body-m"><a href="#">Forgotten your password?</p>
+
+  <div class="introduction-page" style="margin-top:50px" >
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {% if data['cookies']=="no"%}
+        <h1 class="govuk-heading-m">Sign in or create an account</h1>
+        {% else %}
+        <h1 class="govuk-heading-m">Sign in</h1>
+        {% endif %}
+
+        {% if data['cookies']=="no"%}
+        <div class="govuk-inset-text"  >
+          Sign in with your details or enter an email address and password to create an account.
+        </div>
+        {% endif %}
       </div>
-  {% endblock %}
+    </div>
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email"  >
+            Email address
+          </label>
+          {% if data['cookies']=="no"%}
+            <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+          {% else %}
+            <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email" value="lsmith@yahoo.com">
+          {% endif %}
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="password"  >
+            Password
+          </label>
+          {% if data['cookies']=="no"%}
+            <input class="govuk-input govuk-input--width-20" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint" autocomplete="password"><br><br>
+          {% else %}
+            <input class="govuk-input govuk-input--width-20" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint" autocomplete="password" value="*********"><br><br>
+          {% endif %}
+          <p class="govuk-body-s"><a href="#"  >Forgotten your password?</a></p>
+        </div>
+
+
+
+            <form action="check-you-can-apply" method="post" novalidate>
+              <button class="govuk-button" data-module="govuk-button"   >
+                Sign in
+              </button>
+
+
+        <br><br><br>
+        <h2 class="govuk-heading-s">Sign in with an existing account</h2>
+        {% if data['cookies']=="yes"%}
+          <img src="public/images/google-button.png" style="max-width:20.5%"><br>
+          <img src="public/images/linkedin-button.png" style="max-width:20%;padding-left:2px">
+        {% else %}
+            <img src="public/images/google-button.png" style="max-width:20.5%"><br>
+            <img src="public/images/linkedin-button.png" style="max-width:20%;padding-left:2px">
+        {% endif %}
+      </div>
+      </div>
+    </div>
+  <br>
+
+{% endblock %}

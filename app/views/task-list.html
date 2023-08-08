@@ -1,20 +1,44 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Task list – {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['signedin'] == "true" %}
-{% include "includes/header-signed-in.html" %}
-{% elif data['signedin'] == "false" %}
-{% include "includes/header-home.html" %}
-{% else %}
-{% include "includes/header-home.html" %}
-{% endif %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
 {% endblock %}
 
 {% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+</style>
 
 {% if data['dept'] == "Department for Education" %}
 {% set salary = "£38,995" %}
@@ -44,26 +68,40 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
 <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
 {% endif %}
 
+{% if data['searchwhat'] %}
+  {% set Job = data['searchwhat'] %}
+{% else %}
+  {% set Job = 'Delivery Manager' %}
+{% endif %}
+
+{% if data['dept'] %}
+  {% set Dept = data['dept'] %}
+{% else %}
+  {% set Dept = 'DWP' %}
+{% endif %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters" style="padding-right:10px">
-    <span class="govuk-caption-l">{{ data['dept']}}</span>
-    <h1 class="govuk-heading-xl">{{ data['searchwhat'] | capitalize}}</h1>
+
+    <span class="govuk-caption-l">
+      <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br>
+    <h1 class="govuk-heading-xl">Your application for {{Job}}</h1>
 
 
-    <p class="govuk-body govuk-!-margin-bottom-3">Complete the application for {{ data['searchwhat'] | capitalize}}.<br>
-      Throughout your application you can leave and return to complete at any time.</p>
-      <p class="govuk-body govuk-!-margin-bottom-3">If you need a reasonable adjustment, you can contact our recruitment team.</p>
+    <p class="govuk-body">You can leave and return to complete at any time. Your answers will automatically save when you complete a task.</p>
 
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-warning-text__assistive">Warning</span>
-          You must submit your application before 11:55 PM on 22nd February 2023.
-        </strong>
-      </div>
+    <p class="govuk-body"><a href="job-ad-full">View the {{Job}} advert</a>.</p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You must submit your application before 11:55 PM on 22nd July 2023.
+      </strong>
+    </div>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 8 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 5 sections.</p>
     </div>
     <div class="govuk-grid-column-one-quarter" style="padding-left:20px">
     </div>
@@ -76,13 +114,13 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
       <ol class="govuk-prototype-kit-task-list" style="border-top:5px solid #1D70B8;padding-top:20px">
         <li>
           <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">1. </span> Eligibility
+            Check you can apply
           </h2>
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="check-you-can-apply" aria-describedby="eligibility-status">
-                  Check you can apply
+                <a href="eligibility-cya" aria-describedby="eligibility-status">
+                  Eligibility details
                 </a>
               </span>
               <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
@@ -92,9 +130,10 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
 
         <li>
           <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">2. </span> Online tests
+            Online tests
           </h2>
-          <p class="govuk-body govuk-!-margin-left-6">For this job role, you must pass 3 online tests. You cannot progress through your application until you have completed each test.</p>
+          <p class="govuk-body govuk-!-margin-left-6">For this application, you must pass an online test. You’ll need to pass this test before you can progress to the next step in your application.</p>
+          <p class="govuk-body govuk-!-margin-left-6">You can <a href="">practice for the online test</a> before taking it.</p><br><br>
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
@@ -112,42 +151,30 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
 
 
             </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">
-                  Numeric test
-                </a>
-              </span>
-              {% if data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% endif %}
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="list-convictions-status">
-                  Work strengths test
-                </a>
-              </span>
-              {% if data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% endif %}
-            </li>
+
           </ul>
         </li>
         <li>
           <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">3. </span> CV and personal statement
+            Assessments
           </h2>
+          <p class="govuk-body govuk-!-margin-left-6">For help on the assessments, you can use the articles:</p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-6">
+            <li><a href="#">how to answer behaviour questions</a></li>
+            <li><a href="#">Success profile guidance</a></li>
+          </ul>
+            <br><br>
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
+
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="{{ cvurl }}" aria-describedby="company-information-status">
+                {% if data['pass'] == "true"  %}
+                <a href="cv-choice" aria-describedby="list-convictions-status">
                   CV
                 </a>
+                {% else%}
+                  CV
+                {% endif %}
               </span>
 
               {% if data['cv'] == "true"  %}
@@ -161,9 +188,15 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="personal-statement" aria-describedby="contact-details-status">
+
+                {% if data['pass'] == "true"  %}
+                <a href="personal-statement" aria-describedby="list-convictions-status">
                   Personal statement
                 </a>
+                {% else %}
+                  Personal statement
+                {% endif %}
+
               </span>
 
               {% if data['ps'] == "true"  %}
@@ -176,65 +209,80 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
               {% else %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
               {% endif %}
+            </li>
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                {% if data['pass'] == "true"  %}
+                <a href="behaviour-questions" aria-describedby="list-convictions-status">
+                  Behaviour questions
+                </a>
+                {% else%}
+                  Behaviour questions
+                {% endif %}
+              </span>
+
+
+              {% if data['behaviour-pass'] == "true" %}
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elif data['pass'] == "true"  %}
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+              {% endif %}
+            </li>
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                {% if data['pass'] == "true"  %}
+                <a href="technical-skills" aria-describedby="list-convictions-status">
+                  Technical skills
+                </a>
+                {% else %}
+                  Technical skills
+                {% endif %}
+
+              </span>
+              {% if data['tech-skills-pass'] == "true" %}
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elif data['pass'] == "true"  %}
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+              {% endif %}
 
             </li>
           </ul>
         </li>
+
         <li>
           <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">4. </span> Assessment questions
+            Personal details
           </h2>
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
-                Behaviour questions
+                {% if data['pass'] == "true"  %}
+                <a href="personal-info" aria-describedby="list-convictions-status">
+                  Personal information
                 </a>
+                {% else%}
+                  Personal information
+                {% endif %}
               </span>
-
               {% if data['pass'] == "true"  %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
               {% endif %}
-
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">
-                Technical skills
+                {% if data['pass'] == "true"  %}
+                <a href="preferences" aria-describedby="list-convictions-status">
+                  Work preferences
                 </a>
-              </span>
-              {% if data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-              {% endif %}
-
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">5. </span> Background information questions
-          </h2>
-          <ul class="govuk-prototype-kit-task-list__items">
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">Personal information</a>
-              </span>
-              {% if data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-              {% endif %}
-
-
-
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">Preferences</a>
+                {% else%}
+                  Work preferences
+                {% endif %}
               </span>
 
               {% if data['pass'] == "true"  %}
@@ -248,7 +296,13 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">Diversity and Inclusion</a>
+                {% if data['pass'] == "true"  %}
+                <a href="diversity-inclusion" aria-describedby="list-convictions-status">
+                  Diversity and inclusion
+                </a>
+                {% else%}
+                  Diversity and inclusion
+                {% endif %}
               </span>
 
               {% if data['pass'] == "true"  %}
@@ -265,10 +319,10 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
       <ul class="govuk-list govuk-list--bullet-" style="padding-left:10px">
         <li><h2 style="padding-left:5px;border-top:5px solid #1D70B8;padding-top:20px" class="govuk-heading-m">Related content</h2></li>
 
-        <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="job-ad-full">View {{ data['searchwhat'] | capitalize}} advert</a></p></li>
+
         <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">How to answer behaviour questions</a></p></li>
         <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">Success profile guidiance</a></p></li>
-        <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">Preparing for the online tests</a></p></li>
+
 
       </ul>
     </div>
