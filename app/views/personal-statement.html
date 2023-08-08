@@ -51,8 +51,7 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
   {% endif %}
 
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">
-      <strong>{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span>
+  {% include "includes/job-and-dept.html" %}
       <h1 class="govuk-heading-xl">Personal statement</h1>
 
     </div>
@@ -67,7 +66,16 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body-m">Use the <a href="#">STAR method</a> to write a personal statement that relates to the skills listed in the person specification from <a href="#">Policy Advisor</a>.</p>
+  <p class="govuk-body-m">Your personal statement will be assessed on:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><p class="govuk-body-m">the <a href="#">behaviours</a>: 'Seeing the big picture' and 'Making Effective Decisions' </p></li>
+    <li><p class="govuk-body-m">Your experience of: strategy development or delivery - experience of developing strategy recommendations drawing on a range of evidence or delivering complex policy priorities</p></li>
+    <li><p class="govuk-body-m">Your experience of: delivery of data-driven technology - experience working in teams delivering data-driven technology, whether in technical or product roles</p></li>
+  </ul><br>
+
+  <p class="govuk-body-m">You can <a href="#">use the person specification</a> to help write your personal statement.</p><br>
+
+    <p class="govuk-body-m">Use the <a href="#">STAR method</a> to write your personal statement.</p>
 
     <p class="govuk-body-m">The STAR method can help you structure your personal statement:</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -76,19 +84,16 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
       <li><p class="govuk-body-m"><strong>action</strong> - the action you took</p></li>
       <li><p class="govuk-body-m"><strong>result</strong> - what happened as a result of your action and what you learned from the experience</p></li>
     </ul>
-    <p class="govuk-body-m">Please remove any references to your identity.</p>
 
-    <div class="govuk-heading-m govuk-!-margin-top-4" style="background:#F6F6F6;padding-top:5px;padding-bottom:5px;padding-left:20px; padding-right:20px">
-      <h3 class="govuk-heading-m govuk-!-margin-top-3">Person specification</h3>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li><p class="govuk-body-m">You will have strong analytical skills and an ability to evaluate and interpret information (quantitative and qualitative, but particularly the latter) to form judgements and make appropriate recommendations</p></li>
-        <li><p class="govuk-body-m">The ability to manage own workload, resolve competing demands and cope with changing priorities in a flexible and proactive way</p></li>
-        <li><p class="govuk-body-m">Being able to forward plan, using foresight with the ability to anticipate forthcoming situations and planning time and resources accordingly</p></li>
-        <li><p class="govuk-body-m">To be able to communicate with people at all levels, in a clear, concise, and fluent manner</p></li>
-      </ul>
-
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Please remove any references to your identity.
+      </strong>
     </div>
+
+
     <h3 class="govuk-heading-m govuk-!-margin-top-6">Upload a personal statement</h3>
 
     <p class="govuk-body-m">You can upload your personal statement and edit it.</p>
@@ -111,7 +116,7 @@ CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
       <!-- <hr style="border:0px" class="govuk-!-margin-top-0 govuk-!-margin-bottom-3"> -->
 
     </div>
-    <form class="form" action="task-list-complete" method="post">
+    <form class="form" action="task-list?ps=true" method="post">
     <h3 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Enter your personal statement</h3>
   <p class="govuk-body-m">Or write your personal statement here</p>
     <div style="background:#dee0e2;padding-left:20px;padding-top:10px;padding-bottom:10px">

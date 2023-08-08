@@ -1,0 +1,159 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+<script>
+  function hopToIt(div){
+    var divIt = document.getElementById(div);
+    divIt.scrollIntoView();
+    document.getElementById(div).style.display = 'none';
+    document.getElementById('ps-text-area-full').style.display = 'block';
+  }
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    {% include "includes/job-and-dept.html" %}
+      <h1 class="govuk-heading-xl">Behaviour questions</h1>
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+      <form class="form" action="task-list?behaviour-pass=true" method="post">
+    <ul class="govuk-list govuk-list--bullet-">
+
+        <li><p style ="border-left:5px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"><strong>Behaviour questions</strong></a></p></li>
+        <li><p style ="border-left:0px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="technical-skills" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Technical skills</a></p></li>
+      </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body-m">The Civil Service uses <a href="#">behaviours</a> to get an understanding of the actions and activities that you have done (or would do) that result in effective performance in a job.</p>
+
+    <p class="govuk-body-m">Use <a href="">the STAR method</a> to help you structure your answers:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><p class="govuk-body-m"><strong>situation</strong> - the situation you had to deal with</p></li>
+      <li><p class="govuk-body-m"><strong>task</strong> - the task you were given to do</p></li>
+      <li><p class="govuk-body-m"><strong>action</strong> - the action you took</p></li>
+      <li><p class="govuk-body-m"><strong>result</strong> - what happened as a result of your action and what you learned from the experience</p></li>
+    </ul>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Please remove any references to your identity.
+      </strong>
+    </div><br>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Communicating and influencing
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Communicate in a straightforward, honest and engaging manner, choosing appropriate styles to maximise understanding and impact. Encourage the use of different communication methods, including digital resources and highlight the benefits, including ensuring cost effectiveness. Ensure communication has a clear purpose and takes into account people’s individual needs. Share information as appropriate and check understanding. Show positivity and enthusiasm towards work, encouraging others to do the same. Ensure that important messages are communicated with colleagues and stakeholders respectfully, taking into consideration the diversity of interests.
+      </div>
+    </details>
+
+
+
+    <div class="govuk-character-count" data-module="govuk-character-count" data-maxWords="250">
+    <div class="govuk-form-group">
+    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="10" aria-describedby="with-hint-info with-hint-hint"></textarea>
+    </div>
+    <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+    You can enter up to 200 characters
+    </div>
+    </div><br><br>
+
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Seeing the big picture
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Understand the strategic drivers for your area of work. Align activities to contribute to wider organisational priorities. Remain alert to emerging issues and trends which might impact your work area. Seek out and share experiences to develop knowledge of the team’s business area. Understand how the strategies and activities of the team create value and meet the diverse needs of all stakeholders.
+      </div>
+    </details>
+
+
+
+    <div class="govuk-character-count" data-module="govuk-character-count" data-maxWords="250">
+    <div class="govuk-form-group">
+    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="10" aria-describedby="with-hint-info with-hint-hint"></textarea>
+    </div>
+    <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+    You can enter up to 200 characters
+    </div>
+    </div><br><br>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Making effective decisions
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Understand own level of responsibility and empower others to make decisions where appropriate. Analyse and use a range of relevant, credible information from internal and external sources to support decisions. Invite challenge and where appropriate involve others in decision making. Display confidence when making difficult decisions, even if they prove to be unpopular. Consult with others to ensure the potential impacts on end users have been considered. Present strong recommendations in a timely manner outlining the consideration of other options, costs, benefits and risks.
+      </div>
+    </details>
+
+
+
+    <div class="govuk-character-count" data-module="govuk-character-count" data-maxWords="250">
+    <div class="govuk-form-group">
+    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="10" aria-describedby="with-hint-info with-hint-hint"></textarea>
+    </div>
+    <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+    You can enter up to 200 characters
+    </div>
+    </div><br><br>
+
+
+
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+
+  <p class="govuk-body-m"><a href="task-list">Return to task-list</a></p>
+</div>
+</div>
+
+{% endblock %}

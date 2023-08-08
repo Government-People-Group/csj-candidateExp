@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+CV and personal statement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+<script>
+  function hopToIt(div){
+    var divIt = document.getElementById(div);
+    divIt.scrollIntoView();
+    document.getElementById(div).style.display = 'none';
+    document.getElementById('ps-text-area-full').style.display = 'block';
+  }
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    {% include "includes/job-and-dept.html" %}
+      <h1 class="govuk-heading-xl">Technical skills</h1>
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+      <form class="form" action="technical-skills" method="post">
+    <ul class="govuk-list govuk-list--bullet-">
+
+        <li><p style ="border-left:0px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="behaviour-questions" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"><strong>Behaviour questions</strong></a></p></li>
+        <li><p style ="border-left:5px solid #1d70b8; padding-left:20px" class="govuk-body-m"><a href="{{ cvurl }}" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Technical skills</a></p></li>
+      </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body-m">The Civil Service uses <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/744220/Success-Profiles-Technical-vFV.pdf" target="_blank">technical skills</a> to see how you meet the skills needed for this role. </p>
+
+    <p class="govuk-body-m">Technical skills are the demonstration of specific professional skills, knowledge or qualifications.</p>
+
+    <p class="govuk-body-m">Use <a href="">the STAR method</a> to help you structure your answers:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><p class="govuk-body-m"><strong>situation</strong> - the situation you had to deal with</p></li>
+      <li><p class="govuk-body-m"><strong>task</strong> - the task you were given to do</p></li>
+      <li><p class="govuk-body-m"><strong>action</strong> - the action you took</p></li>
+      <li><p class="govuk-body-m"><strong>result</strong> - what happened as a result of your action and what you learned from the experience</p></li>
+    </ul>
+
+    <p class="govuk-body-m">You can view the <a href="">Strategy Adviser advert</a>.</p>
+
+    <p class="govuk-body-m">Please remove any references to your identity.</p>
+
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-6">Write a statement on how you meet the following technical skill: </h3>
+
+    <p class="govuk-body-m">The ability to collect and analyse data, assess problems and structure solutions.</p>
+
+    <div class="govuk-character-count" data-module="govuk-character-count" data-maxWords="250">
+  <div class="govuk-form-group">
+
+
+    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="10" aria-describedby="with-hint-info with-hint-hint"></textarea>
+  </div>
+  <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+    You can enter up to 200 characters
+  </div>
+</div>
+
+
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Save and continue",
+    href: "task-list?tech-skills-pass=true"
+  }) }}
+
+  <p class="govuk-body-m"><a href="task-list">Return to task-list</a></p>
+</div>
+</div>
+
+{% endblock %}

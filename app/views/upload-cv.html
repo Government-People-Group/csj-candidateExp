@@ -1,0 +1,122 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check you can apply – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['signedin'] == "true" %}
+{% include "includes/header-signed-in.html" %}
+{% elif data['signedin'] == "false" %}
+{% include "includes/header-home.html" %}
+{% else %}
+{% include "includes/header-home.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="" method="post" novalidate>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br><br>
+        <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Upload a CV
+      </h1>
+    </legend><br>
+
+    <p class="govuk-body-m">Choose your file and upload your CV.</p>
+    <p class="govuk-body-m">To make sure your CV will upload correctly, you should:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>use files up to 5 MB with types .pdf, .doc, .docx, .odt or .rtf</li>
+      <li>divide the text into clear sections</li>
+      <li>not use any images</li>
+    </ul>
+
+    <div class="govuk-form-group" style="border-radius: 10px;background:#ffffff;padding:10px;border:1px lightgrey solid">
+      <label class="govuk-label" for="file-upload-1">
+        Upload a file
+      </label>
+      <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" value="{{ data['file-upload-1']}}">
+
+
+    <p id="lastMod" class="govuk-body-m"></p>
+
+    <script>
+      const fileUpload = document.getElementById('file-upload-1');
+      var stamp = new Date();
+      var localStamp = stamp.toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" }) ;
+
+      fileUpload.addEventListener('change', (event) => {
+        const files = event.target.files;
+        for (const file of files) {
+          const name = file.name;
+          const lastModified = file.lastModified;
+          const lmElement = document.getElementById('lastMod');
+
+          var fileName = `${name}`;
+          var lastM = `Last modified on ${new Date(lastModified).toLocaleDateString('en-uk')}`;
+          lmElement.innerHTML = lastM;
+        }
+      });
+    </script>
+  <button class="govuk-button" data-module="govuk-button">Upload and continue</button>
+      </div>
+  </fieldset>
+
+      <div class="govuk-button-group">
+
+        <a class="govuk-link" href="ji-cv-choice">Go back to CV options</a>
+      </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  </form>
+  {% endblock %}
