@@ -19,9 +19,74 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   :target{
     background-color:#e5f5f0;
   }
+
 </style>
 
+<div id="scroll-here"></div>
+<a id="back-to-top" href="#scroll-here">
+  <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' aria-labelledby='title' aria-describedby='desc' role='img' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EAngle Up%3C/title%3E%3Cdesc%3EA line styled icon from Orion Icon Library.%3C/desc%3E%3Cpath data-name='layer1' fill='none' stroke='%23202020' stroke-miterlimit='10' stroke-width='2' d='M20 40l11.994-14L44 40' stroke-linejoin='round' stroke-linecap='round'%3E%3C/path%3E%3C/svg%3E" alt="Angle Up" />
+</a>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+  $(function(){
+    //Function To Add Class
+    function showBackToTop(){
+      $('#back-to-top').addClass('show-btt');
+    }
+
+    //Function To Add Class
+    function hideBackToTop(){
+      $('#back-to-top').removeClass('show-btt');
+    }
+
+    //Check Scroll and Add Class
+    function checkScrollPos(){
+      if ($(this).scrollTop() >= 200) { //if scroll position is lower than 700px from the top of the screen
+        showBackToTop();
+      } else {
+        hideBackToTop()
+      }
+    }
+    // tell the browser to run the "checkScrollPos()" function just above when the user scrolls
+    $(window).on('scroll', function(){
+      checkScrollPos();
+    });
+    //Check the scroll position once when the page loads
+    checkScrollPos();
+  })
+</script>
+<style>
+  html {
+  scroll-behavior:smooth
+}
+#back-to-top.show-btt {
+    bottom: 0;
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+#back-to-top {
+    height: 75px;
+    width: 75px;
+    position: fixed;
+    right: 0;
+    z-index: 99;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px #ccc;
+    margin: 17px;
+    background: gray;
+    bottom: -150px;
+    opacity: 0;
+    transition: all .5s ease;
+    margin-right:300px;
+}
+</style>
+
+
+
+
 <div class="govuk-grid-row">
+
 
 
     <div class="govuk-tabs" data-module="govuk-tabs">
@@ -69,7 +134,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 (4) <a class="govuk-link" href="#step4">Applications are sifted</a>
               </li>
               <li>
-                (5) <a class="govuk-link" href="#step5">Interviews are set up and arranged</a>
+                (5) <a class="govuk-link" href="#step5">Interviews are set up and arranged</a><br>
+                <a class="govuk-link" href="#step5a" style="padding-left:30px">(a) interview set up screens</a><br>
+                <a class="govuk-link" href="#step5b" style="padding-left:30px">(b) candidate booking screens</a><br>
               </li>
             </ul>
           </div>
@@ -342,7 +409,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 
 
-<!-- Step 2 table -->
+<!-- Step 2 - Candidate finds role -->
 
         <table class="govuk-table">
           <caption class="govuk-table__caption govuk-table__caption--m"  id="step2">(2) Candidate finds role</caption>
@@ -542,7 +609,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 
 
-
+<!-- Step 3 - Candidate applies -->
 
         <table class="govuk-table">
           <caption class="govuk-table__caption govuk-table__caption--m"  id="step3">(3) Candidate applies</caption>
@@ -1186,33 +1253,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 ???
               </td>
             </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="???" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="???">Candidate completes Personal Information</a><br>
-                <details class="govuk-details" data-module="govuk-details">
-                  <summary class="govuk-details__summary" style="color:#5d6062">
-                    <span class="govuk-details__summary-text" style="font-size:0.9em">
-                      Notes
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    Not currently prototyped.
-                  </div>
-                </details>
-              </td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--purple">
-                  candidate
-                </strong>
-              </td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag">
-                  ???
-                </strong>
-              </td>
-              <td class="govuk-table__cell">
-                ???
-              </td>
-            </tr>
+
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a href="???" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="???">Candidate completes Work Preferences</a><br>
                 <details class="govuk-details" data-module="govuk-details">
@@ -1267,13 +1308,579 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 ???
               </td>
             </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="task-list-complete" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="task-list-complete">Application task list - all tasks are complete</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="confirmation" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="confirmation">Application is submitted and receipt confirmed</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
           </tbody>
-        </table>
+        </table><br><br><br>
+
+
+
+
+
+<!-- Step 4 - Applications are sifted -->
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m"  id="step4">(4) Applications are sifted</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header column-width-40">Event</th>
+              <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="unsuccessful-application" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="unsuccessful-application">Candidate informed application was unsuccessful</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details><br>
+                <a href="#unsuccessful-application-feedback" class="govuk-link govuk-link--no-visited-state">Candidate views unsuccessful application feedback</a><br><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="unsuccessful-application-feedback" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="unsuccessful-application-feedback">Candidate views feedback for unsuccessful application</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+
+          </tbody>
+        </table><br><br><br>
+
+
+
+
+<!-- Step 5 - Interviews are set up and arranged -->
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m"  id="step5">(5) Interviews are set up and arranged</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header column-width-40">Event</th>
+              <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" id="step5a">
+                (a) interview set up screens
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="unsuccessful-application" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="unsuccessful-application">Blah blah</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr><br><br><br>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" id="step5b">
+                (b) candidate booking screens
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="interview-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="interview-offer">Candidate is invited to an interview</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+                <br>
+                <a href="#application-feedback" class="govuk-link govuk-link--no-visited-state">Candidate views application feedback</a><br><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="application-feedback" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="application-feedback">Candidate views application feedback</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="book-interview" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="book-interview">Candidate books interview slot</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="interview-confirmed" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="interview-confirmed">Interview is confirmed</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+          </tbody>
+        </table><br><br><br>
+
+
+
+
+<!-- Step 6 - Interviews take place -->
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m"  id="step6">(6) Interviews take place</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header column-width-40">Event</th>
+              <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="">Candidate informed interview was unsuccessful</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+                <br>
+                <a href="" class="govuk-link govuk-link--no-visited-state">Candidate views unsuccessful interview feedback</a><br><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="">Candidate views unsuccessful interview feedback</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="reserve-list-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="reserve-list-offer">Candidate is offered place on reserve-list</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+
+          </tbody>
+        </table><br><br><br>
+
+
+
+
+<!-- Step 7 - Provisional offer -->
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m"  id="step7">(7) Provisional offer</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header column-width-40">Event</th>
+              <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="provisional-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="provisional-offer">Provisional offer is made to candidate</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+                <br>
+                <a href="#interview-feedback" class="govuk-link govuk-link--no-visited-state">Candidate views interview feedback</a><p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#provisional-offer-confirmation" class="govuk-link govuk-link--no-visited-state">Candidate asks to speak to hiring manager</a><p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#provisional-offer-confirm" class="govuk-link govuk-link--no-visited-state">Candidate accepts offer</a><p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#provisional-offer-confirm" class="govuk-link govuk-link--no-visited-state">Candidate declines offer</a><br><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="interview-feedback" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="interview-feedback">Candidate views interview feedback</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="provisional-offer-confirm" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="provisional-offer-confirm">Candidate confirms offer decision</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    The same page is shown regardless of whether the candidate has selected 'Accept' or 'Decline' on the previous page.<br><br>
+                    The difference is the content shown in the header, triggered by the decision previously made.
+                  </div>
+                </details>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/provisional-offer-confirmation?provisional-offer=accept%20the%20provisional%20offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="provisional-offer-confirmation">Provisional offer decision is confirmed</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    The same page is shown regardless of whether the candidate has selected 'Accept' or 'Decline' previously.<br><br>
+                    The difference is the content shown, triggered by the decision previously made.<br><br>
+                    The 'Decline' version can be seen <a href="/provisional-offer-confirmation?provisional-offer=decline%20the%20provisional%20offer" target="_blank">here</a><br><br>
+                    The 'Speak to hiring manager' version can be seen <a href="/provisional-offer-confirmation?provisional-offer=speak-to-manager" target="_blank">here</a>
+                  </div>
+                </details>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+
+          </tbody>
+        </table><br><br><br>
+
+
+
+
 
 
 
 
       </div>
+
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="user-journeys">
         <h2 class="govuk-heading-l">User journeys</h2>
       </div>
@@ -1282,5 +1889,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     </div>
   </div>
+
+
+
 
 {% endblock %}
