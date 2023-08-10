@@ -156,6 +156,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <li>
                 (9) <a class="govuk-link govuk-link--no-visited-state" href="#step9">Final offer</a>
               </li>
+              <li>
+                (10) <a class="govuk-link govuk-link--no-visited-state" href="#step10">Candidate portal (dashboard)</a>
+              </li>
             </ul>
           </div>
         </div><br><br><br>
@@ -1515,7 +1518,45 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="interview-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="interview-offer">Candidate is invited to an interview</a><br>
+              <td class="govuk-table__cell"><a href="/portal-interview" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="portal-interview">Candidate is invited to an interview through portal notification</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details><p class="govuk-body-m">OR</p>
+                <a href="/dwp-application-home?searchwhat=Delivery%20Manager&dept=DWP" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="homepage-interview">Candidate is invited to an interview through application homepage notification</a><br>
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary" style="color:#5d6062">
+                      <span class="govuk-details__summary-text" style="font-size:0.9em">
+                        Notes
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      None.
+                    </div>
+                  </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="interview-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="interview-offer">Candidate is given interview booking info</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1526,8 +1567,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     None.
                   </div>
                 </details>
-                <br>
-                <a href="#application-feedback" class="govuk-link govuk-link--no-visited-state">Candidate views application feedback</a><br><br>
               </td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--purple">
@@ -1552,7 +1591,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-                    None.
+                    This is not an obligatory step but an option on the page above.
                   </div>
                 </details>
 
@@ -1611,6 +1650,44 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     None.
                   </div>
                 </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/portal-interview?interview-booked=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="portal-interview-confirmed">Portal updates to show interview confirmed</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details><p class="govuk-body-m">OR</p>
+                <a href="/dwp-application-home?interview-booked=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="homepage-interview-confirmed">Application homepage updates to show interview confirmed</a><br>
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary" style="color:#5d6062">
+                      <span class="govuk-details__summary-text" style="font-size:0.9em">
+                        Notes
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      None.
+                    </div>
+                  </details>
               </td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--purple">
@@ -1703,7 +1780,45 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="reserve-list-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="reserve-list-offer">Candidate is offered place on reserve-list</a><br>
+              <td class="govuk-table__cell"><a href="/portal-reserve-list" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="portal-reserve-list">Candidate is invited to join reserve list through portal notification</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details><p class="govuk-body-m">OR</p>
+                <a href="/dwp-application-home-reserve-list?searchwhat=Delivery%20Manager&dept=DWP" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="homepage-reserve-list">Candidate is invited to join reserve list through application homepage notification</a><br>
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary" style="color:#5d6062">
+                      <span class="govuk-details__summary-text" style="font-size:0.9em">
+                        Notes
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      None.
+                    </div>
+                  </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="reserve-list-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="reserve-list-offer">Candidate is offered place on reserve list</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1715,6 +1830,33 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   </div>
                 </details>
 
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/dwp-application-home-reserve-list?reserve-list=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="portal-interview-confirmed">Application homepage updates to show reserve list accepted / declined</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
               </td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--purple">
@@ -3097,6 +3239,96 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/task-list-complete" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-task-list-complete">PEC info task list is complete</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+                <br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--grey">
+                  UNTESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Not prototyped so no testing done.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><br><br></td>
+              <td class="govuk-table__cell"><br><br></td>
+              <td class="govuk-table__cell"><br><br></td>
+              <td class="govuk-table__cell"><br><br></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/portal-pec" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="portal-pec">Candidate portal shows link to PEC progress</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+                <br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--grey">
+                  UNTESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Not prototyped so no testing done.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/dwp-application-home-pec?searchwhat=Delivery%20Manager&dept=DWP" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="application-homepage-pec">Application homepage shows PEC progress</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    None.
+                  </div>
+                </details>
+                <br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--grey">
+                  UNTESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Not prototyped so no testing done.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/candidate-pec/tab-pec-list?rtw-action-needed=no" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="candidate-pec-hub">Candidate sees detailed PEC progress</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
