@@ -152,12 +152,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 (8) <a class="govuk-link govuk-link--no-visited-state" href="#step8">Pre-employment checks</a><br>
                 <span style="padding-left:30px">(a) </span><a class="govuk-link govuk-link--no-visited-state" href="#step8a">candidate enters info screens</a><br>
                 <span style="padding-left:30px">(b) </span><a class="govuk-link govuk-link--no-visited-state" href="#step8b">PEC advisor actions screens</a><br>
+                <span style="padding-left:30px">(c) </span><a class="govuk-link govuk-link--no-visited-state" href="#step8c">candidate actions screens</a>
               </li>
               <li>
                 (9) <a class="govuk-link govuk-link--no-visited-state" href="#step9">Final offer</a>
-              </li>
-              <li>
-                (10) <a class="govuk-link govuk-link--no-visited-state" href="#step10">Candidate portal (dashboard)</a>
               </li>
             </ul>
           </div>
@@ -525,7 +523,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <td class="govuk-table__cell"><br><br></td>
             </tr>
             <tr id="saves-a-job" class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="search-results-saved" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate saves a job they like (optional)</a><br>
+              <td class="govuk-table__cell"><a href="search-results-saved" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate saves a job they like</a><br>
 
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
@@ -553,7 +551,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
             <tr id="job-alert" class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="job-alert" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate creates job alert for this role (optional)</a><br>
+              <td class="govuk-table__cell"><a href="job-alert" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate creates job alert for this role</a><br>
 
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
@@ -581,7 +579,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
             <tr id="job-alert" class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="job-alert-saved" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Job alert is saved (optional)</a><br>
+              <td class="govuk-table__cell"><a href="job-alert-saved" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Job alert is saved</a><br>
 
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
@@ -591,6 +589,34 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   </summary>
                   <div class="govuk-details__text">
                     None.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  tested
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" id="portal-gds-1"><a href="portal-gds-2" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate portal updates to show new job alert</a><br>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Note that the 'Job alerts' section on the portal shows 'Manage your job alerts' - this has not been prototyped.
                   </div>
                 </details>
               </td>
@@ -658,7 +684,35 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="check-you-can-apply" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligibility-criteria">Candidate decides if meets eligibility criteria</a><br>
+              <td class="govuk-table__cell" id="portal-gds-1"><a href="portal-gds-1" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate is taken to their portal page</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    The portal - or user account page - is the central hub for a candidate when they sign in or create an account. From here, the candidate can manage their account, applications, saved jobs, job alerts and more.<br><br>
+                    The page also shows relevant guidance to the candidate, changing what is displayed depending on what stage the candidate is at e.g. if they have no job alerts, guidance is given to set one up. If they have an upcoming interview, guidance is given on how to prepare for interview etc.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="check-you-can-apply" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligibility-criteria">Candidate selects job and decides if meets eligibility criteria</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1322,7 +1376,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-                    None.
+                    At this stage, the candidate can click on each task to see a 'Check your answers' page for the task, which allows them to review and change the answers they gave for this task before submitting the completed application.<br><br>
+                    These pages have not been prototyped.
                   </div>
                 </details>
               </td>
@@ -3449,6 +3504,110 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     The difference is the content shown, triggered by the decision previously made.<br><br>
                     The 'Decline' version can be seen <a href="/provisional-offer-confirmation?provisional-offer=decline%20the%20provisional%20offer" target="_blank">here</a><br><br>
                     The 'Speak to hiring manager' version can be seen <a href="/provisional-offer-confirmation?provisional-offer=speak-to-manager" target="_blank">here</a>
+                  </div>
+                </details>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><br><br></td>
+              <td class="govuk-table__cell"><br><br></td>
+              <td class="govuk-table__cell"><br><br></td>
+              <td class="govuk-table__cell"><br><br></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" id="step8c">
+                (c) Candidate actions screens
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/eehc-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-not-started">Candidate sees a check has not been started</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    This page is reached by clicking on the check name on the <a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-pec-list" target="_blank">main page listing all the candidate's checks</a>.
+                  </div>
+                </details>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/dbs-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-in-progress">Candidate sees a check is in progress</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    This page is reached by clicking on the check name on the <a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-pec-list" target="_blank">main page listing all the candidate's checks</a>.
+                  </div>
+                </details>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--purple">
+                  candidate
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/rtw-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-action-needed">Candidate needs to do something for a check to progress</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    This page is reached by clicking on the check name on the <a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-pec-list" target="_blank">main page listing all the candidate's checks</a>.
                   </div>
                 </details>
 
