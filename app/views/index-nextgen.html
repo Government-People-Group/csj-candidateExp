@@ -3435,7 +3435,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="interview-feedback" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="interview-feedback">Candidate views interview feedback</a><br>
+              <td class="govuk-table__cell"><a href="https://csjobs-pec.herokuapp.com/sign-in/sign-in?duplicate-eehc=no" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-advisor-sign-in">PEC Advisor signs into service</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -3449,8 +3449,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
               </td>
               <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--purple">
-                  candidate
+                <strong class="govuk-tag govuk-tag--blue">
+                  PEC ADVISOR
                 </strong>
               </td>
               <td class="govuk-table__cell">
@@ -3463,7 +3463,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="provisional-offer-confirm" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="provisional-offer-confirm">Candidate confirms offer decision</a><br>
+              <td class="govuk-table__cell"><a href="https://csjobs-pec.herokuapp.com/sign-in/sign-in-mfa" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-advisor-mfa">PEC Advisor enters security code</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -3471,15 +3471,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-                    The same page is shown regardless of whether the candidate has selected 'Accept' or 'Decline' on the previous page.<br><br>
-                    The difference is the content shown in the header, triggered by the decision previously made.
+                    This page assumes that agents will use some sort of MFA to verify log in. This has not been confirmed and is subject to change.
                   </div>
                 </details>
-
               </td>
               <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--purple">
-                  candidate
+                <strong class="govuk-tag govuk-tag--blue">
+                  PEC ADVISOR
                 </strong>
               </td>
               <td class="govuk-table__cell">
@@ -3492,7 +3490,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="/provisional-offer-confirmation?provisional-offer=accept%20the%20provisional%20offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="provisional-offer-confirmation">Provisional offer decision is confirmed</a><br>
+              <td class="govuk-table__cell"><a href="https://csjobs-pec.herokuapp.com/hub/allocation-options" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-advisor-allocation-type">PEC Advisor chooses work allocation type</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -3500,17 +3498,73 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-                    The same page is shown regardless of whether the candidate has selected 'Accept' or 'Decline' previously.<br><br>
-                    The difference is the content shown, triggered by the decision previously made.<br><br>
-                    The 'Decline' version can be seen <a href="/provisional-offer-confirmation?provisional-offer=decline%20the%20provisional%20offer" target="_blank">here</a><br><br>
-                    The 'Speak to hiring manager' version can be seen <a href="/provisional-offer-confirmation?provisional-offer=speak-to-manager" target="_blank">here</a>
+                    This page assumes that agents will have a choice of how they want to work. This has not been confirmed.
                   </div>
-                </details>
-
+                </details><br>
+                <a href="#pec-advisor-task" class="govuk-link govuk-link--no-visited-state">PEC Advisor chooses single task</a><p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#pec-advisor-task" class="govuk-link govuk-link--no-visited-state">PEC Advisor chooses multiple tasks</a><p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#pec-advisor-candidate" class="govuk-link govuk-link--no-visited-state">PEC Advisor chooses candidate</a>
+                <br><br>
               </td>
               <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--purple">
-                  candidate
+                <strong class="govuk-tag govuk-tag--blue">
+                  PEC ADVISOR
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csjobs-pec.herokuapp.com/single-view/dashboard-ao-task?single-or-multiple=single" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-advisor-task">Single or multiple task allocation is shown to PEC Advisor</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Page shown is for the single task view.<br><br>
+                    The <a href="https://csjobs-pec.herokuapp.com/single-view/dashboard-ao-task?single-or-multiple=multiple" target="_blank">multiple task view can be seen here</a>.<br><br>
+                    Clicking on a task takes the PEC Advisor to the <a href="https://csjobs-pec.herokuapp.com/hub/eehc-options" target="_blank">options page for that task</a>. Note that only the top task link works on the multiple task page.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--blue">
+                  PEC ADVISOR
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  ???
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                ???
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="https://csjobs-pec.herokuapp.com/single-view/dashboard-ao-candidate" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-advisor-candidate">Candidate allocation is shown to PEC Advisor</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Clicking on a candidate takes the PEC Advisor to the <a href="https://csjobs-pec.herokuapp.com/hub/tab-pec-list" target="_blank">main check page for that candidate</a>.
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--blue">
+                  PEC ADVISOR
                 </strong>
               </td>
               <td class="govuk-table__cell">
