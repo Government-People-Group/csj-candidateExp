@@ -207,7 +207,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <button class="btn" onclick="filterSelection('panel-member')"> Panel Member</button>
         </div>
 
-        <br><br><br>
+        <br>
 
         <script>
         filterSelection("all")
@@ -1029,7 +1029,7 @@ The contract information has been tested in several design cycles. The location 
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="sign-in?cookies=no" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate signs in or registers</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="sign-in?cookies=no" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate signs in or registers</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1044,22 +1044,22 @@ The contract information has been tested in several design cycles. The location 
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Two rounds. No users were keen on using social media profiles to sign in, as they felt personal and application log ins should be kept separate. There were also some issues with spotting how to create an account if they didn't already have one.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show" id="portal-gds-1"><a href="portal-gds-1" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate is taken to their portal page</a><br>
+              <td class="govuk-table__cell filterDiv candidates show" id="portal-gds-1"><a href="portal-gds-1" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Candidate is taken to their portal page</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1072,22 +1072,22 @@ The contract information has been tested in several design cycles. The location 
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Multiple rounds. Whole page has tested well although some questions around (a) location of user details (b) location of job search.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="check-you-can-apply" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligibility-criteria">Candidate selects job and decides if meets eligibility criteria</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="check-you-can-apply" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligibility-criteria">Candidate selects job and decides if meets eligibility criteria</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1102,106 +1102,106 @@ The contract information has been tested in several design cycles. The location 
                 <p class="govuk-body-m" style="padding-top:20px">OR</p>
                 <a href="#eligible-no" class="govuk-link govuk-link--no-visited-state">No - candidate is not eligible</a><br><br><br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Still doubts that candidate may just press 'yes' or may be unsure.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="uk-national">Candidate declares if they are a UK national</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="uk-national">Candidate declares if they are a UK national</a><br>
                 <br>
                 <a href="#eligible-yes" class="govuk-link govuk-link--no-visited-state">Yes - candidate is a UK national</a>
                 <p class="govuk-body-m" style="padding-top:20px">OR</p>
                 <a href="#other-nationality" class="govuk-link govuk-link--no-visited-state">No - candidate is not a UK national</a><br><br><br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Some confusion over language used. No testing done with non-UK candidates.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="other-nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="other-nationality">If not UK, candidate declares if they are EU, EEA etc</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="other-nationality" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="other-nationality">If not UK, candidate declares if they are EU, EEA etc</a><br>
                 <br>
                 <a href="#right-to-work" class="govuk-link govuk-link--no-visited-state">Yes - candidate fits the description</a>
                 <p class="govuk-body-m" style="padding-top:20px">OR</p>
                 <a href="#commonwealth-or-ireland" class="govuk-link govuk-link--no-visited-state">No - candidate does not fit the description</a><br><br><br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Limited testing with UK nationals as part of scenario test. No testing done with non-UK candidates.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="commonwealth-or-ireland" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="commonwealth-or-ireland">If not EU, EEA etc, candidate declares if Commonwealth or Irish citizen</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="commonwealth-or-ireland" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="commonwealth-or-ireland">If not EU, EEA etc, candidate declares if Commonwealth or Irish citizen</a><br>
                 <br>
                 <a href="#right-to-work" class="govuk-link govuk-link--no-visited-state">Yes - candidate is Commonwealth or Irish citizen</a>
                 <p class="govuk-body-m" style="padding-top:20px">OR</p>
                 <a href="#eligible-no" class="govuk-link govuk-link--no-visited-state">No - candidate is not Commonwealth or irish citizen</a><br><br><br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Limited testing with UK nationals as part of scenario test. No testing done with non-UK candidates.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="right-to-work" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="right-to-work">Candidate declares if have right to work in UK</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="right-to-work" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="right-to-work">Candidate declares if have right to work in UK</a><br>
                 <br>
                 <a href="#eligible-yes" class="govuk-link govuk-link--no-visited-state">Yes - candidate can work in the UK</a>
                 <p class="govuk-body-m" style="padding-top:20px">OR</p>
                 <a href="#eligible-no" class="govuk-link govuk-link--no-visited-state">No - candidate cannot work in the UK</a><br><br><br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Limited testing with UK nationals as part of scenario test. No testing done with non-UK candidates.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="eligible" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligible-yes">Eligibility to apply is confirmed</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="eligible" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligible-yes">Eligibility to apply is confirmed</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1213,35 +1213,35 @@ The contract information has been tested in several design cycles. The location 
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues, although one need identified: to add an option to leave (rather than force user to start application)
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="not-eligible" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligible-no">Not eligible to apply is confirmed</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="not-eligible" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="eligible-no">Not eligible to apply is confirmed</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Needs work on what happens to people who can never apply. Hand-holding missing from content. Need to know criteria / logic tree behind this. Only tested for nationality - not other things e.g. convictions
               </td>
             </tr>
@@ -1252,25 +1252,25 @@ The contract information has been tested in several design cycles. The location 
               <td class="govuk-table__cell filterDiv vh show"><br><br></td>
             </tr>
             <tr class="govuk-table__row" >
-              <td class="govuk-table__cell filterDiv vh show"><a href="task-list" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="task-list">Application task list is available to candidate</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="task-list" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="task-list">Application task list is available to candidate</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Six rounds. Generally well received although 'Related content' was not readily noticed or used.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="eligibility-cya" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="task-list">Eligibility answers can be viewed</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="eligibility-cya" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="task-list">Eligibility answers can be viewed</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1283,22 +1283,22 @@ The contract information has been tested in several design cycles. The location 
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 No testing done.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="online-tests" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="online-test">Candidate takes online test</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="online-tests" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="online-test">Candidate takes online test</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1315,58 +1315,58 @@ The contract information has been tested in several design cycles. The location 
                 <p class="govuk-body-m" style="padding-top:20px">OR</p>
                 <a href="#online-tests-fail" class="govuk-link govuk-link--no-visited-state">Candidate fails test</a><br><br><br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                  Two rounds. Some tweaks to content needed (more info on timings etc.)
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="online-tests-pass" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="online-tests-pass">Test passed is confirmed</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="online-tests-pass" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="online-tests-pass">Test passed is confirmed</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                  Two rounds. Need to get stakeholder input in terms of content. Does this page (and unsuccessful one) sit within our service or the test platform?
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="online-tests-fail" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="online-tests-fail">Test failed is confirmed</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="online-tests-fail" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="online-tests-fail">Test failed is confirmed</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                  Two rounds. Same comments as passed page above.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="cv-choice" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="cv-choice">CV - candidate chooses how to add CV to application</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="cv-choice" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="cv-choice">CV - candidate chooses how to add CV to application</a><br>
                 <br>
                 <br>
                 <a href="#existing-cv" class="govuk-link govuk-link--no-visited-state">Candidate chooses to use uploaded CV</a>
@@ -1376,148 +1376,148 @@ The contract information has been tested in several design cycles. The location 
                 <a href="#manual-cv" class="govuk-link govuk-link--no-visited-state">Candidate chooses to manually enter a new CV</a><p class="govuk-body-m" style="padding-top:20px">OR</p>
                 <a href="#linkedin-cv" class="govuk-link govuk-link--no-visited-state">Candidate chooses to use LinkedIn profile as their CV</a><br><br><br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Three rounds. Not confident in the amount of options and whether it needs to be split over several screens or whether all can be included in the next screen
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="existing-cv" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="existing-cv">CV - candidate uses an uploaded CV</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="existing-cv" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="existing-cv">CV - candidate uses an uploaded CV</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 No significant problems.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="upload-cv" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="upload-cv">CV - candidate uploads a new CV</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="upload-cv" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="upload-cv">CV - candidate uploads a new CV</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Limited testing with Figma screenshots.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="manual-cv" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="manual-cv">CV - candidate manually enters a new CV</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="manual-cv" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="manual-cv">CV - candidate manually enters a new CV</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 No significant problems.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="linkedin-cv" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="linkedin-cv">CV - candidate uses LinkedIn profile as CV</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="linkedin-cv" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="linkedin-cv">CV - candidate uses LinkedIn profile as CV</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Users stated they wouldn't use their LinkedIn info for an application.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="personal-statement" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="personal-statement">Candidate completes Personal Statement</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="personal-statement" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="personal-statement">Candidate completes Personal Statement</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Two rounds. Still not sure whether people would upload or copy and paste into free textbox.<br><br>Potential content change: negative feedback on the STAR method - but can we change this?
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="behaviour-questions" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="behaviour-questions">Candidate completes Behaviour Questions</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="behaviour-questions" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="behaviour-questions">Candidate completes Behaviour Questions</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Two rounds. Content change to bullet point info (if we are allowed to do so) suggested.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="technical-skills" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="technical-skills">Candidate completes Technical Skills</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="technical-skills" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="technical-skills">Candidate completes Technical Skills</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Hasn't been tested with external users but we are confident in this design.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="???" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="???">Candidate completes Personal Information</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="???" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="???">Candidate completes Personal Information</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1529,23 +1529,23 @@ The contract information has been tested in several design cycles. The location 
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="???" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="???">Candidate completes Work Preferences</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="???" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="???">Candidate completes Work Preferences</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1557,22 +1557,22 @@ The contract information has been tested in several design cycles. The location 
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="???" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="???">Candidate completes Diversity & Inclusion</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="???" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="???">Candidate completes Diversity & Inclusion</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1584,22 +1584,22 @@ The contract information has been tested in several design cycles. The location 
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="task-list-complete" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="task-list-complete">Application task list - all tasks are complete</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="task-list-complete" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="task-list-complete">Application task list - all tasks are complete</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1612,35 +1612,35 @@ The contract information has been tested in several design cycles. The location 
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 No significant problems, although suggested that we might need a CTA at the bottom of the page as well at the top. Users liked the visibility of the application deadline.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="confirmation" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="confirmation">Application is submitted and receipt confirmed</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="confirmation" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="confirmation">Application is submitted and receipt confirmed</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round but we are confident in this design.
               </td>
             </tr>
@@ -1871,21 +1871,21 @@ The contract information has been tested in several design cycles. The location 
                          Tested at least once during an early Alpha sprint.</td>
                          </tr>
                          <tr class="govuk-table__row">
-                           <td class="govuk-table__cell filterDiv vh show"><a href="unsuccessful-application" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="unsuccessful-application">Candidate informed application was unsuccessful</a><br>
+                           <td class="govuk-table__cell filterDiv candidates show"><a href="unsuccessful-application" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="unsuccessful-application">Candidate informed application was unsuccessful</a><br>
                              <br><br>
                              <a href="#unsuccessful-application-feedback" class="govuk-link govuk-link--no-visited-state">Candidate views unsuccessful application feedback</a><br><br>
                            </td>
-                           <td class="govuk-table__cell filterDiv vh show">
+                           <td class="govuk-table__cell filterDiv candidates show">
                              <strong class="govuk-tag govuk-tag--purple">
                                candidate
                              </strong>
                            </td>
-                           <td class="govuk-table__cell filterDiv vh show">
+                           <td class="govuk-table__cell filterDiv candidates show">
                              <strong class="govuk-tag">
                                TESTED
                              </strong>
                            </td>
-                           <td class="govuk-table__cell filterDiv vh show">
+                           <td class="govuk-table__cell filterDiv candidates show">
                              One round. No significant problems.
                            </td>
                          </tr>
@@ -1950,7 +1950,7 @@ The contract information has been tested in several design cycles. The location 
                  </thead>
                  <tbody class="govuk-table__body">
                    <tr class="govuk-table__row">
-                     <td class="govuk-table__cell filterDiv panel-member show"><a href="https://csjobs-hiring-side-a6b074da6857.herokuapp.com/csu71/sift/setup-interview/setup-interview-ph2-availability" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Schedule of interview slots created based on chair and panel's availability</a><br>
+                     <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-hiring-side-a6b074da6857.herokuapp.com/csu71/sift/setup-interview/setup-interview-ph2-availability" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Schedule of interview slots created based on chair and panel's availability</a><br>
                        <details class="govuk-details" data-module="govuk-details">
                          <summary class="govuk-details__summary" style="color:#5d6062">
                            <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -1967,17 +1967,17 @@ The contract information has been tested in several design cycles. The location 
                      </td>
 
 
-                     <td class="govuk-table__cell filterDiv panel-member show">
+                     <td class="govuk-table__cell filterDiv vh show">
                        <strong class="govuk-tag govuk-tag--green">
                          VACANCY HOLDER
                        </strong>
                      </td>
-                     <td class="govuk-table__cell filterDiv panel-member show">
+                     <td class="govuk-table__cell filterDiv vh show">
                        <strong class="govuk-tag govuk-tag--grey">
                          UNTESTED
                        </strong>
                      </td>
-                     <td class="govuk-table__cell filterDiv panel-member show">
+                     <td class="govuk-table__cell filterDiv vh show">
                        Concept of this didn't test well. Alternatives are to either ask vacancy holders to organise offline and enter specific dates and times, or automate this with multiple panellists' calendars / ask panellists for availability and suggest slots based on that
 Also not clear on being able to pick multiple dates, and need to be able to choose 1.3.5 and different numbers of ints on different days
                      </td>
@@ -2314,19 +2314,19 @@ This particular form has not been tested, however similar versions were tested d
                                   This particular form has not been tested, however similar versions were tested during earlier iterations focused on sifting.</td>
                                 </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="/unsuccessful-interview-feedback" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="">Candidate informed interview was unsuccessful</a><br><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="/unsuccessful-interview-feedback" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="">Candidate informed interview was unsuccessful</a><br><br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Users wanted personal, written feedback rather than generic scores that didn't really help them see where to improve. Online test feedback was considered unnecessary at this point.
               </td>
             </tr>
@@ -3000,7 +3000,7 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/task-list?more-details-complete=true&nino=yes&lived-outside-uk=yes&employed=yes&self-employed=yes&previous-cs=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-additional-cya">PEC info tasklist updates with new list of checks</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/task-list?more-details-complete=true&nino=yes&lived-outside-uk=yes&employed=yes&self-employed=yes&previous-cs=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-additional-cya">PEC info task list updates with new list of checks</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -3014,22 +3014,22 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                 </details>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Some users where surprised / confused by new sections appearing v initial task list. Some felt they should already be visible, although they understood this was not possible once the generation of the list was explained to them (i.e. answers in sections one and two creates the list in section three).
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/start" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-start">PEC - health - candidate is shown info on health check</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/start" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-start">PEC - health - candidate is shown info on health check</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -3042,249 +3042,249 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                 </details>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Users showed some concern about why we were asking health-related questions - would it affect whether they were offered the job? This was a common theme throughout the health check pages.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-1" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-1">PEC - health - candidate confirms if needs any adjustments at work</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-1" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-1">PEC - health - candidate confirms if needs any adjustments at work</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues barring concerns raised above.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-2" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-2">PEC - health - candidate confirms if health has affected work in the past</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-2" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-2">PEC - health - candidate confirms if health has affected work in the past</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues barring concerns raised above.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-3" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-3">PEC - health - candidate confirms if health may affect ability to do advertised job</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-3" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-3">PEC - health - candidate confirms if health may affect ability to do advertised job</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues barring concerns raised above.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-4" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-4">PEC - health - candidate confirms if they have any planned treatment that may affect role</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-4" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-4">PEC - health - candidate confirms if they have any planned treatment that may affect role</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   tested
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues barring concerns raised above.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-5" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-5">PEC - health - candidate confirms if they have any issues that work might make worse</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-5" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-5">PEC - health - candidate confirms if they have any issues that work might make worse</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   tested
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues barring concerns raised above.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-6" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-6">PEC - health - candidate confirms if they have been off work with health issues</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-6" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-6">PEC - health - candidate confirms if they have been off work with health issues</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues barring concerns raised above.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-7" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-7">PEC - health - candidate confirms if they have any issues to discuss with Occ Health</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-7" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-7">PEC - health - candidate confirms if they have any issues to discuss with Occ Health</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues barring concerns raised above.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-cya" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-cya">PEC - health - candidate checks answers before submitting</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/health/health-cya" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-health-cya">PEC - health - candidate checks answers before submitting</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/employment-history/start" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-employment-start">PEC - employment history - candidate is shown info on employment history check</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/employment-history/start" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-employment-start">PEC - employment history - candidate is shown info on employment history check</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   tested
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/employment-history/employment-1" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-employment-1">PEC - employment history - candidate confirms most recent job</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/employment-history/employment-1" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-employment-1">PEC - employment history - candidate confirms most recent job</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   tested
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues once scenario was understood.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/employment-history/employment-2" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-employment-2">PEC - employment history - candidate confirms other job(s) in specified time period</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/employment-history/employment-2" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-employment-2">PEC - employment history - candidate confirms other job(s) in specified time period</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   tested
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues once scenario was understood.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/employment-history/employment-history-cya" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-employment-cya">PEC - employment history - candidate confirms answers before submitting</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/employment-history/employment-history-cya" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-employment-cya">PEC - employment history - candidate confirms answers before submitting</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/employment-history/references-needed" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-employment-references-needed">PEC - employment history - candidate is informed that references are needed</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/checks/employment-history/references-needed" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-employment-references-needed">PEC - employment history - candidate is informed that references are needed</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -3299,60 +3299,60 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                 </details>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   tested
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. Users were confused about why we were asking for references, and how the content seemed unlinked (gaps content, then 'we need 3 references' content).
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/task-list?references-needed=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-task-list-references-needed">PEC info task list is shown again, with new References check highlighted</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/task-list?references-needed=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-task-list-references-needed">PEC info task list is shown again, with new References check highlighted</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   tested
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues. Users easily spotted the new check had been added.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-right-to-work">PEC - right to work check</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-right-to-work">PEC - right to work check</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-nino">PEC - NINO check</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-nino">PEC - NINO check</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -3365,22 +3365,22 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                 </details>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-nino">PEC - NINO check</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-nino">PEC - NINO check</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -3393,112 +3393,112 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                 </details>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-previous-cs">PEC - Previous Civil Service check</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-previous-cs">PEC - Previous Civil Service check</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-pension">PEC - Public Sector Pension check</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-pension">PEC - Public Sector Pension check</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-bankrupt">PEC - Bankrupt / Insolvency / Fine check</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-bankrupt">PEC - Bankrupt / Insolvency / Fine check</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-references">PEC - References check</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-references">PEC - References check</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/task-list-complete" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-task-list-complete">PEC info task list is complete</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-pec-info/task-list-complete" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-task-list-complete">PEC info task list is complete</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 Not prototyped so no testing done.
               </td>
             </tr>
@@ -3509,59 +3509,59 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
               <td class="govuk-table__cell filterDiv vh show"><br><br></td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="/portal-pec" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="portal-pec">Candidate portal shows link to PEC progress</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="/portal-pec" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="portal-pec">Candidate portal shows link to PEC progress</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No issues with identifying that PEC progress was available (via status tag). Whole page has tested well although some question around (a) location of user details (b) location of job search.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="/dwp-application-home-pec?searchwhat=Delivery%20Manager&dept=DWP" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="application-homepage-pec">Application homepage shows PEC progress</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="/dwp-application-home-pec?searchwhat=Delivery%20Manager&dept=DWP" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="application-homepage-pec">Application homepage shows PEC progress</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No issues with PEC element, although some doubts over (a) messaging section and (b) showing completed actions in RHS timeline.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="/candidate-pec/tab-pec-list?rtw-action-needed=no" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="candidate-pec-hub">Candidate sees detailed PEC progress</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="/candidate-pec/tab-pec-list?rtw-action-needed=no" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="candidate-pec-hub">Candidate sees detailed PEC progress</a><br>
 
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round of basic testing at end of a session to get a general feel from candidates. No issues raised.
               </td>
             </tr>
@@ -4242,7 +4242,7 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/eehc-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-not-started">Candidate sees a check has not been started</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/eehc-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-not-started">Candidate sees a check has not been started</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -4255,22 +4255,22 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                 </details>
 
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues. Users were keen on the more specific timescales given, but unsure how realistic this could be.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/dbs-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-in-progress">Candidate sees a check is in progress</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/dbs-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-in-progress">Candidate sees a check is in progress</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -4283,22 +4283,22 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                 </details>
 
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 As above
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/rtw-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-action-needed">Candidate needs to do something for a check to progress</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/rtw-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-action-needed">Candidate needs to do something for a check to progress</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -4311,22 +4311,22 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                 </details>
 
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues. Users understood they had an action to perform.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/prev-civil-service-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-completed">Candidate sees a check has been completed</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/prev-civil-service-page" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-completed">Candidate sees a check has been completed</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -4338,22 +4338,22 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-contact-message" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-in-progress">Candidate sees a new message has been sent to them</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-contact-message" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-in-progress">Candidate sees a new message has been sent to them</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -4365,22 +4365,22 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues. Some users wanted the message already open (it would have been but prototype code wouldn't default to message being open).
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-pec-list-comms-options" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-keep-informed-comms">Candidate specifies how they want to be updated on check progress</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-pec-list-comms-options" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-keep-informed-comms">Candidate specifies how they want to be updated on check progress</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -4392,40 +4392,40 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-pec-list-comms-frequency" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-keep-informed-frequency">Candidate specifies how often they want an update</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-pec-list-comms-frequency" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-keep-informed-frequency">Candidate specifies how often they want an update</a><br>
                 <br>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues, although there was some debate about what frequency options there should be.
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-pec-list?comms=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-keep-informed-confirmed">Candidate returns to main check page to see 'Updates' banner</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-pec-list?comms=yes" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-keep-informed-confirmed">Candidate returns to main check page to see 'Updates' banner</a><br>
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary" style="color:#5d6062">
                     <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -4438,17 +4438,17 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                   </div>
                 </details>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag">
                   TESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 One round. No significant issues.
               </td>
             </tr>
@@ -4517,20 +4517,20 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell filterDiv vh show"><a href="https://csjobs-pec.herokuapp.com/candidate-formal-offer/formal-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-keep-informed-confirmed">Candidate is given formal offer for job</a><br>
+              <td class="govuk-table__cell filterDiv candidates show"><a href="https://csjobs-pec.herokuapp.com/candidate-formal-offer/formal-offer" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em" id="pec-keep-informed-confirmed">Candidate is given formal offer for job</a><br>
 
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--purple">
                   candidate
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 <strong class="govuk-tag govuk-tag--grey">
                   UNTESTED
                 </strong>
               </td>
-              <td class="govuk-table__cell filterDiv vh show">
+              <td class="govuk-table__cell filterDiv candidates show">
                 No testing done.
               </td>
             </tr>
