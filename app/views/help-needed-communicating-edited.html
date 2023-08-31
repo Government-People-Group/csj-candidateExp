@@ -45,6 +45,20 @@
     <main class="govuk-main-wrapper " id="main-content" role="main">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds-from-desktop">
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+            aria-labelledby="govuk-notification-banner-title"
+            data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Success
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <h3 class="govuk-notification-banner__heading">
+                The help you need when communicating with us has been updated.
+              </h3>
+            </div>
+          </div>
           <h1 class="govuk-heading-l">Help you need when applying for a job</h1>
 
           <p class="govuk-body">Tell us about any help you might need during the application process.</p>
@@ -111,7 +125,7 @@
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if data['comms-help-details'] %}
-                  {{ data['comms-help-details'] }}  
+                  {{ data['comms-help-details'] }}
                 {% else %}
                     I do not need any help with this
                 {% endif %}

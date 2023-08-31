@@ -94,7 +94,7 @@
           <div class="govuk-summary-card">
             <div class="govuk-summary-card__title-wrapper">
               <h2 class="govuk-summary-card__title">Communicating with us</h2>
-
+              <form action="help-needed-communicating-edited" method="post" novalidate>
             <ul class="govuk-summary-card__actions">
              <li class="govuk-summary-card__action"> <a class="govuk-link" href="help-needed-communicating">
                  Edit
@@ -110,11 +110,34 @@
                 You told us
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['comms-help-details'] %}
-                  {{ data['comms-help-details'] }}  
-                {% else %}
-                    I do not need any help with this
-                {% endif %}
+                <div class="govuk-form-group">
+                  {% if data['comms-help-details'] %}
+                    {{ govukTextarea({
+                      name: "more-detail",
+                      id: "more-detail",
+                      value:data['comms-help-details']
+                    }) }}
+                  {% else %}
+                  {{ govukTextarea({
+                    name: "comms-help-details",
+                    id: "more-detail",
+                    value:"I do not need any help with this"
+                  }) }}
+                  {% endif %}
+                  <div class="govuk-hint">
+                    Change the information above and then save it.
+                  </div>
+                </div>
+                <div class="govuk-button-group">
+                  <button class="govuk-button" data-module="govuk-button">
+                    Save
+                  </button>
+                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                  </button>
+                </div>
+                </form>
+
               </dd>
             </div>
           </dl></div></div><br><br><br>
