@@ -88,24 +88,52 @@
     {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
-      <form action="goto-task-list" method="post" novalidate>
+      <form action="help-needed-home-comms-updated" method="post" novalidate>
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br><br>
 
-        <h1 class="govuk-heading-l">Tell us about your reasonable adjustment</h1>
 
-        <p class="govuk-body">Please let us know what adjustments you need for filling in the online application form, which will include:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>1 online test</li>
-          <li>a CV</li>
-          <li>a personal statement</li>
-        </ul>
 
-        {{ govukTextarea({
-          name: "ra-for-application-detail",
-          id: "ra-for-application-detail",
-          rows:"10"
-        }) }}
+
+
+{% set raHtml %}
+{{ govukTextarea({
+  name: "ra-for-comms-detail",
+  id: "ra-for-comms-detail",
+  rows:"10",
+  label: {
+    text: "Tell us how we might be able to help you. For example, if you only want us to email you and not phone you."
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "ra-comms",
+  fieldset: {
+    legend: {
+      text: "Do you need any reasonable adjustments when communicating with us?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: raHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
 
         <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Submit</button>
 

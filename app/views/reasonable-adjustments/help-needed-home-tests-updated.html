@@ -45,20 +45,6 @@
     <main class="govuk-main-wrapper " id="main-content" role="main">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds-from-desktop">
-          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-            aria-labelledby="govuk-notification-banner-title"
-            data-module="govuk-notification-banner">
-            <div class="govuk-notification-banner__header">
-              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                Success
-              </h2>
-            </div>
-            <div class="govuk-notification-banner__content">
-              <h3 class="govuk-notification-banner__heading">
-                The help you need when communicating with us has been updated.
-              </h3>
-            </div>
-          </div>
           <h1 class="govuk-heading-l">Help you need when applying for a job</h1>
 
           <p class="govuk-body">Tell us about any help you might need during the application process.</p>
@@ -109,29 +95,30 @@
             <div class="govuk-summary-card__title-wrapper" style="background-color:#b0d5f5;">
               <h2 class="govuk-summary-card__title">Communicating with us</h2>
 
-            <ul class="govuk-summary-card__actions">
-             <li class="govuk-summary-card__action"> <a class="govuk-link" href="help-needed-communicating">
-                 Edit
-               </a>
-             </li>
-
-           </ul>
+              <ul class="govuk-summary-card__actions">
+               <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                   Edit</a>
+               </li>
+             </ul>
          </div>
             <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                You told us
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {% if data['no-help'] %}
-                  {{ data['no-help'] }}
-                {% else %}
-                    I do not need any help with this
-                {% endif %}
-              </dd>
-            </div>
-          </dl></div></div><br><br><br>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    You told us
+                  </dt>
+                  {% if data['ra-comms'] == 'yes' %}
+                  <dd class="govuk-summary-list__value">
+                      {{ data['ra-for-comms-detail'] }}
+                  </dd>
+                  {% else%}
+                  <dd class="govuk-summary-list__value">
+                      I do not need any help with this
+                  </dd>
+                  {% endif %}
+                </div>
+
+              </dl></div></div><br><br><br>
           <div class="govuk-summary-card">
             <div class="govuk-summary-card__title-wrapper" style="background-color:#b0d5f5;">
               <h2 class="govuk-summary-card__title">Completing an application form</h2>
@@ -148,22 +135,14 @@
                 You told us
               </dt>
               <dd class="govuk-summary-list__value">
-                I have difficulty filling things in online and would prefer if i could give you a recording of me telling you about my cv and personal statement
+                  {{ data['ra-for-application-detail'] }}
               </dd>
 
             </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Is there anything else you want us to know about completing an application form?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                No
-              </dd>
 
-            </div>
           </dl></div></div><br><br><br>
-          <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper" style="background-color:#b0d5f5;">
+          <div class="govuk-summary-card" id="ra-online-tests">
+              <div class="govuk-summary-card__title-wrapper" style="background-color:#b0d5f5;">
               <h2 class="govuk-summary-card__title">Doing online tests</h2>
               <ul class="govuk-summary-card__actions">
                <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
@@ -172,82 +151,71 @@
              </ul>
             </div>
             <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                You told us
-              </dt>
-              <dd class="govuk-summary-list__value">
-                I do not need any help with this
-              </dd>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    You told us
+                  </dt>
+                  {% if data['ra-tests'] == 'yes' %}
+                  <dd class="govuk-summary-list__value">
+                      {{ data['ra-for-tests-detail'] }}
+                  </dd>
+                  {% else%}
+                  <dd class="govuk-summary-list__value">
+                      I do not need any help with this
+                  </dd>
+                  {% endif %}
+                </div>
 
-            </div>
-          </dl></div></div><br><br><br>
+              </dl></div></div><br><br><br>
           <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper" style="background-color:#b0d5f5;">
+            <div class="govuk-summary-card__title-wrapper">
               <h2 class="govuk-summary-card__title">If you have an interview</h2>
               <ul class="govuk-summary-card__actions">
-               <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-                   Edit</a>
+               <li class="govuk-summary-card__action">  <strong class="govuk-tag" style="background-color:#f3f2f1; color:#000000;">
+            INCOMPLETE
+          </strong>
                </li>
              </ul>
             </div>
             <div class="govuk-summary-card__content">
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                You told us
-              </dt>
-              <dd class="govuk-summary-list__value">
-                I have to take medication at specific times so I might have to leave an interview for 10 minutes.
-              </dd>
+              <div class="govuk-summary-list__row">
 
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                You also told us
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Bright lights can make me disorientated. Can I have a room with dimmed lights or just a reading lamp?
-              </dd>
-
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Is there anything else you want us to know about the interview stage?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                I have to visualise my answers in my head and will often close my eyes while I'm doing this.
-              </dd>
-
+                <dd class="govuk-summary-list__value">
+                  <a class="govuk-link" href="#">Complete this section</a>
+                </dd>
+              </div>
             </div>
           </dl></div></div><br><br><br>
           <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper" style="background-color:#b0d5f5;">
+            <div class="govuk-summary-card__title-wrapper">
               <h2 class="govuk-summary-card__title">Any other information you want to tell us</h2>
               <ul class="govuk-summary-card__actions">
-               <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-                   Edit</a>
+               <li class="govuk-summary-card__action"> <strong class="govuk-tag" style="background-color:#f3f2f1; color:#000000;">
+            INCOMPLETE
+          </strong>
                </li>
              </ul>
             </div>
             <div class="govuk-summary-card__content">
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                You told us
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Got a knee injury from a fall. Probably be on crutches until end of September 2023
-              </dd>
+              <div class="govuk-summary-list__row">
+
+                <dd class="govuk-summary-list__value">
+                  <a class="govuk-link" href="#">Complete this section</a>
+                </dd>
+              </div>
             </div>
 
           </dl></div></div><br>
 
-          <form action="portal-reasonable-adjustments" method="post" novalidate>
+          <form action="task-list" method="post" novalidate>
             <input type="hidden" name="answers-checked" value="true">
             <button class="govuk-button" data-module="govuk-button">
-              Back to your dashboard
+              Go back
             </button>
           </form>
         </div>
