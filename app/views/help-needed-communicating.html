@@ -92,7 +92,7 @@
 
           <br><br>
           <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
+            <div class="govuk-summary-card__title-wrapper" style="background-color:#87d699;">
               <h2 class="govuk-summary-card__title">Communicating with us</h2>
               <form action="help-needed-communicating-edited" method="post" novalidate>
             <ul class="govuk-summary-card__actions">
@@ -113,13 +113,13 @@
                 <div class="govuk-form-group">
                   {% if data['comms-help-details'] %}
                     {{ govukTextarea({
-                      name: "more-detail",
+                      name: "comms-help-details",
                       id: "more-detail",
                       value:data['comms-help-details']
                     }) }}
                   {% else %}
                   {{ govukTextarea({
-                    name: "comms-help-details",
+                    name: "no-help",
                     id: "more-detail",
                     value:"I do not need any help with this"
                   }) }}
@@ -142,7 +142,7 @@
             </div>
           </dl></div></div><br><br><br>
           <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
+            <div class="govuk-summary-card__title-wrapper" style="background-color:#87d699;">
               <h2 class="govuk-summary-card__title">Completing an application form</h2>
               <ul class="govuk-summary-card__actions">
                <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
@@ -172,7 +172,7 @@
             </div>
           </dl></div></div><br><br><br>
           <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
+            <div class="govuk-summary-card__title-wrapper" style="background-color:#87d699;">
               <h2 class="govuk-summary-card__title">Doing online tests</h2>
               <ul class="govuk-summary-card__actions">
                <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
@@ -193,7 +193,7 @@
             </div>
           </dl></div></div><br><br><br>
           <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
+            <div class="govuk-summary-card__title-wrapper" style="background-color:#87d699;">
               <h2 class="govuk-summary-card__title">If you have an interview</h2>
               <ul class="govuk-summary-card__actions">
                <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
@@ -232,7 +232,7 @@
             </div>
           </dl></div></div><br><br><br>
           <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
+            <div class="govuk-summary-card__title-wrapper" style="background-color:#87d699;">
               <h2 class="govuk-summary-card__title">Any other information you want to tell us</h2>
               <ul class="govuk-summary-card__actions">
                <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
