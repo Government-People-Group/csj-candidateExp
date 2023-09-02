@@ -110,23 +110,23 @@
         <div class="govuk-notification-banner__content">
           <p class="govuk-notification-banner__heading">
             You've told us you need the following reasonable adjustment for your online test:</p>{{ data['ra-for-tests-detail'] }}<br><br>
-            <div class="govuk-warning-text">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text">
-              <span class="govuk-warning-text__assistive">Warning</span>
-              Please wait until we have contacted you before you start your test.
-            </strong>
-          </div>
+            <p class="govuk-body">Your options:</p>
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#">Wait for us to contact you about your reasonable adjustment</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#">Go ahead with the test</a>
+              </li>
+
+              <li>
+                <a class="govuk-link" href="help-needed-home-tests-updated">Change or delete the reasonable adjustment</a>
+              </li>
+            </ul>
         </div>
         {% endif %}
       </div>
 
-      {% if data['ra-tests'] == 'no'%}
-      <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Start test</button>
-      {% else %}
-      <form action="task-list" method="post" novalidate>
-      <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Go back</button>
-      {% endif %}
 
     </div>
 
