@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+</style>
+
+
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    {% include "includes/job-and-dept.html" %}
+
+      <h1 class="govuk-heading-xl">Judgement test</h1>
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+
+
+    <div class="govuk-grid-column-three-quarters">
+
+        <p class="govuk-body-m govuk-!-margin-bottom-3">You have been invited to complete the Civil Service Judgement online test.</p>
+      <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">You’ll need to pass this test before you can progress to the next step in your application.</p>
+
+      <h2 class="govuk-heading-m">What the judgement test includes</h2>
+
+      <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">The Judgement test has 3 sections and will take 45 minutes to complete.</p>
+      <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">Section 3 is timed and will be a set of questions.</p>
+
+      <h2 class="govuk-heading-l">Before you start</h2>
+      <h3 class="govuk-heading-m">How to prepare</h3>
+      <p class="govuk-body-m">To prepare for the test, you can:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><p class="govuk-body-m">read our <a href="#">help on preparing for the online tests</a></p> </li>
+        <li><p class="govuk-body-m">read the <a href="#">test guide</a></p> </li>
+        <li><p class="govuk-body-m">take the <a href="#">Judgement practice test</a></p> </li>
+      </ul>
+
+      <h3 class="govuk-heading-m">What you need</h3>
+
+      <p class="govuk-body-m">We recommend you taking the test on a large screen (a laptop or desktop).</p>
+      <p class="govuk-body-m">For the test, you will need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><p class="govuk-body-m">good internet connection</p> </li>
+        <li><p class="govuk-body-m">time with no interruptions</p> </li>
+        <li><p class="govuk-body-m">to take the test alone. Your application could be withdrawn if any evidence of receiving help is found</p> </li>
+      </ul><br>
+
+      <div class="govuk-notification-banner" role="region"
+        aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+
+        {% if data['ra-tests'] != 'yes'%}
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            Do you need any reasonable adjustments to help you with an online test?
+            <p class="govuk-body"><a class="govuk-notification-banner__link" href="help-needed-home-comms-updated">Tell us how we can help you</a> if you think we can make this easier for you.</p>
+        </div>
+        {% else %}
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            You've told us you need the following reasonable adjustment for your online test:</p>{{ data['ra-for-tests-detail'] }}<br><br>
+            <p class="govuk-body">Your options:</p>
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#">Wait for us to contact you about your reasonable adjustment</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#">Go ahead with the test</a>
+              </li>
+
+              <li>
+                <a class="govuk-link" href="help-needed-home-tests-updated">Change or delete the reasonable adjustment</a>
+              </li>
+            </ul>
+        </div>
+        {% endif %}
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+  {% endblock %}

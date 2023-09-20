@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+
+.hint-text-black{
+  color:#000000;
+  padding:10px 0px;
+}
+</style>
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+{% if data['searchwhat'] %}
+  {% set Job = data['searchwhat'] %}
+{% else %}
+  {% set Job = 'Delivery Manager' %}
+{% endif %}
+
+{% if data['dept'] %}
+  {% set Dept = data['dept'] %}
+{% else %}
+  {% set Dept = 'DWP' %}
+{% endif %}
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="" method="post" novalidate>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br><br>
+
+        <div class="govuk-notification-banner" role="region"
+          aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+
+
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              Your stored information shows that you might need the following reasonable adjustment for filling in an online application form:</p><br>I have difficulty filling things in online and would prefer if i could give you a recording of me telling you about my cv and personal statement<br><br><br>
+              <p class="govuk-body">Your options:</p>
+              <ul class="govuk-list">
+                <li>
+                  <a class="govuk-link" href="#">Request this reasonable adjustment on this application</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Continue to your online application form without this adjustment</a>
+                </li>
+
+                <li>
+                  <a class="govuk-link" href="help-needed-home-tests-updated">Change or delete the reasonable adjustment</a>
+                </li>
+              </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  </form>
+  {% endblock %}
