@@ -109,7 +109,7 @@
         </div>
         <hr class="govuk-!-margin-top-1 govuk-!-margin-bottom-1">
 
-  <form class="form" action="task-list" method="post">
+  <form class="form" action="../check-you-can-apply?ra-journey=yes" method="post">
         <button class="govuk-button govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" style="float:left;max-width:100%;min-width:25%" data-module="govuk-button">Apply</button></form>
         <button id="but1" style="background:lightgrey;min-width:10%;max-width:100%" onclick="" class="govuk-button govuk-button--secondary govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" data-module="govuk-button">☆ save</button>
 
@@ -119,15 +119,7 @@
       </div>
 
     </div><br>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-    <h2 id="person" class="govuk-heading-m">Let us know if you need reasonable adjustments</h2>
-
-    <p class="govuk-body-m">When you apply for a job, you will be asked if you need any adjustments at any of the stages in the process.</p>
-    <p class="govuk-body-m">Anyone applying for a job with a disability can be offered reasonable adjustments during the application process, even if you do not feel you qualify for the <a href="https://www.google.com/url?q=https://www.gov.uk/government/publications/disability-confident-guidance-for-levels-1-2-and-3/level-1-disability-confident-committed?_ga%3D2.257979786.1651527610.1692882687-1010223948.1692882681%23offer-an-interview-to-disabled-people&sa=D&source=docs&ust=1693841509214099&usg=AOvVaw3Pms2sK3MFzw7XSkiSTnMs" target="_blank">Disability Confident Scheme</a>.</p>
-    <p class="govuk-body-m"><a href="https://www.civil-service-careers.gov.uk/reasonable-adjustments/" target="_blank">Find more about the reasonable adjustments we offer</a>.</p>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"><br>
 
     <div class="govuk-grid-row govuk-!-margin-top-6">
       <div class="govuk-grid-column-full">
@@ -230,8 +222,44 @@
               Quisque ut dolor gravida, placerat libero vel, euismod. Idque Caesaris facere voluntate liceret: sese habere. Quam diu etiam furor iste tuus nos eludet? Curabitur est gravida et libero vitae dictum. Integer legentibus erat a ante historiarum dapibus."
             }) }}
 
+            <div class="govuk-notification-banner" role="region"
+              aria-labelledby="govuk-notification-banner-title"
+              data-module="govuk-notification-banner">
+              <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                  Important
+                </h2>
+              </div>
+
+              {% if data['ra-tests'] != 'yes'%}
+              <div class="govuk-notification-banner__content">
+                <p class="govuk-notification-banner__heading">
+                  Adjustments and support for your application
+                  <p class="govuk-body" style="max-width:100%"><a class="govuk-notification-banner__link" href="help-needed-home">Tell us if we can make any adjustments or support you</a> during your application.</p>
+              </div>
+              {% else %}
+              <div class="govuk-notification-banner__content">
+                <p class="govuk-notification-banner__heading">
+                  You've told us you need the following reasonable adjustment for your online test:</p>{{ data['ra-for-tests-detail'] }}<br><br>
+                  <p class="govuk-body">Your options:</p>
+                  <ul class="govuk-list">
+                    <li>
+                      <a class="govuk-link" href="#">Wait for us to contact you about your reasonable adjustment</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link" href="#">Go ahead with the test</a>
+                    </li>
+
+                    <li>
+                      <a class="govuk-link" href="help-needed-home-tests-updated">Change or delete the reasonable adjustment</a>
+                    </li>
+                  </ul>
+              </div>
+              {% endif %}
+            </div>
+
             <hr class="govuk-!-margin-top-6 govuk-!-margin-bottom-3">
-            <form class="form" action="task-list" method="post">
+            <form class="form" action="../check-you-can-apply?ra-journey=yes" method="post">
             <button class="govuk-button govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" style="float:left;max-width:100%;min-width:25%" data-module="govuk-button">Apply</button></form><button id="but1" style="background:lightgrey;min-width:10%;max-width:100%" onclick="" class="govuk-button govuk-button--secondary govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" data-module="govuk-button">☆ save</button>        </div>
           </div>
 

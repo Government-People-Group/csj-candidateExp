@@ -85,8 +85,14 @@
     {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
+
+    {% if data['ra-journey']=='yes' %}
+    <form class="form" action="reasonable-adjustments/task-list" method="post">
+    {% else %}
     <form class="form" action="task-list" method="post">
-      <span class="govuk-caption-l">
+    {% endif %}
+
+    <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br>
 
           <h1 class="govuk-heading-xl">
