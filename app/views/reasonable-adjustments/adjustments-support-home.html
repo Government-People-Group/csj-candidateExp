@@ -1,0 +1,230 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+</style>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl" style="margin-bottom:30px">Adjustments and support</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <p class="govuk-body">We want to make sure that our application process is fair to everyone.</p>
+    <p class="govuk-body"><strong>If you feel there are reasonable adjustments to the application process that we could make, tell us below.</strong></p>
+
+    <p class="govuk-body">Examples of reasonable adjustments include:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>providing interview questions before the actual interview</li>
+        <li>letting you have more time to complete tests or assessments</li>
+        <li>giving you an accessible interview room if you are on crutches or recovering from an operation</li>
+
+      </ul>
+
+    <div class="govuk-inset-text">This is not an exhaustive list and we will consider any adjustments or support that you ask for.</div>
+
+    <p class="govuk-body"><strong>You can also tell us if there's some information that you think might be useful for us to know.</strong> For example, you could tell us if you do not like to make eye contact with a person who's interviewing you and we would pass this information on to the person doing the interview.</p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Telling us about any adjustments or support does not affect how we assess your application in any way. You will not be penalised for asking for support or an adjustment.
+      </strong>
+    </div><br><br>
+
+    <h2 class="govuk-heading-l" style="margin-bottom:30px">Your adjustments and support</h2>
+
+    <p class="govuk-body">Tell us below about any support or adjustments we could make during the application process.</p>
+
+    <div class="govuk-inset-text">
+      You do not have to fill every section in, and you can change or remove this information at any time.
+    </div>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters" style="margin-bottom:50px;background:#F6F6F6;padding:30px">
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+              Contacting you
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+            For example, if you only want us to email you and not phone you.
+          </div>
+        </div>
+        <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+          <div class="govuk-form-group">
+            <div id="more-detail-hint" class="govuk-hint">
+              Describe your adjustment or support below, then click the Save button.<br>Leave it blank if you have do not want an adjustment or support for this part of the process.
+            </div>
+              <textarea class="govuk-textarea" id="ra-comms-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
+              <a href="#" aria-describedby="list-convictions-status">
+                Clear all text
+              </a>
+              <div class="govuk-button-group" style="margin-top:35px">
+                <form action="" method="post" novalidate>
+                <button class="govuk-button" data-module="govuk-button">
+                  Save
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Cancel
+                </button>
+                </form
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="govuk-accordion__section govuk-accordion__section--expanded">
+        <div class="govuk-accordion__section-header"style="border-left-width:10px; border-left-style:solid;border-left-color:#d4351c;padding-left:10px">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+              Doing online tests
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+            For example, if you want more time to do in the test.
+          </div>
+        </div>
+        <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2"style="border-left-width:10px; border-left-style:solid;border-left-color:#d4351c;padding-left:10px">
+          <div class="govuk-form-group">
+              <div id="more-detail-hint" class="govuk-hint">
+                Describe your adjustment or support below, then click the Save button.<br>Leave it blank if you have do not want an adjustment or support for this part of the process.
+              </div>
+              <textarea class="govuk-textarea" id="ra-tests-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
+              <a href="#" aria-describedby="list-convictions-status">
+                Clear all text
+              </a>
+              <div class="govuk-button-group" style="margin-top:35px">
+                <form action="adjustments-support-home-tests-updated" method="post" novalidate>
+                <button class="govuk-button" data-module="govuk-button">
+                  Save
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Cancel
+                </button>
+                </form
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-3">
+              If you are offered an interview
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-3">
+            For example, if you want the questions before the interview.
+          </div>
+        </div>
+        <div id="accordion-with-summary-sections-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-3">
+          <div class="govuk-form-group">
+            <div id="more-detail-hint" class="govuk-hint">
+              Describe your adjustment or support below, then click the Save button.<br>Leave it blank if you have do not want an adjustment or support for this part of the process.
+            </div>
+              <textarea class="govuk-textarea" id="ra-interview-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
+              <a href="#" aria-describedby="list-convictions-status">
+                Clear all text
+              </a>
+              <div class="govuk-button-group" style="margin-top:35px">
+                <form action="" method="post" novalidate>
+                <button class="govuk-button" data-module="govuk-button">
+                  Save
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Cancel
+                </button>
+                </form
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-4">
+              Any other adjustment or support information you want to tell us
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-4">
+            For example, if you're uncomfortable shaking hands.
+          </div>
+        </div>
+        <div id="accordion-with-summary-sections-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-4">
+          <div class="govuk-form-group">
+            <div id="more-detail-hint" class="govuk-hint">
+              Describe your adjustment or support below, then click the Save button.<br>Leave it blank if you have do not want an adjustment or support for this part of the process.
+            </div>
+              <textarea class="govuk-textarea" id="ra-anything-else-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
+              <a href="#" aria-describedby="list-convictions-status">
+                Clear all text
+              </a>
+              <div class="govuk-button-group" style="margin-top:35px">
+                <form action="" method="post" novalidate>
+                <button class="govuk-button" data-module="govuk-button">
+                  Save
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Cancel
+                </button>
+                </form
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  {% endblock %}

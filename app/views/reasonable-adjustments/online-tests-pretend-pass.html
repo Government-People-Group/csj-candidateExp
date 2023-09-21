@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+</style>
+
+
+<div class="govuk-grid-row">
+  {% if data['dept'] == "Department for Education" %}
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+  {% elif data['dept'] == "Home Office" %}
+  <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+  {% else %}
+  <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+  {% endif %}
+
+  <div class="govuk-grid-column-two-thirds">
+    {% include "includes/job-and-dept.html" %}
+
+      <h1 class="govuk-heading-xl" style="margin-bottom:30px">Judgement test</h1>
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+        aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            You have passed your Judgement test
+          </h3>
+
+        </div>
+      </div>
+
+
+
+      <h2 class="govuk-heading-m">Next steps</h2>
+
+      <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">You can now start filling in any of the other sections in for your application.</p>
+      <div class="govuk-inset-text">
+        You do not need to start now - you can come back at any time before the application deadline to finish your application.
+      </div>
+      <div class="govuk-inset-text">
+        You do not need to fill in all of the other sections in one go - you can fill in one section at a time, and your answers will be saved at the end of the section.
+      </div>
+
+      <br><br>
+
+        <form action="task-list-test-passed?pass=true" method="post" novalidate>
+        <button class="govuk-button" data-module="govuk-button">
+          Go back to your application
+        </button>
+        </form>
+
+
+  </div>
+
+
+
+
+  {% endblock %}

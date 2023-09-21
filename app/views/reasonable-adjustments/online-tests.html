@@ -53,7 +53,7 @@
   <div class="govuk-grid-column-two-thirds">
     {% include "includes/job-and-dept.html" %}
 
-      <h1 class="govuk-heading-xl">Judgement test</h1>
+      <h1 class="govuk-heading-xl" style="margin-bottom:30px">Judgement test</h1>
 
     </div>
   </div>
@@ -64,13 +64,13 @@
 
     <div class="govuk-grid-column-three-quarters">
 
-        <p class="govuk-body-m govuk-!-margin-bottom-3">You have been invited to complete the Civil Service Judgement online test.</p>
-      <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">You’ll need to pass this test before you can progress to the next step in your application.</p>
+        <p class="govuk-body-m govuk-!-margin-bottom-3">The next part of the application process is a Civil Service Judgement online test.</p>
+      <div class="govuk-inset-text">You’ll need to pass this test before you can progress to the next step in your application.</div>
 
       <h2 class="govuk-heading-m">What the judgement test includes</h2>
 
       <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">The Judgement test has 3 sections and will take 45 minutes to complete.</p>
-      <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">Section 3 is timed and will be a set of questions.</p>
+      <p class="govuk-body-m govuk-!-margin-bottom-3 govuk-!-margin-top-1">Section 3 is timed.</p><br><br>
 
       <h2 class="govuk-heading-l">Before you start</h2>
       <h3 class="govuk-heading-m">How to prepare</h3>
@@ -79,17 +79,18 @@
         <li><p class="govuk-body-m">read our <a href="#">help on preparing for the online tests</a></p> </li>
         <li><p class="govuk-body-m">read the <a href="#">test guide</a></p> </li>
         <li><p class="govuk-body-m">take the <a href="#">Judgement practice test</a></p> </li>
-      </ul>
+      </ul><br><br>
 
       <h3 class="govuk-heading-m">What you need</h3>
 
-      <p class="govuk-body-m">We recommend you taking the test on a large screen (a laptop or desktop).</p>
+
       <p class="govuk-body-m">For the test, you will need:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li><p class="govuk-body-m">good internet connection</p> </li>
         <li><p class="govuk-body-m">time with no interruptions</p> </li>
         <li><p class="govuk-body-m">to take the test alone. Your application could be withdrawn if any evidence of receiving help is found</p> </li>
-      </ul><br>
+      </ul>
+      <p class="govuk-inset-text">We recommend you take the test on a large screen (a laptop, desktop or large table).</p><br>
 
       <div class="govuk-notification-banner" role="region"
         aria-labelledby="govuk-notification-banner-title"
@@ -103,8 +104,8 @@
         {% if data['ra-tests'] != 'yes'%}
         <div class="govuk-notification-banner__content">
           <p class="govuk-notification-banner__heading">
-            Do you need any reasonable adjustments to help you with an online test?
-            <p class="govuk-body"><a class="govuk-notification-banner__link" href="help-needed-home-comms-updated">Tell us how we can help you</a> if you think we can make this easier for you.</p>
+            Adjustments and support for your online test
+            <p class="govuk-body" style="max-width:100%"><a class="govuk-notification-banner__link" href="adjustments-support-home">Tell us if we can make any adjustments or support you</a> during your online test.</p>
         </div>
         {% else %}
         <div class="govuk-notification-banner__content">
@@ -120,15 +121,25 @@
               </li>
 
               <li>
-                <a class="govuk-link" href="help-needed-home-tests-updated">Change or delete the reasonable adjustment</a>
+                <a class="govuk-link" href="adjustments-support-home-tests-updated">Change or delete the reasonable adjustment</a>
               </li>
             </ul>
         </div>
         {% endif %}
       </div>
 
-
-    </div>
+      <div class="govuk-button-group">
+        <form action="online-tests-pretend-pass" method="post" novalidate>
+        <button class="govuk-button" data-module="govuk-button">
+          Start your online test
+        </button>
+        </form>
+        <form action="task-list" method="post" novalidate>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Go back to your application
+        </button>
+        </form>
+      </div>
 
   </div>
 
