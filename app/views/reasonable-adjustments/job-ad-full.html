@@ -41,7 +41,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-xl">{{ data['dept']}}</span>
-      <h1 class="govuk-heading-xl">{{ data['searchwhat'] | capitalize}}</h1>
+      <h1 class="govuk-heading-xl" style="text-transform: capitalize;" >{{ data['searchwhat']}}</h1>
     </div>
 
 
@@ -230,7 +230,7 @@
               <div class="govuk-notification-banner__content">
                 <p class="govuk-notification-banner__heading">
                   Adjustments and support for your application
-                  <p class="govuk-body" style="max-width:100%"><a class="govuk-notification-banner__link" href="adjustments-support-home">Tell us if we can make any adjustments or support you</a> during your application.</p>
+                  <p class="govuk-body" style="max-width:100%">We want to make sure that our application process is fair to everyone. If you feel there are reasonable adjustments to the application process that we could make or support we could give you, you will have the chance to tell us during your application.</p>
               </div>
               {% else %}
               <div class="govuk-notification-banner__content">

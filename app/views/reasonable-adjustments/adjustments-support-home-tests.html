@@ -1,0 +1,145 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+
+.govuk-summary-card__title
+{
+  font-size:1.5rem;
+}
+</style>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl" style="margin-bottom:30px">Adjustments and support</h1>
+  </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <p class="govuk-body">We want to make sure that our application process is fair to everyone.</p>
+    <p class="govuk-body"><strong>If you feel there are reasonable adjustments to the application process that we could make, tell us below.</strong></p>
+
+    <p class="govuk-body">Examples of reasonable adjustments include:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>providing interview questions before the actual interview</li>
+        <li>letting you have more time to complete tests or assessments</li>
+        <li>giving you an accessible interview room if you are on crutches or recovering from an operation</li>
+
+      </ul>
+
+    <div class="govuk-inset-text">This is not an exhaustive list and we will consider any adjustments or support that you ask for.</div>
+
+    <p class="govuk-body"><strong>You can also tell us if there's some information that you think might be useful for us to know.</strong> For example, you could tell us if you do not like to make eye contact with a person who's interviewing you and we would pass this information on to the person doing the interview.</p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Telling us about any adjustments or support does not affect how we assess your application in any way. You will not be penalised for asking for support or an adjustment.
+      </strong>
+    </div><br>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="nationality" name="ra-info" type="checkbox" value="hide" aria-describedby="nationality-item-hint">
+            <label class="govuk-label govuk-checkboxes__label" for="nationality">
+              Hide this information from now on
+            </label>
+            <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              You will still have an option to see it again if you want
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <form action="online-tests?ra-tests=yes" method="post" novalidate>
+
+    <h2 class="govuk-heading-l" style="margin-bottom:30px" id="your-adjustments">Your adjustments and support</h2>
+
+
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Doing online tests</h2>
+</div>
+  <div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+
+    <div class="govuk-form-group">
+        <p class="govuk-body">Describe your adjustment or support below. For example, if you want more time to do the test.<br><br>Leave it blank if you do not want an adjustment or support for online tests.
+        </p>
+        <textarea class="govuk-textarea" id="ra-for-tests-detail" name="ra-for-tests-detail" rows="8" aria-describedby="more-detail-hint">{{ data['ra-for-tests-detail'] }}</textarea>
+        <a href="#" aria-describedby="list-convictions-status">
+          Clear all text
+        </a>
+
+      </div>
+  </div>
+</dl></div></div>
+
+
+    </div>
+  </div>
+
+
+
+    <button class="govuk-button" data-module="govuk-button">
+      Save and return to your online test page
+    </button>
+    </form
+
+  {% endblock %}

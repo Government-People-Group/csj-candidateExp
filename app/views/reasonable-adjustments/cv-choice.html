@@ -1,0 +1,140 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+<style>
+
+.nav-right{
+  float:right;
+}
+
+.hint-text-black{
+  color:#000000;
+  padding:10px 0px;
+}
+</style>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="" method="post" novalidate>
+        {% include "includes/job-and-dept.html" %}
+        <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Your CV
+      </h1>
+    </legend>
+
+    <div style="background:#F6F6F6; padding:10px">
+
+
+    <p class="govuk-body-m">Your CV will be assessed on:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><p class="govuk-body-m">how your past experience meets the <a href="">main responsibilities</a></p></li>
+      <li><p class="govuk-body-m">Communicating and influencing - you can <a href="#">read the description of this behaviour</a></p></li>
+    </ul>
+</div><br>
+
+<p class="govuk-body-m">You can <a href="#">use the person specification</a> to help write your CV.</p><br>
+
+    <p class="govuk-body">Choose one of the following options:</p>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in" name="cv-option" type="radio" value="existing-cv~/existing-cv" aria-describedby="sign-in-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in">
+          I want to use a CV I've already uploaded
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          You currently have 2 uploaded CV's.
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="cv-option" type="radio" value="new-cv~/upload-cv" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          I want to upload a new CV
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="cv-option" type="radio" value="manual-cv~/manual-cv" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          I want to enter my CV
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="cv-option" type="radio" value="linkedin-cv~/linkedin-cv" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          I want to use my LinkedIn profile as my CV
+        </label>
+      </div>
+    </div>
+  </fieldset>
+
+        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Continue</button>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  </form>
+  {% endblock %}
