@@ -61,11 +61,11 @@
 
 
 {% if data['dept'] == "Department for Education" %}
-<img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+<img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right;padding-right:60px" alt="Department for Education logo">
 {% elif data['dept'] == "Home Office" %}
-<img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+<img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right;padding-right:60px" alt="Home Office logo">
 {% else %}
-<img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+<img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right;padding-right:60px" alt="Cabinet Office logo">
 {% endif %}
 
 {% if data['searchwhat'] %}
@@ -110,14 +110,35 @@
 
 
       <ol class="govuk-prototype-kit-task-list" >
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-bottom-width:5px;margin-top:0px;">
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-bottom-width:5px;margin-top:0px;margin-bottom:0px">
+
+        <li>
+
+
+          <div class="govuk-inset-text" style="border-left-color:#d4351c">
+            You must pass an online Judgement test before you can start any of the other sections below.
+          </div>
+
+          <p class="govuk-body">You can <a href="">practice for this test</a> before taking it.</p><br>
+          <p class="govuk-body">You can also <a href="adjustments-support-home-saved">tell us if we can make an adjustment or give you support</a> with your test.</p><br>
+          <form action="online-tests" method="post" novalidate>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          </form>
+        </li>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-bottom-width:5px; margin-top:0px;margin-bottom:0px">
+        <br><br>
 
 
         <li>
           <h2 class="govuk-prototype-kit-task-list__section">
             Assessments
           </h2>
-
+          <div class="govuk-inset-text">
+            You must pass the online Judgement test above before you can start these sections.
+          </div>
           <p class="govuk-body govuk-!-margin-left-6">For help on the assessments, you can use the articles:</p>
           <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-6">
             <li><a href="#">how to answer behaviour questions</a></li>
@@ -217,7 +238,9 @@
           <h2 class="govuk-prototype-kit-task-list__section">
             Personal details
           </h2>
-
+          <div class="govuk-inset-text">
+            You must pass the online Judgement test above before you can start these sections.
+          </div>
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">

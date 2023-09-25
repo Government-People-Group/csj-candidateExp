@@ -1,0 +1,255 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+
+.govuk-summary-card__title
+{
+  font-size:1.5rem;
+}
+
+.govuk-button--card
+{
+  background-color:#000000;
+  margin-bottom:10px;
+}
+</style>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl" style="margin-bottom:30px">Adjustments and support</h1>
+  </div>
+</div>
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+{% if data['ra-info']=='hide'%}
+<p class="govuk-body" style="margin-bottom:40px"><a class="govuk-link" href="adjustments-support-home-blank?ra-info=show">Show information</a></p>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+{% endif %}
+
+{% if data['ra-info']!='hide'%}
+
+    <p class="govuk-body">We want to make sure that our application process is fair to everyone.</p>
+    <p class="govuk-body"><strong>If you feel there are reasonable adjustments to the application process that we could make, tell us below.</strong></p>
+
+    <p class="govuk-body">Examples of reasonable adjustments include:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>providing interview questions before the actual interview</li>
+        <li>letting you have more time to complete tests or assessments</li>
+        <li>giving you an accessible interview room if you are on crutches or recovering from an operation</li>
+
+      </ul>
+
+    <div class="govuk-inset-text">This is not an exhaustive list and we will consider any adjustments or support that you ask for.</div>
+
+    <p class="govuk-body"><strong>You can also tell us if there's some information that you think might be useful for us to know.</strong> For example, you could tell us if you do not like to make eye contact with a person who's interviewing you and we would pass this information on to the person doing the interview.</p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Telling us about any adjustments or support does not affect how we assess your application in any way. You will not be penalised for asking for support or an adjustment.
+      </strong>
+    </div><br>
+
+    <p class="govuk-body" style="margin-bottom:40px"><a class="govuk-link" href="adjustments-support-home-blank?ra-info=hide">Hide this information from now on</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+{% endif %}
+
+
+
+    <h2 class="govuk-heading-l" style="margin-bottom:30px" id="your-adjustments">Your adjustments and support</h2>
+
+
+
+    <p class="govuk-body">Tell us below about any support or adjustments we could make during the application process.</p>
+
+    <p class="govuk-body-m">Jump to a section</p>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="#communication">Communication</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#online-tests">Doing online tests</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#interviews">If you have an interview</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#anything-else">Any other adjustment or support information you want to tell us</a>
+      </li>
+    </ul>
+
+    <div class="govuk-inset-text">
+      You do not have to fill every section in, and you can change or remove this information at any time.
+    </div>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+<div class="govuk-summary-card" id="communication">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Communication</h2>
+    <ul class="govuk-summary-card__actions">
+      <form action="adjustments-support-home-saved?&comms-saved=yes#communication" method="post" novalidate>
+      <button class="govuk-button govuk-button--card" data-module="govuk-button">
+        Save
+      </button>
+
+    </ul>
+</div>
+  <div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+
+    <div class="govuk-form-group">
+      <p class="govuk-body">Describe your adjustment or support below. For example, if you only want us to contact you by email and not by phone.<br><br>Leave it blank if you do not want an adjustment or support for communication.
+      </p>
+        <textarea class="govuk-textarea" id="ra-comms-detail" name="ra-for-comms-detail" rows="8" aria-describedby="more-detail-hint">{{ data['ra-for-comms-detail'] }}</textarea>
+        <a href="#" aria-describedby="list-convictions-status">
+          Clear all text
+        </a>
+      </div>
+  </div>
+</dl></div></div><br><br><br></form>
+<div class="govuk-summary-card" id="online-tests">
+  {% if data ['ra-for-tests-detail']%}
+  <div class="govuk-summary-card__title-wrapper" style="background-color:#a7d5f6">
+  {% else %}
+  <div class="govuk-summary-card__title-wrapper">
+  {% endif %}
+    <h2 class="govuk-summary-card__title">Doing online tests</h2>
+    <ul class="govuk-summary-card__actions">
+      <button class="govuk-button govuk-button--card" data-module="govuk-button">
+        Save
+      </button>
+    </ul>
+</div>
+  <div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+
+    <div class="govuk-form-group">
+        <p class="govuk-body">Describe your adjustment or support below. For example, if you want more time to do the test.<br><br>Leave it blank if you do not want an adjustment or support for online tests.
+        </p>
+        <textarea class="govuk-textarea" id="ra-comms-detail" name="ra-for-tests-detail" rows="8" aria-describedby="more-detail-hint">{{ data['ra-for-tests-detail'] }}</textarea>
+        <a href="#" aria-describedby="list-convictions-status">
+          Clear all text
+        </a>
+
+      </div>
+  </div>
+</dl></div></div><br><br><br>
+<div class="govuk-summary-card" id="interviews">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">If you have an interview</h2>
+    <ul class="govuk-summary-card__actions">
+      <button class="govuk-button govuk-button--card" data-module="govuk-button">
+        Save
+      </button>
+    </ul>
+</div>
+  <div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+
+    <div class="govuk-form-group">
+      <div id="more-detail-hint" class="govuk-hint">
+        <p class="govuk-body">Describe your adjustment or support below. For example, if you want the questions before the interview.<br><br>Leave it blank if you do not want an adjustment or support at the interview stage.
+        </p>
+        <textarea class="govuk-textarea" id="ra-comms-detail" name="ra-for-interview-detail" rows="8" aria-describedby="more-detail-hint">{{ data['ra-for-interview-detail'] }}</textarea>
+        <a href="#" aria-describedby="list-convictions-status">
+          Clear all text
+        </a>
+
+      </div>
+  </div>
+</dl></div></div><br><br><br>
+<div class="govuk-summary-card" id="anything-else">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Any other adjustment or support information you want to tell us</h2>
+    <ul class="govuk-summary-card__actions">
+      <button class="govuk-button govuk-button--card" data-module="govuk-button">
+        Save
+      </button>
+    </ul>
+</div>
+  <div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+
+    <div class="govuk-form-group">
+      <p class="govuk-body">If there is more information you would like us to know, but that doesn't require an actual adjustment, describe it here. For example, if you're uncomfortable shaking hands.<br><br>Leave it blank if there is no other information you want to tell us.
+      </p>
+        <textarea class="govuk-textarea" id="ra-comms-detail" name="ra-any-other-detail" rows="8" aria-describedby="more-detail-hint">{{ data['ra-any-other-detail'] }}</textarea>
+        <a href="#" aria-describedby="list-convictions-status">
+          Clear all text
+        </a>
+        <ul class="govuk-summary-card__actions">
+          <button class="govuk-button govuk-button--card" data-module="govuk-button">
+            Save
+          </button>
+        </ul>
+      </div>
+  </div>
+</dl></div></div>
+
+<form action="task-list" method="post" novalidate>
+<button class="govuk-button" data-module="govuk-button">
+  Back to your application page
+</button>
+</form>
+    </div>
+  </div>
+
+
+  {% endblock %}
