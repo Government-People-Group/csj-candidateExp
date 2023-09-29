@@ -84,7 +84,7 @@
   <div class="govuk-grid-column-three-quarters" style="padding-right:10px">
 
     <h1 class="govuk-heading-xl" style="margin-bottom:10px">Your application for {{Job}}</h1>
-    <p class="govuk-body" style="padding-left:5px"><a href="job-ad-full">View the job advert</a></p><br>
+    <p class="govuk-body" style="padding-left:5px"><a href="job-ad-full" class="govuk-link govuk-link--no-visited-state">View the job advert</a></p><br>
 
 
 
@@ -119,8 +119,12 @@
             You must pass an online Judgement test before you can start any of the other sections below.
           </div>
 
-          <p class="govuk-body">You can <a href="">practice for this test</a> before taking it.</p><br>
-          <p class="govuk-body">You can also <a href="adjustments-support-home-blank">tell us if we can make an adjustment or give you support</a> with your application, including this test.</p><br>
+          <p class="govuk-body">You can <a href="" class="govuk-link govuk-link--no-visited-state">practice for this test</a> before taking it.</p><br>
+
+
+
+
+
           <form action="online-tests" method="post" novalidate>
           <button class="govuk-button" data-module="govuk-button">
             More information on the online test
@@ -279,8 +283,19 @@
         </li>
       </ol>
     </div>
+    <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-notification-banner" role="region"
+        aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner" style="margin-top:45px; border-style:none;">
 
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body"><strong><a href="adjustments-support-home-blank" class="govuk-link govuk-link--no-visited-state">Tell us if we can make an adjustment or support you</a> with your application.</strong></p>
+        </div>
+      </div>
+    </div>
   </div>
+
+
 
 
   {% endblock %}

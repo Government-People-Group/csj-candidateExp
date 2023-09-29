@@ -104,24 +104,18 @@
 
           <div class="govuk-notification-banner__content">
             <p class="govuk-notification-banner__heading">
-              Your stored information shows that you might need the following reasonable adjustment for filling in an online application form:</p><br>I have difficulty filling things in online and would prefer if i could give you a recording of me telling you about my cv and personal statement<br><br><br>
-              <p class="govuk-body">Your options:</p>
-              <ul class="govuk-list">
-                <li>
-                  <a class="govuk-link" href="#">Request this reasonable adjustment on this application</a>
-                </li>
-                <li>
-                  <a class="govuk-link" href="#">Continue to your online application form without this adjustment</a>
-                </li>
-
-                <li>
-                  <a class="govuk-link" href="adjustments-support-home-tests-updated">Change or delete the reasonable adjustment</a>
-                </li>
-              </ul>
+              Your account has the following adjustments or support stored:</p>
+              Communication: "{{ data['ra-for-comms-detail'] }}"<br><br>
+              <p class="govuk-body">Doing online tests: "{{ data['ra-for-tests-detail'] }}"
+            </p><br>
+              <p class="govuk-body"><strong>We will apply these to this application, or you can <a class="govuk-link" href="adjustments-support-home-saved?comms-saved=no&">change or delete your adjustments and support</strong></a>.
+                </p>
           </div>
 
         </div>
-
+        <button class="govuk-button" data-module="govuk-button">
+          Start your application
+        </button>
       </div>
     </div>
 
