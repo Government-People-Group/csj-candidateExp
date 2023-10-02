@@ -1,0 +1,215 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+
+.hint-text-black{
+  color:#000000;
+  padding:10px 0px;
+}
+</style>
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+{% if data['searchwhat'] %}
+  {% set Job = data['searchwhat'] %}
+{% else %}
+  {% set Job = 'Delivery Manager' %}
+{% endif %}
+
+{% if data['dept'] %}
+  {% set Dept = data['dept'] %}
+{% else %}
+  {% set Dept = 'DWP' %}
+{% endif %}
+
+  <div class="govuk-grid-row">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-notification-banner" role="region"
+          aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+
+
+
+
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              You've told us about the following adjustments and support for this application:</p>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+              {% if data['ra-for-comms-detail'] %}
+              {% set raCommsHtml %}
+              <label class="govuk-label govuk-checkboxes__label" for="countries" style="padding-left:0px;"><strong>Communication:</strong></label><br>
+              {{ data['ra-for-comms-detail'] }}
+              {% endset %}
+
+              {{ govukCheckboxes({
+                name: "waste",
+                fieldset: {
+                },
+                items: [
+                  {
+                    value: "{{ data['ra-for-comms-detail'] }}",
+                    html: raCommsHtml,
+                    checked:"true"
+                  }
+                ]
+              }) }}
+
+              {% endif %}
+              {% if data['ra-for-tests-detail'] %}
+              {% set raTestsHtml %}
+              <label class="govuk-label govuk-checkboxes__label" for="countries" style="padding-left:0px;"><strong>Doing online tests:</strong></label><br>
+              {{ data['ra-for-tests-detail'] }}
+              {% endset %}
+
+              {{ govukCheckboxes({
+                name: "waste",
+                fieldset: {
+                },
+                items: [
+                  {
+                    value: "{{ data['ra-for-tests-detail'] }}",
+                    html: raTestsHtml,
+                    checked:"true"
+                  }
+                ]
+              }) }}
+              {% endif %}
+              {% if data['ra-for-interview-detail'] %}
+              {% set raInterviewHtml %}
+              <label class="govuk-label govuk-checkboxes__label" for="countries" style="padding-left:0px;"><strong>If you have an interview:</strong></label><br>
+              {{ data['ra-for-interview-detail'] }}
+              {% endset %}
+
+              {{ govukCheckboxes({
+                name: "waste",
+                fieldset: {
+                },
+                items: [
+                  {
+                    value: "{{ data['ra-for-interview-detail'] }}",
+                    html: raInterviewHtml,
+                    checked:"true"
+                  }
+                ]
+              }) }}
+              {% endif %}
+              {% if data['ra-any-other-detail'] %}
+              {% set raAnyOtherHtml %}
+              <label class="govuk-label govuk-checkboxes__label" for="countries" style="padding-left:0px;"><strong>Any other adjustment or support:</strong></label><br>
+              {{ data['ra-any-other-detail'] }}
+              {% endset %}
+
+              {{ govukCheckboxes({
+                name: "waste",
+                fieldset: {
+                },
+                items: [
+                  {
+                    value: "{{ data['ra-any-other-detail'] }}",
+                    html: raAnyOtherHtml,
+                    checked:"true"
+                  }
+                ]
+              }) }}
+              {% endif %}
+
+
+            </div>
+
+            <div class="govuk-inset-text">
+              Untick any that you do not want to save.
+            </div>
+          </div>
+        </div>
+
+        <h1 class="govuk-heading-l">
+          We will save this information in your user account
+        </h1>
+
+        <p class="govuk-body">If you only want to save some of the adjustments listed, untick the ones you do not want to keep.</p>
+        <p class="govuk-body">If you do not want to save any, click on the grey button instead.</p>
+
+        <div class="govuk-button-group">
+            <form action="confirmation?ra-save=yes" method="post" novalidate>
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+            </form>
+            <form action="confirmation?ra-save=no" method="post" novalidate>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Do not save
+          </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  {% endblock %}
