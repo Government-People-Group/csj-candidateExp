@@ -72,7 +72,7 @@
 
 {% if data['ra-info']!='hide'%}
 
-    <p class="govuk-body">We want to make sure that our application process is fair to everyone.</p>
+  <p class="govuk-body">As an inclusive Civil Service, we want to make sure that our application process is fair to everyone.</p>
     <p class="govuk-body"><strong>If you feel there are reasonable adjustments to the application process that the recruitment team could make, tell us below.</strong></p>
 
     <p class="govuk-body">Examples of reasonable adjustments include:</p>
@@ -88,6 +88,17 @@
 
     <p class="govuk-body"><strong>You can also tell us if there's some information that you think might be useful for us to know.</strong> For example, you could tell us if you do not like to make eye contact with a person who's interviewing you and we would pass this information on to the person doing the interview.</p>
 
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Who will see my adjustments and support?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Only the recruitment team handling your application will see this information.<br><br>The recruitment team includes the civil servants who decide if you should be invited to an interview, and the civil servants who actually interview you.<br><br>They will only see the adjustment or support you've mentioned at the relevant time. For example, if you have an adjustment for an interview, the recruitment team will not see this information until you are invited to an interview.
+      </div>
+    </details>
+
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
@@ -96,16 +107,7 @@
       </strong>
     </div>
 
-    <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Who will see my adjustments and support?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    Only the recruitment team handling your application will see this information.<br><br>The recruitment team includes the civil servants who decide who if you should be invited to an interview, and the civil servants who actually interview you.<br><br>They will only see the adjustment or support you've mentioned at the relevant time. For example, if you have an adjustment for an interview, the recruitment team will not see this information until you are invited to an interview.
-  </div>
-</details>
+
 
     <p class="govuk-body" style="margin-top:60px; margin-bottom:40px"><a class="govuk-link" href="adjustments-support-home-blank?ra-info=hide">Hide this information from now on</a></p>
 
@@ -148,7 +150,7 @@
   <div class="govuk-grid-column-three-quarters">
 
 <div class="govuk-summary-card" id="communication">
-  <div class="govuk-summary-card__title-wrapper" style="background-color:#a7d5f6">
+  <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">Communication</h2>
     <ul class="govuk-summary-card__actions">
       <form action="adjustments-support-home-saved?#communication" method="post" novalidate>
@@ -180,7 +182,7 @@
 {% endif %}
 
     <div class="govuk-form-group">
-      <p class="govuk-body">Describe your adjustment or support below. For example, if you only want us to contact you by email and not by phone.<br><br>Leave it blank if you do not want an adjustment or support for communication.
+      <p class="govuk-body">Describe any adjustments or support below. For example, if you only want us to contact you by email and not by phone.<br><br>Leave it blank if you do not want an adjustment or support for communication.
       </p>
         <textarea class="govuk-textarea" id="ra-comms-detail" name="ra-for-comms-detail" rows="8" aria-describedby="more-detail-hint">{{ data['ra-for-comms-detail'] }}</textarea>
         <a href="#" aria-describedby="list-convictions-status">
@@ -212,7 +214,7 @@
   <div class="govuk-summary-list__row">
 
     <div class="govuk-form-group">
-        <p class="govuk-body">Describe your adjustment or support below. For example, if you want more time to do the test.<br><br>Leave it blank if you do not want an adjustment or support for online tests.
+        <p class="govuk-body">Describe any adjustments or support below. For example, if you want more time to do the test.<br><br>Leave it blank if you do not want an adjustment or support for online tests.
         </p>
         <textarea class="govuk-textarea" id="ra-comms-detail" name="ra-for-tests-detail" rows="8" aria-describedby="more-detail-hint">{{ data['ra-for-tests-detail'] }}</textarea>
         <a href="#" aria-describedby="list-convictions-status">
@@ -242,7 +244,7 @@
 
     <div class="govuk-form-group">
       <div id="more-detail-hint" class="govuk-hint">
-        <p class="govuk-body">Describe your adjustment or support below. For example, if you want the questions before the interview.<br><br>Leave it blank if you do not want an adjustment or support at the interview stage.
+        <p class="govuk-body">Describe any adjustments or support below. For example, if you want the questions before the interview.<br><br>Leave it blank if you do not want an adjustment or support at the interview stage.
         </p>
         <textarea class="govuk-textarea" id="ra-comms-detail" name="ra-for-interview-detail" rows="8" aria-describedby="more-detail-hint">{{ data['ra-for-interview-detail'] }}</textarea>
         <a href="#" aria-describedby="list-convictions-status">

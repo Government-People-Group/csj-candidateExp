@@ -105,8 +105,12 @@
           <div class="govuk-notification-banner__content">
             <p class="govuk-notification-banner__heading">
               Your account has the following adjustments or support stored:</p>
-              Communication: "{{ data['ra-for-comms-detail'] }}"<br><br>
+              {% if data ['ra-for-comms-detail']%}
+                <p class="govuk-body">Communication: "{{ data['ra-for-comms-detail'] }}"</p>
+              {% endif %}
+              {% if data ['ra-for-tests-detail']%}
               <p class="govuk-body">Doing online tests: "{{ data['ra-for-tests-detail'] }}"
+              {% endif %}
             </p><br>
               <p class="govuk-body"><strong>We will apply these to this application, or you can <a class="govuk-link" href="adjustments-support-home-saved?comms-saved=no&">change or delete your adjustments and support</strong></a>.
                 </p>
