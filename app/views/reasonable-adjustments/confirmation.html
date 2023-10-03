@@ -30,7 +30,7 @@
 
       <p>If you need support, please contact <a href="#">Craig.Shaddick@doe.gov.uk</a></p>
 
-      <p>You can <a ref="">withdraw your application</a> at any time.</p>
+      <p>You can <a ref="#">withdraw your application</a> at any time.</p>
 
 {% if data['ra-save']=='yes'%}
       <div class="govuk-notification-banner" role="region"
@@ -49,7 +49,12 @@
 
       </div>
 {% endif %}
+  <form action="../diversity-and-inclusion/diversity-inclusion" method="post" novalidate>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
     </div>
+
   </div>
 
 {% endblock %}

@@ -79,22 +79,17 @@
 {% endif %}
 
   <div class="govuk-grid-row">
-    {% if data['dept'] == "Department for Education" %}
-    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
-    {% elif data['dept'] == "Home Office" %}
-    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
-    {% else %}
-    <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
-    {% endif %}
+
 
     <div class="govuk-grid-column-two-thirds">
       <form action="d-and-i-questionnaire" method="post" novalidate>
-      <span class="govuk-caption-l">
-        <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br><br>
+
         <h1 class="govuk-heading-l">Diversity and inclusion</h1>
 
+        <p class="govuk-body"><strong>We would like you to fill out a short questionnaire to help us assess the inclusivity of our selection process.</strong></p>
+
         <p class="govuk-body">We want the civil service to reflect the full range of backgrounds and experiences in the society we serve.</p>
-        <p class="govuk-body">We would like you to fill out a short questionnaire to help us assess the inclusivity of our selection process.</p>
+
 
         <div class="govuk-inset-text">
           None of the information you provide will be visible when we assess your application.
@@ -106,7 +101,7 @@
 
         <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Continue</button><br>
 
-        <a class="govuk-link" href="task-list?skip=true">I do not want to fill out the questionnaire</a>
+        <a class="govuk-link" href="socio-econ">I do not want to fill out the questionnaire</a>
 
       </div>
     </div>

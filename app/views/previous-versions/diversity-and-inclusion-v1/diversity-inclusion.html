@@ -88,34 +88,26 @@
     {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
-      <form action="../check-you-can-apply" method="post" novalidate>
+      <form action="d-and-i-questionnaire" method="post" novalidate>
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br><br>
+        <h1 class="govuk-heading-l">Diversity and inclusion</h1>
 
-        <div class="govuk-notification-banner" role="region"
-          aria-labelledby="govuk-notification-banner-title"
-          data-module="govuk-notification-banner">
-          <div class="govuk-notification-banner__header">
-            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-              Important
-            </h2>
-          </div>
+        <p class="govuk-body">We want the civil service to reflect the full range of backgrounds and experiences in the society we serve.</p>
+        <p class="govuk-body">We would like you to fill out a short questionnaire to help us assess the inclusivity of our selection process.</p>
 
-
-          <div class="govuk-notification-banner__content">
-            <p class="govuk-notification-banner__heading">
-              Your account has the following adjustments or support stored:</p>
-              Communication: "{{ data['ra-for-comms-detail'] }}"<br><br>
-              <p class="govuk-body">Doing online tests: "{{ data['ra-for-tests-detail'] }}"
-            </p><br>
-              <p class="govuk-body"><strong>We will apply these to this application, or you can <a class="govuk-link" href="adjustments-support-home-saved?comms-saved=no&">change or delete your adjustments and support</strong></a>.
-                </p>
-          </div>
-
+        <div class="govuk-inset-text">
+          None of the information you provide will be visible when we assess your application.
         </div>
-        <button class="govuk-button" data-module="govuk-button">
-          Start your application
-        </button>
+
+        <h2 class="govuk-heading-m">What do we do with this information?</h2>
+        <p class="govuk-body">Your answers will be anonymous and will only go to a central team looking at improving the inclusivity of our selection process. </p>
+
+
+        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Continue</button><br>
+
+        <a class="govuk-link" href="task-list?skip=true">I do not want to fill out the questionnaire</a>
+
       </div>
     </div>
 
