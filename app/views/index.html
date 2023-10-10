@@ -19,7 +19,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+
 
 
     {{ govukButton({
@@ -31,7 +31,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <br><br><br><h2 class="govuk-heading-l">Candidate landing page</h2>
     <span class="govuk-caption-xl govuk-!-margin-bottom-6">Using an off-pattern style, and a more GDS-friendly style</span>
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+
 
 
     {{ govukButton({
@@ -92,9 +92,26 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     text: "V3 - Reasonable adjustments stored",
     href: "portal-reasonable-adjustments"
   }) }}<br>
-  <a href="design-notes" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
+  <a href="design-notes#portalv3" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
   <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
 
+
+
+
+  <h2 class="govuk-heading-l">Reasonable adjustments</h2>
+    <span class="govuk-caption-xl govuk-!-margin-bottom-6">Candidate entry of any adjustments or support</span>
+
+
+  {{ govukButton({
+    text: "V1 - user asked about RAs at start",
+    href: "previous-versions/reasonable-adjustments-v1/job-ad-full?searchwhat=Strategy Advisor&dept=Department for Education"
+  }) }}<br>
+
+  {{ govukButton({
+    text: "V2 - user gets RA option on tasklist",
+    href: "reasonable-adjustments/job-ad-full?searchwhat=Strategy Advisor&dept=Department for Education"
+  }) }}
+  <a href="design-notes#reasonable-adjustments" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
 
   <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
 
