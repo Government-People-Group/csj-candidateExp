@@ -1,0 +1,334 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+</style>
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "East Midlands (England), East of England, London (region), North East England, North West England, Scotland, South East England "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+
+<br><br>
+
+
+
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl" style="margin-bottom:10px;text-transform: capitalize;">Strategy Administrator</h1>
+      <span class="govuk-caption-xl" style="margin-bottom:30px">Department for Education</span>
+    </div>
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full" style="padding:20px;background:#F7F7F7;">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+
+
+            {{ govukSummaryList({
+              classes: 'govuk-summary-list--no-border',
+              rows: [
+              {
+                key: {
+                  text: "Salary"
+                },
+                value: {
+                  text: salary
+                }
+              },
+              {
+                key: {
+                  text: "Location"
+                },
+                value: {
+                  text: locs
+                }
+              },
+              {
+                key: {
+                  text: "Job type"
+                },
+                value: {
+                  text: "Full time, permanent"
+                }
+              },
+              {
+                key: {
+                  text: "Grade"
+                },
+                value: {
+                  text: "Senior Executive Officer (SEO)"
+                }
+              }
+              ]
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-half">
+
+            <div style="float:left;">
+                <p class="govuk-body-m" style="margin-top:10px; margin-bottom:10px"><strong>Apply before 11:55pm on 22nd February 2023</strong></p>
+                <form class="form" action="sign-in?apply=true" method="post">
+                  <button class="govuk-button govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" style="float:left;max-width:100%;min-width:60%; margin-right:8px" data-module="govuk-button">Apply</button>
+                </form>
+                  <button id="but1" style="background:lightgrey;min-width:10%;max-width:100%;" onclick="" class="govuk-button govuk-button--secondary govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" data-module="govuk-button">Save this job</button>
+
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+      <div class="govuk-grid-column-full">
+        <p class="govuk-body-m">Jump to a section</p>
+        <ul class="govuk-list govuk-list--bullet-" style="font-size:20px">
+
+          <li style="text-align: right;display: inline;"><a href="#key" class="govuk-link--no-visited-state">About the role</a></li>
+          <li style="text-align: right;display: inline;padding:20px;"><a href="#location" class="govuk-link--no-visited-state">Location</a></li>
+          <li style="text-align: right;display: inline;padding:20px;"><a href="#person" class="govuk-link--no-visited-state">What we're looking for</a></li>
+          <li style="text-align: right;display: inline;padding:20px;"><a href="#offer" class="govuk-link--no-visited-state">What we offer</a></li>
+          <li style="text-align: right;display: inline;padding:20px;"><a href="#process" class="govuk-link--no-visited-state">The application process</a></li>
+        </ul>
+      </div>
+    </div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+      <div class="govuk-grid-column-full">
+
+        <h2 id="key" class="govuk-heading-l">About the role</h2>
+        <p class="govuk-body-m">This is a permanent role, working 37.5 hours per week.</p>
+        <p class="govuk-body-m">You will be part of the Education Strategy team, supporting the Lead Strategy Advisors. Their focus is improving the education policies implemented in your team's geographical area.</p>
+        <p class="govuk-body-m">You will have key responsibilities to carry out on a day-to-day basis, like:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>provide administrative support to the team</li>
+          <li>ensure projects focus on outcomes and deliver on time</li>
+          <li>assisting in the development of proposals for funding including drafting up content, editing and checking accuracy</li>
+          <li>drafting and providing content for progress reports on projects including extracting and collating information</li>
+          <li>assisting the team in delivering key milestones and evidencing action logs</li>
+          <li>setting up and supporting key stakeholder meetings and track progress on agreed actions</li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        <h2 id="location" class="govuk-heading-l">Location</h2>
+        <p class="govuk-body-m">You will be based in one of our Education Centres. When you apply you can state which Education Centre you would prefer to be based at.</p>
+        <p class="govuk-body-m">The Education Centres you can choose from are located in:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>East Midlands (England), East of England, London (region), North East England, North West England, Scotland, South East England</li>
+        </ul>
+
+        <div class="govuk-inset-text">
+          We may be able to offer hybrid working for this role, where you can work partly from an Education Centre and partly from home. You can discuss this with us if you are offered a role.
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+          <h2 id="person" class="govuk-heading-l">What we're looking for</h2><br>
+        <h3 class="govuk-heading-m">Essential criteria</h3>
+        <p class="govuk-body-m">For this role, you must:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+          <li>meet the Nationality requirements for this role
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px;padding-top:10px">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  see more
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                This job is broadly open to the following groups:
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced" style="list-style-type: '— ';">
+                  <li>UK nationals</li>
+                  <li>nationals of the Republic of Ireland</li>
+                  <li>nationals of Commonwealth countries who have the right to work in the UK</li>
+                  <li>nationals of the EU, Switzerland, Norway, Iceland or Liechtenstein and family members of those nationalities with settled or pre-settled status under the European Union Settlement Scheme (EUSS) (opens in a new window)</li>
+                  <li>nationals of the EU, Switzerland, Norway, Iceland or Liechtenstein and family members of those nationalities who have made a valid application for settled or pre-settled status under the European Union Settlement Scheme (EUSS)</li>
+                  <li>individuals with limited leave to remain or indefinite leave to remain who were eligible to apply for EUSS on or before 31 December 2020</li>
+                  <li>Turkish nationals, and certain family members of Turkish nationals, who have accrued the right to work in the Civil Service</li>
+                </ul>
+              </div>
+            </details>
+          </li>
+          <li>have a 'Developed Vetting' security clearance
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px;padding-top:10px">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  see more
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                'Developed vetting' security clearance is needed when an individual needs frequent and uncontrolled access to TOP SECRET assets or requires any access to TOP SECRET codeword material.<br><br>
+
+                If you already hold a DV clearance you will be required to renew your clearance at intervals of no more than 7 years and more frequently if the risk owner has set a shorter validity period. Your sponsor will initiate a DV renewal. This carries the same mandatory checks as a DV clearance but may exclude the referee interview.
+              </div>
+            </details>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-m">Desirable criteria</h3>
+        <p class="govuk-body-m">For this role, you should be able to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>deal with wide ranging enquiries and follow through to resolution</li>
+          <li>work on your own initiative as well as collaboratively as part of a team</li>
+          <li>quickly develop working relationships</li>
+          <li>develop solutions to address problems</li>
+          <li>work flexibly to meet ever changing priorities</li>
+          <li>manage a diverse workload</li>
+          <li>utilise excellent communications skills, both oral and written</li>
+        </ul>
+
+        <br><br>
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body-m">We welcome applications from the following schemes:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="https://www.gov.uk/government/news/making-the-civil-service-a-great-place-to-work-for-veterans" target="_blank" class="govuk-link--no-visited-state">Great Place to work for Veterans</a></li>
+            <li><a href="https://www.civil-service-careers.gov.uk/prison-leaver-recruitment/" target="_blank" class="govuk-link--no-visited-state">Prison leaver recruitment</a></li>
+          </ul>
+
+          <p class="govuk-body-m"><strong>We also welcome applications from anyone who may want reasonable adjustments or support</strong>, whether during the application process itself or if they are offered the job. <a href="#ra-info" class="govuk-link--no-visited-state">There is more information at the bottom of this page</a>.</p>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        <h2 id="offer" class="govuk-heading-l">What we offer</h2>
+        <p class="govuk-body-m">Benefits include:<p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Learning and development tailored to your role</li>
+            <li>An environment with flexible working options</li>
+            <li>A culture encouraging inclusion and diversity</li>
+            <li>A Civil Service pension with an average employer contribution of 27%</li>
+            <li>Entitlement to a minimum start of 23 days annual leave</li>
+          </ul>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        <h2 id="process" class="govuk-heading-l">The application process</h2>
+
+          <ol class="govuk-list govuk-list--number govuk-list--spaced">
+            <li>The CV and Personal Statement you submit as part of your application will be assessed against the following <a href="https://assets.publishing.service.gov.uk/media/5b27cf2240f0b634b469fb1a/CS_Behaviours_2018.pdf" target="_blank" class="govuk-link--no-visited-state">Success Profile behaviours</a>:</li>
+            <ol class="govuk-list--spaced" type="a">
+                <li>Managing a Quality Service</li>
+                <li>Delivering at Pace</li>
+                <li>Working Together</li>
+                <li>Communicating and Influencing</li>
+            </ol>
+            <li>if your application passes this assessment, you will be invited to an interview, where we will ask you more about the behaviours above</li>
+            <li>once all interviews have been completed, you will be notified of the outcome by email and through your Civil Service Jobs account</li>
+            <li>if successful you will receive a provisional job offer from us, including your starting salary, place of work and your working pattern if applicable</li>
+            <li>If you accept this provisional offer, pre-employment checks will commence and once they are cleared, the vacancy holder will contact you with details of a start date</li>
+          </ol><br>
+
+
+          </div>
+        </div>
+
+        <div class="govuk-notification-banner" role="region"
+          aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner" id="ra-info">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+
+          {% if data['ra-tests'] != 'yes'%}
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              Adjustments and support for your application
+              <p class="govuk-body" style="max-width:100%">We want to make sure that our application process is fair to everyone. If you feel there are reasonable adjustments to the application process that we could make or support we could give you, you will be able to tell us once you start the application process.</p>
+              <p class="govuk-body" style="max-width:100%"><strong>If you have any questions about the adjustments or support we could make for you, please <a href="#">contact the recruitment team</a>.</strong></p>
+          </div>
+          {% else %}
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              Your account has the following adjustments or support stored:</p>
+              Communication: "{{ data['ra-for-comms-detail'] }}"<br><br>
+              <p class="govuk-body">Doing online tests: "{{ data['ra-for-tests-detail'] }}"
+            </p><br>
+              <p class="govuk-body"><strong>We will apply these to this application, or you can <a class="govuk-link" href="adjustments-support-home-saved?comms-saved=no&">change or delete your adjustments and support</a></strong>.</p>
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full" style="background:#F6F6F6;padding:30px">
+
+
+
+
+            <form class="form" action="sign-in?apply=true" method="post">
+            <button class="govuk-button govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" style="float:left;max-width:100%;min-width:25%; margin-right:8px;" data-module="govuk-button">Apply</button></form><button id="but1" style="background:lightgrey;min-width:10%;max-width:100%" onclick="" class="govuk-button govuk-button--secondary govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" data-module="govuk-button">Save this job</button>
+            <p class="govuk-body-m" style="margin-top:20px; margin-bottom:10px;float:right"><strong>Apply before 11:55pm on 22nd February 2023</strong></p>
+          </div>
+          </div>
+
+        <script>
+          var c = 0;
+          const element = document.getElementById("but1");
+          element.addEventListener("click", function() {
+            if (c == 0){
+              document.getElementById("but1").innerHTML = "Saved"
+              c = c+1;
+              document.getElementById("display").innerHTML = "♥";
+            } else {
+              document.getElementById("but1").innerHTML = "Save this job"
+
+              if (c == 1) {
+                c = c-1;
+                document.getElementById("display").innerHTML = "";
+              }
+            }
+          });
+        </script>
+        {% endblock %}

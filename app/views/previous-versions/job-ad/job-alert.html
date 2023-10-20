@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set defaultJob = 'Strategy Advisor' %}
+{% set defaultDept = 'DWP' %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+</style>
+
+<form class="form" action="job-alert-saved" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Create job alert</h1>
+      <div class="govuk-inset-text">We'll send you an email alert when we find a job that matches your selections.</div><br>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="subject" style="font-weight:bold">
+          What
+        </label>
+
+        <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+
+          {% if data['searchwhat'] %}
+            <option value="eastmidlands" selected style="text-transform: capitalize;">{{ data['searchwhat']}}</option>
+          {% else %}
+            <option value="eastofengland">{{defaultJob}}</option>
+          {% endif %}
+          <option value="eastofengland">Enter a different role...</option>
+
+        </select>
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="subject" style="font-weight:bold">
+          Where
+        </label>
+
+        <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+
+          <option value="eastmidlands" selected>London</option>
+          <option value="eastofengland">Enter a different location...</option>
+
+        </select>
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="frequency" style="font-weight:bold">
+          How often we alert you
+        </label>
+
+        <select class="govuk-select" id="frequency" name="frequency" aria-describedby="subject-hint">
+
+          {% if data['searchwhat'] %}
+            <option value="asap" selected style="text-transform: capitalize;">As soon as a {{ data['searchwhat']}} role is posted</option>
+          {% else %}
+            <option value="eastofengland">As soon as a {{defaultJob}} role is posted</option>
+          {% endif %}
+
+          <option value="daily">Once a day</option>
+          <option value="weekly">Once a week</option>
+          <option value="different">Enter a different frequency...</option>
+
+        </select>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="govuk-link govuk-link--no-visited-state">More options for this job alert</a>
+  <br><br><br><br>
+  <button class="govuk-button" data-module="govuk-button">
+  Save job alert
+</button>
+
+
+</form>
+
+
+
+
+{% endblock %}
