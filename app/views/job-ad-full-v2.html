@@ -29,16 +29,6 @@
 }
 </style>
 
-{% if data['dept'] == "Department for Education" %}
-{% set salary = "£38,995" %}
-{% set locs = "East Midlands (England), East of England, London (region), North East England, North West England, Scotland, South East England "+data['searchwhere'] | capitalize %}
-{% elif data['dept'] == "Cabinet Office" %}
-{% set salary = "£41,550" %}
-{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
-{% elif data['dept'] == "Home Office" %}
-{% set salary = "£44,900" %}
-{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
-{% endif %}
 
 
 <br><br>
@@ -73,7 +63,7 @@
                   text: "Salary"
                 },
                 value: {
-                  text: salary
+                  text: "£38,995 to £43,965"
                 }
               },
               {
@@ -81,7 +71,7 @@
                   text: "Location"
                 },
                 value: {
-                  text: locs
+                  text: "East Midlands (England), East of England, London (region), North East England, North West England, Scotland, South East England"
                 }
               },
               {
@@ -106,7 +96,7 @@
           <div class="govuk-grid-column-one-half">
 
             <div style="float:left;">
-                <p class="govuk-body-m" style="margin-top:10px; margin-bottom:10px"><strong>Apply before 11:55pm on 22nd February 2023</strong></p>
+                <p class="govuk-body-m" style="margin-top:10px; margin-bottom:10px"><strong>Apply before 11:55pm on 22nd February 2024</strong></p>
                 <form class="form" action="sign-in?apply=true" method="post">
                   <button class="govuk-button govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" style="float:left;max-width:100%;min-width:60%; margin-right:8px" data-module="govuk-button">Apply</button>
                 </form>
@@ -143,7 +133,8 @@
 
         <h2 id="key" class="govuk-heading-l">About the role</h2>
         <p class="govuk-body-m">This is a permanent role, working 37.5 hours per week.</p>
-        <p class="govuk-body-m">You will be part of the Education Strategy team, supporting the Lead Strategy Advisors. Their focus is improving the education policies implemented in your team's geographical area.</p>
+        <p class="govuk-body-m">You will be part of the Emergency Education Strategy team, supporting the Lead Strategy Advisors. Their focus is planning education strategies which might be implemented in times of national emergency.</p>
+        <p class="govuk-body-m">Your line manager will be the Lead Strategy Advisor you are assigned to.</p><br>
         <p class="govuk-body-m">You will have key responsibilities to carry out on a day-to-day basis, like:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>provide administrative support to the team</li>
@@ -263,7 +254,7 @@
                 <li>Working Together</li>
                 <li>Communicating and Influencing</li>
             </ol>
-            <li>if your application passes this assessment, you will be invited to an interview, where we will ask you more about the behaviours above</li>
+            <li>if your application passes this assessment, you will be invited to an interview. The format of the interview will be given to you in advance so you will know how to prepare for it</li>
             <li>once all interviews have been completed, you will be notified of the outcome by email and through your Civil Service Jobs account</li>
             <li>if successful you will receive a provisional job offer from us, including your starting salary, place of work and your working pattern if applicable</li>
             <li>If you accept this provisional offer, pre-employment checks will commence and once they are cleared, the vacancy holder will contact you with details of a start date</li>
@@ -282,34 +273,25 @@
             </h2>
           </div>
 
-          {% if data['ra-tests'] != 'yes'%}
+
           <div class="govuk-notification-banner__content">
             <p class="govuk-notification-banner__heading">
               Adjustments and support for your application
               <p class="govuk-body" style="max-width:100%">We want to make sure that our application process is fair to everyone. If you feel there are reasonable adjustments to the application process that we could make or support we could give you, you will be able to tell us once you start the application process.</p>
-              <p class="govuk-body" style="max-width:100%"><strong>If you have any questions about the adjustments or support we could make for you, please <a href="#">contact the recruitment team</a>.</strong></p>
+              <p class="govuk-body" style="max-width:100%"><strong>If you have any questions about the adjustments or support we could make for you, please contact the Emergency Education Strategy team below.</strong></p>
           </div>
-          {% else %}
-          <div class="govuk-notification-banner__content">
-            <p class="govuk-notification-banner__heading">
-              Your account has the following adjustments or support stored:</p>
-              Communication: "{{ data['ra-for-comms-detail'] }}"<br><br>
-              <p class="govuk-body">Doing online tests: "{{ data['ra-for-tests-detail'] }}"
-            </p><br>
-              <p class="govuk-body"><strong>We will apply these to this application, or you can <a class="govuk-link" href="adjustments-support-home-saved?comms-saved=no&">change or delete your adjustments and support</a></strong>.</p>
-          </div>
-          {% endif %}
+
         </div>
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full" style="background:#F6F6F6;padding:30px">
 
-
+            <p class="govuk-body"><strong>If you have any questions about this role, you can contact the Emergency Education Strategy team on <a href="#">(0191) 2862862</a> or <a href="#">emergency.educ.strategy@dofe.gov.uk</a></strong></p>
 
 
             <form class="form" action="sign-in?apply=true" method="post">
             <button class="govuk-button govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" style="float:left;max-width:100%;min-width:25%; margin-right:8px;" data-module="govuk-button">Apply</button></form><button id="but1" style="background:lightgrey;min-width:10%;max-width:100%" onclick="" class="govuk-button govuk-button--secondary govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" data-module="govuk-button">Save this job</button>
-            <p class="govuk-body-m" style="margin-top:20px; margin-bottom:10px;float:right"><strong>Apply before 11:55pm on 22nd February 2023</strong></p>
+            <p class="govuk-body-m" style="margin-top:20px; margin-bottom:10px;float:right"><strong>Apply before 11:55pm on 22nd February 2024</strong></p>
           </div>
           </div>
 
