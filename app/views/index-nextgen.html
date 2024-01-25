@@ -130,7 +130,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
           <a class="govuk-tabs__tab" href="#prototype">
-            Prototype
+            Prototype - main journey
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#optional">
+            Prototype - optional journeys, alternatives etc
           </a>
         </li>
         <li class="govuk-tabs__list-item">
@@ -4557,11 +4562,313 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
             </tr>
           </tbody>
         </table></div><br><br><br><br><br>
-
-
-
-
       </div>
+
+      <div class="govuk-tabs__panel" id="optional" style="background-color:#ffffff;">
+        <h2 class="govuk-heading-l">Optional journeys, alternative screens etc</h2>
+        <br><br>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <ul class="govuk-list">
+              <li>
+                (1) <a class="govuk-link govuk-link--no-visited-state" href="#ra-candidate-entry">Reasonable adjustments - candidate entry</a>
+              </li>
+              <li>
+                (2) <a class="govuk-link govuk-link--no-visited-state" href="#ra-rast-mgmt">Reasonable adjustments - RAST case management</a>
+              </li>
+              <li>
+                (3) <a class="govuk-link govuk-link--no-visited-state" href="#candidate-portal">Candidate portal - variations</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </div><br><br><br>
+
+
+
+
+
+
+
+      <!-- Step 1 - Vacancy is set up -->
+      <div class="container">
+      <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m" id="ra-candidate-entry">(1) Reasonable adjustments - candidate entry</caption>
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header column-width-40">Event</th>
+      <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell filterDiv vh show filterDiv vh show"><a href="https://csj-candidate-experience.herokuapp.com/reasonable-adjustments/job-ad-full?searchwhat=Strategy%20Advisor&dept=Department%20for%20Education" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">V2 - RA option appears on side of application tasklist</a><br>
+       <details class="govuk-details" data-module="govuk-details">
+         <summary class="govuk-details__summary" style="color:#5d6062">
+           <span class="govuk-details__summary-text" style="font-size:0.9em">
+             Notes
+           </span>
+         </summary>
+         <div class="govuk-details__text">
+           See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#reasonable-adjustments" target="_blank">design notes
+           </div>
+         </details><br>
+         <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+         <p class="govuk-body-m" style="padding-top:20px">OR</p>
+         <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+       </td>
+
+
+       <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+         <strong class="govuk-tag govuk-tag--purple">
+           CANDIDATE
+         </strong>
+       </td>
+       <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+         <strong class="govuk-tag">
+           TESTED
+         </strong>
+       </td>
+       <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+         See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#reasonable-adjustments" target="_blank">'What we found'</td>
+       </tr>
+       <tr class="govuk-table__row">
+       <td class="govuk-table__cell filterDiv vh show filterDiv vh show"><a href="http://localhost:3000/previous-versions/reasonable-adjustments-v1/job-ad-full?searchwhat=Strategy%20Advisor&dept=Department%20for%20Education" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">V1 - RA option is a task within the application tasklist</a><br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#5d6062">
+            <span class="govuk-details__summary-text" style="font-size:0.9em">
+              Notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#reasonable-adjustments" target="_blank">design notes
+            </div>
+          </details><br>
+          <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+          <p class="govuk-body-m" style="padding-top:20px">OR</p>
+          <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+        </td>
+
+
+        <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+          <strong class="govuk-tag govuk-tag--purple">
+            CANDIDATE
+          </strong>
+        </td>
+        <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+          <strong class="govuk-tag">
+            TESTED
+          </strong>
+        </td>
+        <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+          See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#reasonable-adjustments" target="_blank">'What we found'</td>
+        </tr>
+       </table>
+       </div>
+
+       <div class="container">
+       <table class="govuk-table">
+       <caption class="govuk-table__caption govuk-table__caption--m" id="ra-rast-mgmt">(2) Reasonable adjustments - RAST case management</caption>
+       <thead class="govuk-table__head">
+       <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__header column-width-40">Event</th>
+       <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+       <th scope="col" class="govuk-table__header">Status</th>
+       <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+       </tr>
+       </thead>
+       <tbody class="govuk-table__body">
+
+       <tr class="govuk-table__row">
+       <td class="govuk-table__cell filterDiv vh show filterDiv vh show"><a href="https://csj-ra-dash-7b67361d8c62.herokuapp.com/home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">V1 - RAST team dashboard for reasonable adjustment requests</a><br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#5d6062">
+            <span class="govuk-details__summary-text" style="font-size:0.9em">
+              Notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            See <a href="https://csj-ra-dash-7b67361d8c62.herokuapp.com/design-notes" target="_blank">design notes</a>.<br><br>
+            Click on 'Open cases' and then 'Carolyn Hall' to access case notes.
+            </div>
+          </details><br>
+          <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+          <p class="govuk-body-m" style="padding-top:20px">OR</p>
+          <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+        </td>
+
+
+        <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+          <strong class="govuk-tag govuk-tag--orange">
+            RECRUITER
+          </strong>
+        </td>
+        <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+          <strong class="govuk-tag">
+            TESTED
+          </strong>
+        </td>
+        <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+          See <a href="https://csj-ra-dash-7b67361d8c62.herokuapp.com/design-notes" target="_blank">'What we found'</td>
+        </tr>
+        </table>
+        </div>
+
+        <div class="container">
+        <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m" id="candidate-portal">(3) Candidate portal - variations</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header column-width-40">Event</th>
+        <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+        <td class="govuk-table__cell filterDiv vh show filterDiv vh show"><a href="https://csj-candidate-experience.herokuapp.com/portal-reasonable-adjustments" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">V3 - latest version</a><br>
+         <details class="govuk-details" data-module="govuk-details">
+           <summary class="govuk-details__summary" style="color:#5d6062">
+             <span class="govuk-details__summary-text" style="font-size:0.9em">
+               Notes
+             </span>
+           </summary>
+           <div class="govuk-details__text">
+             See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#portalv3" target="_blank">design notes
+             </div>
+           </details><br>
+           <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+           <p class="govuk-body-m" style="padding-top:20px">OR</p>
+           <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+         </td>
+
+
+         <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+           <strong class="govuk-tag govuk-tag--purple">
+             CANDIDATE
+           </strong>
+         </td>
+         <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+           <strong class="govuk-tag">
+             TESTED
+           </strong>
+         </td>
+         <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+           See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#portalv3" target="_blank">'What we found'</td>
+         </tr>
+         <tr class="govuk-table__row">
+         <td class="govuk-table__cell filterDiv vh show filterDiv vh show"><a href="https://csj-candidate-experience.herokuapp.com/portal-pec" style="font-size:1.2em" target="_blank">V2 - PEC in progress</a><br>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary" style="color:#5d6062">
+              <span class="govuk-details__summary-text" style="font-size:0.9em">
+                Notes
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#portalv2" target="_blank">design notes
+              </div>
+            </details><br>
+            <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+            <p class="govuk-body-m" style="padding-top:20px">OR</p>
+            <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+          </td>
+
+
+          <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+            <strong class="govuk-tag govuk-tag--purple">
+              CANDIDATE
+            </strong>
+          </td>
+          <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+            <strong class="govuk-tag">
+              TESTED
+            </strong>
+          </td>
+          <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+            See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#portalv2" target="_blank">'What we found'</td>
+          </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell filterDiv vh show filterDiv vh show"><a href="https://csj-candidate-experience.herokuapp.com/portal-reserve-list" style="font-size:1.2em" target="_blank">V2 - reserve list offer</a><br>
+           <details class="govuk-details" data-module="govuk-details">
+             <summary class="govuk-details__summary" style="color:#5d6062">
+               <span class="govuk-details__summary-text" style="font-size:0.9em">
+                 Notes
+               </span>
+             </summary>
+             <div class="govuk-details__text">
+               See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#portalv2" target="_blank">design notes
+               </div>
+             </details><br>
+             <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+             <p class="govuk-body-m" style="padding-top:20px">OR</p>
+             <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+           </td>
+
+
+           <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+             <strong class="govuk-tag govuk-tag--purple">
+               CANDIDATE
+             </strong>
+           </td>
+           <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+             <strong class="govuk-tag">
+               TESTED
+             </strong>
+           </td>
+           <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+             See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#portalv2" target="_blank">'What we found'</td>
+           </tr>
+           <tr class="govuk-table__row">
+           <td class="govuk-table__cell filterDiv vh show filterDiv vh show"><a href="https://csj-candidate-experience.herokuapp.com/portal-interview" style="font-size:1.2em" target="_blank">V2 - interview offer</a><br>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary" style="color:#5d6062">
+                <span class="govuk-details__summary-text" style="font-size:0.9em">
+                  Notes
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#portalv2" target="_blank">design notes
+                </div>
+              </details><br>
+              <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+              <p class="govuk-body-m" style="padding-top:20px">OR</p>
+              <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+            </td>
+
+
+            <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+              <strong class="govuk-tag govuk-tag--purple">
+                CANDIDATE
+              </strong>
+            </td>
+            <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+              <strong class="govuk-tag">
+                TESTED
+              </strong>
+            </td>
+            <td class="govuk-table__cell filterDiv vh show filterDiv vh show">
+              See <a href="https://csj-candidate-experience.herokuapp.com/design-notes#portalv2" target="_blank">'What we found'</td>
+            </tr>
+         </table>
+         </div>
+
+
+     </div>
+
+
+
+
+
+
+
+
 
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="user-journeys" style="background-color:#ffffff;">
         <h2 class="govuk-heading-l">User journeys</h2>
