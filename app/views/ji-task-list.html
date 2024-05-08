@@ -38,6 +38,12 @@
 .nav-right{
   float:right;
 }
+
+.govuk-tag {
+  text-transform:none;
+  font-size:1.1875rem;
+  font-weight:400;
+}
 </style>
 
 {% if data['dept'] == "Department for Education" %}
@@ -88,7 +94,7 @@
     <h1 class="govuk-heading-xl">Your application for {{Job}}</h1>
 
 
-    <p class="govuk-body">You can leave and return to complete at any time. Your answers will automatically save when you complete a task.</p>
+    <p class="govuk-body">You can leave and return to complete your application at any time. Your answers will automatically save when you complete a task.</p>
 
     <p class="govuk-body"><a href="ji-job-ad-full">View the {{Job}} advert</a>.</p>
 
@@ -96,7 +102,7 @@
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
         <span class="govuk-warning-text__assistive">Warning</span>
-        You must submit your application before 11:55 PM on 22nd July 2023.
+        You must submit your application before 11:55pm on 22 July 2023.
       </strong>
     </div>
 
@@ -123,7 +129,7 @@
                   Nationality details
                 </a>
               </span>
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Completed</strong>
             </li>
           </ul>
         </li>
@@ -145,7 +151,7 @@
               {% if data['pass'] == "true"  %}
               <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
               {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Not started</strong>
               {% endif %}
 
 
@@ -158,10 +164,10 @@
           <h2 class="govuk-prototype-kit-task-list__section">
             Assessments
           </h2>
-          <p class="govuk-body govuk-!-margin-left-6">For help on the assessments, you can use the articles:</p>
+          <p class="govuk-body govuk-!-margin-left-6">For help on these assessments, you can use the articles:</p>
           <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-6">
             <li><a href="#">how to answer behaviour questions</a></li>
-            <li><a href="#">Success profile guidance</a></li>
+            <li><a href="#">Success Profile guidance</a></li>
           </ul>
             <br><br>
           <ul class="govuk-prototype-kit-task-list__items">
@@ -178,11 +184,11 @@
               </span>
 
               {% if data['cv'] == "true"  %}
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Completed</strong>
               {% elif data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Not started</strong>
               {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Cannot start yet</strong>
               {% endif %}
 
             </li>
@@ -200,14 +206,14 @@
               </span>
 
               {% if data['ps'] == "true"  %}
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Completed</strong>
 
               {% elif data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Not started</strong>
               {% elif data['cv'] == "true" %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Not started</strong>
               {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Cannot start yet</strong>
               {% endif %}
             </li>
             <li class="govuk-prototype-kit-task-list__item">
@@ -223,11 +229,11 @@
 
 
               {% if data['behaviour-pass'] == "true" %}
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Completed</strong>
               {% elif data['pass'] == "true"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Not started</strong>
               {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status" style="text-transform:none;font-size:1.1875rem; font-weight:400">Cannot start yet</strong>
               {% endif %}
             </li>
             <li class="govuk-prototype-kit-task-list__item">
@@ -321,7 +327,7 @@
 
 
         <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">How to answer behaviour questions</a></p></li>
-        <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">Success profile guidiance</a></p></li>
+        <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">Success Profile guidiance</a></p></li>
 
 
       </ul>
