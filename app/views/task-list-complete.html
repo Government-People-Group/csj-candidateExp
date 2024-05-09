@@ -27,6 +27,15 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
 {% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
 {% endif %}
 
+<style>
+.govuk-tag {
+  text-transform:none;
+  font-size:1.1875rem;
+  font-weight:400;
+  background-color:#bbd4ea;
+  color:#0c2d4a
+}
+</style>
 
 
 {% if data['dept'] == "Department for Education" %}
@@ -58,7 +67,7 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
         <span class="govuk-warning-text__assistive">Warning</span>
-        You must submit your application before 11:55 PM on 22nd February 2023.
+        You must submit your application before 11:55pm on 22 February 2023.
       </strong>
     </div>
     <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>

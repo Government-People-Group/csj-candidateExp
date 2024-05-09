@@ -29,21 +29,20 @@ Online tests result – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">
       <strong>{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span>
-      <h1 class="govuk-heading-xl">Judgement test</h1>
-      <h2 class="govuk-heading-l">Your test result</h2>
+      <h1 class="govuk-heading-l">Your judgement test result</h1>
       <p class="govuk-body-m">Thank you for completing the Civil Service Judgement Test.</p>
-      <p class="govuk-body-m">Unfortunately, your performance was below the minimum requirements for this job grade, so you cannot continue with your application for {{ data['searchwhat'] | capitalize}}.</p>
-      <p class="govuk-body-m">You scored better than 43%. You needed to achieve 60% or more to pass this test.</p>
-      <p class="govuk-body-m">For more information on your performance, you can view your <a href="#">test report</a>.</p>
+      <p class="govuk-body-m">Unfortunately, your performance was below the minimum requirements for this job grade. You cannot continue with your application for {{ data['searchwhat'] | capitalize}}.</p>
+      <p class="govuk-body-m">You scored better than 43%. To pass this test you need to score 60% or more.</p>
+      <p class="govuk-body-m">For more information on your performance, you can <a href="#">view your test report</a>.</p>
 
       <p class="govuk-body-m">For help on improving your test scores, you can:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li><p class="govuk-body-m">complete our CSJT practice test</p> </li>
+        <li><p class="govuk-body-m">complete our Civil Service Judgement Test practice test</p> </li>
         <li><p class="govuk-body-m">explore resources, challenges or development opportunities that improve your judgement and decision making</p> </li>
             <li><p class="govuk-body-m">consider how you analyse information and what you can gain from it - to better focus on important text points</p> </li>
       </ul>
 
-<p class="govuk-body-m">You can search for another Civil service role. </p>
+<p class="govuk-body-m">You can <a href="#">search for another Civil service role.</a></p>
 
       <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Search for jobs</button>
 </form>
