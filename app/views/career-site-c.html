@@ -63,6 +63,10 @@
     visibility:hidden;
   }
 
+  .search-float{
+    float:right;
+  }
+
 
 </style>
 
@@ -104,60 +108,33 @@
 
 </nav>
 
-<div class="moj-search">
 
-  <div class="govuk-form-group">
-
-  <div class="govuk-input__wrapper">
-    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false" value="Search..." style="color:#606B71">
-    <button class="gem-c-search__submit" type="submit" enterkeyhint="search">
-
-<svg class="gem-c-search__icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-  <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
-  <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
-</svg>
-</button>
-  </div>
-</div>
-</div>
 
 </div>
 
 
 <div class="govuk-grid-row" style="clear:both;background-color:#DEE0E2;">
 <div class="govuk-grid-column-three-quarters" style="min-height:100px;max-height:160px;padding-top:15px;padding-left:35px">
-  <div class="govuk-grid-column-one-half">
+
 
     {{ govukInput({
       label: {
-        text: 'Search for a job'
+        text: 'Search for a job',
+        classes: 'search-label-hidden'
       },
       id: "searchwhat",
       name: "searchwhat",
-      value: "Enter job title, skill or keywords",
-      classes: "govuk-input--width-25",
+      value: "Search for jobs, careers or info about working for the Civil Service",
+      classes: "govuk-!-width-full search-float",
       autocomplete: "search-term-input"
     }) }}
-  </div>
-  <div class="govuk-grid-column-one-half">
 
-    {{ govukInput({
-      label: {
-        text: 'Search',
-        classes: 'search-label-hidden'
-      },
-      id: "searchwhere",
-      name: "searchwhere",
-      value: "Enter a postcode, town or region",
-      classes: "govuk-input--width-25",
-      autocomplete: "location-search-input"
-    }) }}
-  </div>
+
 </div>
 <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-3"  style="position:relative;min-height:100px;max-height:160px">
 
 
-<form class="form" action="search-results" method="post">
+<form class="form" action="search-results-careers" method="post">
     <button class="govuk-button" style="max-width:92%;min-width:70%; margin-top:40px;margin-bottom:20px" data-module="govuk-button">Search</button>
 </form>
 
