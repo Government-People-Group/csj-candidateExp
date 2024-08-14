@@ -112,10 +112,6 @@
 </nav>
 
 
-
-
-
-
 <div class="govuk-grid-row" style="clear:both;background-color:#DEE0E2;max-width:1460px">
 <div class="govuk-grid-column-three-quarters" style="min-height:100px;max-height:160px;padding-left:35px">
 
@@ -134,27 +130,54 @@
 </div>
 <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-3"  style="position:relative;min-height:100px;max-height:160px">
 
+  <div class="govuk-form-group" style="max-width:92%;min-width:70%; margin-top:15px;margin-bottom:20px">
+  <label class="govuk-label" for="sort">
+    Search in
+  </label>
+  <select class="govuk-select" id="sort" name="sort" onchange="location = this.options[this.selectedIndex].value;">
+    <option>Please select...</option>
+    <option value="careers-site-search-results-site">this site</option>
+    <option value="careers-site-search-results-jobs">jobs</option>
+  </select>
+</div>
 
-<form class="form" action="careers-site-search-results" method="post">
-    <button class="govuk-button" style="max-width:92%;min-width:70%; margin-top:45px;margin-bottom:20px" data-module="govuk-button">Search</button>
-</form>
+
 
 </div>
+</div>
+
+<div class="govuk-grid-row" style="padding:40px 20px">
+  <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-m">Vacancies on our Civil Service Jobs site that match your search</h2>
+    <div id="more-detail-hint" class="govuk-hint">
+    Clicking these links will take you from this site to the Civil Service Jobs website.
+  </div><br>
+      <ul class="govuk-list">
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=cGFnZWFjdGlvbj12aWV3dmFjYnlqb2JsaXN0Jm93bmVyPTUwNzAwMDAmdXNlcnNlYXJjaGNvbnRleHQ9OTE4NTA1OTImb3duZXJ0eXBlPWZhaXImc2VhcmNocGFnZT0xJnNlYXJjaHNvcnQ9c2NvcmUmam9ibGlzdF92aWV3X3ZhYz0xOTE4Nzc3JnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNzIzNTY4MjMxLWVmNzgyYTM0MjI1YmZlNzRmMWVmN2UyYTE0MTBmNDJlNjgwMGU2NjQ=" style="font-weight:bold">Interaction Designer (Cardiff, Wales)</a>
+      <div id="example-hint" class="govuk-hint" style="padding-right:20px">
+      <span style="font-weight:bold">Companies House</span><br>Closes : 11:55 pm on Sunday 1st September 2024
+    </div>
+    </li>
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=c2VhcmNoc29ydD1zY29yZSZwYWdlY2xhc3M9Sm9icyZqb2JsaXN0X3ZpZXdfdmFjPTE5MTgxNDImb3duZXI9NTA3MDAwMCZ1c2Vyc2VhcmNoY29udGV4dD05MTg1MDU5MiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmb3duZXJ0eXBlPWZhaXImc2VhcmNocGFnZT0xJnJlcXNpZz0xNzIzNTY4MjMxLWVmNzgyYTM0MjI1YmZlNzRmMWVmN2UyYTE0MTBmNDJlNjgwMGU2NjQ=" style="font-weight:bold">Lead Service Designer (Bedford)</a>
+      <div id="example-hint" class="govuk-hint" style="padding-right:20px">
+        <span style="font-weight:bold">Money and Pensions Service</span><br>Closes : 4:55 pm on Wednesday 14th August 2024
+    </div>
+    </li>
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=cGFnZWFjdGlvbj12aWV3dmFjYnlqb2JsaXN0Jm93bmVyPTUwNzAwMDAmdXNlcnNlYXJjaGNvbnRleHQ9OTE4NTA1OTImb3duZXJ0eXBlPWZhaXImc2VhcmNocGFnZT0xJnNlYXJjaHNvcnQ9c2NvcmUmcGFnZWNsYXNzPUpvYnMmam9ibGlzdF92aWV3X3ZhYz0xOTE1NTYwJnJlcXNpZz0xNzIzNTY4MjMxLWVmNzgyYTM0MjI1YmZlNzRmMWVmN2UyYTE0MTBmNDJlNjgwMGU2NjQ=" style="font-weight:bold">Web Content Designer (Remote working)</a>
+      <div id="example-hint" class="govuk-hint" style="padding-right:20px">
+        <span style="font-weight:bold">College of Policing</span><br>Closes : 11:55 pm on Wednesday 14th August 2024
+    </div>
+    </li>
+    </ul>
+  </div>
 </div>
 
 <div class="govuk-grid-row">
-
-
-
-      <img src="public/images/cs2.png" style="max-width:100%;">
-      <img src="public/images/cs3.png" style="max-width:100%;">
-      <img src="public/images/cs4.png" style="max-width:100%;">
-      <img src="public/images/cs5.png" style="max-width:100%;">
-      <img src="public/images/cs6.png" style="max-width:100%;">
-      <img src="public/images/cs7.png" style="max-width:100%;">
-      <img src="public/images/cs8.png" style="max-width:100%;">
-      <img src="public/images/cs9.png" style="max-width:100%;">
-      </div>
-
+  <img src="public/images/cs-footer.png" style="max-width:100%;">
 </div>
+</div>
+
 {% endblock %}

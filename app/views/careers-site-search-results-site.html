@@ -113,9 +113,6 @@
 
 
 
-
-
-
 <div class="govuk-grid-row" style="clear:both;background-color:#DEE0E2;max-width:1460px">
 <div class="govuk-grid-column-three-quarters" style="min-height:100px;max-height:160px;padding-left:35px">
 
@@ -134,27 +131,57 @@
 </div>
 <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-3"  style="position:relative;min-height:100px;max-height:160px">
 
+  <div class="govuk-form-group" style="max-width:92%;min-width:70%; margin-top:15px;margin-bottom:20px">
+  <label class="govuk-label" for="sort">
+    Search in
+  </label>
+  <select class="govuk-select" id="sort" name="sort" onchange="location = this.options[this.selectedIndex].value;">
+    <option>Please select...</option>
+    <option value="careers-site-search-results-site">this site</option>
+    <option value="careers-site-search-results-jobs">jobs</option>
+  </select>
+</div>
 
-<form class="form" action="careers-site-search-results" method="post">
-    <button class="govuk-button" style="max-width:92%;min-width:70%; margin-top:45px;margin-bottom:20px" data-module="govuk-button">Search</button>
-</form>
+
 
 </div>
+</div>
+
+<div class="govuk-grid-row" style="padding:40px 20px">
+  <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-m">Pages on this site</h2>
+    <ul class="govuk-list">
+  <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://www.civil-service-careers.gov.uk/professions/working-in-digital-data-and-technology/" style="font-weight:bold">Explore working for Government Digital & Data</a>
+    <div id="example-hint" class="govuk-hint" style="padding-right:20px">
+    We design, build and run digital public services, making them simpler and faster to use. This is your chance to be involved in some of the most innovative e-government projects in the world.
+  </div>
+  </li>
+  <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://ddat-capability-framework.service.gov.uk/role/interaction-designer" style="font-weight:bold">Careers > Interaction Designer</a>
+  </li>
+  <div id="example-hint" class="govuk-hint" style="padding-right:20px">
+  An interaction designer works out the best way to let users interact with services, in terms of both overall flow and at the level of individual design elements.
+</div>
+  <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://ddat-capability-framework.service.gov.uk/role/content-designer" style="font-weight:bold">Careers > Content Designer</a>
+  </li>
+  <div id="example-hint" class="govuk-hint" style="padding-right:20px">
+  Content designers make things easier for people to understand and use. This can involve working on a single piece of content or on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent.
+</div>
+  <li>
+    <a class="govuk-link govuk-link--no-visited-state" href="https://ddat-capability-framework.service.gov.uk/role/service-designer" style="font-weight:bold">Careers > Service Designer</a>
+  </li>
+  <div id="example-hint" class="govuk-hint" style="padding-right:20px">
+  Service designers design the end-to-end journey of a service. This helps a user complete their goal and government deliver a policy intent. In this role, your work may involve the creation of, or change to, transactions, products and content across both digital and offline channels provided by different parts of government.
+</div>
+</ul>
+  </div>
 </div>
 
 <div class="govuk-grid-row">
-
-
-
-      <img src="public/images/cs2.png" style="max-width:100%;">
-      <img src="public/images/cs3.png" style="max-width:100%;">
-      <img src="public/images/cs4.png" style="max-width:100%;">
-      <img src="public/images/cs5.png" style="max-width:100%;">
-      <img src="public/images/cs6.png" style="max-width:100%;">
-      <img src="public/images/cs7.png" style="max-width:100%;">
-      <img src="public/images/cs8.png" style="max-width:100%;">
-      <img src="public/images/cs9.png" style="max-width:100%;">
-      </div>
-
+  <img src="public/images/cs-footer.png" style="max-width:100%;">
 </div>
+</div>
+
 {% endblock %}
