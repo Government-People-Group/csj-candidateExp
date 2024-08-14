@@ -37,6 +37,9 @@
     padding-top:5px
   }
 
+  .moj-sub-navigation {
+    width:1200px;
+  }
   .moj-sub-navigation__link:link, .moj-sub-navigation__link:visited {
     color: #0b0c0c;
   }
@@ -57,6 +60,14 @@
 
   .gem-c-search__icon{
     color:#000000;
+  }
+
+  .search-label-hidden{
+    visibility:hidden;
+  }
+
+  .search-float{
+    float:right;
   }
 
 
@@ -100,29 +111,49 @@
 
 </nav>
 
-<div class="moj-search">
 
-  <div class="govuk-form-group">
-
-  <div class="govuk-input__wrapper">
-    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false" value="Search..." style="color:#606B71">
-    <button class="gem-c-search__submit" type="submit" enterkeyhint="search">
-
-<svg class="gem-c-search__icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-  <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
-  <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
-</svg>
-</button>
-  </div>
-</div>
-</div>
 
 </div>
 
 
-    <div class="govuk-grid-row" style="clear:both">
+<div class="govuk-grid-row" style="clear:both;background-color:#DEE0E2;">
+<div class="govuk-grid-column-three-quarters" style="min-height:100px;max-height:160px;padding-left:35px">
 
-      <a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi"><img src="public/images/cs1.png" style="max-width:100%;"></a>
+
+
+    <div class="govuk-form-group">
+
+    <label class="govuk-label govuk-label--l search-label-hidden" for="event-name" style="margin-bottom:5px">
+      Search for a job
+    </label>
+
+  <input class="govuk-input govuk-!-width-full search-float" id="event-name" name="eventName" type="text" placeholder="Search for jobs, careers or info about working for the Civil Service">
+</div>
+
+
+</div>
+<div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-3"  style="position:relative;min-height:100px;max-height:160px">
+
+  <div class="govuk-form-group" style="max-width:92%;min-width:70%; margin-top:15px;margin-bottom:20px">
+  <label class="govuk-label" for="sort">
+    Search in
+  </label>
+  <select class="govuk-select" id="sort" name="sort" onchange="location = this.options[this.selectedIndex].value;">
+    <option>Please select...</option>
+    <option value="home">this site</option>
+    <option value="http://www.bbc.com">jobs</option>
+  </select>
+</div>
+
+
+
+</div>
+</div>
+
+<div class="govuk-grid-row">
+
+
+
       <img src="public/images/cs2.png" style="max-width:100%;">
       <img src="public/images/cs3.png" style="max-width:100%;">
       <img src="public/images/cs4.png" style="max-width:100%;">
@@ -132,6 +163,8 @@
       <img src="public/images/cs8.png" style="max-width:100%;">
       <img src="public/images/cs9.png" style="max-width:100%;">
       </div>
+
+
 
 
 {% endblock %}
