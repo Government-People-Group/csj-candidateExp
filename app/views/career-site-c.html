@@ -117,20 +117,18 @@
 
 
 <div class="govuk-grid-row" style="clear:both;background-color:#DEE0E2;">
-<div class="govuk-grid-column-three-quarters" style="min-height:100px;max-height:160px;padding-top:15px;padding-left:35px">
+<div class="govuk-grid-column-three-quarters" style="min-height:100px;max-height:160px;padding-left:35px">
 
 
-    {{ govukInput({
-      label: {
-        text: 'Search for a job',
-        classes: 'search-label-hidden'
-      },
-      id: "searchwhat",
-      name: "searchwhat",
-      value: "Search for jobs, careers or info about working for the Civil Service",
-      classes: "govuk-!-width-full search-float",
-      autocomplete: "search-term-input"
-    }) }}
+
+    <div class="govuk-form-group">
+
+    <label class="govuk-label govuk-label--l search-label-hidden" for="event-name" style="margin-bottom:5px">
+      Search for a job
+    </label>
+
+  <input class="govuk-input govuk-!-width-full search-float" id="event-name" name="eventName" type="text" placeholder="Search for jobs, careers or info about working for the Civil Service">
+</div>
 
 
 </div>
