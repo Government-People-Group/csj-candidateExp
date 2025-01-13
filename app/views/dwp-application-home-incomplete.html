@@ -74,7 +74,7 @@
     {% if data['dept'] %}
       {% set Dept = data['dept'] %}
     {% else %}
-      {% set Dept = 'Defra' %}
+      {% set Dept = 'DWP' %}
     {% endif %}
 
     <span class="govuk-heading-l" style="margin-bottom:10px">
@@ -84,16 +84,16 @@
 
     <br>
 
-    <div class="govuk-panel govuk-panel--confirmation" style="background-color:#d2e2f1; color:#000000">
+    <div class="govuk-panel govuk-panel--confirmation" style="background-color:#d2e2f1; color:#000000;">
       <h1 class="govuk-panel__title">
-        We are carrying out your pre-employment checks
+        Your application is incomplete
       </h1>
       <div class="govuk-panel__body">
-        While we carry out your checks, you do not need to do anything<br>
-      </div><br><br>
-      <form action="candidate-pec/tab-pec-list?rtw-action-needed=no" method="post" novalidate>
+        The deadline for applying is in 18 days<br>
+      </div><br>
+      <form action="task-list-incomplete" method="post" novalidate>
       <button class="govuk-button" data-module="govuk-button" style="margin-bottom:0px">
-        Track the progress of your pre-employment checks
+        Continue your application
       </button>
       </form>
     </div>
