@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "portal-interview",
+        text: "Go back to my dashboard",
+        active: true
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
+        <h1 class="govuk-heading-l">
+          Are you sure you want to withdraw your application?
+        </h1>
+        
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            (ramifications of clicking red button).
+          </strong>
+        </div>
+       
+
+        
+
+       
+
+        <div class="govuk-button-group">
+
+          <form action="dwp-application-home-withdrawn" method="post" novalidate>
+            <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+              Withdraw my application
+            </button></form>
+
+            <form action="dwp-application-home" method="post" novalidate>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Back to your application page
+          </button></form>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </form>
+  {% endblock %}

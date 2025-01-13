@@ -1,0 +1,149 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "portal-interview",
+        text: "Go back to my dashboard",
+        active: true
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
+        <h1 class="govuk-heading-l">
+          Withdraw your application
+        </h1>
+        <p class="govuk-body-m">If you have decided you no longer want to apply for the position of {{Job}} with {{ Dept }}, you can withdraw your application.</p>
+       
+
+        <div class="govuk-inset-text">
+          It is useful for our future job campaigns if we know why you have decided to withdraw. Your information will only be used blah blah blah. You don't have to give a reason if you prefer not to etc etc
+        </div><br><br>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h3 class="govuk-fieldset__heading">
+                Why are you withdrawing your application?
+              </h3>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              Select one option
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="contact">
+                  I have accepted another job offer
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" style="display:none">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    Email address
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  the location or hours are no longer suitable for me
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" style="display:none">
+               
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+                <label class="govuk-label govuk-radios__label" for="contact-3">
+                  Other
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-text">
+                    Reason
+                  </label>
+                  <textarea class="govuk-textarea" id="contact-by-text" name="contactByText" rows="5" aria-describedby="more-detail-hint"></textarea>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-button-group">
+
+          <form action="withdraw-application-confirm" method="post" novalidate>
+          <button class="govuk-button" data-module="govuk-button">
+            Withdraw my application
+          </button>
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Back to your application page
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </form>
+  {% endblock %}

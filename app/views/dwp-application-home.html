@@ -32,7 +32,6 @@
 
   .govuk-tag--bright-green{
     background-color:#189d51;
-    color:#fffff;
   }
 
   .app-step-nav__step:last-child:before {
@@ -84,101 +83,42 @@
 
     <br><br>
 
-
-    {% if data['interview-booked'] !="yes" %}
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true" style="background-color:#189d51;border:3px solid #189d51;">!</span>
-      <strong class="govuk-warning-text__text">
-         
-        You have been offered an interview for this job. You should book an interview slot as soon as possible.
-      </strong>
-    </div>
-    <form action="interview-offer?appl-homepage=yes" method="post" novalidate>
-    <button class="govuk-button" data-module="govuk-button">
-      Book your interview
-    </button><br>
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          I need a reasonable adjustment for my interview
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body">
-        We want to support you if you need an adjustment for your interview. You can ask for a reasonable adjustment for your interview. Examples of adjustments we can make are:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>changing the time, location or format of interviews</li>
-          <li>a sign language interpreter</li>
-          <li>a supported test session</li>
-        </ul>
-<a href="">Ask for a reasonable adjustment</a>
-      </div>
-    </details>
-    {% else %}
-      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-      aria-labelledby="govuk-notification-banner-title"
-      data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
+          Important
         </h2>
       </div>
       <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          Your interview is booked for 3pm on Monday 16 March 2024.
-        </h3>
-        <p class="govuk-body">If you need to, you can <a class="govuk-notification-banner__link" href="#">change your interview slot</a> up to 2 days before the interview.</p>
+        <p class="govuk-notification-banner__heading">
+          You have been offered an interview for this job. You should <a class="govuk-notification-banner__link" href="#">book an interview slot</a> as soon as possible.<br>
+          <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                I need a reasonable adjustment for my interview
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">
+              We want to support you if you need an adjustment for your interview. You can ask for a reasonable adjustment for your interview. Examples of adjustments we can make are:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>changing the time, location or format of interviews</li>
+                <li>a sign language interpreter</li>
+                <li>a supported test session</li>
+              </ul>
+      <a href="">Ask for a reasonable adjustment</a>
+            </div>
+          </details>
+        </p>
       </div>
-      </div>
-    {% endif %}
-
-
+    </div>
 
 
 
 <br><br>
 <h2 class="govuk-heading-m">Messages about this job</h2>
 <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections" style="background-color:#f3f2f1;padding:20px">
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="font-size:0.8em">
-          You have booked your interview <span style="padding-left:30px; font-weight:normal; font-size:0.8em">23 July 2023</span>
-        </span>
-      </h2>
-
-    </div>
-    <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
-      <p class="govuk-body">Congratulations, your application has been successful and we would like to invite you to an interview.<br><br>The interview will be 1 hour long and will include:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-
-  <li>questions on the behaviours: Making effective decisions, Communicating and influencing and Seeing the big picture</li>
-  <li>presentation: a 15 minute presentation on ‘managing relationships with key policy stakeholders’</li>
-  </ul>
-  <br><br><p class="govuk-body">You can view your application feedback to:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>practice for your interview</li>
-  <li>practice behaviour questions</li></ul>
-  <br><br><p class="govuk-body">If you would like to talk to someone about your application, you can contact adam.smith@cabinetoffice.gov.uk</p>
-
-  <br><br><p class="govuk-body">If you are no longer interested in this job, you can withdraw your application at any time.</p>
-  <button class="govuk-button" data-module="govuk-button">
-  Book your interview
-  </button>
-      <ul class="govuk-list">
-        <li><br>
-          <a class="govuk-link" href="#">View your application feedback</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#">Contact the vacancy holder</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#">Withdraw your application</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+  
   <div class="govuk-accordion__section">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
@@ -317,6 +257,7 @@ practice behaviour questions
               <span class="js-step-title" style="color:#505a5f;font-weight:normal">
                 You submitted your application
               </span>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:16px;font-weight:normal">View job ad</a><br>
               <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:16px;font-weight:normal">View your application</a><br><br>
             </h3>
           </div>
@@ -437,9 +378,10 @@ practice behaviour questions
 
       </ol>
     </div><br>
+    <form action="withdraw-application" method="post" novalidate>
     <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-left:40px">
       Withdraw application
-    </button>
+    </button></form>
 
   </div>
 
