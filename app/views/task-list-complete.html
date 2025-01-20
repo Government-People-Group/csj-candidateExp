@@ -35,6 +35,14 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
   background-color:#bbd4ea;
   color:#0c2d4a
 }
+
+.govuk-summary-list__key{
+  width:15%;
+}
+
+.govuk-summary-list__actions{
+  width:10%;
+}
 </style>
 
 
@@ -48,9 +56,20 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters" style="padding-right:10px">
-    <span class="govuk-caption-l">
-      <strong style="padding-right:20px">{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span><br>
-    <h1 class="govuk-heading-xl">Your application for {{ data['searchwhat'] | capitalize}}</h1>
+
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Project Lead' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'Defra' %}
+    {% endif %}
+
+    <h1 class="govuk-heading-xl">Your application for {{ Job }}</h1>
 
 
 
@@ -62,7 +81,7 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
     <h3 class="govuk-notification-banner__heading">
       Application form complete and ready to submit
     </h3>
-    <p class="govuk-body">You can still check your answers before you submit by clicking on each section below.</p>
+    <p class="govuk-body">You can still check your answers below before you submit.</p>
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
@@ -84,138 +103,118 @@ Task list – {{ serviceName }} – GOV.UK Prototype Kit
     </div>
   </div>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters" style="padding-right:50px;">
+    <div class="govuk-grid-column-full" style="padding-right:50px;"><br>
 
 
+              <h1 class="govuk-heading-l">Check your answers before submitting your application</h1>
+              <h2 class="govuk-heading-m">Employment history</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Details
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong>Encomo Oils</strong><br>
+                    Project Manager (October 2022 - present)<br><br>
+                    <strong>Encomo Oils</strong><br>
+                    Assistant Project Manager (January 2020 - October 2022)<br><br>
+                    <strong>Rural Payments Service</strong><br>
+                    Project Lead (August 2005 - January 2020)<br><br>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                  </dd>
+                </div>
+                
+              </dl>
+              <h2 class="govuk-heading-m">Personal statement</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Details
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis justo euismod, pretium lorem sed, condimentum lectus. Maecenas quis volutpat eros. Mauris ac mattis neque. Duis vulputate id quam vel tincidunt. Pellentesque sed mattis mi. Duis tristique ullamcorper fermentum. Nulla et arcu in lorem egestas finibus in vel dolor. Etiam eget diam vitae nulla mattis facilisis a vitae mi. Fusce et diam urna.<br><br>
 
-      <ol class="govuk-prototype-kit-task-list" style="border-top:5px solid #1D70B8;padding-top:20px">
-        <li>
-          <h2 class="govuk-prototype-kit-task-list__section">
-            Can you apply for this role?
-          </h2>
-          <ul class="govuk-prototype-kit-task-list__items">
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="check-you-can-apply" aria-describedby="eligibility-status">
-                  Check you can apply
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-            </li>
-          </ul>
-        </li>
+                    Proin facilisis est et risus convallis imperdiet. Aliquam eget pharetra tortor. Cras malesuada felis dolor, quis tristique ex placerat in. Nunc volutpat, nisl et porta consequat, nibh turpis faucibus dui, ut volutpat augue mi sed urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi a justo eu enim volutpat fermentum. Morbi non massa lorem. Proin feugiat dui ac augue facilisis, eu luctus enim efficitur. Quisque suscipit faucibus augue, quis pharetra erat ullamcorper vitae. Suspendisse fermentum, arcu vitae pharetra luctus, leo arcu malesuada tellus, eget efficitur mi sapien in sem. Sed pharetra sit amet lacus sed maximus. Sed sagittis porttitor mauris sed sodales. Integer luctus, nisi a aliquam laoreet, lectus ligula eleifend orci, eu auctor eros enim et metus. Praesent sit amet cursus velit. Suspendisse ullamcorper nisl in nibh venenatis, vitae vehicula diam porttitor. Nulla facilisi.<br><br>
+                    
+                    Morbi nisl urna, venenatis in mattis suscipit, hendrerit eget turpis. Sed eu lectus vitae mauris feugiat ultrices. Aenean accumsan ullamcorper varius. Duis elit enim, ultrices sit amet suscipit cursus, venenatis eu ipsum. Nulla egestas tristique diam et finibus. Nunc consectetur rutrum est eu maximus. Morbi purus leo, fermentum id sodales vitae, luctus sit amet sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi nisi sem, tristique vel gravida sed, mollis sit amet lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam placerat et ante auctor viverra.<br><br>
+                    
+                    Donec convallis efficitur felis, in vulputate nulla elementum in. Duis auctor tincidunt leo, non sodales arcu fermentum vitae. Duis commodo luctus suscipit. Nulla et tortor et ipsum convallis mattis. Vestibulum libero magna, tristique nec ligula eget, laoreet tempus risus. Integer eget dolor non ex ultricies porttitor. Quisque pellentesque lectus semper magna vestibulum viverra. Fusce eget felis egestas, luctus est eu, tincidunt dolor. Etiam convallis magna ex, vel pulvinar nibh egestas in. Praesent dapibus fermentum turpis, eget sagittis sapien dignissim quis.<br><br>
+                    
+                    Ut at nulla molestie, lobortis nisl nec, dictum elit. Integer augue sem, efficitur et arcu nec, fermentum commodo dolor. Ut nec sem consectetur, consequat ligula non, hendrerit nunc. Duis elementum viverra enim. Duis suscipit velit erat. Integer gravida ac massa vel tempor. Donec efficitur massa vel vulputate pharetra. Sed dignissim leo quis faucibus vehicula. Morbi feugiat nisi vel sapien pellentesque ultricies vel sollicitudin odio. Aenean sit amet fermentum tellus, et feugiat felis. Vestibulum bibendum egestas lectus, a ullamcorper mi sagittis vel. Vestibulum non dapibus eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;<br><br>
+                    
+                    Morbi maximus nisi quis posuere condimentum. Suspendisse vulputate pharetra sapien interdum volutpat. Vestibulum fringilla, eros sed porttitor tincidunt, ex sapien convallis tellus, vel eleifend quam nisl sit amet urna. Etiam malesuada aliquet lorem in ultricies. Integer eget hendrerit mi. Curabitur fermentum nibh lorem, a vestibulum velit ullamcorper non. Etiam mollis pellentesque ipsum ac fermentum. Vivamus dictum et mauris sit amet venenatis. Vestibulum nec venenatis dolor. Ut ullamcorper tempor lectus, a iaculis felis laoreet a. Pellentesque id dolor orci. Duis placerat arcu lacus, et finibus quam interdum vitae.<br><br>
+                    
+                    Mauris condimentum elit nisi. Praesent congue eu ligula vitae faucibus. Sed cursus sollicitudin mauris, vestibulum laoreet leo volutpat at. Nullam blandit quam in nulla dapibus pretium. Aliquam egestas, urna eu consequat molestie, turpis dolor pretium eros, aliquam imperdiet lacus nunc nec nulla. Vivamus quis varius purus. Etiam vitae tristique libero. Integer lobortis egestas nibh et maximus. Donec eu mi at turpis elementum aliquam in non ipsum. Vivamus erat risus, tristique in magna ut, tristique ultricies sapien. Curabitur in ipsum vitae erat blandit porttitor. Nunc lacinia nec nibh vitae pharetra. Aenean scelerisque est ac feugiat pretium. Etiam in eros mollis, finibus tortor eget, viverra elit. Phasellus ut arcu at elit bibendum ultricies. Sed sagittis augue eu euismod suscipit.<br><br>
+                    
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque aliquet quam tellus, sit amet tempus magna tempus faucibus. Praesent lobortis tincidunt libero, pulvinar ultrices quam sagittis sit amet. Aenean ut lorem vestibulum, sagittis arcu ut, vestibulum risus. Quisque vulputate molestie consequat. Sed convallis dui mauris, a rutrum nisl blandit a. Donec sed porttitor erat. Sed sit amet nisi libero. Nunc vestibulum.
 
-        <li>
-          <h2 class="govuk-prototype-kit-task-list__section">
-            Online tests
-          </h2>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+                  </dd>
+                </div>
+                
+              </dl>
+              <h2 class="govuk-heading-m">Behaviour questions</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row" style="border-bottom:none">
+                  <dt class="govuk-summary-list__key">
+                    Describe an occasion when you did this and that
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Mauris condimentum elit nisi. Praesent congue eu ligula vitae faucibus. Sed cursus sollicitudin mauris, vestibulum laoreet leo volutpat at. Nullam blandit quam in nulla dapibus pretium. Aliquam egestas, urna eu consequat molestie, turpis dolor pretium eros, aliquam imperdiet lacus nunc nec nulla. Vivamus quis varius purus. Etiam vitae tristique libero. Integer lobortis egestas nibh et maximus. Donec eu mi at turpis elementum aliquam in non ipsum. Vivamus erat risus, tristique in magna ut, tristique ultricies sapien. Curabitur in ipsum vitae erat blandit porttitor. Nunc lacinia nec nibh vitae pharetra. Aenean scelerisque est ac feugiat pretium. Etiam in eros mollis, finibus tortor eget, viverra elit. Phasellus ut arcu at elit bibendum ultricies. Sed sagittis augue eu euismod suscipit.<br><br>
+                    
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque aliquet quam tellus, sit amet tempus magna tempus faucibus. Praesent lobortis tincidunt libero, pulvinar ultrices quam sagittis sit amet. Aenean ut lorem vestibulum, sagittis arcu ut, vestibulum risus. Quisque vulputate molestie consequat. Sed convallis dui mauris, a rutrum nisl blandit a. Donec sed porttitor erat. Sed sit amet nisi libero. Nunc vestibulum.
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                  </dd>
+                </div><br><br>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Describe something else that you sorted out really well
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Mauris condimentum elit nisi. Praesent congue eu ligula vitae faucibus. Sed cursus sollicitudin mauris, vestibulum laoreet leo volutpat at. Nullam blandit quam in nulla dapibus pretium. Aliquam egestas, urna eu consequat molestie, turpis dolor pretium eros, aliquam imperdiet lacus nunc nec nulla. Vivamus quis varius purus. Etiam vitae tristique libero. Integer lobortis egestas nibh et maximus. Donec eu mi at turpis elementum aliquam in non ipsum. Vivamus erat risus, tristique in magna ut, tristique ultricies sapien. Curabitur in ipsum vitae erat blandit porttitor. Nunc lacinia nec nibh vitae pharetra. Aenean scelerisque est ac feugiat pretium. Etiam in eros mollis, finibus tortor eget, viverra elit. Phasellus ut arcu at elit bibendum ultricies. Sed sagittis augue eu euismod suscipit.<br><br>
+                    
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque aliquet quam tellus, sit amet tempus magna tempus faucibus. Praesent lobortis tincidunt libero, pulvinar ultrices quam sagittis sit amet. Aenean ut lorem vestibulum, sagittis arcu ut, vestibulum risus. Quisque vulputate molestie consequat. Sed convallis dui mauris, a rutrum nisl blandit a. Donec sed porttitor erat. Sed sit amet nisi libero. Nunc vestibulum.
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                  </dd>
+                </div>
+                
+              </dl>
+              <h2 class="govuk-heading-m">Preferences</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Choice of work location
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    London (first choice - no other choices given)
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                  </dd>
+                </div>
+                
+                
+              </dl>
+              <h2 class="govuk-heading-m">Now send your application</h2>
+              <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+              <form class="form" action="confirmation" method="post">
+                <button class="govuk-button govuk-!-margin-top-1 govuk-!-margin-left-0 govuk-!-margin-bottom-3" style=";max-width:100%;min-width:25%" data-module="govuk-button">Submit your application</button>
+              </form>
+          
+            </div>
+          
 
-          <ul class="govuk-prototype-kit-task-list__items">
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="online-tests" aria-describedby="company-information-status">
-                  Judgement test
-                </a>
-              </span>
-
-
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-
-
-
-            </li>
-
-          </ul>
-        </li>
-        <li>
-          <h2 class="govuk-prototype-kit-task-list__section">
-            Assessments
-          </h2>
-          <ul class="govuk-prototype-kit-task-list__items">
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="{{ cvurl }}" aria-describedby="company-information-status">
-                  CV
-                </a>
-              </span>
-
-
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-
-
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="personal-statement" aria-describedby="contact-details-status">
-                  Personal statement
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
-                Behaviour questions
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">
-                Technical skills
-                </a>
-              </span>
-            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <h2 class="govuk-prototype-kit-task-list__section">
-          Personal details
-          </h2>
-          <ul class="govuk-prototype-kit-task-list__items">
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">Personal information</a>
-              </span>
-            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-
-
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">Preferences</a>
-              </span>
-
-        <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-
-
-
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">Diversity and Inclusion</a>
-              </span>
-
-            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-            </li>
-          </ul>
-        </li>
-      </ol>
+     
     </div>
-    <div class="govuk-grid-column-one-quarter">
-      <ul class="govuk-list govuk-list--bullet-" style="padding-left:10px">
-        <li><h2 style="padding-left:5px;border-top:5px solid #1D70B8;padding-top:20px" class="govuk-heading-m">Related content</h2></li>
-
-
-        <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">How to answer behaviour questions</a></p></li>
-        <li><p style ="border-left:0px solid #1d70b8; padding-left:5px" class="govuk-body-m"><a href="#">Success profile guidiance</a></p></li>
-
-
-      </ul>
-    </div>
+    
   </div>
 
 
