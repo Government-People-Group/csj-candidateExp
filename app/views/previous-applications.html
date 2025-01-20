@@ -1,0 +1,149 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "portal-interview",
+        text: "Go back to my dashboard",
+        active: true
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+
+
+
+
+
+{% block content %}
+
+<style>
+
+  .govuk-tag--bright-green{
+    background-color:#189d51;
+  }
+
+  .app-step-nav__step:last-child:before {
+  content: "";
+  position: absolute;
+  z-index: 6;
+  bottom: 0;
+  left: 0;
+  margin-left: 7.5px;
+  width: 15px;
+  height: 0;
+  border-bottom: none;
+}
+
+.app-step-nav__step:last-child:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 0;
+  height: 100%;
+  border-left: solid 0px #b1b4b6;
+  background: #ffffff;
+  left: 0;
+  margin-left: 0.90625em;
+  top: 0.9375em;
+}
+
+.govuk-table__cell:first-child {
+    padding-left: 10px;
+}
+
+.govuk-table__header:last-child, .govuk-table__cell:last-child {
+    padding-right: 10px;
+}
+
+tr:nth-child(even) td {
+    background-color: #eaf6fa;
+}
+
+</style>
+ 
+ <div class="govuk-grid-row"><h1 class="govuk-heading-xl">Your previous applications</h1><br><br>
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+    
+          
+          <th scope="col" class="govuk-table__header" aria-sort="none">Job</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Department</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none" style="text-align:left">Closing date</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none" style="text-align:left">Last update</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Reference</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="descending">Application ID</th>
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Status</th>
+          <th scope="col" class="govuk-table__header"></th>
+    
+        </tr>
+      </thead>
+    
+      <tbody class="govuk-table__body">
+    
+        <tr class="govuk-table__row"> 
+          <td class="govuk-table__cell">Senior Interaction Designer</td>
+          <td class="govuk-table__cell">Dept for Education</td></a>
+          <td class="govuk-table__cell" data-sort-value="20240630" style="text-align: left;">30 June 2024<br>23:55</td>
+          <td class="govuk-table__cell" data-sort-value="20240719" style="text-align: left;">19 July 2024<br>11:10</td>
+          <td class="govuk-table__cell" data-sort-value="357151">357151</td>
+          <td class="govuk-table__cell" data-sort-value="11536998">11536998</td>
+          <td class="govuk-table__cell">Unsuccessful</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
+        </tr>
+    
+        <tr class="govuk-table__row"> 
+          <td class="govuk-table__cell">Lead Interaction Designer</td>
+          <td class="govuk-table__cell">DWP</td></a>
+          <td class="govuk-table__cell" data-sort-value="20240619" style="text-align: left;">19 June 2024<br>23:55</td>
+          <td class="govuk-table__cell" data-sort-value="20240703" style="text-align: left;">3 July 2024<br>09:19</td>
+          <td class="govuk-table__cell" data-sort-value="357987">357987</td>
+          <td class="govuk-table__cell" data-sort-value="11539123">11539123</td>
+          <td class="govuk-table__cell">Unsuccessful</td>
+          <td class="govuk-table__cell"><a href="dwp-application-home-previous" class="govuk-link govuk-link--no-visited-state">View</a></td>
+        </tr>
+        <tr class="govuk-table__row"> 
+          <td class="govuk-table__cell">Interaction Designer</td>
+          <td class="govuk-table__cell">Defra</td></a>
+          <td class="govuk-table__cell" data-sort-value="20240410" style="text-align: left;">10 April 2024<br>23:55</td>
+          <td class="govuk-table__cell" data-sort-value="20240419" style="text-align: left;">19 April 2024<br>06:52</td>
+          <td class="govuk-table__cell" data-sort-value="355625">355625</td>
+          <td class="govuk-table__cell" data-sort-value="11512855">11512855</td>
+          <td class="govuk-table__cell">Withdrew</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
+        </tr>
+        <tr class="govuk-table__row"> 
+          <td class="govuk-table__cell">Senior Interaction Designer</td>
+          <td class="govuk-table__cell">Dept for Transport</td></a>
+          <td class="govuk-table__cell" data-sort-value="20240730" style="text-align: left;">30 July 2024<br>23:55</td>
+          <td class="govuk-table__cell" data-sort-value="20240803" style="text-align: left;">3 August 2024<br>17:04</td>
+          <td class="govuk-table__cell" data-sort-value="357908">357908</td>
+          <td class="govuk-table__cell" data-sort-value="11534345">11534345</td>
+          <td class="govuk-table__cell">Unsuccessful</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
+        </tr>
+        <tr class="govuk-table__row"> 
+          <td class="govuk-table__cell">Service Lead</td>
+          <td class="govuk-table__cell">Dept for Education</td></a>
+          <td class="govuk-table__cell" data-sort-value="20240830" style="text-align: left;">30 August 2024<br>23:55</td>
+          <td class="govuk-table__cell" data-sort-value="20240901"style="text-align: left;">1 September 2024<br>00:10</td>
+          <td class="govuk-table__cell" data-sort-value="357151">357151</td>
+          <td class="govuk-table__cell" data-sort-value="11536087">11536087</td>
+          <td class="govuk-table__cell">Missed deadline</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
+        </tr>
+        
+       
+    
+      </tbody>
+    </table>
+</div>
+{% endblock %}

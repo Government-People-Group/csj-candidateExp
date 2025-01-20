@@ -1,0 +1,284 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "portal-interview",
+        text: "Go back to my dashboard",
+        active: true
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    var $element = document.querySelector('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+  </script>
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+<style>
+
+  .govuk-tag--bright-green{
+    background-color:#189d51;
+  }
+
+  .app-step-nav__step:last-child:before {
+  content: "";
+  position: absolute;
+  z-index: 6;
+  bottom: 0;
+  left: 0;
+  margin-left: 7.5px;
+  width: 15px;
+  height: 0;
+  border-bottom: none;
+}
+
+.app-step-nav__step:last-child:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 0;
+  height: 100%;
+  border-left: solid 0px #b1b4b6;
+  background: #ffffff;
+  left: 0;
+  margin-left: 0.90625em;
+  top: 0.9375em;
+}
+
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Lead Interaction Designer' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
+    <span class="govuk-heading-l" style="margin-bottom:10px">
+      <strong style="padding-right:20px;">{{ Job }}</strong></span>
+
+    <span class="govuk-caption-xl">{{ Dept }}</span>
+
+    <br><br>
+
+
+    
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="border-color:#000000; background-color: #000000;">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Information
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          Your application for this job was unsuccessful.
+          
+        </p>
+      </div>
+    </div>
+    
+
+<br><br>
+<h2 class="govuk-heading-m">Messages about this job</h2>
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections" style="background-color:#f3f2f1;padding:20px">
+  
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="font-size:0.8em">
+          Your application was unsuccessful<span style="padding-left:30px; font-weight:normal; font-size:0.8em">22 July 2023</span>
+        </span>
+      </h2>
+
+    </div>
+    <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+      <p class="govuk-body">Congratulations, your application has been successful and we would like to invite you to an interview.<br><br>The interview will be 1 hour long. It will include questions on the behaviours: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Making effective decisions</li>
+        <li>Communicating and influencing</li>
+        <li>Seeing the big picture</li>
+      </ul>
+<p class="govuk-body">and a 15 minute presentation on ‘managing relationships with key policy stakeholders’.</p>
+
+<br><br><p class="govuk-body">You can view your application feedback topractice for your interview practice behaviour questions</p>
+<br><br><p class="govuk-body">If you would like to talk to someone about your application, you can contact adam.smith@cabinetoffice.gov.uk</p>
+
+<br><br><p class="govuk-body">If you are no longer interested in this job, you can withdraw your application at any time.</p>
+<button class="govuk-button" data-module="govuk-button">
+  Book your interview
+</button>
+      <ul class="govuk-list">
+        <li><br>
+          <a class="govuk-link" href="#">View your application feedback</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Contact the vacancy holder</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Withdraw your application</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="font-size:0.8em">
+          We've received your application <span style="padding-left:30px; font-weight:normal; font-size:0.8em">16 July 2023</span>
+        </span>
+      </h2>
+
+    </div>
+    <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+      <p class="govuk-body">Congratulations, your application has been successful and we would like to invite you to an interview.<br><br>The interview will be 1 hour long and will include:
+
+  questions on the behaviours: Making effective decisions, Communicating and influencing and Seeing the big picture
+  presentation: a 15 minute presentation on ‘managing relationships with key policy stakeholders’
+  <br><br>You can view your application feedback to:
+
+  practice for your interview
+  practice behaviour questions
+  <br><br>If you would like to talk to someone about your application, you can contact adam.smith@cabinetoffice.gov.uk
+
+  <br><br>If you are no longer interested in this job, you can withdraw your application at any time.</p>
+  <button class="govuk-button" data-module="govuk-button">
+  Book your interview
+  </button>
+      <ul class="govuk-list">
+        <li><br>
+          <a class="govuk-link" href="#">View your application feedback</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Contact the vacancy holder</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Withdraw your application</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="font-size:0.8em">
+          You only have 2 days left to apply <span style="padding-left:30px; font-weight:normal; font-size:0.8em">14 July 2023</span>
+        </span>
+      </h2>
+
+    </div>
+    <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+      <p class="govuk-body">Congratulations, your application has been successful and we would like to invite you to an interview.<br><br>The interview will be 1 hour long and will include:
+
+questions on the behaviours: Making effective decisions, Communicating and influencing and Seeing the big picture
+presentation: a 15 minute presentation on ‘managing relationships with key policy stakeholders’
+<br><br>You can view your application feedback to:
+
+practice for your interview
+practice behaviour questions
+<br><br>If you would like to talk to someone about your application, you can contact adam.smith@cabinetoffice.gov.uk
+
+<br><br>If you are no longer interested in this job, you can withdraw your application at any time.</p>
+<button class="govuk-button" data-module="govuk-button">
+  Book your interview
+</button>
+      <ul class="govuk-list">
+        <li><br>
+          <a class="govuk-link" href="#">View your application feedback</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Contact the vacancy holder</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Withdraw your application</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+
+
+    <div data-module="appstepnav"id="step-by-step-navigation" >
+      <h2 class="govuk-heading-m" >Completed</h2>
+      <ol class="app-step-nav__steps">
+        <li class="app-step-nav__step js-step app-step-nav__step" aria-current="step" id="check-you-re-allowed-to-drive">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><img src="public/images/green-tick.png" style="max-width:50%;"><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                You submitted your application
+              </span>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:16px;font-weight:normal">View job ad</a><br>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:16px;font-weight:normal">View your application</a><br><br>
+            </h3>
+          </div>
+
+
+
+        </li>
+        
+
+        <li class="app-step-nav__step" id="get-a-provisional-licence">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><img src="public/images/green-tick.png" style="max-width:50%;"><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                We decided your application was unsuccessful
+              </span><br>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="font-size:16px;font-weight:normal">View your application feedback</a><br><br>
+            </h3>
+          </div>
+        </li>
+      </ol>
+    </div><br>
+
+
+  </div>
+
+</div>
+
+
+</div>
+</div>
+{% endblock %}
