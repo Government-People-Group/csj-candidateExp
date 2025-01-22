@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <button type="submit" class="govuk-button" data-module="govuk-button" style="float: right;">
+      Download application
+    </button>
+
+    <h1 class="govuk-heading-xl" id="top">
+      Your application
+    </h1>
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Delivery Manager</span>
+      DWP
+    </h1>
+    <span class="govuk-caption-m">You can view and download your application from here. You submitted the following answers to the application questions.
+      Jump to any section of your application from the links below</span>
+
+    <div class="govuk-!-padding-bottom-5"></div>
+
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="#CV">CV</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#Personal statement">Personal Statement</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="Behaviour questions">Behaviour Questions</a>
+      </li>
+    </ul>
+  </div>
+
+    <div class="govuk-grid-row" style="margin-left:5px;">
+      <div class="govuk-grid-column-full">
+    
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+     
+        <h3 class="govuk-heading-m" id="CV">CV</h3>
+        <p class="govuk-body-s"><strong>Experience:</strong>
+          <br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+           <br>
+           <br>
+          <strong>Education:</strong>
+          <br>
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+           <br>
+           <br>
+          <strong>Certifications:</strong>
+          <br>
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <h3 class="govuk-heading-m" id="Personal statement">Personal Statement</h3>
+        <p class="govuk-body-s">From a young age, I have had a keen interest in reading crime novels by authors such as James Patterson. To gain more insight into the legalities of criminal justice system, I have spent some time at The Old Bailey Court, where I sat through hearings and legal proceedings. This encouraged me to try and understand how this process operates, and this is how I discovered my interest in criminology. Furthermore, through sitting in a public trial I managed to identify the various job roles that influenced the final verdict. This was interesting as it highlighted potential career paths I could follow.
+          Outside of academic learning, I am an active member in the school community. As a Prefect, I am responsible for organising events. This has given me the opportunity to listen to other people’s opinions. This has also helped me to become a more conscientious worker. My part-time job has allowed me to gain confidence in myself whilst working as an individual and also as a crucial team member. From this I have developed skills such as decision making, critical thinking and working under pressure. These are all skills I believe to be necessary for successfully completing a degree.
+          </p>
+          
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <h3 class="govuk-heading-m" id="Behaviour questions">Behaviour Questions</h3>
+        <p class="govuk-body-s"><strong>Describe the one time you did so and so? </strong> <br> <br>Outside of academic learning, I am an active member in the school community. As a Prefect, I am responsible for organising events. This has given me the opportunity to listen to other people’s opinions. This has also helped me to become a more conscientious worker. My part-time job has allowed me to gain confidence in myself whilst working as an individual and also as a crucial team member. From this I have developed skills such as decision making, critical thinking and working under pressure. These are all skills I believe to be necessary for successfully completing a degree. <br><br> <strong>Describe the one time you did so and so? </strong> <br> <br>Outside of academic learning, I am an active member in the school community. As a Prefect, I am responsible for organising events. This has given me the opportunity to listen to other people’s opinions. This has also helped me to become a more conscientious worker. My part-time job has allowed me to gain confidence in myself whilst working as an individual and also as a crucial team member. From this I have developed skills such as decision making, critical thinking and working under pressure. These are all skills I believe to be necessary for successfully completing a degree.
+          </p>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Download application
+        </button>
+
+        <form class="form" action="#top" method="post" style="display:inline">
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="float: right;">
+          Back to top
+        </button>
+        </form>
+        
+{% endblock %}
