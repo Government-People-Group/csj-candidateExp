@@ -66,30 +66,30 @@
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
         <h1 class="govuk-heading-l">
-          Withdraw your application
+          Withdraw application
         </h1>
-        <p class="govuk-body-m">If you have decided you no longer want to apply for the position of {{Job}} with {{ Dept }}, you can withdraw your application.</p>
+        <p class="govuk-body-m">If you no longer want to apply for this job you can withdraw your application.</p>
+        <p class="govuk-body-m">To better understand how we can improve and offer a better experience of our service we would like to know why you decided to withdraw your application. The reason you give will only be used anonymously for service improvement.</p>
+        <p class="govuk-body-m">You do not have to provide us with a reason if you do not want to.</p>
        
 
-        <div class="govuk-inset-text">
-          It is useful for our future job campaigns if we know why you have decided to withdraw. Your information will only be used blah blah blah. You don't have to give a reason if you prefer not to etc etc
-        </div><br><br>
+        <br><br>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h3 class="govuk-fieldset__heading">
-                Why are you withdrawing your application?
+                Select the reason you withdrew your application
               </h3>
             </legend>
             <div id="contact-hint" class="govuk-hint">
               Select one option
             </div>
-            <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
                 <label class="govuk-label govuk-radios__label" for="contact">
-                  I have accepted another job offer
+                  I already accepted another job offer
                 </label>
               </div>
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" style="display:none">
@@ -103,12 +103,75 @@
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
                 <label class="govuk-label govuk-radios__label" for="contact-2">
-                  the location or hours are no longer suitable for me
+                  My current employer offered me better benefits
                 </label>
               </div>
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" style="display:none">
                
               </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  I could not work from home
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" style="display:none">  
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  I am no longer interested
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" style="display:none">  
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  Online test issues
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" style="display:none">
+               
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  Salary is too low
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" style="display:none">
+               
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  Personal circumstances
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" style="display:none">
+               
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  Recruitment process is taking too long
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" style="display:none">
+               
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  I was redeployed
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" style="display:none">
+               
+              </div>
+              
+              
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
                 <label class="govuk-label govuk-radios__label" for="contact-3">
@@ -135,7 +198,7 @@
           </button>
 
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Back to your application page
+            Return to my application
           </button>
 
         </div>
