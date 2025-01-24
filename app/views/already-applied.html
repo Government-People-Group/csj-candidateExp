@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "portal-interview",
+        text: "Go back to my dashboard",
+        active: true
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="task-list?pass=true" method="post">
+<div class="govuk-grid-row">
+  
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">
+      <strong>{{ data['searchwhat'] | capitalize}}</strong> {{ data['dept']}}</span>
+
+      <h1 class="govuk-heading-l">Important</h1>
+
+      <p class="govuk-body-m">Our system identified a potential attempt to submit a duplicate application for this role.
+      <p class="govuk-body-m">A significant amount of information matched an already submitted application. 
+      </p>
+      <p class="govuk-body-m">If you are unable to access your original account or this is a mistake please contact us through an <a href="#" class="govuk-link govuk-link--no-visited-state">online form</a> or email at <a href="#" class="govuk-link govuk-link--no-visited-state">dwp.recruitment@dwp.gov.uk</a>.  
+      </p>
+
+      <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Return to your dashboard</button>
+</form>
+    </div>
+  </div>
+
+
+  {% endblock %}

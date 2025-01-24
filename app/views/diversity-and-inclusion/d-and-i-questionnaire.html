@@ -5,15 +5,11 @@
     homepageUrl: "#",
     serviceName: "Civil Service Jobs",
     serviceUrl: "#",
-    navigationClasses:"nav-right",
     navigation: [
       {
-        href: "portal-gds-2",
-        text: "My dashboard"
-      },
-      {
-        href: "#",
-        text: "Sign out"
+        href: "portal-interview",
+        text: "Go back to my dashboard",
+        active: true
       }
     ]
   }) }}
@@ -45,6 +41,8 @@
 }
 </style>
 
+
+
 {% if data['dept'] == "Department for Education" %}
 {% set salary = "£38,995" %}
 {% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
@@ -55,6 +53,8 @@
 {% set salary = "£44,900" %}
 {% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
 {% endif %}
+
+
 
 <script>
   function showDiv(div){
@@ -78,6 +78,8 @@
   {% set Dept = 'DWP' %}
 {% endif %}
 
+{% if data['stored'] != 'yes' %}
+
   <div class="govuk-grid-row">
     {% if data['dept'] == "Department for Education" %}
     <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
@@ -88,9 +90,10 @@
     {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
-      <form action="socio-econ" method="post" novalidate>
+     
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span><br><br>
+{% endif  %}
         <h1 class="govuk-heading-l">Diversity and inclusion</h1><br>
 
         <div class="govuk-form-group">
@@ -364,8 +367,9 @@
           </fieldset>
         </div>
 
-
+        <form action="socio-econ" method="post" novalidate>
         <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Submit</button><br>
+        </form>
 
       </div>
     </div>
