@@ -34,22 +34,6 @@
     padding-left: 165px;
 }
 
-@media (min-width: 768px)
-.beta-banner {
-    padding-right: 40px;
-    padding-left: 113px;
-}
-
-@media (min-width: 680px)
-.beta-banner {
-    padding-right: 40px;
-    padding-left: 60px;
-}
-.beta-banner {
-    background-color: #d6e8f2;
-    padding: 5px 20px 5px 20px;
-}
-
 .govuk-template__body {
   background-color: #f3f3f3;
 }
@@ -119,7 +103,7 @@
 
 
                       <dl class="govuk-summary-list" style="margin-bottom:0px;margin-left:30px;max-width:50%">
-                        <div class="govuk-summary-list__row" style="; ">
+                        <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key" style="width:40%">
                             Sign in email
                           </dt>
@@ -132,7 +116,7 @@
                             </a>
                           </dd>
                         </div>
-                        <div class="govuk-summary-list__row" style="; ">
+                        <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key" style="width:40%">
                             Sign in password
                           </dt>
@@ -145,7 +129,7 @@
                             </a>
                           </dd>
                         </div>
-                      <div class="govuk-summary-list__row" style="; ">
+                      <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key" style="width:40%">
                           Full name
                         </dt>
@@ -258,6 +242,25 @@
     </div>
 
 
+    {% if data['d-and-i-stored'] =="yes" %}
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner" style="margin:20px 0px 20px 80px;max-width:35%">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading" style="max-width:100%">
+      Your diversity and inclusion information has been updated.
+    </h3>
+   
+  </div>
+  </div>
+{% endif %}
+
+
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dash-element-left" style="margin-right:70px">
 
@@ -363,7 +366,7 @@
             </dl>
             <br>
 
-            <a href="#" class="govuk-link govuk-link--no-visited-state"  style=";margin-left:50px; font-size: 1.1875rem;">See previous applications</a><br>
+            <a href="#" class="govuk-link govuk-link--no-visited-state"  style="margin-left:50px; font-size: 1.1875rem;">See previous applications</a><br>
         </div>
 
 
@@ -441,7 +444,7 @@
             <div class="govuk-summary-card__title-wrapper" style="background-color:#c1cdcd">
               <h2 class="govuk-summary-card__title">Reuse your information</h2>
             </div>
-          <div class="govuk-inset-text" style=";padding-top:10px;margin-left:30px">
+          <div class="govuk-inset-text" style="padding-top:10px;margin-left:30px">
             You can reuse the following info you've already given us in your next application.
           </div>
           <dl class="govuk-summary-list" style="margin-bottom:0px;margin-left:30px;max-width:90%">
@@ -501,11 +504,17 @@
 
             <div class="govuk-summary-list__row">
               <dd class="govuk-summary-list__value"  style="width:30%"">
-                <a class="govuk-link govuk-link--no-visited-state" href="diversity-and-inclusion/d-and-i-questionnaire?stored=yes">Answers to Diversity and Inclusion questionnaire</a>
+                <a class="govuk-link govuk-link--no-visited-state" href="diversity-and-inclusion/d-and-i-questionnaire?d-and-i-stored=yes">Answers to Diversity and Inclusion questionnaire</a>
               </dd>
+              {% if data['d-and-i-stored']=='yes'%}
               <dd class="govuk-summary-list__actions"   >
-                Last changed 6 Apr 2023
+                Last changed 10 Feb 2025
               </dd>
+              {% else %}
+              <dd class="govuk-summary-list__actions">
+                Last changed 6 April 2023
+              </dd>
+              {% endif %}
             </div>
 
             <div class="govuk-summary-list__row">

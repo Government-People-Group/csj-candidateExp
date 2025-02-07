@@ -78,7 +78,7 @@
   {% set Dept = 'DWP' %}
 {% endif %}
 
-{% if data['stored'] != 'yes' %}
+{% if data['d-and-i-stored'] != 'yes' %}
 
   <div class="govuk-grid-row">
     {% if data['dept'] == "Department for Education" %}
@@ -108,21 +108,21 @@
             </div>
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="changedName">
+                <input class="govuk-radios__input" id="disabled" name="disabled" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="disabled">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                <input class="govuk-radios__input" id="disabled-2" name="disabled" type="radio" value="no" checked="yes">
+                <label class="govuk-label govuk-radios__label" for="disabled-2">
                   No
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-3" name="changedName" type="radio" value="prefer-not-to-answer">
-                <label class="govuk-label govuk-radios__label" for="changedName-3">
+                <input class="govuk-radios__input" id="disabled-3" name="disabled" type="radio" value="prefer-not-to-answer">
+                <label class="govuk-label govuk-radios__label" for="disabled-3">
                   Prefer not to answer
                 </label>
               </div>
@@ -139,21 +139,21 @@
             </legend>
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="changedName">
+                <input class="govuk-radios__input" id="sex" name="sex" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="sex">
                   Man
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                <input class="govuk-radios__input" id="sex-2" name="sex-2" type="radio" value="no" checked="yes">
+                <label class="govuk-label govuk-radios__label" for="sex-2">
                   Woman
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-3" name="changedName" type="radio" value="prefer-not-to-answer">
-                <label class="govuk-label govuk-radios__label" for="changedName-3">
+                <input class="govuk-radios__input" id="sex-3" name="sex-3" type="radio" value="prefer-not-to-answer">
+                <label class="govuk-label govuk-radios__label" for="sex-3">
                   Prefer not to answer
                 </label>
               </div>
@@ -170,21 +170,21 @@
             </legend>
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="changedName">
+                <input class="govuk-radios__input" id="sex-birth" name="sex-birth" type="radio" value="yes" checked="yes">
+                <label class="govuk-label govuk-radios__label" for="sex-birth">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                <input class="govuk-radios__input" id="sex-birth-2" name="sex-birth-2" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="sex-birth-2">
                   No
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-3" name="changedName" type="radio" value="prefer-not-to-answer">
-                <label class="govuk-label govuk-radios__label" for="changedName-3">
+                <input class="govuk-radios__input" id="sex-birth-3" name="sex-birth-3" type="radio" value="prefer-not-to-answer">
+                <label class="govuk-label govuk-radios__label" for="sex-birth-3">
                   Prefer not to answer
                 </label>
               </div>
@@ -201,33 +201,33 @@
             </legend>
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="changedName">
+                <input class="govuk-radios__input" id="orientation" name="orientation" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="orientation">
                   Heterosexual or straight
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                <input class="govuk-radios__input" id="orientation-2" name="orientation-2" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="orientation-2">
                   Gay or lesbian
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                <input class="govuk-radios__input" id="orientation-3" name="orientation-3" type="radio" value="no" checked="yes">
+                <label class="govuk-label govuk-radios__label" for="orientation-2">
                   Bisexual
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                <input class="govuk-radios__input" id="orientation-4" name="orientation-4" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="orientation-4">
                   Other
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-3" name="changedName" type="radio" value="prefer-not-to-answer">
-                <label class="govuk-label govuk-radios__label" for="changedName-3">
+                <input class="govuk-radios__input" id="orientation-5" name="orientation-5" type="radio" value="prefer-not-to-answer">
+                <label class="govuk-label govuk-radios__label" for="orientation-5">
                   Prefer not to answer
                 </label>
               </div>
@@ -246,7 +246,7 @@
               <div id="event-name-hint" class="govuk-hint">
                 Enter a year, like '1997'
               </div>
-              <input class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text">
+              <input class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text" value="1995">
             </div>
           </fieldset>
         </div><br>
@@ -260,39 +260,39 @@
             </legend>
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="changedName">
+                <input class="govuk-radios__input" id="ethnic" name="ethnic" type="radio" value="yes" checked="yes">
+                <label class="govuk-label govuk-radios__label" for="ethnic">
                   White
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                <input class="govuk-radios__input" id="ethnic-2" name="ethnic-2" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="ethnic-2">
                   Mixed or multiple ethnic groups
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                <input class="govuk-radios__input" id="ethnic-3" name="ethnic-3" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="ethnic-3">
                   Asian or Asian British
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                <input class="govuk-radios__input" id="ethnic-4" name="ethnic-4" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="ethnic-4">
                   Black, African, Caribbean or Black British
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                <input class="govuk-radios__input" id="ethnic-5" name="ethnic-5" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="ethnic-5">
                   Other ethnic group
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName-3" name="changedName" type="radio" value="prefer-not-to-answer">
-                <label class="govuk-label govuk-radios__label" for="changedName-3">
+                <input class="govuk-radios__input" id="ethnic-6" name="ethnic-6" type="radio" value="prefer-not-to-answer">
+                <label class="govuk-label govuk-radios__label" for="ethnic-6">
                   Prefer not to answer
                 </label>
               </div>
@@ -309,7 +309,7 @@
             </legend>
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes" checked="yes">
                 <label class="govuk-label govuk-radios__label" for="changedName">
                   No religion
                 </label>
@@ -367,10 +367,14 @@
           </fieldset>
         </div>
 
+        {% if data['d-and-i-stored'] != 'yes' %}
         <form action="socio-econ" method="post" novalidate>
+        {% else %}
+        <form action="../portal-reasonable-adjustments" method="post" novalidate>
+        {% endif %}
         <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Submit</button><br>
         </form>
-
+        
       </div>
     </div>
 
