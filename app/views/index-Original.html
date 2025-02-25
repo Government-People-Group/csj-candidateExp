@@ -1,0 +1,122 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }}</h1>
+    <h2 class="govuk-heading-l">  Candidate Experience</h2>
+      <span class="govuk-caption-xl govuk-!-margin-bottom-6">Job ad to application submission</span>
+
+
+
+
+
+
+
+    {{ govukButton({
+      text: "Launch prototype",
+      href: "home"
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
+
+    <br><br><br><h2 class="govuk-heading-l">Candidate landing page</h2>
+    <span class="govuk-caption-xl govuk-!-margin-bottom-6">Using an off-pattern style, and a more GDS-friendly style</span>
+
+
+
+    {{ govukButton({
+      text: "GDS style",
+      classes: "govuk-button--secondary",
+      href: "landing-page"
+    }) }}
+
+    {{ govukButton({
+      text: "non-GDS style",
+      classes: "govuk-button--secondary",
+      href: "landing-page-non-gds"
+    }) }}
+
+  <a href="design-notes" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
+
+  <br><h2 class="govuk-heading-l">Candidate portal</h2>
+
+  {{ govukButton({
+    text: "Launch prototype (then choose 'sign-in' option)",
+    href: "portal-csjobs-home"
+  }) }}
+
+  {{ govukButton({
+    text: "Tabbed version (to compare with above)",
+    href: "portal-gds-tabs"
+  }) }}
+
+  <a href="design-notes" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br><br>
+
+
+
+  {{ govukButton({
+    text: "V1 - Using Career Site styling",
+    classes: "govuk-button--secondary",
+    href: "previous-versions/portal-v1/career-site"
+  }) }}
+
+  <a href="design-notes" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
+
+  {{ govukButton({
+    text: "V2 - Interview offer",
+    href: "portal-interview"
+  }) }}<br>
+
+  {{ govukButton({
+    text: "V2 - Reserve list offer",
+    href: "portal-reserve-list"
+  }) }}<br>
+
+  {{ govukButton({
+    text: "V2 - Pre-employment checks stage",
+    href: "portal-pec"
+  }) }}<br>
+
+  {{ govukButton({
+    text: "V3 - Reasonable adjustments stored",
+    href: "portal-reasonable-adjustments"
+  }) }}<br>
+  <a href="design-notes#portalv3" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
+
+
+
+
+  <h2 class="govuk-heading-l">Reasonable adjustments</h2>
+    <span class="govuk-caption-xl govuk-!-margin-bottom-6">Candidate entry of any adjustments or support</span>
+
+
+  {{ govukButton({
+    text: "V1 - user asked about RAs at start",
+    href: "previous-versions/reasonable-adjustments-v1/job-ad-full?searchwhat=Strategy Advisor&dept=Department for Education"
+  }) }}<br>
+
+  {{ govukButton({
+    text: "V2 - user gets RA option on tasklist",
+    href: "reasonable-adjustments/job-ad-full?searchwhat=Strategy Advisor&dept=Department for Education"
+  }) }}
+  <a href="design-notes#reasonable-adjustments" class="govuk-link govuk-link--no-visited-state" style="display:block">Design notes</a><br><br>
+
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
+
+    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+  </div>
+</div>
+
+{% endblock %}
