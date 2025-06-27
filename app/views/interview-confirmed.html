@@ -68,46 +68,104 @@
               }) }}<br><br>
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
-        <h1 class="govuk-heading-l">
-          Interview confirmation
-        </h1>
-        <p class="govuk-body-m"><strong>Your interview has successfully been booked.</strong></p>
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Booking confirmed
+          </h1>
+          <div class="govuk-panel__body">
+            You've successfully booked your interview for Delivery Manager (3224578)
+          </div>
+        </div>
 
-        <p class="govuk-body-m">Your interview is at 3pm on Monday 16 March.</p>
+        <div class="govuk-grid-row govuk-!-margin-top-6">
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-body-m"><strong>Date</strong></p>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p>Monday 16 March</p>
+          </div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-body-m"><strong>Time</strong></p>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p>10am</p>
+          </div>
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-bottom-6">
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-body-m"><strong>Address</strong></p>
+          </div>
+           <div class="govuk-grid-column-one-third">
+            <p>3 Glass Wharf<br>Bristol<br>BS1 0EL</p>
+          </div>
+        
+        </div>
 
-        <p class="govuk-body-m">Location: remote interview.</p>
-        <p class="govuk-body-m">You will be emailed the interview invite by Friday 13 March 2024.</p>
+        <h2 class="govuk-heading-m">
+          Your interview panel
+        </h2>
 
-        <p class="govuk-body-m">The interview will be 1 hour long. It will include questions on the <a href="">behaviours</a>:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>Making effective decisions</li>
-          <li>Communicating and influencing</li>
-          <li>Seeing the big picture</li>
+          <li>Jonathan Smith, Senior Delivery Manager</li>
+          <li>Sally Phillips, Interaction Designer</li>
+          <li>Gregg Canterbury, Communication Officer</li>
         </ul>
 
-<p class="govuk-body-m">and a 15 minute presentation on ‘managing relationships with key policy stakeholders’.</p>
-        <div class="govuk-inset-text">We have received your reasonable adjustments request(s) and will email you to confirm they will be met.</div><br><br>
+        <h2 class="govuk-heading-m">
+          Preparing for your interview
+        </h2>
+        <p class="govuk-body-m">When you arrive at the building, report to reception and ask for Jonathan Smith. Remember to arrive early so you can avoid any delays. </p>
+        <p class="govuk-body-m">Your interview will be about 1 hour long. You'll be assessed on your interview presentation and your answers to our interview questions. 
+        </p>
+        <p class="govuk-body-m">You can review your application and interview details in your application centre. 
+        </p>
+
+        <h3 class="govuk-heading-m">
+          Interview presentation
+        </h3>
+        <p class="govuk-body-m">You'll give a 15 minute presentation on 'managing relationships with key policy stakeholders'. 
+</p>
+
+        <h3 class="govuk-heading-m">
+          Interview questions
+        </h3>
+        <p class="govuk-body-m">We'll ask you questions based on the <a class="govuk-link" href="https://www.gov.uk/government/publications/success-profiles" target="_blank">Civil Service Success Profiles (opens in new tab)</a>.</p>
+
+        <p class="govuk-body-m">These questions will focus on these <a class="govuk-link" href="https://www.gov.uk/government/publications/success-profiles/success-profiles-civil-service-behaviours" target="_blank">Civil Service behaviours (opens in new tab)</a>:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>making effective decisions</li>
+          <li>communicating and influencing</li>
+          <li>seeing the big picture</li>
+        </ul>
+        <p class="govuk-body-m">Think about examples of when you've demonstrated these behaviours. And when you're answering a question, you should use <a class="govuk-link" href="https://nationalcareers.service.gov.uk/careers-advice/interview-advice/the-star-method" target="_blank">the STAR method</a>.</p>
+
+
+        <h2 class="govuk-heading-m">
+          How can we support your access to the interview?
+        </h2>
+
+        <p class="govuk-body-m">We want to make sure everyone has a fair experience during our recruitment process. 
+</p>
+
+<p class="govuk-body-m">If you need any reasonable adjustments because of a disability, condition, or impairment, we may be able to offer extra time or assisted technology.
+</p>
+<p class="govuk-body-m">This will not affect your application. We're committed to enabling access for all.
+</p>
+<p class="govuk-body-m">If you decide to <a class="govuk-link" href="#" target="_blank">tell us about your needs</a>, your request will be sent to the vacancy holder, who will get in touch with you.
+</p>
 
         <h1 class="govuk-heading-m">
           Next steps
         </h1>
 
-        <p class="govuk-body-m">You can view your <a href="application-feedback">application feedback</a> to:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>look at your strengths and weaknesses</li>
-          <li>practice for your interview</li>
-        </ul>
-
-        <p class="govuk-body-m">Your interview will include <a href="">behaviour questions</a>. You should prepare answers for questions on:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>communicating and influencing - communicate purpose and direction with clarity, integrity and enthusiasm. Respect the needs, responses and opinions of others</li>
-          <li>changing and improving - seek out opportunities to create effective change and suggest innovative ideas for improvement. Review ways of working, including seeking and providing feedback</li>
-        </ul>
-
         <p class="govuk-body-m">Before your interview, you can:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>review the <a href="">{{Job}} person specifications</a></li>
-          <li>look at our <a href="">success profiles</a></li>
+          <li>review the <a href="">{{Job}} person specification (opens in new tab)</a></li>
+          <li>look at the <a href="">Civil Service success profiles (opens in new tab)</a></li>
+          <li>get practical advice to <a href="">prepare for your interview (opens in new tab)</a></li>
         </ul><br><br>
 
         <div class="govuk-button-group">

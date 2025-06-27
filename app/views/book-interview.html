@@ -70,30 +70,34 @@
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept}}</span><br>
         <h1 class="govuk-heading-l">
-          Book your interview slot for {{ Job }}
+          Book a date and time for your interview
         </h1>
-        <p class="govuk-body-m"><strong>Please select a time and date you can attend an interview.</strong></p>
 
+        <p class="govuk-body-m"><strong>Format:</strong> {% if data['interviewLocation'] == "online" %}Online{% else %}In person{% endif %}</p>
+        <p class="govuk-body-m"><strong>Duration:</strong> 1 hour</p>
 
-
-        <div class="govuk-inset-text"><a href="">Tell us if you can not attend any of the interview times</a>.</div>
-
+        {% if data['interviewLocation'] != "online" %}
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
-            Location
+            Select an interview location
           </label>
-          <select class="govuk-select" id="interview-location" name="interview-location" style="background-color:#f3f2f1">
-            <option value="Remote" selected>Remote</option>
 
+          <select class="govuk-select" id="interview-location" name="interview-location">
+            <option value="3 Glass Wharf, Bristol" selected>3 Glass Wharf, Bristol</option>
+            <option value="Benton Park View, Longbenton" >Benton Park View, Longbenton</option>
+            <option value="70 Whitehall, Westminster">70 Whitehall, Westminster</option>
+            
           </select>
+
         </div>
+         {% endif %}
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
             Select an interview date
           </label>
           <select class="govuk-select" id="interview-date" name="interview-date">
-            <option value="Monday 16th March" selected>Monday 16 March</option>
+            <option value="Monday 16th March" >Monday 16 March</option>
             <option value="updated">Tuesday 17 March</option>
             <option value="views">Wednesday 18 March</option>
 
@@ -102,32 +106,23 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
-            Select an interview time slot
+            Select an interview time
           </label>
           <select class="govuk-select" id="interview-time" name="interview-time">
-            <option value="3pm" selected>10:00am</option>
+            <option value="3pm" selected>10am</option>
             <option value="updated">11:30am</option>
-            <option value="views">1:00pm</option>
+            <option value="views">1pm</option>
             <option value="comments">2:30pm</option>
           </select>
         </div>
 
-        <div class="govuk-inset-text">
-          <p class="govuk-body-m">Your profile shows you need reasonable adjustments. Please <a href="">tell us how we can help improve your interview</a>.</p>
-          <p class="govuk-body-m">We will contact you about your reasonable adjustments before we confirm your interview slot.</p>
-        </div>
+        <div class="govuk-inset-text"><a href="#">Tell us if you cannot attend any of the interview times</a>. This won't affect your application</a>.</div>
 
-        <p class="govuk-body-m">The remote interview will be 1 hour long. At your interview you will give a 15 minute presentation on ‘managing relationships with key policy stakeholders’.</p>
-        <p class="govuk-body-m"> There will also be questions on the behaviours:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>making effective decisions</<li>
-          <li>communicating and influencing</li>
-          <li>seeing the big picture</li>
-        </ul>
+          <p class="govuk-body-m">If you need any reasonable adjustments because of a disability, condition, or impairment, <a href="#">tell us how we can support you</a>.</p>
 
-        <p class="govuk-body-m">If you would like to discuss your application, you can contact <a href="">adam.smith@cabinetoffice.gov.uk</a></p>
+        <p class="govuk-body-m">If you would like to discuss your interview, you can contact the<a href=""> vacancy manager</a>.</p>
 
-        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Book your interview</button>
+        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Complete your booking</button>
 
       </div>
     </div>
