@@ -1,0 +1,190 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "portal-interview",
+        text: "Go back to my dashboard",
+        active: true
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+<script>
+  function showDiv(div){
+    document.getElementById(div).style.display = 'block';
+  }
+
+  function hideDiv(div){
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+
+
+
+  <div class="govuk-grid-row">
+    {% if data['dept'] == "Department for Education" %}
+    <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+    {% elif data['dept'] == "Home Office" %}
+    <img src="/public/images/ho-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Home Office logo">
+    {% else %}
+    <img src="/public/images/dwp-logo.jpeg" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+    {% endif %}
+
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}<br><br>
+      <form action="interview-confirmed" method="post" novalidate>
+      <span class="govuk-caption-l">
+        <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept}}</span><br>
+        <h1 class="govuk-heading-l">
+          Change the date or time of your interview booking
+        </h1>
+
+        <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Your interview booking details
+              </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Monday 16th March 2025
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    10 A.M
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Duration
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    1 hour
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Location
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      3 Glass Wharf, Bristol
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Format                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      In person
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    </dd>
+                  </div>
+              </dl>
+            </div>
+          </div>
+
+        {% if data['interviewLocation'] != "online" %}
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Select an interview location
+          </label>
+
+          <select class="govuk-select" id="interview-location" name="interview-location">
+            <option value="3 Glass Wharf, Bristol" selected>3 Glass Wharf, Bristol</option>
+            <option value="Benton Park View, Longbenton" >Benton Park View, Longbenton</option>
+            <option value="70 Whitehall, Westminster">70 Whitehall, Westminster</option>
+            
+          </select>
+
+        </div>
+         {% endif %}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Select an interview date
+          </label>
+          <select class="govuk-select" id="interview-date" name="interview-date">
+            <option value="Monday 16th March" >Monday 16 March</option>
+            <option value="updated">Tuesday 17 March</option>
+            <option value="views">Wednesday 18 March</option>
+
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Select an interview time
+          </label>
+          <select class="govuk-select" id="interview-time" name="interview-time">
+            <option value="3pm" selected>10am</option>
+            <option value="updated">11:30am</option>
+            <option value="views">1pm</option>
+            <option value="comments">2:30pm</option>
+          </select>
+        </div>
+
+
+          <p class="govuk-body-m">If you need any reasonable adjustments because of a disability, condition or impairment, <a href="#">tell us how we can support you</a>.</p>
+
+        <p class="govuk-body-m">If you would like to discuss your interview, you can contact the<a href=""> vacancy manager</a>.</p>
+
+        <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Update your interview booking</button>
+
+      </div>
+    </div>
+
+
+
+  </form>
+  {% endblock %}

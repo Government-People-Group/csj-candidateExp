@@ -73,7 +73,7 @@
             Booking confirmed
           </h1>
           <div class="govuk-panel__body">
-            You've successfully booked your interview for Delivery Manager (3224578)
+            You've booked your interview for <strong>Delivery Manager</strong> (3224578)
           </div>
         </div>
 
@@ -82,7 +82,7 @@
             <p class="govuk-body-m"><strong>Date</strong></p>
           </div>
           <div class="govuk-grid-column-one-third">
-            <p>Monday 16 March</p>
+            <p>Monday 16 March 2025</p>
           </div>
         </div>
         <div class="govuk-grid-row">
@@ -90,7 +90,7 @@
             <p class="govuk-body-m"><strong>Time</strong></p>
           </div>
           <div class="govuk-grid-column-one-third">
-            <p>10am</p>
+            <p>10 A.M</p>
           </div>
         </div>
         <div class="govuk-grid-row govuk-!-margin-bottom-6">
@@ -104,20 +104,10 @@
         </div>
 
         <h2 class="govuk-heading-m">
-          Your interview panel
-        </h2>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Jonathan Smith, Senior Delivery Manager</li>
-          <li>Sally Phillips, Interaction Designer</li>
-          <li>Gregg Canterbury, Communication Officer</li>
-        </ul>
-
-        <h2 class="govuk-heading-m">
           Preparing for your interview
         </h2>
-        <p class="govuk-body-m">When you arrive at the building, report to reception and ask for Jonathan Smith. Remember to arrive early so you can avoid any delays. </p>
-        <p class="govuk-body-m">Your interview will be about 1 hour long. You'll be assessed on your interview presentation and your answers to our interview questions. 
+        <p class="govuk-body-m">When you arrive at the building, report to reception. Remember to arrive early so you can avoid any delays. </p>
+        <p class="govuk-body-m">Your interview will be about <strong>1 hour </strong> long. You'll be assessed on your interview presentation and your answers to our interview questions. 
         </p>
         <p class="govuk-body-m">You can review your application and interview details in your application centre. 
         </p>
@@ -125,37 +115,26 @@
         <h3 class="govuk-heading-m">
           Interview presentation
         </h3>
-        <p class="govuk-body-m">You'll give a 15 minute presentation on 'managing relationships with key policy stakeholders'. 
+        <p class="govuk-body-m">You'll give a <strong> 15 minute </strong> presentation on <strong>'Managing relationships with key policy stakeholders'.</strong> 
 </p>
-
-        <h3 class="govuk-heading-m">
-          Interview questions
-        </h3>
-        <p class="govuk-body-m">We'll ask you questions based on the <a class="govuk-link" href="https://www.gov.uk/government/publications/success-profiles" target="_blank">Civil Service Success Profiles (opens in new tab)</a>.</p>
-
-        <p class="govuk-body-m">These questions will focus on these <a class="govuk-link" href="https://www.gov.uk/government/publications/success-profiles/success-profiles-civil-service-behaviours" target="_blank">Civil Service behaviours (opens in new tab)</a>:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>making effective decisions</li>
-          <li>communicating and influencing</li>
-          <li>seeing the big picture</li>
-        </ul>
-        <p class="govuk-body-m">Think about examples of when you've demonstrated these behaviours. And when you're answering a question, you should use <a class="govuk-link" href="https://nationalcareers.service.gov.uk/careers-advice/interview-advice/the-star-method" target="_blank">the STAR method</a>.</p>
-
+        <p class="govuk-body">Your presentation should cover:</p>
+        <p class="govuk-body">Stakeholder Analysis: Identify three key stakeholders and explain their influence and interests.</p>
+        <p class="govuk-body">Engagement Strategy: Outline a clear strategy and specific tactics for engaging with each stakeholder.</p>
+        <p class="govuk-body">Managing Challenges: Describe how you would handle a potential challenge, like a conflict of interest, and adapt your strategy.</p>
+        <p class="govuk-body">Measuring Success: Explain how you would measure the success of your engagement efforts.</p>
 
         <h2 class="govuk-heading-m">
-          How can we support your access to the interview?
+          Supporting your access to the interview
         </h2>
 
         <p class="govuk-body-m">We want to make sure everyone has a fair experience during our recruitment process. 
 </p>
 
-<p class="govuk-body-m">If you need any reasonable adjustments because of a disability, condition, or impairment, we may be able to offer extra time or assisted technology.
+<p class="govuk-body-m">If you need support because of a disability, condition or impairment, we may be able to offer adjustments, like extra time or assistive technology.
 </p>
 <p class="govuk-body-m">This will not affect your application. We're committed to enabling access for all.
 </p>
-<p class="govuk-body-m">If you decide to <a class="govuk-link" href="#" target="_blank">tell us about your needs</a>, your request will be sent to the vacancy holder, who will get in touch with you.
-</p>
+<p class="govuk-body-m">f you need an adjustment you did not tell us about when you submitted your application, you can <a class="govuk-link" href="#" target="_blank">let us know</a>. The hiring manager will get in touch with you.
 
         <h1 class="govuk-heading-m">
           Next steps
@@ -168,28 +147,40 @@
           <li>get practical advice to <a href="">prepare for your interview (opens in new tab)</a></li>
         </ul><br><br>
 
-        <div class="govuk-button-group">
-          {% if data['appl-homepage']=="yes" %}
-          <form action="dwp-application-home?interview-booked=yes" method="post" novalidate>
-          <button class="govuk-button" data-module="govuk-button">
-            Back to your application page
-          </button>
-          {% else %}
-          <form action="portal-interview?interview-booked=yes" method="post" novalidate>
-          <button class="govuk-button" data-module="govuk-button">
-            Back to your dashboard
-          </button>
-          {% endif %}
-          {{ govukButton({
-            text: "Make a change to my booking",
-            classes: "govuk-button--secondary",
-            href: "book-interview"
-          }) }}
-          </form>
+        {# --- Start of final corrected section --- #}
 
+        <div style="display: flex; align-items: baseline; gap: 20px;">
+          
+          {# Primary button with style to prevent text wrapping #}
+          <a href="{% if data['appl-homepage']=='yes' %}dwp-application-home?interview-booked=yes{% else %}portal-interview?interview-booked=yes{% endif %}" 
+             role="button" 
+             draggable="false" 
+             class="govuk-button" 
+             data-module="govuk-button" 
+             style="white-space: nowrap;">
+            {% if data['appl-homepage']=="yes" %}
+              Back to your application page
+            {% else %}
+              Back to your dashboard
+            {% endif %}
+          </a>
 
+          {# Secondary button with style to prevent text wrapping #}
+          <a href="change-interview-slot" 
+             role="button" 
+             draggable="false" 
+             class="govuk-button govuk-button--secondary" 
+             data-module="govuk-button" 
+             style="white-space: nowrap;">
+            Change your interview booking
+          </a>
+
+          {# The cancel link, now ALSO with the style to prevent text wrapping #}
+          <a class="govuk-link govuk-body-m" href="dwp-application-home" style="white-space: nowrap;">Cancel your interview booking</a>
+          
         </div>
 
+        {# --- End of final corrected section --- #}
       </div>
     </div>
 
