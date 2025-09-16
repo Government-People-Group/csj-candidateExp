@@ -70,7 +70,7 @@
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept}}</span><br>
         <h1 class="govuk-heading-l">
-          Change the date or time of your interview booking
+          Change your interview booking
         </h1>
 
         <div class="govuk-summary-card">
@@ -134,10 +134,12 @@
             </div>
           </div>
 
+          <h3 class="govuk-heading-m">Update your interview details</h3>
+
         {% if data['interviewLocation'] != "online" %}
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
-            Select an interview location
+            Select a location
           </label>
 
           <select class="govuk-select" id="interview-location" name="interview-location">
@@ -152,7 +154,7 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
-            Select an interview date
+            Select a date
           </label>
           <select class="govuk-select" id="interview-date" name="interview-date">
             <option value="Monday 16th March" >Monday 16 March</option>
@@ -164,7 +166,7 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
-            Select an interview time
+            Select a time
           </label>
           <select class="govuk-select" id="interview-time" name="interview-time">
             <option value="3pm" selected>10am</option>
