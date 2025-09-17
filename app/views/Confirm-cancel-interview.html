@@ -66,33 +66,25 @@
       <span class="govuk-caption-l">
         <strong style="padding-right:20px">{{ Job }}</strong> {{ Dept }}</span><br>
         <h1 class="govuk-heading-l">
-          Are you sure you want to withdraw your application?
+          Are you sure you want to cancel your interview?
         </h1>
         
-
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-visually-hidden">Warning</span>
-            Once you withdraw your application you will not be able to re-apply for this job.
-          </strong>
-        </div>
-       
-
+        <p class="govuk-body">If you cancel your interview, you will have to book a new interview.</p>
+        <p class="govuk-body">If you would like to change the location, time or date of your interview, you can change your interview booking instead.</p>
         
-
+<br></br>
        
 
         <div class="govuk-button-group">
 
-          <form action="dwp-application-home-withdrawn" method="post" novalidate>
-            <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
-              Yes, withdraw application
+          <form action="dwp-application-home" method="post" novalidate>
+            <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+              Yes, cancel the interview
             </button></form>
 
-            <form action="dwp-application-home" method="post" novalidate>
+            <form action="change-interview-slot" method="post" novalidate>
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            No, return to application page
+            No, change the interview booking
           </button></form>
 
         </div>
