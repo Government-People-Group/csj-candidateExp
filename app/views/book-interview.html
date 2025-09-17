@@ -73,13 +73,42 @@
           Book a date and time for your interview
         </h1>
 
-        <p class="govuk-body-m"><strong>Format:</strong> {% if data['interviewLocation'] == "online" %}Online{% else %}In person{% endif %}</p>
-        <p class="govuk-body-m"><strong>Duration:</strong> 1 hour</p>
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Your interview booking details
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Duration
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  1 hour
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Format
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  In person
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
 
         {% if data['interviewLocation'] != "online" %}
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
-            Select an interview location
+            Select location
           </label>
 
           <select class="govuk-select" id="interview-location" name="interview-location">
@@ -94,7 +123,7 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
-            Select an interview date
+            Select date
           </label>
           <select class="govuk-select" id="interview-date" name="interview-date">
             <option value="Monday 16th March" >Monday 16 March</option>
@@ -106,7 +135,7 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
-            Select an interview time
+            Select time
           </label>
           <select class="govuk-select" id="interview-time" name="interview-time">
             <option value="3pm" selected>10am</option>
